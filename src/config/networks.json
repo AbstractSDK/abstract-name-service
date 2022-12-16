@@ -1,4 +1,5 @@
 {
   "juno": ["juno-1", "uni-5"],
-  "osmosis": ["osmo-1"]
+  "osmosis": ["osmo-1"],
+  "terra": ["phoenix-1"]
 }

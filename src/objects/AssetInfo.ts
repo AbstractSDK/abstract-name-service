@@ -10,4 +10,14 @@ export class AssetInfo {
   public static native = (denom: string): AbstractAssetInfo => ({
     native: denom,
   })
+
+  public static from(address: string): AbstractAssetInfo {
+    if (address.startsWith('ibc/')) {
+      return AssetInfo.native(address)
+    } else if (address.length === 44) {
+      return AssetInfo.cw20(address)
+    }
+    // non contracts are native
+    return AssetInfo.native(address)
+  }
 }

@@ -132,5 +132,8 @@
   },
   "osmosis": {
     "osmo-1": []
+  },
+  "terra": {
+    "phoenix-1": []
   }
 }

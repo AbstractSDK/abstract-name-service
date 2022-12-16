@@ -60,7 +60,7 @@ async function writeChainDataToFile<T>(
 
       for (const exchange of supportedExchanges) {
         const exchangeData = await retrieveEntries(exchange, network)
-        console.log(`Found ${exchangeData.length} data for ${network} on ${exchange.name}`)
+        console.log(`Found ${exchangeData.length} ${fileName} for ${network} on ${exchange.name}`)
 
         exchangeData.forEach((item) => existingData.push(item))
       }

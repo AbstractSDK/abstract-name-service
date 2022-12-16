@@ -1321,19 +1321,6 @@
       ],
       [
         {
-          "id": 818
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/71b441e27f1bbb44dd0891bcd370c2794d404d60a4ffe5aeccd9b1e28bc89805",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
           "id": 6
         },
         {
@@ -1342,6 +1329,19 @@
           "assets": [
             "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
             "ibc/9712dbb13b9631edfa9bf61b55f1b2d290b2adb67e3a4eb3a875f3b6081b3b84"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 818
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/71b441e27f1bbb44dd0891bcd370c2794d404d60a4ffe5aeccd9b1e28bc89805",
+            "uosmo"
           ]
         }
       ],
@@ -1412,19 +1412,6 @@
       ],
       [
         {
-          "id": 562
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/0ef15df2f02480ade0bb6e85d9ebb5daea2836d3860e9f97f9aade4f57a31aa0",
-            "ibc/be1bb42d4be3c30d50b68d7c41db4dfce9678e8ef8c539f6e6a9345048894fcc"
-          ]
-        }
-      ],
-      [
-        {
           "id": 7
         },
         {
@@ -1433,6 +1420,19 @@
           "assets": [
             "ibc/7c4d60aa95e5a7558b0a364860979ca34b7ff8aaf255b87af9e879374470cec0",
             "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 562
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/0ef15df2f02480ade0bb6e85d9ebb5daea2836d3860e9f97f9aade4f57a31aa0",
+            "ibc/be1bb42d4be3c30d50b68d7c41db4dfce9678e8ef8c539f6e6a9345048894fcc"
           ]
         }
       ],
@@ -1555,19 +1555,6 @@
       ],
       [
         {
-          "id": 725
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/64ba6e31fe887d66c6f8f31c7b1a80c7ca179239677b4088bb55f5ea07dbe273",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
           "id": 8
         },
         {
@@ -1576,6 +1563,19 @@
           "assets": [
             "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
             "ibc/7c4d60aa95e5a7558b0a364860979ca34b7ff8aaf255b87af9e879374470cec0"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 725
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/64ba6e31fe887d66c6f8f31c7b1a80c7ca179239677b4088bb55f5ea07dbe273",
+            "uosmo"
           ]
         }
       ],
@@ -2174,6 +2174,660 @@
           "assets": [
             "uion",
             "uosmo"
+          ]
+        }
+      ]
+    ]
+  },
+  "terra": {
+    "phoenix-1": [
+      [
+        {
+          "contract": "terra1fd68ah02gr2y8ze7tm9te7m70zlmc7vjyyhs6xlhsdmqqcjud4dql4wpxr"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "luna",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1w579ysjvpx7xxhckxewk8sykxz70gm48wpcuruenl29rhe6p6raslhj0m6"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "astro",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1ygn5h8v8rm0v8y57j3mtu3mjr2ywu9utj6jch6e0ys2fc2pkyddqekwrew"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "stable",
+          "assets": [
+            "usdc",
+            "usdt"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1cr8dg06sh343hh4xzn3gxd3ayetsjtet7q5gp4kfrewul2kql8sqvhaey4"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "stable",
+          "assets": [
+            "luna",
+            "ampluna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1mpj7j25fw5a0q5vfasvsvdp6xytaqxh006lh6f5zpwxvadem9hwsy6m508"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "stable",
+          "assets": [
+            "luna",
+            "lunax"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1h32epkd72x7st0wk49z35qlpsxf26pw4ydacs8acq6uka7hgshmq7z7vl9"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "stable",
+          "assets": [
+            "bluna",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1alzkrc6hkvs8g5a064cukfxnv0jj4l3l8vhgfypfxvysk78v6dgqsymgmv"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "vkr",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra15l5pqlp8q5d4z8tvermadvp429d8pfctg4j802t8edzkf8aavp7q59t7er"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "tpt",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra13rj43lsucnel7z8hakvskr7dkfj27hd9aa06pcw4nh7t66fgt7qshrpmaw"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "luna",
+            "astro"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1zhq0rqermczklmw89ranmgz28zthsthw6u35umgvpykfwzlwtgcsylpqqf"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "red",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1muhks8yr47lwe370wf65xg5dmyykrawqpkljfm39xhkwhf4r7jps0gwl4l"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "astro",
+            "xastro"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1yx28vf8z0ph94h6mwxurfjuqzqcc6chzpd85ls8uvr0ajpkdvzhqrmp2sv"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "dust",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra12hcs6mkg3zhg2vdnrl8ep8yejjhnynyvz42uewpupdmg0ksmlcts5v4uvv"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "btc",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1lgnfv8tkh8wlqcs280nnpfcw7p5v6j8my4uga5t9d8dgw6nlx9qszjetaj"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "usdc",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra10xergcw3a994882ra9gpefjwc9wupzpvdck8cemxgc5p6cg5scvqgjkuax"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "xastro",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1ghrgxen482dag6777mp4pzkcafh995y9xp7jqsfvdaal5ld3d2hs4q0v5v"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "usdc",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1pxm9qtnrchzy90d99clpa0rkx8fyztlc67wt5t999pc8yvsrx90snpfe4v"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "stable",
+          "assets": [
+            "cluna",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra18fr4keh3afk9e84tf466xsdkk9t8amstycjw7c8e6gukjqjq875q9zdavy"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "stable",
+          "assets": [
+            "ampluna",
+            "lunax"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1e67qwgxexherg4quj8l5297txq0awqr46y52nl8pywcz86n5rwlq82teeh"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "red",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra12sxh6tx923lk9jpkzsrqx3k2hcm4nl4hjpjj28n8at0s5pyrs8wsdzawz7"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "tpt",
+            "xtpt"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1cw6lvwkw3hz8c5gj33ecjma88kyp73mgep04m0rgg87yt5g5l4hsfpuhd4"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "xtpt",
+            "xastro"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1ffkw4u3uaa800a62jfxaf5wtjqk0mgl4e5ayxmus2n2tq0lfnffqva4xww"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "astro",
+            "red"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra16gcy7pzae346t67rv3wlcfexp5alx5jht35rcgzvgharyakzdldsupr4aq"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "idc",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1p4xx3nydj6th2e2ewk0j6xrzxeq4f3zm86pmv6hywnrl7d4vc9asgkmmru"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "yn-usdc-usdt",
+            "pn-usdc-usdt"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1q5xw5q8sqpaffuq867rjdl6ljaent9zlzv3t3hy90a24gttuts3sdjxduz"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "idc",
+            "opza"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1yjekfa0d0z8jdj5jc0mv0k8lu023yzymmgkerjvhh4twtq6nhmzqa9s2v7"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "usdc",
+            "opza"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1sr5gcuww0564lcf9mderzqq6xmn4rucv070qq55kx44x99j92k0qykgnfn"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "pn-usdc-usdt",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1ekaahva0msrcxdyyfrx6lt9c8rf4u682mrfpp8qstqpdwxk46ussup7enm"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "tpt",
+            "opza"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1wx8h3grl9w79awkp5lefx2pewzner324dcq6vycxrrn3kj0lf0fqy74ple"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "lunax",
+            "xastro"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1zjfy562q4nw0fwhhp8hmck88td3trlj76wqhhkncal25qu4mck6sgpkau4"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "astro",
+            "vkr"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1a044rg849fdtzvkr8sgq7dzrktmxd93at8pf2nr56aydgm45h3fsj8w6lc"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "weth",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1074tgxqlxtav7ypzadkj30wkgrync9mm8s307r3u9hc3r2rjsjjsytp2cz"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "weth",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1ytv225amprdus06930pptnpxu0m7nhtjjwd4wf8r4x8wwhzj9uaqwyp38r"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "idc",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1apzktjcuez96a2mhuuptnkphpevvn5m8rfjcwvnrpaaxmpv5mrasq2fgwk"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "tfloki",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra127xnylapups3msndck3aky75m9k47hk4h8y7cwerd5ua86km9ffqrc703g"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "wavax",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1sxdrn5efjuf3z2lzuwnew839zus4lm2dndwzw589t0kzku6kmhnsuhsxq3"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "stable",
+          "assets": [
+            "luna",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1uz03r5rk7p60aktxl8gm8np2kf9ur3dk3zp80uyztfse07xhnrusqdq8du"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "fatman",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1my9v4lt55v6mg92wpq43gfyuvj5k0gll0epaj8u0tcarcjyp0qtsf6c9nw"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "local",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1rne6vwma3nznlnc3ptef8zrqv9pj2fxtv8yzxg8ly9xd7mrjvrvsyhtfqf"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "wavax",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra19zfuwg4l9u7wrsekpq2aumakgzc3g090almhl4taxmnu89weyavqz5t27g"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "astro",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1jpkrh5q5wcfatatuwlzqsl830f2ewsrk3urkxh4reqalr0nav4xq2d6jk9"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "musk",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1tfxnza2panr47fgr6g28ns6zgvh4lcx99vs03vyjs4mh7jdeeqfqc87455"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "sol",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1fwjgcqkeuzvyh40pq78m239ffdelrqxuzft7x5e4ezkxhxwt4ershfgtah"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "luna",
+            "gido"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1k7aa2ngsfajxrtn2vy3q5jph8jc8xaeg75x80plhqg3ttre0pk9slh4ms6"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "gido",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1hapant9z9454s0sl2pjwpct2apft4uxu6ypem0u290fe0626gvzqg4xzlp"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "luna",
+            "ust"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra179a20595ssz3zxmg46t9jpwyq5vfhuvyelj5qnthq6dcah9tdu0sxpt0tm"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "lubi",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1vzxatdcx3msz0lpvl7anu8raarhhyenjhnrnpdhvsnhhx7dew9ms0hdaz9"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "stable",
+          "assets": [
+            "usdc",
+            "usdt"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1fg8zgcxtc40zqttq3sk2dqjmaf9zw6qqaqpvn83e4tvy579hlqfq8vrpsh"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "steak",
+            "astro"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra12t3t0f0ga6hv6cw274mytcwhh9038x448ugthz9j0tkvdnlgnc5qdz2ael"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "luna",
+            "lira"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra19kaa5azm3tw6a2yd2p0chvfznt6rathpf0qy2twm5mgwrg0wrf8sletgyv"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "stable",
+          "assets": [
+            "usdc",
+            "usdt"
           ]
         }
       ]

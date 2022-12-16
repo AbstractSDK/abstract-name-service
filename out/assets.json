@@ -294,5 +294,405 @@
   },
   "osmosis": {
     "osmo-1": []
+  },
+  "terra": {
+    "phoenix-1": [
+      [
+        "astro",
+        {
+          "native": "terra1nsuqsk6kh58ulczatwev87ttq2z6r3pusulg9r24mfj2fvtzd4uq3exn26"
+        }
+      ],
+      [
+        "usdc",
+        {
+          "native": "ibc/b3504e092456ba618cc28ac671a71fb08c6ca0fd0be7c8a5b5a3e2dd933cc9e4"
+        }
+      ],
+      [
+        "luna",
+        {
+          "native": "uluna"
+        }
+      ],
+      [
+        "lunax",
+        {
+          "native": "terra14xsm2wzvu7xaf567r693vgfkhmvfs08l68h4tjj5wjgyn5ky8e2qvzyanh"
+        }
+      ],
+      [
+        "usdt",
+        {
+          "native": "ibc/cbf67a2bcf6cae343fdf251e510c8e18c361fc02b23430c121116e0811835def"
+        }
+      ],
+      [
+        "ampluna",
+        {
+          "native": "terra1ecgazyd0waaj3g7l9cmy5gulhxkps2gmxu9ghducvuypjq68mq2s5lvsct"
+        }
+      ],
+      [
+        "steak",
+        {
+          "native": "terra1xumzh893lfa7ak5qvpwmnle5m5xp47t3suwwa9s0ydqa8d8s5faqn6x7al"
+        }
+      ],
+      [
+        "fatman",
+        {
+          "native": "terra1zf90xr38pdgq0yjq2d56scclpfyu3ep4d720s9r2yw9gmwg7khaq0c30rl"
+        }
+      ],
+      [
+        "musk",
+        {
+          "native": "terra1z7xe8pjrr0tdguvsdxh2hj6u0gk3y93dxs2xncz00jsjzt8g6suq95lj5w"
+        }
+      ],
+      [
+        "lubi",
+        {
+          "native": "terra1uv8ltv32tuq4qf6xspytpv058p0pef64s5xdncfywjexv22lfjzs7mul8s"
+        }
+      ],
+      [
+        "usdt",
+        {
+          "native": "terra12ezq5402h5n3skhdshjp4f49zzg0saxum8fvvhjhauzas2ezyyrqpznqny"
+        }
+      ],
+      [
+        "busd",
+        {
+          "native": "terra129zjaxquhh3h5upn0clqzdawnze43a9z34ktt4l6um2hf5w0xqjsta42u5"
+        }
+      ],
+      [
+        "usdc",
+        {
+          "native": "terra1vzd98s9kqdkatahxs7rsd8m474lf2f8ct39zdgd6shj4nh5e6kuskaz2gy"
+        }
+      ],
+      [
+        "weth",
+        {
+          "native": "terra15hhqg8gyz04zapynqtk7uvlsp7lzay7etrt9ann0276v94yae63sxygeat"
+        }
+      ],
+      [
+        "sol",
+        {
+          "native": "terra1ctelwayk6t2zu30a8v9kdg3u2gr0slpjdfny5pjp7m3tuquk32ysugyjdg"
+        }
+      ],
+      [
+        "wavax",
+        {
+          "native": "terra1qmnxhecc3vnmhef9q7vap7spx9tgpnw9fqe8ljqfwrlz7rur9y5qu2dlp6"
+        }
+      ],
+      [
+        "vkr",
+        {
+          "native": "terra1gy73st560m2j0esw5c5rjmr899hvtv4rhh4seeajt3clfhr4aupszjss4j"
+        }
+      ],
+      [
+        "tcw",
+        {
+          "native": "terra1mma39sqn43aen4jh2sdmka84mv94uk7v7xw3ype2fdvlay6emrlqweyf5u"
+        }
+      ],
+      [
+        "auto",
+        {
+          "native": "terra1jqt5mmlpd6x3jtwfdsxwtrknvaczz2xmplukzc8h86xhupg7fe7q7nkzdp"
+        }
+      ],
+      [
+        "maapl",
+        {
+          "native": "terra1p67lldutk5haqpmnk5thuhmhyff8ntf8axa37mzm87qq58082u0qqp9mmu"
+        }
+      ],
+      [
+        "ust",
+        {
+          "native": "terra1rwg5kt6kcyxtz69acjgpeut7dgr4y3r7tvntdxqt03dvpqktrfxq4jrvpq"
+        }
+      ],
+      [
+        "mmsft",
+        {
+          "native": "terra1s8u586k3s7xtvasxv4p6ldl0jrxht9w886v8ymkst6crg5hxue3sqn49r9"
+        }
+      ],
+      [
+        "tfloki",
+        {
+          "native": "terra1564y9uxzhast8sk5n47teypy4mxy7fg5vne2msuztsft7qk3pj9sxxuxmc"
+        }
+      ],
+      [
+        "luna",
+        {
+          "native": "terra16h7keds26d52xj8rn9jfx6lj2x0ja79lt56yxnmlm4xsttf5mu5smq5f78"
+        }
+      ],
+      [
+        "local",
+        {
+          "native": "terra1xzkel96e5e8vfmqw7valzdzzv9hqasfyslclvnmvxdejvpda3xwsskxzus"
+        }
+      ],
+      [
+        "usdc",
+        {
+          "native": "terra1uc3r74qg44csdrl8hrm5muzlue9gf7umgkyv569pgazh7tudpr4qdtgqh6"
+        }
+      ],
+      [
+        "gido",
+        {
+          "native": "terra177huv6k3gyqwxcd7n32ts56tvxt68dgll0fn56k56rcvy9zeke9s5gfn3c"
+        }
+      ],
+      [
+        "gido",
+        {
+          "native": "terra1ttspm8jgeylc6us3mlpwpmlwzr3rkesm70vn6zkfr07pz7e3rzkq73ah2j"
+        }
+      ],
+      [
+        "btc",
+        {
+          "native": "terra1a2gdn43yjllg3jvna7xcv2zea0ppjchsww2fedd63l9k2azg6j7qg6v3pj"
+        }
+      ],
+      [
+        "lira",
+        {
+          "native": "terra1ee4g63c3sus9hnyyp3p2u3tulzdv5ag68l55q8ej64y4qpwswvus5mtag2"
+        }
+      ],
+      [
+        "burn",
+        {
+          "native": "terra13e7da9f90m32s04kg4knlpsakmn50kqz2zx2rqypkahhp29gxdwqu4vy8q"
+        }
+      ],
+      [
+        "bluna",
+        {
+          "native": "terra1hspy32cecnj72wwpma59eldpmsmfndlrwqxnzx6awfdtarns66qqw5kn85"
+        }
+      ],
+      [
+        "alem",
+        {
+          "native": "terra1cmf8ytutcwrjrv08zskj9phuh46a3w3nkjax7en4hxezsrdr58lqvzy05q"
+        }
+      ],
+      [
+        "ueth",
+        {
+          "native": "terra1ly8vd2q69h3jlyjgnwqq0q4wngulmr2l2gr0lxd93tqle42596rsq5zz5d"
+        }
+      ],
+      [
+        "usd",
+        {
+          "native": "terra1q4r4zzde2tg52306qevhnaf3qw76a68hnyzw404uuvvzx09n3ckqe2ylrm"
+        }
+      ],
+      [
+        "bond",
+        {
+          "native": "terra1plhefzma59lh6rjk5gfkq45pz2chfq35nm9xgdz4pcuhp3nnwekq8sthua"
+        }
+      ],
+      [
+        "xastro",
+        {
+          "native": "terra1x62mjnme4y0rdnag3r8rfgjuutsqlkkyuh4ndgex0wl3wue25uksau39q8"
+        }
+      ],
+      [
+        "red",
+        {
+          "native": "terra1xe8umegahlqphtpvjsuwfzfvyjfvag5h8rffsx6ezm0el4xzsf8s7uzezk"
+        }
+      ],
+      [
+        "mine",
+        {
+          "native": "terra1ykxe98arwtahe97h9y5nck8gw88kxn2z73gfwlnx5twcd96ct98sqzcsrk"
+        }
+      ],
+      [
+        "pce",
+        {
+          "native": "terra1dzahfzk3vavwy4zqt0x49guswvwe6ef8jm60fpl2cqmq0yl7pp4qyrx3cr"
+        }
+      ],
+      [
+        "sd",
+        {
+          "native": "terra1l23rtnsp0fcfgs2zlww4gcd8dlznkm580p5yrsangcen9jjjhuqstd2sle"
+        }
+      ],
+      [
+        "orne",
+        {
+          "native": "terra19p20mfnvwh9yvyr7aus3a6z6g6uk28fv4jhx9kmnc2m7krg27q2qkfenjw"
+        }
+      ],
+      [
+        "tpt",
+        {
+          "native": "terra13j2k5rfkg0qhk58vz63cze0uze4hwswlrfnm0fa4rnyggjyfrcnqcrs5z2"
+        }
+      ],
+      [
+        "hero",
+        {
+          "native": "terra1klxa4rxjgpg9xuaf5mwpgykpv7x9decrvgg3ejresupcne69cgdqzx5yhu"
+        }
+      ],
+      [
+        "xtpt",
+        {
+          "native": "terra1e9s5m6vrl9ms75q0862llq2vcsz8r43czm36s6xnn3vh8dfmwe0s3c86e8"
+        }
+      ],
+      [
+        "cluna",
+        {
+          "native": "terra13eekqp0zgj55arjuacpxqxzgqy2uydf5wzzqns9ddgpepj377afqflunf3"
+        }
+      ],
+      [
+        "ibc/14accad1750327c74bb35978ad0c3e97b184dab9f0bf4bd876fbd1f782b57110",
+        {
+          "native": "ibc/14accad1750327c74bb35978ad0c3e97b184dab9f0bf4bd876fbd1f782b57110"
+        }
+      ],
+      [
+        "pluna",
+        {
+          "native": "terra1gd3ntqq04lvd623xs8ht6dly0s7n4gxnz7lmlw5ga0qnamg9wyrqcggn2h"
+        }
+      ],
+      [
+        "yluna",
+        {
+          "native": "terra1l02355pejytcakcpq6g3n57ydwpqeysuw5nj679hlnrrsz3sc3wssxr69j"
+        }
+      ],
+      [
+        "gea",
+        {
+          "native": "terra13jlm0anpdd3hc0xctw9vtncmcfnrag8dh686s2juy7m226unwd4q0tmx2v"
+        }
+      ],
+      [
+        "geb",
+        {
+          "native": "terra1mrdgys0e0hhq0n56zgy3e0htahcnwtdt4dy2ec9wcltcr6qjntmq0yen07"
+        }
+      ],
+      [
+        "sdo",
+        {
+          "native": "terra1nu0c3s69umqz862ltp6wytuztm0rrn6w5079g999u0hvwy62tf3q02qhmr"
+        }
+      ],
+      [
+        "yn-usdc-usdt",
+        {
+          "native": "terra1e0uch3fwned9rfhkaeehqv9mnfuwjh9jfhawd4gxw248czljdttsh22jkg"
+        }
+      ],
+      [
+        "pn-usdc-usdt",
+        {
+          "native": "terra1gk0y0tcxj8pr65tanqvc8zyzv3c8szkwf2kcmzgqj9jm2t9z3f9q4xcnfz"
+        }
+      ],
+      [
+        "tkna",
+        {
+          "native": "terra1nchx6x3xtmme9sq6gxtj0tuux9l3mh05ce0hmmm7ge35vl8zsdeshkn7z5"
+        }
+      ],
+      [
+        "tknb",
+        {
+          "native": "terra16er279t0mgumskzqp2eq5wju9ge68v6y7ylq4qju35rj5as6gwaqpf70xu"
+        }
+      ],
+      [
+        "moon",
+        {
+          "native": "terra1jg848acg7rzt7tnz6zqaxzsc94w2yjhafad80d3uel9937grkmfsv8aycw"
+        }
+      ],
+      [
+        "bluna",
+        {
+          "native": "terra17aj4ty4sz4yhgm08na8drc0v03v2jwr3waxcqrwhajj729zhl7zqnpc0ml"
+        }
+      ],
+      [
+        "vvp",
+        {
+          "native": "terra1xepgy0lp0lkt9dq89pfe3sqwnfyln29r2zj5qqkp75l2egthmmkqkn36vv"
+        }
+      ],
+      [
+        "idc",
+        {
+          "native": "terra1d4j9lsl453mkvtlg4ctw8y52rdkhafsaefug0hq0z06phczuvvvs7uq0vg"
+        }
+      ],
+      [
+        "only",
+        {
+          "native": "terra1zd27zxxn976s0ygqa7h2cmgzq0emcuy2h4dk04a6s8jm5a346dfs3zc6u2"
+        }
+      ],
+      [
+        "dinheiros",
+        {
+          "native": "terra1spkm49wd9dqkranhrks4cupecl3rtgeqqljq3qrvrrts2ev2gw6sy5vz3k"
+        }
+      ],
+      [
+        "opza",
+        {
+          "native": "terra1ry9f6alqyf9dpj04u9ymq5u4whjndu485agh6gusn89dmqse3ggsnzducj"
+        }
+      ],
+      [
+        "dust",
+        {
+          "native": "terra17gck626vgax9jpe6utm7dhx4vdzawfkt0jhru03l7a3dzu98wedsfad4sz"
+        }
+      ],
+      [
+        "pluna-lunax",
+        {
+          "native": "terra13g39gz8uv4s8h9a7pzmg2pezcmd46jz774lffhe2n9dqckn87mlqqg86nc"
+        }
+      ],
+      [
+        "yluna-lunax",
+        {
+          "native": "terra1wjzwg8megt6zsfsr2tduwklh8sx3mpptquqcm7h0krxuzwc5n86sn2xh9a"
+        }
+      ]
+    ]
   }
 }

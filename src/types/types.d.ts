@@ -1,7 +1,6 @@
-type Chain = string
-// type Chain = 'juno' | 'archway' | 'osmosis' | 'terra';
+// type Chain = string
+type Chain = 'juno' | 'archway' | 'osmosis' | 'terra'
 
-type AssetEntry = string
 type Addr = string
 
 type AbstractAssetInfo =
@@ -19,4 +18,3 @@ type AbstractContractEntry = {
   contract: string
   protocol: string
 }
-type AnsAssetEntry = [AssetEntry, AbstractAssetInfo]

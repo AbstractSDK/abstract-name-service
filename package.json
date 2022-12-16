@@ -24,6 +24,8 @@
     "@cosmjs/tendermint-rpc": "^0.29.5",
     "@osmonauts/lcd": "^0.8.0",
     "dotenv": "^16.0.3",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.0.0",
     "osmojs": "^13.0.1",
     "ts-pattern": "^4.0.6"
   },
