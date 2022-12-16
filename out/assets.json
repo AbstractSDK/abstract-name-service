@@ -290,7 +290,50 @@
         }
       ]
     ],
-    "uni-5": []
+    "uni-5": [
+      [
+        "junox",
+        {
+          "native": "ujunox"
+        }
+      ],
+      [
+        "crab",
+        {
+          "cw20": "juno12wwfatmpqnxdqk0ka8rpd4ud4frc97srtv55mmlf7xunux6led8s8wtgx2"
+        }
+      ],
+      [
+        "dao",
+        {
+          "cw20": "juno1lqhg97uxqlm7qhl4dylm2ynzf6z8r3px9epc23epkcu3703tal7qwj6vun"
+        }
+      ],
+      [
+        "pood",
+        {
+          "cw20": "juno174a3wz38p2rzqznm9npar95zpp5tpfe420amyj7qfs5373nklmqsqutetv"
+        }
+      ],
+      [
+        "dog",
+        {
+          "cw20": "juno1sds2hju9gnc6g4jhu78kvxe8snwk80zypq6qlny7jv4pfmz5s9fqzl6s3g"
+        }
+      ],
+      [
+        "bull",
+        {
+          "cw20": "juno1c5zfjmrvja82jrwceml4d3x7xhtz8hzvwksre5u23q8q2xyxx2vqa9d7zg"
+        }
+      ],
+      [
+        "cat",
+        {
+          "cw20": "juno1u3p88cklq0tt7frfwfjchhcs5ss0tjzwkxgr32m50j5pjnkxdzdszuj02h"
+        }
+      ]
+    ]
   },
   "osmosis": {
     "osmo-1": []

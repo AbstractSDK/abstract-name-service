@@ -11,6 +11,7 @@ export class Junoswap extends Exchange {
   private networkToPoolList = {
     'juno-1':
       'https://raw.githubusercontent.com/CosmosContracts/junoswap-asset-list/main/pools_list.json',
+    'uni-5': 'https://wasmswap.io/pools_list.testnet.json',
   } as const
 
   supportsNetwork = (network: string) => Object.keys(this.networkToPoolList).includes(network)
