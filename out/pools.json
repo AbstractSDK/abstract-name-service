@@ -1,0 +1,2182 @@
+{
+  "juno": {
+    "juno-1": [
+      [
+        {
+          "contract": "juno124d0zymrkdxv72ccyuqrquur8dkesmxmx2unfn7dej95yqx5yn8s70x3yj"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "raw"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1sg6chmktuhyj4lsrxrrdflem7gsnk4ejv6zkcc4d3vcqulzp55wsf4l4gl"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "atom"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1ctsmp54v79x7ea970zejlyws50cj9pkrmw49x46085fn80znjmpqz2n642"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1hue3dnrtgf9ly2frnnvf8z5u7e224ctc4hk7wks2xumeu3arj6rs9vgzec"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "ustc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1j7pdtemw0qvl6rmnl0sf324409gz2p4sdt6rv659482x9rqqz6mqd653dg"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "btsg"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno10mrlcttkwt99wxnqfyk6327lq3ac9yhfle2fd0c5s4rp8dzqy9ps3sjzyf"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "lunc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1el6rfmz6h9pwpdlf6k2qf4dwt3y5wqd7k3xpyvytklsnkt9uv2aqe8aq4v"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1z5vukf037r6acgln3n37tr8a5rv7wafqzhcq29ddn9etwwtfrytsn6xvux"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "stars"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1730cx75d8uevqvrkcwxpy9trhqqfksu5u9xwqss0qe4tn7x0tt3shakhk8"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "huahua"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1tmxx3rdnnrcckkh7pjde924lftjs724rzd44sqte5xh8xax0yf2sc7v7dk"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "akt"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1yaff0t6tfheqcdep24euu7w0xhnhs2yjwwv7r2c280vlns8trghq5d72pd"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "xprt"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno152lfpmadpxh2xha5wmlh2np5rj8fuy06sk72j55v686wd4q4c9jsvwj0gm"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "cmdx"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1gpa5ardzal22el6czj4j0d2pwy0m9qj06lr20t2l8fca3gkws63qfnx8eq"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "dig"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1hkz5dhn59w6l29k8w8ceuramqx2f35qpen7xtlx6ezketwh8ndxq8rwq2a"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "scrt"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1e8n6ch7msks487ecznyeagmzd5ml2pq9tgedqt2u63vra0q0r9mqrjy6ys"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "neta"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1acs6q36t6qje5k82h5g74plr258y2q90cjf9z4wnktt7caln0mhsx8mt7z"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "canlab"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno133xa84qnue3uy0mj9emvauddxzw554rfl9rr6eadhfau50ws7gvs4ynm79"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "tuck"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno16zn96yf3vnxengke3vcf6mg9x7qyppgsdh3dnnmvdd8hvtpw58wsrjuu56"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "hulc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1gv2gswtan8wsk54h663waefffywnuc9wcxr7xl5pnnxvjaqunpgs20t39g"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "bcna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1653nhx2330rnhmzk2qe9w74kwwa3jtxe4lrfs5cfq8szfms8pqzsra5fvq"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "ngm"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1z698dxy9gj4fnrs76xwmtqwh84lamav9xl0w35pd35vnfx7987nqudxyge"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "eeur"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno18nflutunkth2smnh257sxtxn9p5tq6632kqgsw6h0c02wzpnq9rq927heu"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "hope"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1m08vn7klzxh9tmqwajuux202xms2qz3uckle7zvtturcq7vk2yaqpcwxlz"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "rac"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1cvjuc66rdg34guugmxpz6w59rw6ghrun5m33z3hpvx6q60f40knqglhzzx"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "marble"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno14nak8v6xeawstrq7r7qmpa67qqfc9xzzymfdfpnp0luycv8knyuq5a6w2m"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "coin"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1enl842z00cklnathpv8f3t3w2u70dkrq22crz3gxg38we7xjfq5s8lktmg"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "primo"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno14p3wvpeezqueenfu9jy29s96xuk0hp38k5d5k4ysyzk789v032sqp8uvh3"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "daisy"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1fzl79pekf8wtd0y37q92dmz5h9dxtfpl97w3kguyc59m7ufnlzvsf46vf8"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "future"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno19859m5x8kgepwafc3h0n36kz545ngc2vlqnqxx7gx3t2kguv6fws93cu25"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "bfot"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1xkm8tmm7jlqdh8kua9y7wst8fwcxpdnk6gglndfckj6rsjg4xc5q8aaawn"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "phmn"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1fpphzkkq5uyezm7amk6sslyz8r94wl658zg2ku47v8mtslueyx5q29rkzq"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "arto"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1w7l7hetsm4x6hxa55dsjwszqh9elzwqrd6cud2qkqhafrd6u9vrqc2zh48"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "nmn"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1jz50fj5zkcv3h6hmcfr3nr6eer7rj5pmsry5qj5jc8rfvpeavyzsgknm83"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "sgnl"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1rft4xp5e6ffta5a8aqwtu4kgdfjqw4jhnleu8agmmedzrxsat7pqxfgfrs"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "joe"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno17h4sgpaksygdnswpx74szv98hggddc08ny4zv5ca63jv53qptxrshacvku"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "raw",
+            "osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1qsmywlded2sdggud5wft44gq2u6c3epl3qhzr4qv7psj536t8yhsfvrcf6"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "mntl"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno150vj5jusg4g8n82q40nd9cmq3unc255u3hf5qh6pud4dexkgyp0ss7yvwq"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "punk"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1cugrrrryrpl383kfca0w5swywffa08zwqshrsfre82059vxjlx6syhf73y"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "glto"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1fha0ux5k6xxzzknhwk0j2rtwxtczlp8kzk6w9g383lzjhu337k9swvjdlv"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "sejuno",
+            "atom"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1gxvcltkl0tf20rpsn2wf9q6ex0vr5xk6j3tzezuv6yyjez97w5vqmxk0cv"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "sejuno",
+            "raw"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno17v2d2993me50e6dgzx50ckuuah0vmfyanl0segxsdcg3s4qzqersyrvu8n"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "bjuno",
+            "juno"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1d04vn4t3cw494md0xleyqk6hxt8ctn5gmr353h06uvnudlvk5chq93vmjq"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "sejuno",
+            "juno"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno14hrt7htv42234xwpsxmxaxu7wywak7zflpk9jf5nze3w6e93czdsfwe0ly"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "seasy",
+            "juno"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1qt7uzjg9su3mk78jpt695rmxce4sa7evz7wa0edexjrsxghy35hsgje5l9"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "loop",
+            "raw"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno107l74mj5q7d6zdzqzwpmdkk76628az2p9z08z9cj5pa7s5fpucws96f57e"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "muse"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1fjmrqc5tjj2t5mfwkk5utwz2t0gcpkfajjefllrfahuqanctn9ys968emr"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "drgn"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1na8zlnp3pqsjfzllcncq2ahsxg9zkdkqrz3sl4ae5lergh2wrjes7jl9gr"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "verse"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1lgmtzhn840y9l74azn06w0wnsh4y98mjq5zs98yf96ggm7ejz05sgvpzqc"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "tori"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno10yvrummu6ma72z9ne82k888acn5que7s8ef3xtadd3fkhtq9xkuq80dhjs"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "ampjuno"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1p8prj0dddf6d2wp599rtv9c5zp3v5gx0pjpk0hwl8fuhn7x8jslqxvjeqk"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "muse",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "juno1z8c5kqh2yc48wstsq4h68lk78kxmf0rh30qs5f6d7luxzledvjtsxgugzt"
+        },
+        {
+          "dex": "junoswap",
+          "poolType": "constant_product",
+          "assets": [
+            "juno",
+            "czar"
+          ]
+        }
+      ]
+    ],
+    "uni-5": []
+  },
+  "osmosis": {
+    "osmo-1": [
+      [
+        {
+          "id": 1
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 678
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/d189335c6e4a68b513c10ab227bf1c1d38c746766278ba3eeb4fb14124f1d858",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 704
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/ea1d43981d5c9a1c4aaea9c23bb1d4fa126ba9bc7020a25e0ae4aa841ea25dc5",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 712
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/d1542aa8762db13087d8364f3ea6509fd6f009a34f00426af9e4f9fa85cbbf1f",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 722
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/6ae98883d4d5d5ff9e50d7130f1305da2ffa0c652d1dd9c123657c6b4eb2df8a",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 674
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/0cd3a0285e1341859b5e86b6ab7682f023d03e97607ccc1dc95706411d866df7",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 812
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/903a61a498756ea560b85a85132d3aee21b5dedd41213725d22abf276ea6945e",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 497
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/46b44899322f3cd854d2d46deef881958467cdd4b3b10086da49296bbed94bed",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 584
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/0954e1c28eb7af5b72d24f3bc2b47bbb2fdf91bddfd57b74b99e133aed40972a",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 9
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/e6931f78057f7cc5da0fd6cef82ff39373a6e0452bf1fd76910b93292cf356c1",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 498
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/46b44899322f3cd854d2d46deef881958467cdd4b3b10086da49296bbed94bed"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 795
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/2da9c149e9ad2bd27fefa635458fb37093c256c1a940392634a16bea45262604",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 481
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/5973c068568365fff40dedcf1a1cb7582b6116b731cd31a12231ae25e20b871f",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 560
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/be1bb42d4be3c30d50b68d7c41db4dfce9678e8ef8c539f6e6a9345048894fcc",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 585
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/0954e1c28eb7af5b72d24f3bc2b47bbb2fdf91bddfd57b74b99e133aed40972a",
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 604
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/987c17b11abc2b20019178ace62929fe9840202ce79498e29fe8e5cb02b7c0a4",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 3
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/1480b8fd20ad5fcae81ea87584d269547dd4d436843c1d20f15e00eb64743ef4",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 611
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/987c17b11abc2b20019178ace62929fe9840202ce79498e29fe8e5cb02b7c0a4"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 858
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/bb936517f7e5d77a63e0adb05217a6608b0c4cf8fba7ea2f4bae4107a7238f06",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 840
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/f4a070a6d78496d53127ea85c094a9ec87dfc1f36071b8ccddbd020f933d213d",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 4
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "weighted",
+          "assets": [
+            "ibc/1480b8fd20ad5fcae81ea87584d269547dd4d436843c1d20f15e00eb64743ef4",
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 816
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/eb7fb9c8b425f289b63703413327c2051030e848ce4eaaea2e51199d6d39d3ec",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 10
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/e6931f78057f7cc5da0fd6cef82ff39373a6e0452bf1fd76910b93292cf356c1"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 601
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/ea3e1640f9b1532ab129a571203a0b9f789a7f14bb66e350dcbfa18e1a1931f0",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 773
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/3ff92d26b407fd61ae95d975712a7c319cde28de4d80bdc9978d935932b991d7",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 837
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/92be0717f4678905e53f4e45b2ded18bc0cb97bf1f8b6a25afedf3d5a879b4d5",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 15
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/a0cc0cf735bfb30e730c70019d4218a1244ff383503ff7579c9201ab93ca9293",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 832
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/8e697bdabe97ace8773c6df7402b2d1d5104dd1eeabe12608e3469b7f64c15ba",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 600
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/ea3e1640f9b1532ab129a571203a0b9f789a7f14bb66e350dcbfa18e1a1931f0"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 744
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/bb6bcdb515050bae97516111873ccd7bcf1fd0ccb723cc12f3c4f704d6c646ce",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 561
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/0ef15df2f02480ade0bb6e85d9ebb5daea2836d3860e9f97f9aade4f57a31aa0",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 463
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/1dc495fcefda068a3820f903edbd78b942fbd204d7e93d3ba2b432e9669d1a59",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 681
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/5d1f516200ee8c6b2354102143b78a2deda25ede771ac0f8dc3c1837c8fd4447",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 803
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/c140afd542ae77bd7dcc83f13fdd8c5e5bb8c4929785e6ec2f4c636f98f17901"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 641
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/67795e528df67c5606fc20f824ea39a6ef55ba133f4dc79c90a8c47a0901e17c",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 605
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/b9e0a1a524e98bb407d3ced8720efefd186002f90c1b1b7964811dd0ccc12228",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 13
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/a0cc0cf735bfb30e730c70019d4218a1244ff383503ff7579c9201ab93ca9293"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 633
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/9f9b07ef9ad291167cf5700628145de1deb777c2cfc7907553b24446515f6d0e",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 806
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/a8ca5ee328fa10c9519df6057da1f69682d28f7d0f5ccc7ecb72e3dca2d157a4",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 587
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/3bccc93ad5df58d11a6f8a05fa8bc801cba0ba61a981f57e91b8b598bf8061cb"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 813
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/a1ac7f9ee2f643a68e3a35bceb22040120bea4059773bb56985c76bdfebc71d9",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 5
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/9712dbb13b9631edfa9bf61b55f1b2d290b2adb67e3a4eb3a875f3b6081b3b84",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 625
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/e97634a40119f1898989c2a23224ed83fdd0a57ea46b3a094e287288d1672b44",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 586
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/3bccc93ad5df58d11a6f8a05fa8bc801cba0ba61a981f57e91b8b598bf8061cb",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 800
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/0ef15df2f02480ade0bb6e85d9ebb5daea2836d3860e9f97f9aade4f57a31aa0",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 602
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/7a08c6f11ef0f59eb841b9f788a87ec9f2361c7d9703157ec13d940dc53031fa",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 2
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "weighted",
+          "assets": [
+            "uion",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 606
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/b9e0a1a524e98bb407d3ced8720efefd186002f90c1b1b7964811dd0ccc12228"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 796
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/e09ed39f390ec51fa9f3f69bea08b5bbe6a48b3057b2b1c3467faae9e58b021b",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 482
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/5973c068568365fff40dedcf1a1cb7582b6116b731cd31a12231ae25e20b871f"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 818
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/71b441e27f1bbb44dd0891bcd370c2794d404d60a4ffe5aeccd9b1e28bc89805",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 6
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "weighted",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/9712dbb13b9631edfa9bf61b55f1b2d290b2adb67e3a4eb3a875f3b6081b3b84"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 577
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/b547dc9b897e7c3aa5b824696110b8e3d2c31e3ed3f02ff363dcbad82457e07e",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 833
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/d176154b0c63d1f9c6dcfb4f70349ebf2e2b5a87a05902f57a6ae92b863e9aec",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 42
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/1dcc8a6cb5689018431323953344a9f6cc4d0bfb261e88c9f7777372c10cd076",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 627
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/9bba9a1c257e971e38c1422780ce6f0b0686f0a3085e2d61118d904bfe0f5f5e",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 730
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/57aa1a70a4bc9769c525ebf6386f7a21536e04a79d62e1981efcef9428ebb205",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 562
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/0ef15df2f02480ade0bb6e85d9ebb5daea2836d3860e9f97f9aade4f57a31aa0",
+            "ibc/be1bb42d4be3c30d50b68d7c41db4dfce9678e8ef8c539f6e6a9345048894fcc"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 7
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/7c4d60aa95e5a7558b0a364860979ca34b7ff8aaf255b87af9e879374470cec0",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 629
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/8318fd63c42203d16ddcaf49fe10e8590669b3219a3e87676ac9da50722687fb",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 690
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/cba34207e969623d95d057d9b11b0c8b32b89a71f170577d982fdde623813ffc",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 608
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/8a34af0c1943fd0dfcde9adbf0b2c9959c45e87e6088ea2fc6adacd59261b8a2",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 643
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/67795e528df67c5606fc20f824ea39a6ef55ba133f4dc79c90a8c47a0901e17c"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 571
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/d805f1da50d31b96e4282c1d4181eddfb1a44a598bff5666f4b43e4b8bea95a5",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 651
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/8fefae6aecf6e2a255585617f781f35a8d5709a545a804482a261c0c9548a9d3",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 634
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/65381c5f3fd21442283d56925e62ea524ded8b6927f0ff94e21e0020954c40b5",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 867
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/d3b574938631b0a1ba704879020c696e514cfadaa7643cde4bd5eb010bde327b"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 631
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "weighted",
+          "assets": [
+            "ibc/297c64cc42b5a8d8f82fe2ebe208a6fe8f94b86037fa28c4529a23701c228f7a",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 725
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/64ba6e31fe887d66c6f8f31c7b1a80c7ca179239677b4088bb55f5ea07dbe273",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 8
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "weighted",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/7c4d60aa95e5a7558b0a364860979ca34b7ff8aaf255b87af9e879374470cec0"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 875
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/bb936517f7e5d77a63e0adb05217a6608b0c4cf8fba7ea2f4bae4107a7238f06",
+            "ibc/d189335c6e4a68b513c10ab227bf1c1d38c746766278ba3eeb4fb14124f1d858"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 572
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/d805f1da50d31b96e4282c1d4181eddfb1a44a598bff5666f4b43e4b8bea95a5"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 738
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "weighted",
+          "assets": [
+            "ibc/cba34207e969623d95d057d9b11b0c8b32b89a71f170577d982fdde623813ffc",
+            "ibc/d189335c6e4a68b513c10ab227bf1c1d38c746766278ba3eeb4fb14124f1d858"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 626
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/f867ae2112efe646ec71a25cd2dfabb8927126ac1e19f1bbf0ff693a4eca05de",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 686
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/cba34207e969623d95d057d9b11b0c8b32b89a71f170577d982fdde623813ffc"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 22
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/1dcc8a6cb5689018431323953344a9f6cc4d0bfb261e88c9f7777372c10cd076",
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 769
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/1e09cb0f506acf12fde4683fb6b34da62fb4be122641e0d93aaf98a87675676c",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 648
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/8061a06d3bd4d52c4a28ffecf7150d370393af0ba661c3776c54ff32836c3961",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 645
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/9bcb27203424535b6230d594553f1659c77ec173e36d9cf4759e7186ee747e84"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 618
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/ea4c0a9f72e2cedf10d0e7a9a6a22954db3444910db5be980df59b05a46dad1c"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 619
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/ea4c0a9f72e2cedf10d0e7a9a6a22954db3444910db5be980df59b05a46dad1c",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 617
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/7a08c6f11ef0f59eb841b9f788a87ec9f2361c7d9703157ec13d940dc53031fa"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 612
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "weighted",
+          "assets": [
+            "ibc/a0cc0cf735bfb30e730c70019d4218a1244ff383503ff7579c9201ab93ca9293",
+            "ibc/be1bb42d4be3c30d50b68d7c41db4dfce9678e8ef8c539f6e6a9345048894fcc"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 197
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/52b1aa623b34eb78fd767cea69e8d7fa6c9cfe1fbf49c5406268fd325e2cc2ac",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 573
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/4e5444c35610cc76fc94e7f7886b93121175c28262ddfdde6f84e82bf2425452",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 637
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/346786ea82f41fe55fad14bf69ad8ba9b36985406e43f3cb23e6c45a285a9593",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 644
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/9bcb27203424535b6230d594553f1659c77ec173e36d9cf4759e7186ee747e84",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 574
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/4e5444c35610cc76fc94e7f7886b93121175c28262ddfdde6f84e82bf2425452"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 731
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/d3327a763c23f01ec43d1f0db3cefec390c362569b6fd191f40a5192f8960049",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 567
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/5973c068568365fff40dedcf1a1cb7582b6116b731cd31a12231ae25e20b871f",
+            "ibc/be1bb42d4be3c30d50b68d7c41db4dfce9678e8ef8c539f6e6a9345048894fcc"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 615
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/8a34af0c1943fd0dfcde9adbf0b2c9959c45e87e6088ea2fc6adacd59261b8a2",
+            "ibc/be1bb42d4be3c30d50b68d7c41db4dfce9678e8ef8c539f6e6a9345048894fcc"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 719
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "weighted",
+          "assets": [
+            "ibc/a0cc0cf735bfb30e730c70019d4218a1244ff383503ff7579c9201ab93ca9293",
+            "ibc/d189335c6e4a68b513c10ab227bf1c1d38c746766278ba3eeb4fb14124f1d858"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 616
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/8a34af0c1943fd0dfcde9adbf0b2c9959c45e87e6088ea2fc6adacd59261b8a2"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 737
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/b547dc9b897e7c3aa5b824696110b8e3d2c31e3ed3f02ff363dcbad82457e07e",
+            "ibc/d189335c6e4a68b513c10ab227bf1c1d38c746766278ba3eeb4fb14124f1d858"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 613
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/e7b35499cfbeb0ff5778127aba4fb2c4b79a6b8d3d831d4379c4048c238796bd",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 464
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "weighted",
+          "assets": [
+            "ibc/1dc495fcefda068a3820f903edbd78b942fbd204d7e93d3ba2b432e9669d1a59",
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 817
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/46b44899322f3cd854d2d46deef881958467cdd4b3b10086da49296bbed94bed",
+            "ibc/84502a75bca4a5f68d464c00b3f610ce2585847d59b52e5ffb7c3c9d2ddcd3fe"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 553
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/9989ad6cca39d1131523db0617b50f6442081162294b4795e26746292467b525",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 810
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/5dd1f95ed336014d00ce2520977ec71566d282f9749170adc83a392e0ea7426a",
+            "ibc/987c17b11abc2b20019178ace62929fe9840202ce79498e29fe8e5cb02b7c0a4"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 778
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/52c57fca7d6854aa178e7a183ddbe4ef322b904b1d719fc485f6ffbc1f72a19e",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 846
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/71055835c7639739eae03aacd1324fe162dba41d09f197cb72d966d014225b1c",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 461
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/1dc495fcefda068a3820f903edbd78b942fbd204d7e93d3ba2b432e9669d1a59",
+            "ibc/5973c068568365fff40dedcf1a1cb7582b6116b731cd31a12231ae25e20b871f"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 826
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/80825e8f04b12d914abeadb1f4d39c04755b12c8402f6876ee3168450c0a90bb",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 638
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/346786ea82f41fe55fad14bf69ad8ba9b36985406e43f3cb23e6c45a285a9593"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 555
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/9989ad6cca39d1131523db0617b50f6442081162294b4795e26746292467b525"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 777
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/c360ef34a86d334f625e4cbb7da3223aea97174b61f35bb3758081a8160f7d9b",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 558
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/f3ff7a84a73b62921538642f9797c423d2b4c4acb3c7fcffce7f12aa69909c4b"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 790
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "weighted",
+          "assets": [
+            "ibc/7c781b4c2082cd62129a972d47486d78ec17155c299270e3c89348ea026beaf8",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 732
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/f16fdc11a7662b86bc0b9ce61871cbacf7c20606f95e86260fd38915184b75b4",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 621
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/307e5c96c8f60d1cbee269a9a86c0834e1db06f2b3788ae4f716edb97a48b97d",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 772
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/ad185f62399f770ccce8a36a180a77879ff6c26a0398bd3d2a74e087b0bfa121",
+            "ibc/b547dc9b897e7c3aa5b824696110b8e3d2c31e3ed3f02ff363dcbad82457e07e"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 807
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/46b44899322f3cd854d2d46deef881958467cdd4b3b10086da49296bbed94bed",
+            "ibc/c6b6bfcb6ee49a7cab1a7e7b021de35b99d525ac660844952f0f6c78dcb2a57b"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 733
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/d27dddf34bb47e5d5a570742cc667de53277867116ccca341f27785e899a70f3",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 751
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/4e5444c35610cc76fc94e7f7886b93121175c28262ddfdde6f84e82bf2425452",
+            "ibc/7abf696369efb3387df22b6a24204459fe5efd010220e8e5618dc49db877047b"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 547
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/655bcef3cdebe32863ff281dbbe3b06160339e9897dc9c9c9821932a5f8ba6f8"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 11
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "uion",
+            "uosmo"
+          ]
+        }
+      ]
+    ]
+  }
+}

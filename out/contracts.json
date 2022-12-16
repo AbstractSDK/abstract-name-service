@@ -1,0 +1,136 @@
+{
+  "juno": {
+    "juno-1": [
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "juno,raw"
+        },
+        "juno1jk7kz2xd880ew9gel2xjh6ucpterflg6jkjymd2636kc9fnqku6qf3ajq0"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "juno,atom"
+        },
+        "juno1ddulcgq7hjwal3jjx9n33x9rr0xf5j0p3je0j4kytt4uyrnk0uhq0ehcyh"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "juno,usdc"
+        },
+        "juno1cuu9qxjqukh9drptk2y50r5tvepes7cy55hffh7quvvawk95lxlq6rzzj0"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "juno,osmo"
+        },
+        "juno1yqum3uy7jx60qarnputjzn6fewmlwc8flvzs6q0raw7ec6l4p00qwytzcs"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "juno,neta"
+        },
+        "juno12sulrvp220gpsp8jsr7dpk9sdydhe8plasltftc6fnxl7yukh24qjvqcu9"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "juno,rac"
+        },
+        "juno1asuge3uue74s0rzjvrptgeq2jn5kgv098lh33a8k2nwchct2uk6szn5a9u"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "juno,sgnl"
+        },
+        "juno15y0xjc6f25f3whu92d2zppl5fws994r9xhs555sxzn7x43rq8vwqhcsxs5"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "raw,osmo"
+        },
+        "juno1sfs7tqehejtz3u65h4cwdkel3qp369thdfu39qhgk4g7nnz7g4esnvaeen"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "juno,punk"
+        },
+        "juno1fneqh5xvv6az0e7mxad78wqtsnzs4hlyuqapkn30sff6plgrnausa0un2v"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "juno,glto"
+        },
+        "juno14xzzfld96htg7f4rwezlak7tcrhu6838q2l2tspefnfts99wukrqs9e6lc"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "sejuno,atom"
+        },
+        "juno15exy530csjch68unw3zdncgyyymwnufx6mmfu9sjzcfsafa9utsqhf94y4"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "sejuno,raw"
+        },
+        "juno1ahm693l08esz4a99jz4nvkpsa2w6l3um55znumjvuclksfsdeyhsa7ra2w"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "bjuno,juno"
+        },
+        "juno13jaullyjmhpg0zm86s50hfjjys3275rmcm52h3euxcdd8deqdnyqj30sc4"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "sejuno,juno"
+        },
+        "juno15gezc5ra6uwxkygfa672cqe3vf4u3pd5wgdc64tsaf9660wtl5ssp3cp2x"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "seasy,juno"
+        },
+        "juno1vujvwn7m9ekdshg678k2arg0s7a32z4wgppj39965gervwrzmeuqpejyw0"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "juno,muse"
+        },
+        "juno19qswdr73m7u5l6vmxyr86emlfugpd0jlmpsu7n9zexkt5x80g2vq4gx0e8"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "juno,drgn"
+        },
+        "juno19yv0nw00fzs30p0hhgm967fwy5e9ntzxspct4mjw7v7czg8pum9sp0hpz7"
+      ],
+      [
+        {
+          "protocol": "junoswap",
+          "contract": "juno,tori"
+        },
+        "juno1altrcm2qmne28dzqt8ncekus49wxfqzyka6nr678ucczmdf0urpqj3gx0p"
+      ]
+    ],
+    "uni-5": []
+  },
+  "osmosis": {
+    "osmo-1": []
+  }
+}

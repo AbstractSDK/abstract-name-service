@@ -6,10 +6,7 @@ module.exports = {
     ecmaVersion: 2021,
     sourceType: 'module',
   },
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
   ignorePatterns: ['.eslintrc.js'],
   rules: {
     '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
@@ -18,6 +15,6 @@ module.exports = {
       'warn',
       { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
     ],
-    semi: ['error', 'always'],
+    // semi: ['error', 'always'],
   },
-};
+}
