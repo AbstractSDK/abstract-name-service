@@ -815,19 +815,6 @@
       ],
       [
         {
-          "id": 674
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/0cd3a0285e1341859b5e86b6ab7682f023d03e97607ccc1dc95706411d866df7",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
           "id": 812
         },
         {
@@ -835,6 +822,19 @@
           "poolType": "constant_product",
           "assets": [
             "ibc/903a61a498756ea560b85a85132d3aee21b5dedd41213725d22abf276ea6945e",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 674
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/0cd3a0285e1341859b5e86b6ab7682f023d03e97607ccc1dc95706411d866df7",
             "uosmo"
           ]
         }
@@ -867,13 +867,13 @@
       ],
       [
         {
-          "id": 9
+          "id": 795
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/e6931f78057f7cc5da0fd6cef82ff39373a6e0452bf1fd76910b93292cf356c1",
+            "ibc/2da9c149e9ad2bd27fefa635458fb37093c256c1a940392634a16bea45262604",
             "uosmo"
           ]
         }
@@ -893,26 +893,13 @@
       ],
       [
         {
-          "id": 795
+          "id": 9
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/2da9c149e9ad2bd27fefa635458fb37093c256c1a940392634a16bea45262604",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 560
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/be1bb42d4be3c30d50b68d7c41db4dfce9678e8ef8c539f6e6a9345048894fcc",
+            "ibc/e6931f78057f7cc5da0fd6cef82ff39373a6e0452bf1fd76910b93292cf356c1",
             "uosmo"
           ]
         }
@@ -932,6 +919,19 @@
       ],
       [
         {
+          "id": 858
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/bb936517f7e5d77a63e0adb05217a6608b0c4cf8fba7ea2f4bae4107a7238f06",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
           "id": 585
         },
         {
@@ -945,13 +945,13 @@
       ],
       [
         {
-          "id": 604
+          "id": 560
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/987c17b11abc2b20019178ace62929fe9840202ce79498e29fe8e5cb02b7c0a4",
+            "ibc/be1bb42d4be3c30d50b68d7c41db4dfce9678e8ef8c539f6e6a9345048894fcc",
             "uosmo"
           ]
         }
@@ -971,26 +971,26 @@
       ],
       [
         {
-          "id": 611
+          "id": 604
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
-            "ibc/987c17b11abc2b20019178ace62929fe9840202ce79498e29fe8e5cb02b7c0a4"
+            "ibc/987c17b11abc2b20019178ace62929fe9840202ce79498e29fe8e5cb02b7c0a4",
+            "uosmo"
           ]
         }
       ],
       [
         {
-          "id": 858
+          "id": 816
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/bb936517f7e5d77a63e0adb05217a6608b0c4cf8fba7ea2f4bae4107a7238f06",
+            "ibc/eb7fb9c8b425f289b63703413327c2051030e848ce4eaaea2e51199d6d39d3ec",
             "uosmo"
           ]
         }
@@ -1010,6 +1010,19 @@
       ],
       [
         {
+          "id": 611
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/987c17b11abc2b20019178ace62929fe9840202ce79498e29fe8e5cb02b7c0a4"
+          ]
+        }
+      ],
+      [
+        {
           "id": 4
         },
         {
@@ -1023,52 +1036,26 @@
       ],
       [
         {
-          "id": 816
+          "id": 15
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/eb7fb9c8b425f289b63703413327c2051030e848ce4eaaea2e51199d6d39d3ec",
+            "ibc/a0cc0cf735bfb30e730c70019d4218a1244ff383503ff7579c9201ab93ca9293",
             "uosmo"
           ]
         }
       ],
       [
         {
-          "id": 10
+          "id": 744
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
-            "ibc/e6931f78057f7cc5da0fd6cef82ff39373a6e0452bf1fd76910b93292cf356c1"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 601
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/ea3e1640f9b1532ab129a571203a0b9f789a7f14bb66e350dcbfa18e1a1931f0",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 773
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/3ff92d26b407fd61ae95d975712a7c319cde28de4d80bdc9978d935932b991d7",
+            "ibc/bb6bcdb515050bae97516111873ccd7bcf1fd0ccb723cc12f3c4f704d6c646ce",
             "uosmo"
           ]
         }
@@ -1088,13 +1075,39 @@
       ],
       [
         {
-          "id": 15
+          "id": 601
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/a0cc0cf735bfb30e730c70019d4218a1244ff383503ff7579c9201ab93ca9293",
+            "ibc/ea3e1640f9b1532ab129a571203a0b9f789a7f14bb66e350dcbfa18e1a1931f0",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 10
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/e6931f78057f7cc5da0fd6cef82ff39373a6e0452bf1fd76910b93292cf356c1"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 773
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/3ff92d26b407fd61ae95d975712a7c319cde28de4d80bdc9978d935932b991d7",
             "uosmo"
           ]
         }
@@ -1114,79 +1127,14 @@
       ],
       [
         {
-          "id": 600
+          "id": 13
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
             "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
-            "ibc/ea3e1640f9b1532ab129a571203a0b9f789a7f14bb66e350dcbfa18e1a1931f0"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 744
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/bb6bcdb515050bae97516111873ccd7bcf1fd0ccb723cc12f3c4f704d6c646ce",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 561
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/0ef15df2f02480ade0bb6e85d9ebb5daea2836d3860e9f97f9aade4f57a31aa0",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 463
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/1dc495fcefda068a3820f903edbd78b942fbd204d7e93d3ba2b432e9669d1a59",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 681
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/5d1f516200ee8c6b2354102143b78a2deda25ede771ac0f8dc3c1837c8fd4447",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 803
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
-            "ibc/c140afd542ae77bd7dcc83f13fdd8c5e5bb8c4929785e6ec2f4c636f98f17901"
+            "ibc/a0cc0cf735bfb30e730c70019d4218a1244ff383503ff7579c9201ab93ca9293"
           ]
         }
       ],
@@ -1218,27 +1166,14 @@
       ],
       [
         {
-          "id": 13
+          "id": 600
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
             "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
-            "ibc/a0cc0cf735bfb30e730c70019d4218a1244ff383503ff7579c9201ab93ca9293"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 633
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/9f9b07ef9ad291167cf5700628145de1deb777c2cfc7907553b24446515f6d0e",
-            "uosmo"
+            "ibc/ea3e1640f9b1532ab129a571203a0b9f789a7f14bb66e350dcbfa18e1a1931f0"
           ]
         }
       ],
@@ -1257,26 +1192,52 @@
       ],
       [
         {
-          "id": 587
+          "id": 561
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/0ef15df2f02480ade0bb6e85d9ebb5daea2836d3860e9f97f9aade4f57a31aa0",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 803
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
             "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
-            "ibc/3bccc93ad5df58d11a6f8a05fa8bc801cba0ba61a981f57e91b8b598bf8061cb"
+            "ibc/c140afd542ae77bd7dcc83f13fdd8c5e5bb8c4929785e6ec2f4c636f98f17901"
           ]
         }
       ],
       [
         {
-          "id": 813
+          "id": 681
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/a1ac7f9ee2f643a68e3a35bceb22040120bea4059773bb56985c76bdfebc71d9",
+            "ibc/5d1f516200ee8c6b2354102143b78a2deda25ede771ac0f8dc3c1837c8fd4447",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 463
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/1dc495fcefda068a3820f903edbd78b942fbd204d7e93d3ba2b432e9669d1a59",
             "uosmo"
           ]
         }
@@ -1296,91 +1257,13 @@
       ],
       [
         {
-          "id": 586
+          "id": 813
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/3bccc93ad5df58d11a6f8a05fa8bc801cba0ba61a981f57e91b8b598bf8061cb",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 625
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/e97634a40119f1898989c2a23224ed83fdd0a57ea46b3a094e287288d1672b44",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 602
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/7a08c6f11ef0f59eb841b9f788a87ec9f2361c7d9703157ec13d940dc53031fa",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 800
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/0ef15df2f02480ade0bb6e85d9ebb5daea2836d3860e9f97f9aade4f57a31aa0",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 606
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
-            "ibc/b9e0a1a524e98bb407d3ced8720efefd186002f90c1b1b7964811dd0ccc12228"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 2
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "weighted",
-          "assets": [
-            "uion",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 796
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/e09ed39f390ec51fa9f3f69bea08b5bbe6a48b3057b2b1c3467faae9e58b021b",
+            "ibc/a1ac7f9ee2f643a68e3a35bceb22040120bea4059773bb56985c76bdfebc71d9",
             "uosmo"
           ]
         }
@@ -1400,39 +1283,52 @@
       ],
       [
         {
-          "id": 6
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "weighted",
-          "assets": [
-            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
-            "ibc/9712dbb13b9631edfa9bf61b55f1b2d290b2adb67e3a4eb3a875f3b6081b3b84"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 818
+          "id": 633
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/71b441e27f1bbb44dd0891bcd370c2794d404d60a4ffe5aeccd9b1e28bc89805",
+            "ibc/9f9b07ef9ad291167cf5700628145de1deb777c2cfc7907553b24446515f6d0e",
             "uosmo"
           ]
         }
       ],
       [
         {
-          "id": 577
+          "id": 606
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/b547dc9b897e7c3aa5b824696110b8e3d2c31e3ed3f02ff363dcbad82457e07e",
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/b9e0a1a524e98bb407d3ced8720efefd186002f90c1b1b7964811dd0ccc12228"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 867
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/d3b574938631b0a1ba704879020c696e514cfadaa7643cde4bd5eb010bde327b"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 42
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/1dcc8a6cb5689018431323953344a9f6cc4d0bfb261e88c9f7777372c10cd076",
             "uosmo"
           ]
         }
@@ -1452,130 +1348,13 @@
       ],
       [
         {
-          "id": 730
+          "id": 2
         },
         {
           "dex": "osmosis",
-          "poolType": "constant_product",
+          "poolType": "weighted",
           "assets": [
-            "ibc/57aa1a70a4bc9769c525ebf6386f7a21536e04a79d62e1981efcef9428ebb205",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 42
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/1dcc8a6cb5689018431323953344a9f6cc4d0bfb261e88c9f7777372c10cd076",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 627
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/9bba9a1c257e971e38c1422780ce6f0b0686f0a3085e2d61118d904bfe0f5f5e",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 562
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/0ef15df2f02480ade0bb6e85d9ebb5daea2836d3860e9f97f9aade4f57a31aa0",
-            "ibc/be1bb42d4be3c30d50b68d7c41db4dfce9678e8ef8c539f6e6a9345048894fcc"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 7
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/7c4d60aa95e5a7558b0a364860979ca34b7ff8aaf255b87af9e879374470cec0",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 629
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/8318fd63c42203d16ddcaf49fe10e8590669b3219a3e87676ac9da50722687fb",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 690
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/cba34207e969623d95d057d9b11b0c8b32b89a71f170577d982fdde623813ffc",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 608
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/8a34af0c1943fd0dfcde9adbf0b2c9959c45e87e6088ea2fc6adacd59261b8a2",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 643
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
-            "ibc/67795e528df67c5606fc20f824ea39a6ef55ba133f4dc79c90a8c47a0901e17c"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 571
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/d805f1da50d31b96e4282c1d4181eddfb1a44a598bff5666f4b43e4b8bea95a5",
+            "uion",
             "uosmo"
           ]
         }
@@ -1595,27 +1374,170 @@
       ],
       [
         {
-          "id": 634
+          "id": 625
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/65381c5f3fd21442283d56925e62ea524ded8b6927f0ff94e21e0020954c40b5",
+            "ibc/e97634a40119f1898989c2a23224ed83fdd0a57ea46b3a094e287288d1672b44",
             "uosmo"
           ]
         }
       ],
       [
         {
-          "id": 867
+          "id": 587
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
             "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
-            "ibc/d3b574938631b0a1ba704879020c696e514cfadaa7643cde4bd5eb010bde327b"
+            "ibc/3bccc93ad5df58d11a6f8a05fa8bc801cba0ba61a981f57e91b8b598bf8061cb"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 796
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/e09ed39f390ec51fa9f3f69bea08b5bbe6a48b3057b2b1c3467faae9e58b021b",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 627
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/9bba9a1c257e971e38c1422780ce6f0b0686f0a3085e2d61118d904bfe0f5f5e",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 629
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/8318fd63c42203d16ddcaf49fe10e8590669b3219a3e87676ac9da50722687fb",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 7
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/7c4d60aa95e5a7558b0a364860979ca34b7ff8aaf255b87af9e879374470cec0",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 577
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/b547dc9b897e7c3aa5b824696110b8e3d2c31e3ed3f02ff363dcbad82457e07e",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 818
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/71b441e27f1bbb44dd0891bcd370c2794d404d60a4ffe5aeccd9b1e28bc89805",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 6
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "weighted",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/9712dbb13b9631edfa9bf61b55f1b2d290b2adb67e3a4eb3a875f3b6081b3b84"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 730
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/57aa1a70a4bc9769c525ebf6386f7a21536e04a79d62e1981efcef9428ebb205",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 643
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/67795e528df67c5606fc20f824ea39a6ef55ba133f4dc79c90a8c47a0901e17c"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 875
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/bb936517f7e5d77a63e0adb05217a6608b0c4cf8fba7ea2f4bae4107a7238f06",
+            "ibc/d189335c6e4a68b513c10ab227bf1c1d38c746766278ba3eeb4fb14124f1d858"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 602
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/7a08c6f11ef0f59eb841b9f788a87ec9f2361c7d9703157ec13d940dc53031fa",
+            "uosmo"
           ]
         }
       ],
@@ -1629,6 +1551,32 @@
           "assets": [
             "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
             "ibc/7c4d60aa95e5a7558b0a364860979ca34b7ff8aaf255b87af9e879374470cec0"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 586
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/3bccc93ad5df58d11a6f8a05fa8bc801cba0ba61a981f57e91b8b598bf8061cb",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 800
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/0ef15df2f02480ade0bb6e85d9ebb5daea2836d3860e9f97f9aade4f57a31aa0",
+            "uosmo"
           ]
         }
       ],
@@ -1660,27 +1608,53 @@
       ],
       [
         {
-          "id": 875
+          "id": 562
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/bb936517f7e5d77a63e0adb05217a6608b0c4cf8fba7ea2f4bae4107a7238f06",
-            "ibc/d189335c6e4a68b513c10ab227bf1c1d38c746766278ba3eeb4fb14124f1d858"
+            "ibc/0ef15df2f02480ade0bb6e85d9ebb5daea2836d3860e9f97f9aade4f57a31aa0",
+            "ibc/be1bb42d4be3c30d50b68d7c41db4dfce9678e8ef8c539f6e6a9345048894fcc"
           ]
         }
       ],
       [
         {
-          "id": 572
+          "id": 608
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
-            "ibc/d805f1da50d31b96e4282c1d4181eddfb1a44a598bff5666f4b43e4b8bea95a5"
+            "ibc/8a34af0c1943fd0dfcde9adbf0b2c9959c45e87e6088ea2fc6adacd59261b8a2",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 690
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/cba34207e969623d95d057d9b11b0c8b32b89a71f170577d982fdde623813ffc",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 634
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/65381c5f3fd21442283d56925e62ea524ded8b6927f0ff94e21e0020954c40b5",
+            "uosmo"
           ]
         }
       ],
@@ -1699,6 +1673,19 @@
       ],
       [
         {
+          "id": 571
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/d805f1da50d31b96e4282c1d4181eddfb1a44a598bff5666f4b43e4b8bea95a5",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
           "id": 626
         },
         {
@@ -1706,6 +1693,19 @@
           "poolType": "constant_product",
           "assets": [
             "ibc/f867ae2112efe646ec71a25cd2dfabb8927126ac1e19f1bbf0ff693a4eca05de",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 648
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/8061a06d3bd4d52c4a28ffecf7150d370393af0ba661c3776c54ff32836c3961",
             "uosmo"
           ]
         }
@@ -1725,40 +1725,16 @@
       ],
       [
         {
-          "id": 22
+          "id": 679
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/1dcc8a6cb5689018431323953344a9f6cc4d0bfb261e88c9f7777372c10cd076",
-            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 769
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/1e09cb0f506acf12fde4683fb6b34da62fb4be122641e0d93aaf98a87675676c",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 648
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/8061a06d3bd4d52c4a28ffecf7150d370393af0ba661c3776c54ff32836c3961",
-            "uosmo"
+            "ibc/0e43ede2e2a3afa36d0cd38bddc0b49feca64fa426a82e102f304e430ecf46ee",
+            "ibc/8242ad24008032e457d2e12d46588fd39fb54fb29680c6c7663d296b383c37c4",
+            "ibc/be1bb42d4be3c30d50b68d7c41db4dfce9678e8ef8c539f6e6a9345048894fcc",
+            "ibc/d189335c6e4a68b513c10ab227bf1c1d38c746766278ba3eeb4fb14124f1d858"
           ]
         }
       ],
@@ -1790,14 +1766,40 @@
       ],
       [
         {
-          "id": 619
+          "id": 769
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/ea4c0a9f72e2cedf10d0e7a9a6a22954db3444910db5be980df59b05a46dad1c",
+            "ibc/1e09cb0f506acf12fde4683fb6b34da62fb4be122641e0d93aaf98a87675676c",
             "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 22
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/1dcc8a6cb5689018431323953344a9f6cc4d0bfb261e88c9f7777372c10cd076",
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 572
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/d805f1da50d31b96e4282c1d4181eddfb1a44a598bff5666f4b43e4b8bea95a5"
           ]
         }
       ],
@@ -1816,6 +1818,19 @@
       ],
       [
         {
+          "id": 619
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/ea4c0a9f72e2cedf10d0e7a9a6a22954db3444910db5be980df59b05a46dad1c",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
           "id": 612
         },
         {
@@ -1829,53 +1844,27 @@
       ],
       [
         {
-          "id": 197
+          "id": 817
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/52b1aa623b34eb78fd767cea69e8d7fa6c9cfe1fbf49c5406268fd325e2cc2ac",
-            "uosmo"
+            "ibc/46b44899322f3cd854d2d46deef881958467cdd4b3b10086da49296bbed94bed",
+            "ibc/84502a75bca4a5f68d464c00b3f610ce2585847d59b52e5ffb7c3c9d2ddcd3fe"
           ]
         }
       ],
       [
         {
-          "id": 573
+          "id": 719
         },
         {
           "dex": "osmosis",
-          "poolType": "constant_product",
+          "poolType": "weighted",
           "assets": [
-            "ibc/4e5444c35610cc76fc94e7f7886b93121175c28262ddfdde6f84e82bf2425452",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 637
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/346786ea82f41fe55fad14bf69ad8ba9b36985406e43f3cb23e6c45a285a9593",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 644
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/9bcb27203424535b6230d594553f1659c77ec173e36d9cf4759e7186ee747e84",
-            "uosmo"
+            "ibc/a0cc0cf735bfb30e730c70019d4218a1244ff383503ff7579c9201ab93ca9293",
+            "ibc/d189335c6e4a68b513c10ab227bf1c1d38c746766278ba3eeb4fb14124f1d858"
           ]
         }
       ],
@@ -1894,13 +1883,13 @@
       ],
       [
         {
-          "id": 731
+          "id": 644
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/d3327a763c23f01ec43d1f0db3cefec390c362569b6fd191f40a5192f8960049",
+            "ibc/9bcb27203424535b6230d594553f1659c77ec173e36d9cf4759e7186ee747e84",
             "uosmo"
           ]
         }
@@ -1920,6 +1909,32 @@
       ],
       [
         {
+          "id": 613
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/e7b35499cfbeb0ff5778127aba4fb2c4b79a6b8d3d831d4379c4048c238796bd",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 573
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/4e5444c35610cc76fc94e7f7886b93121175c28262ddfdde6f84e82bf2425452",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
           "id": 615
         },
         {
@@ -1933,13 +1948,78 @@
       ],
       [
         {
-          "id": 719
+          "id": 846
         },
         {
           "dex": "osmosis",
-          "poolType": "weighted",
+          "poolType": "constant_product",
           "assets": [
-            "ibc/a0cc0cf735bfb30e730c70019d4218a1244ff383503ff7579c9201ab93ca9293",
+            "ibc/71055835c7639739eae03aacd1324fe162dba41d09f197cb72d966d014225b1c",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 553
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/9989ad6cca39d1131523db0617b50f6442081162294b4795e26746292467b525",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 731
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/d3327a763c23f01ec43d1f0db3cefec390c362569b6fd191f40a5192f8960049",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 197
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/52b1aa623b34eb78fd767cea69e8d7fa6c9cfe1fbf49c5406268fd325e2cc2ac",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 789
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/ab589511ed0dd5fa56171a39978afbf1371db986ec1c3526ce138a16377e39bb",
+            "uosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 737
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/b547dc9b897e7c3aa5b824696110b8e3d2c31e3ed3f02ff363dcbad82457e07e",
             "ibc/d189335c6e4a68b513c10ab227bf1c1d38c746766278ba3eeb4fb14124f1d858"
           ]
         }
@@ -1959,26 +2039,26 @@
       ],
       [
         {
-          "id": 737
+          "id": 732
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/b547dc9b897e7c3aa5b824696110b8e3d2c31e3ed3f02ff363dcbad82457e07e",
-            "ibc/d189335c6e4a68b513c10ab227bf1c1d38c746766278ba3eeb4fb14124f1d858"
+            "ibc/f16fdc11a7662b86bc0b9ce61871cbacf7c20606f95e86260fd38915184b75b4",
+            "uosmo"
           ]
         }
       ],
       [
         {
-          "id": 613
+          "id": 778
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/e7b35499cfbeb0ff5778127aba4fb2c4b79a6b8d3d831d4379c4048c238796bd",
+            "ibc/52c57fca7d6854aa178e7a183ddbe4ef322b904b1d719fc485f6ffbc1f72a19e",
             "uosmo"
           ]
         }
@@ -1998,27 +2078,14 @@
       ],
       [
         {
-          "id": 553
+          "id": 637
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/9989ad6cca39d1131523db0617b50f6442081162294b4795e26746292467b525",
+            "ibc/346786ea82f41fe55fad14bf69ad8ba9b36985406e43f3cb23e6c45a285a9593",
             "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 817
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/46b44899322f3cd854d2d46deef881958467cdd4b3b10086da49296bbed94bed",
-            "ibc/84502a75bca4a5f68d464c00b3f610ce2585847d59b52e5ffb7c3c9d2ddcd3fe"
           ]
         }
       ],
@@ -2037,26 +2104,13 @@
       ],
       [
         {
-          "id": 778
+          "id": 826
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/52c57fca7d6854aa178e7a183ddbe4ef322b904b1d719fc485f6ffbc1f72a19e",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 846
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/71055835c7639739eae03aacd1324fe162dba41d09f197cb72d966d014225b1c",
+            "ibc/80825e8f04b12d914abeadb1f4d39c04755b12c8402f6876ee3168450c0a90bb",
             "uosmo"
           ]
         }
@@ -2076,45 +2130,6 @@
       ],
       [
         {
-          "id": 826
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/80825e8f04b12d914abeadb1f4d39c04755b12c8402f6876ee3168450c0a90bb",
-            "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 638
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
-            "ibc/346786ea82f41fe55fad14bf69ad8ba9b36985406e43f3cb23e6c45a285a9593"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 555
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
-            "ibc/9989ad6cca39d1131523db0617b50f6442081162294b4795e26746292467b525"
-          ]
-        }
-      ],
-      [
-        {
           "id": 777
         },
         {
@@ -2123,19 +2138,6 @@
           "assets": [
             "ibc/c360ef34a86d334f625e4cbb7da3223aea97174b61f35bb3758081a8160f7d9b",
             "uosmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 558
-        },
-        {
-          "dex": "osmosis",
-          "poolType": "constant_product",
-          "assets": [
-            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
-            "ibc/f3ff7a84a73b62921538642f9797c423d2b4c4acb3c7fcffce7f12aa69909c4b"
           ]
         }
       ],
@@ -2154,14 +2156,27 @@
       ],
       [
         {
-          "id": 732
+          "id": 555
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/f16fdc11a7662b86bc0b9ce61871cbacf7c20606f95e86260fd38915184b75b4",
-            "uosmo"
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/9989ad6cca39d1131523db0617b50f6442081162294b4795e26746292467b525"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 638
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/346786ea82f41fe55fad14bf69ad8ba9b36985406e43f3cb23e6c45a285a9593"
           ]
         }
       ],
@@ -2206,14 +2221,14 @@
       ],
       [
         {
-          "id": 733
+          "id": 558
         },
         {
           "dex": "osmosis",
           "poolType": "constant_product",
           "assets": [
-            "ibc/d27dddf34bb47e5d5a570742cc667de53277867116ccca341f27785e899a70f3",
-            "uosmo"
+            "ibc/27394fb092d2eccd56123c74f36e4c1f926001ceada9ca97ea622b25f41e5eb2",
+            "ibc/f3ff7a84a73b62921538642f9797c423d2b4c4acb3c7fcffce7f12aa69909c4b"
           ]
         }
       ],
@@ -2227,6 +2242,19 @@
           "assets": [
             "ibc/4e5444c35610cc76fc94e7f7886b93121175c28262ddfdde6f84e82bf2425452",
             "ibc/7abf696369efb3387df22b6a24204459fe5efd010220e8e5618dc49db877047b"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 733
+        },
+        {
+          "dex": "osmosis",
+          "poolType": "constant_product",
+          "assets": [
+            "ibc/d27dddf34bb47e5d5a570742cc667de53277867116ccca341f27785e899a70f3",
+            "uosmo"
           ]
         }
       ],
@@ -2301,19 +2329,6 @@
       ],
       [
         {
-          "contract": "terra1cr8dg06sh343hh4xzn3gxd3ayetsjtet7q5gp4kfrewul2kql8sqvhaey4"
-        },
-        {
-          "dex": "astroport",
-          "poolType": "stable",
-          "assets": [
-            "luna",
-            "ampluna"
-          ]
-        }
-      ],
-      [
-        {
           "contract": "terra1mpj7j25fw5a0q5vfasvsvdp6xytaqxh006lh6f5zpwxvadem9hwsy6m508"
         },
         {
@@ -2335,6 +2350,19 @@
           "assets": [
             "bluna",
             "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1cr8dg06sh343hh4xzn3gxd3ayetsjtet7q5gp4kfrewul2kql8sqvhaey4"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "stable",
+          "assets": [
+            "luna",
+            "ampluna"
           ]
         }
       ],
@@ -2379,6 +2407,19 @@
       ],
       [
         {
+          "contract": "terra1h4cakgms4ju3eryhrmw00xegtjxkgyv88yqllg9ryz9qxek4qz9sz3swn2"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "orne",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
           "contract": "terra1zhq0rqermczklmw89ranmgz28zthsthw6u35umgvpykfwzlwtgcsylpqqf"
         },
         {
@@ -2405,45 +2446,6 @@
       ],
       [
         {
-          "contract": "terra1yx28vf8z0ph94h6mwxurfjuqzqcc6chzpd85ls8uvr0ajpkdvzhqrmp2sv"
-        },
-        {
-          "dex": "astroport",
-          "poolType": "constant_product",
-          "assets": [
-            "dust",
-            "luna"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra12hcs6mkg3zhg2vdnrl8ep8yejjhnynyvz42uewpupdmg0ksmlcts5v4uvv"
-        },
-        {
-          "dex": "astroport",
-          "poolType": "constant_product",
-          "assets": [
-            "btc",
-            "usdc"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra1lgnfv8tkh8wlqcs280nnpfcw7p5v6j8my4uga5t9d8dgw6nlx9qszjetaj"
-        },
-        {
-          "dex": "astroport",
-          "poolType": "constant_product",
-          "assets": [
-            "usdc",
-            "usdc"
-          ]
-        }
-      ],
-      [
-        {
           "contract": "terra10xergcw3a994882ra9gpefjwc9wupzpvdck8cemxgc5p6cg5scvqgjkuax"
         },
         {
@@ -2457,14 +2459,27 @@
       ],
       [
         {
-          "contract": "terra1ghrgxen482dag6777mp4pzkcafh995y9xp7jqsfvdaal5ld3d2hs4q0v5v"
+          "contract": "terra1yx28vf8z0ph94h6mwxurfjuqzqcc6chzpd85ls8uvr0ajpkdvzhqrmp2sv"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "dust",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1p6cxnzh29rafnm9mdr96lhgpw82scqpf43zcq4lgny9eds99cfvsjklz52"
         },
         {
           "dex": "astroport",
           "poolType": "constant_product",
           "assets": [
             "usdc",
-            "luna"
+            "tpt"
           ]
         }
       ],
@@ -2478,32 +2493,6 @@
           "assets": [
             "cluna",
             "luna"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra18fr4keh3afk9e84tf466xsdkk9t8amstycjw7c8e6gukjqjq875q9zdavy"
-        },
-        {
-          "dex": "astroport",
-          "poolType": "stable",
-          "assets": [
-            "ampluna",
-            "lunax"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra1e67qwgxexherg4quj8l5297txq0awqr46y52nl8pywcz86n5rwlq82teeh"
-        },
-        {
-          "dex": "astroport",
-          "poolType": "constant_product",
-          "assets": [
-            "red",
-            "usdc"
           ]
         }
       ],
@@ -2535,19 +2524,6 @@
       ],
       [
         {
-          "contract": "terra1ffkw4u3uaa800a62jfxaf5wtjqk0mgl4e5ayxmus2n2tq0lfnffqva4xww"
-        },
-        {
-          "dex": "astroport",
-          "poolType": "constant_product",
-          "assets": [
-            "astro",
-            "red"
-          ]
-        }
-      ],
-      [
-        {
           "contract": "terra16gcy7pzae346t67rv3wlcfexp5alx5jht35rcgzvgharyakzdldsupr4aq"
         },
         {
@@ -2556,19 +2532,6 @@
           "assets": [
             "idc",
             "luna"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra1p4xx3nydj6th2e2ewk0j6xrzxeq4f3zm86pmv6hywnrl7d4vc9asgkmmru"
-        },
-        {
-          "dex": "astroport",
-          "poolType": "constant_product",
-          "assets": [
-            "yn-usdc-usdt",
-            "pn-usdc-usdt"
           ]
         }
       ],
@@ -2587,6 +2550,19 @@
       ],
       [
         {
+          "contract": "terra1e67qwgxexherg4quj8l5297txq0awqr46y52nl8pywcz86n5rwlq82teeh"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "red",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
           "contract": "terra1yjekfa0d0z8jdj5jc0mv0k8lu023yzymmgkerjvhh4twtq6nhmzqa9s2v7"
         },
         {
@@ -2595,6 +2571,19 @@
           "assets": [
             "usdc",
             "opza"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1ffkw4u3uaa800a62jfxaf5wtjqk0mgl4e5ayxmus2n2tq0lfnffqva4xww"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "astro",
+            "red"
           ]
         }
       ],
@@ -2613,13 +2602,39 @@
       ],
       [
         {
-          "contract": "terra1sr5gcuww0564lcf9mderzqq6xmn4rucv070qq55kx44x99j92k0qykgnfn"
+          "contract": "terra1j88tckt0uyq6enw5747ayf5yd77e89yr6ljda5sza6tmpp00tfxs4xjmza"
         },
         {
           "dex": "astroport",
           "poolType": "constant_product",
           "assets": [
-            "pn-usdc-usdt",
+            "ibc/14accad1750327c74bb35978ad0c3e97b184dab9f0bf4bd876fbd1f782b57110",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1ghrgxen482dag6777mp4pzkcafh995y9xp7jqsfvdaal5ld3d2hs4q0v5v"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "usdc",
+            "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1lgnfv8tkh8wlqcs280nnpfcw7p5v6j8my4uga5t9d8dgw6nlx9qszjetaj"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "usdc",
             "usdc"
           ]
         }
@@ -2639,6 +2654,19 @@
       ],
       [
         {
+          "contract": "terra1hmm6wkt2uq973hpykg46rtae34y3maplyl8l9fhpm2vfftrew5uq5t6a0r"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "stable",
+          "assets": [
+            "ibc/14accad1750327c74bb35978ad0c3e97b184dab9f0bf4bd876fbd1f782b57110",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
           "contract": "terra1zjfy562q4nw0fwhhp8hmck88td3trlj76wqhhkncal25qu4mck6sgpkau4"
         },
         {
@@ -2647,45 +2675,6 @@
           "assets": [
             "astro",
             "vkr"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra1a044rg849fdtzvkr8sgq7dzrktmxd93at8pf2nr56aydgm45h3fsj8w6lc"
-        },
-        {
-          "dex": "astroport",
-          "poolType": "constant_product",
-          "assets": [
-            "weth",
-            "luna"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra1074tgxqlxtav7ypzadkj30wkgrync9mm8s307r3u9hc3r2rjsjjsytp2cz"
-        },
-        {
-          "dex": "astroport",
-          "poolType": "constant_product",
-          "assets": [
-            "weth",
-            "usdc"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra1ytv225amprdus06930pptnpxu0m7nhtjjwd4wf8r4x8wwhzj9uaqwyp38r"
-        },
-        {
-          "dex": "astroport",
-          "poolType": "constant_product",
-          "assets": [
-            "idc",
-            "usdc"
           ]
         }
       ],
@@ -2738,6 +2727,19 @@
           "assets": [
             "fatman",
             "luna"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1074tgxqlxtav7ypzadkj30wkgrync9mm8s307r3u9hc3r2rjsjjsytp2cz"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "weth",
+            "usdc"
           ]
         }
       ],
@@ -2847,6 +2849,19 @@
       ],
       [
         {
+          "contract": "terra12hcs6mkg3zhg2vdnrl8ep8yejjhnynyvz42uewpupdmg0ksmlcts5v4uvv"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "btc",
+            "usdc"
+          ]
+        }
+      ],
+      [
+        {
           "contract": "terra179a20595ssz3zxmg46t9jpwyq5vfhuvyelj5qnthq6dcah9tdu0sxpt0tm"
         },
         {
@@ -2907,6 +2922,19 @@
           "assets": [
             "usdc",
             "usdt"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "terra1cduckhvafxrr2h49rufmkqgkku92pjnpnevgrcvjzxsqpgmtagcscgl2j6"
+        },
+        {
+          "dex": "astroport",
+          "poolType": "constant_product",
+          "assets": [
+            "usdc",
+            "lira"
           ]
         }
       ]

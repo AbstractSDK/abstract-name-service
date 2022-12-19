@@ -9,14 +9,20 @@ import { writeFile } from 'fs'
 import chainToNetworks from './config/networks.json'
 import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry } from './objects'
 import { Exchange } from './exchanges/exchange'
+import { Juno1 } from './chains/juno1'
+import { Junoswap } from './exchanges/junoswap'
+import { Network } from './chains/network'
 
 type ChainName = string
 type NetworkId = string
 
 async function main() {
+  const juno1 = new Juno1()
+  const uni5: Network = new Network()
+  const junoswap = new Junoswap()
   await writeAssetsToFile()
   await writePoolsToFile()
-  await writeContractsToFile()
+  // await writeContractsToFile()
 }
 
 main()
@@ -60,9 +66,21 @@ async function writeChainDataToFile<T>(
 
       for (const exchange of supportedExchanges) {
         const exchangeData = await retrieveEntries(exchange, network)
-        console.log(`Found ${exchangeData.length} ${fileName} for ${network} on ${exchange.name}`)
+        console.log(`Found ${exchangeData.length} ${fileName} for ${network} on ${exchange.dexName}`)
 
-        exchangeData.forEach((item) => existingData.push(item))
+        exchangeData.forEach((item) => {
+          const dupe = existingData.find(
+            (existingItem) => JSON.stringify(existingItem) === JSON.stringify(item)
+          )
+          if (dupe) {
+            console.warn(
+              `Duplicate ${fileName} found for ${network} on ${exchange.dexName} ${JSON.stringify(
+                dupe
+              )}`
+            )
+          }
+          existingData.push(item)
+        })
       }
 
       chainData.get(chain)?.set(network, existingData)

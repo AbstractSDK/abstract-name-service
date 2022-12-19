@@ -1,9 +1,9 @@
 // type Chain = string
-type Chain = 'juno' | 'archway' | 'osmosis' | 'terra'
+type ChainName = 'juno' | 'archway' | 'osmosis' | 'terra'
 
 type Addr = string
 
-type AbstractAssetInfo =
+type CwAssetInfo =
   | {
       native: string
     }

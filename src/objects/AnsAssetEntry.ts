@@ -1,16 +1,24 @@
+import { assets } from 'chain-registry'
+import { AssetInfo } from './AssetInfo'
+
 export class AnsAssetEntry {
   name: string
-  info: AbstractAssetInfo
+  info: CwAssetInfo
 
-  constructor(name: string, info: AbstractAssetInfo) {
+  constructor(name: string, info: CwAssetInfo) {
     this.name = name.toLowerCase()
     this.info = info
   }
+
   public equals(other: AnsAssetEntry): boolean {
     return this.name === other.name && this.info.toString() === other.info.toString()
   }
 
-  toJSON() {
+  public isIbc(): boolean {
+    return 'native' in this.info && AssetInfo.isIbcDenom(this.info.native)
+  }
+
+  toJSON(): [string, CwAssetInfo] {
     return [this.name, this.info]
   }
 }

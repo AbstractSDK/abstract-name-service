@@ -1,23 +1,28 @@
 import { Exchange } from './exchange'
 import { AnsAssetEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
 import { gql, request } from 'graphql-request'
+import { Network } from '../chains/network'
 
-export class Astroport extends Exchange {
+const ASTROPORT = 'Astroport'
+
+/*
   private networkToQueryUrl = {
     'phoenix-1': 'https://terra2-api.astroport.fi/graphql',
   }
+ */
+interface AstroportOptions {
+  queryUrl: string
+}
 
-  supportsNetwork = (network: string) => Object.keys(this.networkToQueryUrl).includes(network)
+export class Astroport extends Exchange {
+  options: AstroportOptions
 
-  constructor() {
-    super('Astroport', 'terra')
+  constructor(network: Network, options: AstroportOptions) {
+    super(ASTROPORT, network)
+    this.options = options
   }
-  private async fetchPoolList(
-    network: keyof typeof this.networkToQueryUrl
-  ): Promise<AstroportPoolList> {
-    const listUrl = this.networkToQueryUrl[network]
-
-    return request(listUrl, POOLS_QUERY)
+  private async fetchPoolList(): Promise<AstroportPoolList> {
+    return request(this.options.queryUrl, POOLS_QUERY)
   }
 
   toAbstractPoolType(poolType: string): PoolType {
@@ -31,13 +36,8 @@ export class Astroport extends Exchange {
     }
   }
 
-  async retrievePools(network: string): Promise<AnsPoolEntry[]> {
-    if (!this.supportsNetwork(network)) {
-      return Promise.resolve([])
-    }
-    const { pools, tokens } = await this.fetchPoolList(
-      network as keyof typeof this.networkToQueryUrl
-    )
+  async retrievePools(): Promise<AnsPoolEntry[]> {
+    const { pools, tokens } = await this.fetchPoolList()
 
     return pools.map(({ pool_type, pool_address, prices: assets }) => {
       const assetAddresses = Object.values(assets).map((asset) => asset.toLowerCase())
@@ -52,17 +52,14 @@ export class Astroport extends Exchange {
 
   private poolMetadata(pool_type: string, assets: string[]) {
     return {
-      dex: this.name.toLowerCase(),
+      dex: this.dexName.toLowerCase(),
       poolType: this.toAbstractPoolType(pool_type),
       assets,
     }
   }
 
-  async retrieveAssets(network: string): Promise<AnsAssetEntry[]> {
-    if (!this.supportsNetwork(network)) {
-      return Promise.resolve([])
-    }
-    const { tokens } = await this.fetchPoolList(network as keyof typeof this.networkToQueryUrl)
+  async retrieveAssets(): Promise<AnsAssetEntry[]> {
+    const { tokens } = await this.fetchPoolList()
 
     return tokens.map(
       ({ symbol, tokenAddr }) => new AnsAssetEntry(symbol, AssetInfo.from(tokenAddr))

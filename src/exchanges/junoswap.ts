@@ -1,93 +1,115 @@
 import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
 import { Exchange } from './exchange'
+import { CosmWasmClient } from '@cosmjs/cosmwasm-stargate'
+import { chains } from 'chain-registry'
+import { AnsName } from '../objects/AnsName'
+import { Network } from '../chains/network'
 
 const JUNOSWAP_POOL_TYPE: PoolType = 'constant_product'
 
+const WASMSWAP_INFO_QUERY = { info: {} }
+
+type Denom = string
+
+interface JunoswapOptions {
+  poolListUrl: string
+}
+
+const JUNOSWAP = 'Junoswap'
+
 export class Junoswap extends Exchange {
-  constructor() {
-    super('Junoswap', 'juno')
+  private options: JunoswapOptions
+
+  constructor(network: Network, options: JunoswapOptions) {
+    super(JUNOSWAP, network)
+    this.options = options
   }
 
-  private networkToPoolList = {
-    'juno-1':
-      'https://raw.githubusercontent.com/CosmosContracts/junoswap-asset-list/main/pools_list.json',
-    'uni-5': 'https://wasmswap.io/pools_list.testnet.json',
-  } as const
+  private poolListCache: JunoswapPoolList | undefined
 
-  supportsNetwork = (network: string) => Object.keys(this.networkToPoolList).includes(network)
-  private poolListCache: Record<string, JunoswapPoolList> = {}
-
-  private async fetchPoolList(
-    network: keyof typeof this.networkToPoolList
-  ): Promise<JunoswapPoolList> {
-    if (this.poolListCache[network]) {
-      return this.poolListCache[network]
+  private async fetchPoolList(): Promise<JunoswapPoolList> {
+    if (this.poolListCache) {
+      return this.poolListCache
     }
 
-    const listUrl = this.networkToPoolList[network]
+    const listUrl = this.options.poolListUrl
     const poolList = await fetch(listUrl).then((res) => res.json())
-    this.poolListCache[network] = poolList
+    this.poolListCache = poolList
     return poolList
   }
 
   async retrievePools(network: string): Promise<AnsPoolEntry[]> {
-    if (!this.supportsNetwork(network)) {
-      return []
-    }
+    const poolList = await this.fetchPoolList()
 
-    const poolList = await this.fetchPoolList(network as keyof typeof this.networkToPoolList)
-
-    const ansPoolEntries = poolList.pools.map(({ pool_assets, swap_address }: PoolsItem) => {
-      return new AnsPoolEntry(PoolId.contract(swap_address), {
-        dex: this.name.toLowerCase(),
-        poolType: JUNOSWAP_POOL_TYPE,
-        assets: pool_assets.map(({ symbol }) => symbol.toLowerCase()),
-      })
+    const ansPoolEntries = poolList.pools.map(({ pool_assets, swap_address }: JunoswapPool) => {
+      return new AnsPoolEntry(PoolId.contract(swap_address), this.buildPoolMetadata(pool_assets))
     })
 
     return ansPoolEntries
   }
 
-  async retrieveAssets(network: string): Promise<AnsAssetEntry[]> {
-    if (!this.supportsNetwork(network)) {
-      return []
+  private buildPoolMetadata(pool_assets: JunoswapPoolAsset[]): AbstractPoolMetadata {
+    return {
+      dex: this.dexName.toLowerCase(),
+      poolType: JUNOSWAP_POOL_TYPE,
+      assets: pool_assets.map(({ symbol }) => symbol.toLowerCase()),
     }
-
-    const poolList = await this.fetchPoolList(network as keyof typeof this.networkToPoolList)
-
-    const ansAssetEntries: AnsAssetEntry[] = []
-
-    poolList.pools
-      .flatMap(({ pool_assets }) => pool_assets)
-      .forEach(({ native, symbol, token_address, denom }) => {
-        // only add to ansAssetEntries if it's not already there
-        const newEntry = new AnsAssetEntry(
-          symbol,
-          native ? AssetInfo.native(denom) : AssetInfo.cw20(token_address)
-        )
-        if (!ansAssetEntries.some((entry) => entry.equals(newEntry))) {
-          ansAssetEntries.push(newEntry)
-        }
-      })
-
-    return ansAssetEntries
   }
 
-  async retrieveContracts(network: string): Promise<AnsContractEntry[]> {
-    if (!this.supportsNetwork(network)) {
-      return []
+  private resolvedAssets: Record<string, Map<Denom, AnsAssetEntry[]>> = {}
+
+  async retrieveAssets(networkId: string): Promise<AnsAssetEntry[]> {
+    const { pools } = await this.fetchPoolList()
+    console.log(`Found ${pools.length} pools on Junoswap`)
+
+    // List of assets in all the junoswap pools
+    const uncheckedJunoswapAssets: JunoswapPoolAsset[] = pools.flatMap(
+      ({ pool_assets }) => pool_assets
+    )
+
+    // add assets for pools
+    for (const { symbol, token_address, denom, native } of uncheckedJunoswapAssets) {
+      if (native) {
+        // if it's a native asset, we check if its registered already. If not registered, it is not a preknown asset, so we generate a new entry
+        await this.chain.registerNativeAsset({
+          denom,
+          symbol,
+        })
+      } else {
+        const cw20AssetEntry = new AnsAssetEntry(symbol, AssetInfo.cw20(token_address))
+        this.chain.registerAsset(cw20AssetEntry)
+      }
     }
 
-    const poolList = await this.fetchPoolList(network as keyof typeof this.networkToPoolList)
+    // add LP tokens for pools
+    for (const { pool_assets, swap_address } of pools) {
+      // For example, lp/atom,osmo,
+      const lpTokenSymbol = this.lpTokenName(this.extractAssetSymbols(pool_assets))
+      const lpTokenAddress = await this.queryLpTokenAddress(swap_address)
+
+      const lpTokenEntry = new AnsAssetEntry(lpTokenSymbol, AssetInfo.cw20(lpTokenAddress))
+
+      this.chain.registerAsset(lpTokenEntry)
+    }
+
+    return []
+  }
+
+  async retrieveContracts(networkId: string): Promise<AnsContractEntry[]> {
+    const poolList = await this.fetchPoolList()
 
     const ansContractEntries: AnsContractEntry[] = []
 
     poolList.pools.forEach(({ staking_address, pool_assets }) => {
       if (!staking_address) return
 
-      const contractName = this.stakingContractName(pool_assets)
+      const contractName = AnsName.stakingContract(this.extractAssetSymbols(pool_assets))
 
-      const newEntry = new AnsContractEntry(this.name.toLowerCase(), contractName, staking_address)
+      const newEntry = new AnsContractEntry(
+        this.dexName.toLowerCase(),
+        contractName,
+        staking_address
+      )
       if (!ansContractEntries.some((entry) => entry.equals(newEntry))) {
         ansContractEntries.push(newEntry)
       }
@@ -96,8 +118,25 @@ export class Junoswap extends Exchange {
     return ansContractEntries
   }
 
-  private stakingContractName(pool_assets: PoolAssetsItem[]) {
-    return pool_assets.map(({ symbol }) => symbol.toLowerCase()).join(',')
+  private async queryLpTokenAddress(poolAddress: string) {
+    const client = await this.chain.queryClient()
+    const poolInfo: WasmSwapContractInfo = await client.queryContractSmart(
+      poolAddress,
+      WASMSWAP_INFO_QUERY
+    )
+    if (!poolInfo.lp_token_address) throw new Error(`No LP token found for pool ${poolAddress}`)
+    return poolInfo.lp_token_address
+  }
+
+  private extractAssetSymbols(junoswapPoolAssets: JunoswapPoolAsset[]): string[] {
+    return junoswapPoolAssets.map(({ token_address, native, denom }) => {
+      const searchBy = native ? denom : token_address
+      const registeredSymbol = this.chain.getRegisteredSymbolByAddress(searchBy)
+      if (!registeredSymbol) {
+        throw new Error(`No registered asset found for ${searchBy}`)
+      }
+      return registeredSymbol
+    })
   }
 }
 
@@ -106,9 +145,9 @@ interface JunoswapPoolList {
   base_token: Base_token
   logoURI: string
   keywords: string[]
-  tags: Tags
+  tags: unknown
   timestamp: string
-  pools: PoolsItem[]
+  pools: JunoswapPool[]
   version: Version
 }
 
@@ -125,24 +164,15 @@ interface Base_token {
   denom: string
 }
 
-interface Tags {
-  Juno: Juno
-}
-
-interface Juno {
-  name: string
-  description: string
-}
-
-interface PoolsItem {
+interface JunoswapPool {
   pool_id: string
-  pool_assets: PoolAssetsItem[]
+  pool_assets: JunoswapPoolAsset[]
   swap_address: string
   staking_address: string
   rewards_tokens: RewardsTokensItem[]
 }
 
-interface PoolAssetsItem {
+interface JunoswapPoolAsset {
   id: string
   chain_id: string
   token_address: string
@@ -171,4 +201,13 @@ interface Version {
   major: number
   minor: number
   patch: number
+}
+
+interface WasmSwapContractInfo {
+  token1_reserve: string
+  token1_denom: CwAssetInfo
+  token2_reserve: string
+  token2_denom: CwAssetInfo
+  lp_token_supply: string
+  lp_token_address: string
 }

@@ -48,27 +48,29 @@ export class Osmosis extends Exchange {
   }
 
   determinePoolType = ({ pool_assets, pool_params, id }: OsmosisPool): PoolType | undefined => {
-    if (pool_assets?.length === 2) {
-      const [assetX, assetY] = pool_assets
+    if (pool_assets?.length) {
       if (pool_params.smooth_weight_change_params) {
         return 'liquidity_bootstrap'
-      } else if (assetX.weight === assetY.weight) {
+      }
+      const weights = pool_assets.map(({ weight }) => weight)
+      if (weights.every((weight) => weight === weights[0])) {
         return 'constant_product'
       }
       return 'weighted'
     }
+
     console.warn(`Id: ${id} has unknown pool type`, pool_assets, pool_params)
     return undefined
   }
 
   async retrievePools(network: string): Promise<AnsPoolEntry[]> {
-    console.log(`Retrieving pools for ${this.name} on ${network}`)
+    console.log(`Retrieving pools for ${this.dexName} on ${network}`)
     if (!this.supportsNetwork(network)) {
       return []
     }
 
     const poolList = await this.fetchPoolList(network as keyof typeof this.networkToPoolList)
-    console.log(`Retrieved ${poolList.pools.length} pools for ${this.name} on ${network}`)
+    console.log(`Retrieved ${poolList.pools.length} pools for ${this.dexName} on ${network}`)
 
     const ansPoolEntries: AnsPoolEntry[] = []
     poolList.pools.forEach((pool: OsmosisPool) => {
@@ -81,7 +83,7 @@ export class Osmosis extends Exchange {
 
       ansPoolEntries.push(
         new AnsPoolEntry(PoolId.id(+id), {
-          dex: this.name.toLowerCase(),
+          dex: this.dexName.toLowerCase(),
           poolType,
           assets,
         })
