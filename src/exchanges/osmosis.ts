@@ -1,34 +1,35 @@
 import { AnsAssetEntry, AnsPoolEntry, PoolId } from '../objects'
 import { Exchange } from './exchange'
+import { NetworkRegistry } from '../networks/networkRegistry'
+
+const OSMOSIS = 'Osmosis'
+
+interface OsmosisOptions {
+  poolUrl: string
+  volumeUrl: string
+}
 
 export class Osmosis extends Exchange {
-  constructor() {
-    super('Osmosis', 'osmosis')
+  options: OsmosisOptions
+
+  private poolListCache: OsmosisPoolList | undefined
+
+  constructor(network: NetworkRegistry, options: OsmosisOptions) {
+    super(OSMOSIS, network)
+    this.options = options
+    this.poolListCache = undefined
   }
 
-  readonly networkToPoolList = {
-    'osmo-1': 'https://lcd-osmosis.keplr.app/osmosis/gamm/v1beta1/pools?pagination.limit=1000',
-  } as const
-
-  readonly networkToVolume = {
-    'osmo-1': 'https://api-osmosis.imperator.co/fees/v1/pools',
-  }
-
-  private poolListCache: Record<string, OsmosisPoolList> = {}
-
-  private async fetchPoolList(
-    network: keyof typeof this.networkToPoolList
-  ): Promise<OsmosisPoolList> {
-    if (this.poolListCache[network]) {
-      return this.poolListCache[network]
+  private async fetchPoolList(): Promise<OsmosisPoolList> {
+    if (this.poolListCache) {
+      return this.poolListCache
     }
 
     // retrieve all the pools
-    const listUrl = this.networkToPoolList[network]
-    let poolList: OsmosisPoolList = await fetch(listUrl).then((res) => res.json())
+    const { poolUrl, volumeUrl } = this.options
+    let poolList: OsmosisPoolList = await fetch(poolUrl).then((res) => res.json())
 
     // retrieve the highest volume pools, to sort the actual pools by volume
-    const volumeUrl = this.networkToVolume[network]
     const volumeList: OsmosisPoolVolumeList = await fetch(volumeUrl).then((res) => res.json())
 
     // sort the pools by volume
@@ -42,12 +43,12 @@ export class Osmosis extends Exchange {
       ...poolList,
       pools: sortedPools.slice(0, volumeList.data.length),
     }
-    this.poolListCache[network] = poolList
+    this.poolListCache = poolList
 
     return poolList
   }
 
-  determinePoolType = ({ pool_assets, pool_params, id }: OsmosisPool): PoolType | undefined => {
+  private determinePoolType = ({ pool_assets, pool_params, id }: OsmosisPool): PoolType | undefined => {
     if (pool_assets?.length) {
       if (pool_params.smooth_weight_change_params) {
         return 'liquidity_bootstrap'
@@ -63,14 +64,11 @@ export class Osmosis extends Exchange {
     return undefined
   }
 
-  async retrievePools(network: string): Promise<AnsPoolEntry[]> {
-    console.log(`Retrieving pools for ${this.dexName} on ${network}`)
-    if (!this.supportsNetwork(network)) {
-      return []
-    }
+  async retrievePools(): Promise<AnsPoolEntry[]> {
+    console.log(`Retrieving pools for ${this.dexName} on ${this.chain.networkId}`)
 
-    const poolList = await this.fetchPoolList(network as keyof typeof this.networkToPoolList)
-    console.log(`Retrieved ${poolList.pools.length} pools for ${this.dexName} on ${network}`)
+    const poolList = await this.fetchPoolList()
+    console.log(`Retrieved ${poolList.pools.length} pools for ${this.dexName} on ${this.chain.networkId}`)
 
     const ansPoolEntries: AnsPoolEntry[] = []
     poolList.pools.forEach((pool: OsmosisPool) => {
@@ -93,12 +91,7 @@ export class Osmosis extends Exchange {
     return ansPoolEntries
   }
 
-  supportsNetwork = (network: string) => Object.keys(this.networkToPoolList).includes(network)
-
-  async retrieveAssets(network: string): Promise<AnsAssetEntry[]> {
-    if (!this.supportsNetwork(network)) {
-      return []
-    }
+  async retrieveAssets(): Promise<AnsAssetEntry[]> {
 
     // const poolList = await this.fetchPoolList(network as keyof typeof this.networkToPoolList)
     //

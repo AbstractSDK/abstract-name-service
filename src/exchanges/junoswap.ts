@@ -1,15 +1,18 @@
-import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
+import {
+  AnsAssetEntry,
+  AnsContractEntry,
+  AnsPoolEntry,
+  AssetInfo,
+  PoolId,
+  UncheckedAssetInfo,
+} from '../objects'
 import { Exchange } from './exchange'
-import { CosmWasmClient } from '@cosmjs/cosmwasm-stargate'
-import { chains } from 'chain-registry'
 import { AnsName } from '../objects/AnsName'
-import { Network } from '../chains/network'
+import { NetworkRegistry } from '../networks/networkRegistry'
 
 const JUNOSWAP_POOL_TYPE: PoolType = 'constant_product'
 
 const WASMSWAP_INFO_QUERY = { info: {} }
-
-type Denom = string
 
 interface JunoswapOptions {
   poolListUrl: string
@@ -19,26 +22,14 @@ const JUNOSWAP = 'Junoswap'
 
 export class Junoswap extends Exchange {
   private options: JunoswapOptions
+  private poolListCache: JunoswapPoolList | undefined
 
-  constructor(network: Network, options: JunoswapOptions) {
+  constructor(network: NetworkRegistry, options: JunoswapOptions) {
     super(JUNOSWAP, network)
     this.options = options
   }
 
-  private poolListCache: JunoswapPoolList | undefined
-
-  private async fetchPoolList(): Promise<JunoswapPoolList> {
-    if (this.poolListCache) {
-      return this.poolListCache
-    }
-
-    const listUrl = this.options.poolListUrl
-    const poolList = await fetch(listUrl).then((res) => res.json())
-    this.poolListCache = poolList
-    return poolList
-  }
-
-  async retrievePools(network: string): Promise<AnsPoolEntry[]> {
+  async retrievePools(): Promise<AnsPoolEntry[]> {
     const poolList = await this.fetchPoolList()
 
     const ansPoolEntries = poolList.pools.map(({ pool_assets, swap_address }: JunoswapPool) => {
@@ -48,17 +39,7 @@ export class Junoswap extends Exchange {
     return ansPoolEntries
   }
 
-  private buildPoolMetadata(pool_assets: JunoswapPoolAsset[]): AbstractPoolMetadata {
-    return {
-      dex: this.dexName.toLowerCase(),
-      poolType: JUNOSWAP_POOL_TYPE,
-      assets: pool_assets.map(({ symbol }) => symbol.toLowerCase()),
-    }
-  }
-
-  private resolvedAssets: Record<string, Map<Denom, AnsAssetEntry[]>> = {}
-
-  async retrieveAssets(networkId: string): Promise<AnsAssetEntry[]> {
+  async retrieveAssets(): Promise<UncheckedAssetInfo[]> {
     const { pools } = await this.fetchPoolList()
     console.log(`Found ${pools.length} pools on Junoswap`)
 
@@ -68,34 +49,25 @@ export class Junoswap extends Exchange {
     )
 
     // add assets for pools
-    for (const { symbol, token_address, denom, native } of uncheckedJunoswapAssets) {
-      if (native) {
-        // if it's a native asset, we check if its registered already. If not registered, it is not a preknown asset, so we generate a new entry
-        await this.chain.registerNativeAsset({
-          denom,
-          symbol,
-        })
-      } else {
-        const cw20AssetEntry = new AnsAssetEntry(symbol, AssetInfo.cw20(token_address))
-        this.chain.registerAsset(cw20AssetEntry)
-      }
-    }
+    return uncheckedJunoswapAssets.map(({ symbol, token_address, denom, native }) =>
+        new UncheckedAssetInfo(symbol, native ? denom : token_address)
+    )
 
-    // add LP tokens for pools
-    for (const { pool_assets, swap_address } of pools) {
-      // For example, lp/atom,osmo,
-      const lpTokenSymbol = this.lpTokenName(this.extractAssetSymbols(pool_assets))
-      const lpTokenAddress = await this.queryLpTokenAddress(swap_address)
-
-      const lpTokenEntry = new AnsAssetEntry(lpTokenSymbol, AssetInfo.cw20(lpTokenAddress))
-
-      this.chain.registerAsset(lpTokenEntry)
-    }
+    // // add LP tokens for pools
+    // for (const { pool_assets, swap_address } of pools) {
+    //   // For example, lp/atom,osmo,
+    //   const lpTokenSymbol = this.lpTokenName(this.extractAssetSymbols(pool_assets))
+    //   const lpTokenAddress = await this.queryLpTokenAddress(swap_address)
+    //
+    //   const lpTokenEntry = new AnsAssetEntry(lpTokenSymbol, AssetInfo.cw20(lpTokenAddress))
+    //
+    //   this.network.registerAsset(lpTokenEntry)
+    // }
 
     return []
   }
 
-  async retrieveContracts(networkId: string): Promise<AnsContractEntry[]> {
+  async retrieveContracts(): Promise<AnsContractEntry[]> {
     const poolList = await this.fetchPoolList()
 
     const ansContractEntries: AnsContractEntry[] = []
@@ -118,8 +90,27 @@ export class Junoswap extends Exchange {
     return ansContractEntries
   }
 
+  private async fetchPoolList(): Promise<JunoswapPoolList> {
+    if (this.poolListCache) {
+      return this.poolListCache
+    }
+
+    const listUrl = this.options.poolListUrl
+    const poolList = await fetch(listUrl).then((res) => res.json())
+    this.poolListCache = poolList
+    return poolList
+  }
+
+  private buildPoolMetadata(pool_assets: JunoswapPoolAsset[]): AbstractPoolMetadata {
+    return {
+      dex: this.dexName.toLowerCase(),
+      poolType: JUNOSWAP_POOL_TYPE,
+      assets: pool_assets.map(({ symbol }) => symbol.toLowerCase()),
+    }
+  }
+
   private async queryLpTokenAddress(poolAddress: string) {
-    const client = await this.chain.queryClient()
+    const client = await this.network.queryClient()
     const poolInfo: WasmSwapContractInfo = await client.queryContractSmart(
       poolAddress,
       WASMSWAP_INFO_QUERY
@@ -131,7 +122,7 @@ export class Junoswap extends Exchange {
   private extractAssetSymbols(junoswapPoolAssets: JunoswapPoolAsset[]): string[] {
     return junoswapPoolAssets.map(({ token_address, native, denom }) => {
       const searchBy = native ? denom : token_address
-      const registeredSymbol = this.chain.getRegisteredSymbolByAddress(searchBy)
+      const registeredSymbol = this.network.registry.getRegisteredSymbolByAddress(searchBy)
       if (!registeredSymbol) {
         throw new Error(`No registered asset found for ${searchBy}`)
       }

@@ -22,3 +22,13 @@ export class AnsAssetEntry {
     return [this.name, this.info]
   }
 }
+
+export class UncheckedAssetInfo {
+  name: string
+  address: string
+
+  constructor(name: string, address: string) {
+    this.name = name.toLowerCase()
+    this.address = address
+  }
+}

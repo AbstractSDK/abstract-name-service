@@ -1,7 +1,7 @@
 import { Exchange } from './exchange'
 import { AnsAssetEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
 import { gql, request } from 'graphql-request'
-import { Network } from '../chains/network'
+import { NetworkRegistry } from '../networks/networkRegistry'
 
 const ASTROPORT = 'Astroport'
 
@@ -15,25 +15,15 @@ interface AstroportOptions {
 }
 
 export class Astroport extends Exchange {
-  options: AstroportOptions
+  private options: AstroportOptions
 
-  constructor(network: Network, options: AstroportOptions) {
+  constructor(network: NetworkRegistry, options: AstroportOptions) {
     super(ASTROPORT, network)
     this.options = options
   }
+
   private async fetchPoolList(): Promise<AstroportPoolList> {
     return request(this.options.queryUrl, POOLS_QUERY)
-  }
-
-  toAbstractPoolType(poolType: string): PoolType {
-    switch (poolType) {
-      case 'xyk':
-        return 'constant_product'
-      case 'stable':
-        return 'stable'
-      default:
-        throw new Error(`Unknown pool type: ${poolType}`)
-    }
   }
 
   async retrievePools(): Promise<AnsPoolEntry[]> {
@@ -61,9 +51,12 @@ export class Astroport extends Exchange {
   async retrieveAssets(): Promise<AnsAssetEntry[]> {
     const { tokens } = await this.fetchPoolList()
 
-    return tokens.map(
-      ({ symbol, tokenAddr }) => new AnsAssetEntry(symbol, AssetInfo.from(tokenAddr))
-    )
+    for (const { symbol, tokenAddr } of tokens) {
+      // TODO: difference for native??
+      this.chain.registerAsset(new AnsAssetEntry(symbol, AssetInfo.from(tokenAddr)))
+    }
+
+    return []
   }
 
   private tokenAddrToName(tokens: Token[]) {
@@ -73,6 +66,17 @@ export class Astroport extends Exchange {
         throw new Error(`Could not find token with address ${address}`)
       }
       return token.symbol.toLowerCase()
+    }
+  }
+
+  toAbstractPoolType(poolType: string): PoolType {
+    switch (poolType) {
+      case 'xyk':
+        return 'constant_product'
+      case 'stable':
+        return 'stable'
+      default:
+        throw new Error(`Unknown pool type: ${poolType}`)
     }
   }
 }
