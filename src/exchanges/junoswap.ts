@@ -9,6 +9,7 @@ import {
 import { Exchange } from './exchange'
 import { AnsName } from '../objects/AnsName'
 import { NetworkRegistry } from '../networks/networkRegistry'
+import { Network } from '../networks/network'
 
 const JUNOSWAP_POOL_TYPE: PoolType = 'constant_product'
 
@@ -24,12 +25,12 @@ export class Junoswap extends Exchange {
   private options: JunoswapOptions
   private poolListCache: JunoswapPoolList | undefined
 
-  constructor(network: NetworkRegistry, options: JunoswapOptions) {
-    super(JUNOSWAP, network)
+  constructor(options: JunoswapOptions) {
+    super(JUNOSWAP)
     this.options = options
   }
 
-  async retrievePools(): Promise<AnsPoolEntry[]> {
+  async registerPools(): Promise<AnsPoolEntry[]> {
     const poolList = await this.fetchPoolList()
 
     const ansPoolEntries = poolList.pools.map(({ pool_assets, swap_address }: JunoswapPool) => {
@@ -39,7 +40,7 @@ export class Junoswap extends Exchange {
     return ansPoolEntries
   }
 
-  async retrieveAssets(): Promise<UncheckedAssetInfo[]> {
+  async registerAssets(network: Network): Promise<AnsAssetEntry[]> {
     const { pools } = await this.fetchPoolList()
     console.log(`Found ${pools.length} pools on Junoswap`)
 
@@ -49,25 +50,34 @@ export class Junoswap extends Exchange {
     )
 
     // add assets for pools
-    return uncheckedJunoswapAssets.map(({ symbol, token_address, denom, native }) =>
-        new UncheckedAssetInfo(symbol, native ? denom : token_address)
-    )
+    for (const { symbol, token_address, denom, native } of uncheckedJunoswapAssets) {
+      if (native) {
+        // if it's a native asset, we check if its registered already. If not registered, it is not a preknown asset, so we generate a new entry
+        await network.registerNativeAsset({
+          denom,
+          symbol,
+        })
+      } else {
+        const cw20AssetEntry = new AnsAssetEntry(symbol, AssetInfo.cw20(token_address))
+        network.registerAsset(cw20AssetEntry)
+      }
+    }
 
-    // // add LP tokens for pools
-    // for (const { pool_assets, swap_address } of pools) {
-    //   // For example, lp/atom,osmo,
-    //   const lpTokenSymbol = this.lpTokenName(this.extractAssetSymbols(pool_assets))
-    //   const lpTokenAddress = await this.queryLpTokenAddress(swap_address)
-    //
-    //   const lpTokenEntry = new AnsAssetEntry(lpTokenSymbol, AssetInfo.cw20(lpTokenAddress))
-    //
-    //   this.network.registerAsset(lpTokenEntry)
-    // }
+    // add LP tokens for pools
+    for (const { pool_assets, swap_address } of pools) {
+      // For example, lp/atom,osmo,
+      const lpTokenSymbol = this.lpTokenName(this.extractAssetSymbols(network, pool_assets))
+      const lpTokenAddress = await this.queryLpTokenAddress(network, swap_address)
+
+      const lpTokenEntry = new AnsAssetEntry(lpTokenSymbol, AssetInfo.cw20(lpTokenAddress))
+
+      network.registerAsset(lpTokenEntry)
+    }
 
     return []
   }
 
-  async retrieveContracts(): Promise<AnsContractEntry[]> {
+  async registerContracts(network: Network): Promise<AnsContractEntry[]> {
     const poolList = await this.fetchPoolList()
 
     const ansContractEntries: AnsContractEntry[] = []
@@ -75,7 +85,7 @@ export class Junoswap extends Exchange {
     poolList.pools.forEach(({ staking_address, pool_assets }) => {
       if (!staking_address) return
 
-      const contractName = AnsName.stakingContract(this.extractAssetSymbols(pool_assets))
+      const contractName = AnsName.stakingContract(this.extractAssetSymbols(network, pool_assets))
 
       const newEntry = new AnsContractEntry(
         this.dexName.toLowerCase(),
@@ -109,8 +119,8 @@ export class Junoswap extends Exchange {
     }
   }
 
-  private async queryLpTokenAddress(poolAddress: string) {
-    const client = await this.network.queryClient()
+  private async queryLpTokenAddress(network: Network, poolAddress: string) {
+    const client = await network.queryClient()
     const poolInfo: WasmSwapContractInfo = await client.queryContractSmart(
       poolAddress,
       WASMSWAP_INFO_QUERY
@@ -119,10 +129,10 @@ export class Junoswap extends Exchange {
     return poolInfo.lp_token_address
   }
 
-  private extractAssetSymbols(junoswapPoolAssets: JunoswapPoolAsset[]): string[] {
+  private extractAssetSymbols(network: Network, junoswapPoolAssets: JunoswapPoolAsset[]): string[] {
     return junoswapPoolAssets.map(({ token_address, native, denom }) => {
       const searchBy = native ? denom : token_address
-      const registeredSymbol = this.network.registry.getRegisteredSymbolByAddress(searchBy)
+      const registeredSymbol = network.getRegisteredSymbolByAddress(searchBy)
       if (!registeredSymbol) {
         throw new Error(`No registered asset found for ${searchBy}`)
       }

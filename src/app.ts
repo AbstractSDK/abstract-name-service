@@ -28,21 +28,21 @@ const outDir = (fileName: string) => `./out/${fileName}.json`
 async function writeAssetsToFile() {
   const chainAssets = new Map<ChainName, Map<NetworkId, AnsAssetEntry[]>>()
   await writeChainDataToFile(chainAssets, 'assets', (exchange, network) =>
-    exchange.retrieveAssets(network)
+    exchange.registerAssets(network)
   )
 }
 
 async function writePoolsToFile() {
   const chainPools = new Map<ChainName, Map<NetworkId, AnsPoolEntry[]>>()
   await writeChainDataToFile(chainPools, 'pools', (exchange, network) =>
-    exchange.retrievePools(network)
+    exchange.registerPools(network)
   )
 }
 
 async function writeContractsToFile() {
   const chainContracts = new Map<ChainName, Map<NetworkId, AnsContractEntry[]>>()
   await writeChainDataToFile(chainContracts, 'contracts', (exchange, network) =>
-    exchange.retrieveContracts(network)
+    exchange.registerContracts(network)
   )
 }
 

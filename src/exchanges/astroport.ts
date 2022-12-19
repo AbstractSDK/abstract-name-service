@@ -26,7 +26,7 @@ export class Astroport extends Exchange {
     return request(this.options.queryUrl, POOLS_QUERY)
   }
 
-  async retrievePools(): Promise<AnsPoolEntry[]> {
+  async registerPools(): Promise<AnsPoolEntry[]> {
     const { pools, tokens } = await this.fetchPoolList()
 
     return pools.map(({ pool_type, pool_address, prices: assets }) => {
@@ -48,7 +48,7 @@ export class Astroport extends Exchange {
     }
   }
 
-  async retrieveAssets(): Promise<AnsAssetEntry[]> {
+  async registerAssets(): Promise<AnsAssetEntry[]> {
     const { tokens } = await this.fetchPoolList()
 
     for (const { symbol, tokenAddr } of tokens) {

@@ -13,11 +13,11 @@ export abstract class Exchange {
 
   // abstract supportsNetwork(network: string): boolean
 
-  abstract retrievePools(): Promise<AnsPoolEntry[]>
-  abstract retrieveAssets(network: NetworkRegistry): Promise<AnsAssetEntry[]>
+  abstract registerPools(): Promise<AnsPoolEntry[]>
+  abstract registerAssets(network: Network): Promise<AnsAssetEntry[]>
 
   /** Retrieve the staking contracts for the given network. */
-  retrieveContracts(): Promise<AnsContractEntry[]> {
+  registerContracts(network: Network): Promise<AnsContractEntry[]> {
     return Promise.resolve([])
   }
 

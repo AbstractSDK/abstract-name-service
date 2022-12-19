@@ -64,7 +64,7 @@ export class Osmosis extends Exchange {
     return undefined
   }
 
-  async retrievePools(): Promise<AnsPoolEntry[]> {
+  async registerPools(): Promise<AnsPoolEntry[]> {
     console.log(`Retrieving pools for ${this.dexName} on ${this.chain.networkId}`)
 
     const poolList = await this.fetchPoolList()
@@ -91,7 +91,7 @@ export class Osmosis extends Exchange {
     return ansPoolEntries
   }
 
-  async retrieveAssets(): Promise<AnsAssetEntry[]> {
+  async registerAssets(): Promise<AnsAssetEntry[]> {
 
     // const poolList = await this.fetchPoolList(network as keyof typeof this.networkToPoolList)
     //

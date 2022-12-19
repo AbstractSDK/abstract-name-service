@@ -21,11 +21,6 @@ export class NetworkRegistry {
     this.contractRegistry = contractRegistry || new Map()
   }
 
-  abstract registerNativeAsset(unresolved: {
-    denom: string
-    symbol: string
-  }): Promise<AnsAssetEntry>
-
   static nativeAssetDenoms(chainId: string): string[] {
     return (
       chains.find((c) => c.chain_id === chainId)?.staking?.staking_tokens.map((t) => t.denom) ?? []

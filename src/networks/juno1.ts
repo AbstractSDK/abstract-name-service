@@ -16,7 +16,7 @@ export class Juno1 extends Network {
   private fetchedIbcAssetsCache: JunoswapIbcAsset[]
 
   constructor(registry: NetworkRegistry, options: Juno1Options & NetworkDefaults) {
-    super(JUNO_1, registry, [new Junoswap()])
+    super(JUNO_1, registry)
     this.options = options
     this.fetchedIbcAssetsCache = []
   }

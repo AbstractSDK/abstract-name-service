@@ -2,16 +2,32 @@ import { NetworkRegistry } from './networkRegistry'
 import { Exchange } from '../exchanges/exchange'
 import { chains } from 'chain-registry'
 import { CosmWasmClient } from '@cosmjs/cosmwasm-stargate'
+import { AnsAssetEntry } from '../objects'
 
 export abstract class Network {
   networkId: string
   registry: NetworkRegistry
-  exchanges: Exchange[]
 
-  constructor(networkId: string, registry: NetworkRegistry, exchanges: Exchange[]) {
+  constructor(networkId: string, registry: NetworkRegistry) {
     this.networkId = networkId
     this.registry = registry
-    this.exchanges = exchanges
+  }
+
+  abstract registerNativeAsset(unresolved: {
+    denom: string
+    symbol: string
+  }): Promise<AnsAssetEntry>
+
+  public registerAsset(assetEntry: AnsAssetEntry) {
+    return this.registry.registerAsset(assetEntry)
+  }
+
+  public getRegisteredAsset(assetName: string): CwAssetInfo | undefined {
+    return this.registry.getRegisteredAsset(assetName)
+  }
+
+  public getRegisteredSymbolByAddress(denom: string): string | undefined {
+    return this.registry.getRegisteredSymbolByAddress(denom)
   }
 
   public async queryClient(): Promise<CosmWasmClient> {
