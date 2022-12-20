@@ -1,6 +1,6 @@
 import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry } from '../objects'
 import { AnsName } from '../objects/AnsName'
-import { NetworkDefaults, NetworkRegistry } from '../networks/networkRegistry'
+import { RegistryDefaults, NetworkRegistry } from '../networks/networkRegistry'
 import { Network } from '../networks/network'
 
 export abstract class Exchange {
@@ -13,7 +13,7 @@ export abstract class Exchange {
 
   // abstract supportsNetwork(network: string): boolean
 
-  abstract registerPools(): Promise<AnsPoolEntry[]>
+  abstract registerPools(network: Network): Promise<AnsPoolEntry[]>
   abstract registerAssets(network: Network): Promise<AnsAssetEntry[]>
 
   /** Retrieve the staking contracts for the given network. */

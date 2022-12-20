@@ -10,6 +10,10 @@ export class AnsAssetEntry {
     this.info = info
   }
 
+  static fromEntry([name, info]: [string, CwAssetInfo]) {
+    return new AnsAssetEntry(name, info)
+  }
+
   public equals(other: AnsAssetEntry): boolean {
     return this.name === other.name && this.info.toString() === other.info.toString()
   }

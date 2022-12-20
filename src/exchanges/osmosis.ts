@@ -1,6 +1,7 @@
 import { AnsAssetEntry, AnsPoolEntry, PoolId } from '../objects'
 import { Exchange } from './exchange'
 import { NetworkRegistry } from '../networks/networkRegistry'
+import { Network } from '../networks/network'
 
 const OSMOSIS = 'Osmosis'
 
@@ -14,8 +15,8 @@ export class Osmosis extends Exchange {
 
   private poolListCache: OsmosisPoolList | undefined
 
-  constructor(network: NetworkRegistry, options: OsmosisOptions) {
-    super(OSMOSIS, network)
+  constructor(options: OsmosisOptions) {
+    super(OSMOSIS)
     this.options = options
     this.poolListCache = undefined
   }
@@ -64,11 +65,11 @@ export class Osmosis extends Exchange {
     return undefined
   }
 
-  async registerPools(): Promise<AnsPoolEntry[]> {
-    console.log(`Retrieving pools for ${this.dexName} on ${this.chain.networkId}`)
+  async registerPools(network: Network): Promise<AnsPoolEntry[]> {
+    console.log(`Retrieving pools for ${this.dexName} on ${network.networkId}`)
 
     const poolList = await this.fetchPoolList()
-    console.log(`Retrieved ${poolList.pools.length} pools for ${this.dexName} on ${this.chain.networkId}`)
+    console.log(`Retrieved ${poolList.pools.length} pools for ${this.dexName} on ${network.networkId}`)
 
     const ansPoolEntries: AnsPoolEntry[] = []
     poolList.pools.forEach((pool: OsmosisPool) => {

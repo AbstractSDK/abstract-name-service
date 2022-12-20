@@ -130,11 +130,11 @@ export class Junoswap extends Exchange {
   }
 
   private extractAssetSymbols(network: Network, junoswapPoolAssets: JunoswapPoolAsset[]): string[] {
-    return junoswapPoolAssets.map(({ token_address, native, denom }) => {
+    return junoswapPoolAssets.map(({ token_address, native, denom, symbol }) => {
       const searchBy = native ? denom : token_address
       const registeredSymbol = network.getRegisteredSymbolByAddress(searchBy)
       if (!registeredSymbol) {
-        throw new Error(`No registered asset found for ${searchBy}`)
+        throw new Error(`No registered asset found for ${searchBy} ${symbol}`)
       }
       return registeredSymbol
     })

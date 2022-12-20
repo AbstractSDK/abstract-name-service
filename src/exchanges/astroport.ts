@@ -1,7 +1,7 @@
 import { Exchange } from './exchange'
 import { AnsAssetEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
 import { gql, request } from 'graphql-request'
-import { NetworkRegistry } from '../networks/networkRegistry'
+import { Network } from '../networks/network'
 
 const ASTROPORT = 'Astroport'
 
@@ -17,8 +17,8 @@ interface AstroportOptions {
 export class Astroport extends Exchange {
   private options: AstroportOptions
 
-  constructor(network: NetworkRegistry, options: AstroportOptions) {
-    super(ASTROPORT, network)
+  constructor(options: AstroportOptions) {
+    super(ASTROPORT)
     this.options = options
   }
 
@@ -48,12 +48,12 @@ export class Astroport extends Exchange {
     }
   }
 
-  async registerAssets(): Promise<AnsAssetEntry[]> {
+  async registerAssets(network: Network): Promise<AnsAssetEntry[]> {
     const { tokens } = await this.fetchPoolList()
 
     for (const { symbol, tokenAddr } of tokens) {
       // TODO: difference for native??
-      this.chain.registerAsset(new AnsAssetEntry(symbol, AssetInfo.from(tokenAddr)))
+      network.registerAsset(new AnsAssetEntry(symbol, AssetInfo.from(tokenAddr)))
     }
 
     return []

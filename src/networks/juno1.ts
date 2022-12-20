@@ -1,6 +1,6 @@
 import { AnsAssetEntry, AssetInfo } from '../objects'
 import { AnsName } from '../objects/AnsName'
-import { NetworkRegistry, NetworkDefaults } from './networkRegistry'
+import { NetworkRegistry, RegistryDefaults } from './networkRegistry'
 import { Exchange } from '../exchanges/exchange'
 import { Network } from './network'
 import { Junoswap } from '../exchanges/junoswap'
@@ -13,20 +13,24 @@ interface Juno1Options {
 
 export class Juno1 extends Network {
   options: Juno1Options
-  private fetchedIbcAssetsCache: JunoswapIbcAsset[]
+  private fetchedIbcAssetsCache: JunoswapIbcAsset[] | undefined
 
-  constructor(registry: NetworkRegistry, options: Juno1Options & NetworkDefaults) {
-    super(JUNO_1, registry)
+  constructor(registry: NetworkRegistry, options: Juno1Options) {
+    super(JUNO_1, registry, [
+      new Junoswap({
+        poolListUrl:
+          'https://raw.githubusercontent.com/CosmosContracts/junoswap-asset-list/main/pools_list.json',
+      }),
+    ])
     this.options = options
-    this.fetchedIbcAssetsCache = []
   }
 
   async registerIbcAssets(): Promise<void> {
-    const ibcAssets = await this.fetchIbcAssets()
-    ibcAssets.forEach((asset) => {
-      const assetInfo = AssetInfo.native(asset.chain_id, asset.juno_denom)
-      this.registry.registerAsset(new AnsAssetEntry(asset.symbol, assetInfo))
-    }
+    //   const ibcAssets = await this.fetchIbcAssets()
+    //   ibcAssets.forEach((asset) => {
+    //     const assetInfo = AssetInfo.native(asset.chain_id, asset.juno_denom)
+    //     this.registry.registerAsset(new AnsAssetEntry(asset.symbol, assetInfo))
+    //   }
   }
 
   private async fetchIbcAssets(): Promise<JunoswapIbcAsset[]> {
@@ -43,30 +47,32 @@ export class Juno1 extends Network {
     return ibcAssets.tokens
   }
 
-  async registerNativeAsset(unresolved: { denom: string; symbol: string }): Promise<AnsAssetEntry> {
-    const { denom, symbol } = unresolved
-
+  async registerNativeAsset({ denom, symbol }: { denom: string; symbol: string }) {
     const assetInfo = AssetInfo.native(denom)
 
-    const registered = this.registry.getRegisteredAsset(symbol)
-    if (registered) {
-      if (registered.toString() !== assetInfo.toString()) {
-        throw new Error(`Asset ${symbol} already registered with different info`)
-      }
-      // otherwise, just return happy path
-      return new AnsAssetEntry(symbol, registered)
-    }
+    // const registered = this.registry.getRegisteredAsset(symbol)
+    // if (registered) {
+    //   if (registered.toString() !== assetInfo.toString()) {
+    //     throw new Error(`Asset ${symbol} already registered with different info`)
+    //   }
+    //   // otherwise, just return happy path
+    //   return new AnsAssetEntry(symbol, registered)
+    // }
 
-    // If its not IBC, register it!
+    // If it's not IBC, register it!
     if (!AssetInfo.isIbcDenom(denom)) {
       return this.registry.registerAsset(new AnsAssetEntry(symbol, assetInfo))
     }
 
+    // fetch the known ibc assets to compare
     const knownIbcAssets = await this.fetchIbcAssets()
 
     const matchingIbcAsset = knownIbcAssets.find((a) => a.juno_denom === denom)
     if (!matchingIbcAsset) {
-      throw new Error(`No IBC asset found for denom ${denom}`)
+      console.log(`Didn't find ${denom} ${symbol} in ${knownIbcAssets.length}`)
+      // throw new Error(`No IBC asset found for denom ${denom}`)
+      this.registry.unknownAsset(symbol, denom)
+      return
     }
 
     const ibcAssetName = AnsName.ibcAsset(matchingIbcAsset.chain_id, matchingIbcAsset.symbol)
