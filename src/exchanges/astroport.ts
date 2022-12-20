@@ -5,11 +5,6 @@ import { Network } from '../networks/network'
 
 const ASTROPORT = 'Astroport'
 
-/*
-  private networkToQueryUrl = {
-    'phoenix-1': 'https://terra2-api.astroport.fi/graphql',
-  }
- */
 interface AstroportOptions {
   queryUrl: string
 }

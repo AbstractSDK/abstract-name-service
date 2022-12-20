@@ -4,31 +4,31 @@
 import { ContractRegistry } from '../registry/contractRegistry'
 import { PoolRegistry } from '../registry/poolRegistry'
 import { Network } from './network'
-import { Junoswap } from '../exchanges'
+import { Astroport, Junoswap } from '../exchanges'
 import { AssetRegistry } from '../registry/assetRegistry'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface Uni5Options {}
+interface Phoenix1Options {}
 
-const UNI_5 = 'uni-5'
+const PHOENIX_1 = 'phoenix-1'
 
-export class Uni5 extends Network {
-  private options: Uni5Options
+export class Phoenix1 extends Network {
+  private options: Phoenix1Options
 
   constructor(
     assetRegistry: AssetRegistry,
     contractRegistry: ContractRegistry,
     poolRegistry: PoolRegistry,
-    options: Uni5Options = {}
+    options: Phoenix1Options = {}
   ) {
     super({
-      networkId: UNI_5,
+      networkId: PHOENIX_1,
       assetRegistry: assetRegistry,
       contractRegistry: contractRegistry,
       poolRegistry: poolRegistry,
       exchanges: [
-        new Junoswap({
-          poolListUrl: 'https://wasmswap.io/pools_list.testnet.json',
+        new Astroport({
+          queryUrl: 'https://terra2-api.astroport.fi/graphql',
         }),
       ],
     })

@@ -1,34 +1,32 @@
-
-
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 import { ContractRegistry } from '../registry/contractRegistry'
 import { PoolRegistry } from '../registry/poolRegistry'
 import { Network } from './network'
-import { Junoswap } from '../exchanges'
+import { Osmosis } from '../exchanges'
 import { AssetRegistry } from '../registry/assetRegistry'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface Uni5Options {}
+interface Osmo1Options {}
 
-const UNI_5 = 'uni-5'
+const CHAIN_ID = 'osmo-1'
 
-export class Uni5 extends Network {
-  private options: Uni5Options
+export class Osmo1 extends Network {
+  private options: Osmo1Options
 
   constructor(
     assetRegistry: AssetRegistry,
     contractRegistry: ContractRegistry,
     poolRegistry: PoolRegistry,
-    options: Uni5Options = {}
+    options: Osmo1Options = {}
   ) {
     super({
-      networkId: UNI_5,
+      networkId: CHAIN_ID,
       assetRegistry: assetRegistry,
       contractRegistry: contractRegistry,
       poolRegistry: poolRegistry,
       exchanges: [
-        new Junoswap({
-          poolListUrl: 'https://wasmswap.io/pools_list.testnet.json',
+        new Osmosis({
+          poolUrl: 'https://lcd-osmosis.keplr.app/osmosis/gamm/v1beta1/pools?pagination.limit=1000',
+          volumeUrl: 'https://api-osmosis.imperator.co/fees/v1/pools',
         }),
       ],
     })

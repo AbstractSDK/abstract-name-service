@@ -31,7 +31,7 @@ export class AssetRegistry {
   }
 
   public register(assetEntry: AnsAssetEntry) {
-    console.log(`Registering asset ${assetEntry.name}: ${assetEntry.info}`)
+    console.log(`Registering asset ${assetEntry.name}: ${JSON.stringify(assetEntry.info)}`)
 
     const existing = this.getRegistered(assetEntry.name)
     if (existing && existing.toString() !== assetEntry.info.toString()) {
