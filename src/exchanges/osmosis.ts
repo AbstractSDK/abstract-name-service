@@ -1,6 +1,5 @@
 import { AnsAssetEntry, AnsPoolEntry, PoolId } from '../objects'
 import { Exchange } from './exchange'
-import { NetworkRegistry } from '../networks/networkRegistry'
 import { Network } from '../networks/network'
 
 const OSMOSIS = 'Osmosis'
@@ -49,7 +48,11 @@ export class Osmosis extends Exchange {
     return poolList
   }
 
-  private determinePoolType = ({ pool_assets, pool_params, id }: OsmosisPool): PoolType | undefined => {
+  private determinePoolType = ({
+    pool_assets,
+    pool_params,
+    id,
+  }: OsmosisPool): PoolType | undefined => {
     if (pool_assets?.length) {
       if (pool_params.smooth_weight_change_params) {
         return 'liquidity_bootstrap'
@@ -65,13 +68,14 @@ export class Osmosis extends Exchange {
     return undefined
   }
 
-  async registerPools(network: Network): Promise<AnsPoolEntry[]> {
+  async registerPools(network: Network) {
     console.log(`Retrieving pools for ${this.dexName} on ${network.networkId}`)
 
     const poolList = await this.fetchPoolList()
-    console.log(`Retrieved ${poolList.pools.length} pools for ${this.dexName} on ${network.networkId}`)
+    console.log(
+      `Retrieved ${poolList.pools.length} pools for ${this.dexName} on ${network.networkId}`
+    )
 
-    const ansPoolEntries: AnsPoolEntry[] = []
     poolList.pools.forEach((pool: OsmosisPool) => {
       const { pool_assets, id } = pool
 
@@ -80,7 +84,7 @@ export class Osmosis extends Exchange {
       const poolType = this.determinePoolType(pool)
       if (!poolType) return
 
-      ansPoolEntries.push(
+      network.poolRegistry.register(
         new AnsPoolEntry(PoolId.id(+id), {
           dex: this.dexName.toLowerCase(),
           poolType,
@@ -88,12 +92,9 @@ export class Osmosis extends Exchange {
         })
       )
     })
-
-    return ansPoolEntries
   }
 
   async registerAssets(): Promise<AnsAssetEntry[]> {
-
     // const poolList = await this.fetchPoolList(network as keyof typeof this.networkToPoolList)
     //
     // const ansAssetEntries: AnsAssetEntry[] = []

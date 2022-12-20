@@ -9,8 +9,8 @@ export class AnsPoolEntry {
 
   public equals(other: AnsPoolEntry): boolean {
     return (
-      this.id.toString() === other.id.toString() &&
-      this.metadata.toString() === other.metadata.toString()
+      JSON.stringify(this.id) === JSON.stringify(other.id) &&
+      JSON.stringify(this.metadata) === JSON.stringify(other.metadata)
     )
   }
   toJSON(): [AbstractPoolId, AbstractPoolMetadata] {

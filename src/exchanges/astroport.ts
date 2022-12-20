@@ -22,30 +22,17 @@ export class Astroport extends Exchange {
     this.options = options
   }
 
-  private async fetchPoolList(): Promise<AstroportPoolList> {
-    return request(this.options.queryUrl, POOLS_QUERY)
-  }
-
-  async registerPools(): Promise<AnsPoolEntry[]> {
+  async registerPools(network: Network) {
     const { pools, tokens } = await this.fetchPoolList()
 
-    return pools.map(({ pool_type, pool_address, prices: assets }) => {
+    pools.forEach(({ pool_type, pool_address, prices: assets }) => {
       const assetAddresses = Object.values(assets).map((asset) => asset.toLowerCase())
       const assetNames = assetAddresses.map(this.tokenAddrToName(tokens))
 
-      return new AnsPoolEntry(
-        PoolId.contract(pool_address),
-        this.poolMetadata(pool_type, assetNames)
+      network.poolRegistry.register(
+        new AnsPoolEntry(PoolId.contract(pool_address), this.poolMetadata(pool_type, assetNames))
       )
     })
-  }
-
-  private poolMetadata(pool_type: string, assets: string[]) {
-    return {
-      dex: this.dexName.toLowerCase(),
-      poolType: this.toAbstractPoolType(pool_type),
-      assets,
-    }
   }
 
   async registerAssets(network: Network): Promise<AnsAssetEntry[]> {
@@ -53,20 +40,10 @@ export class Astroport extends Exchange {
 
     for (const { symbol, tokenAddr } of tokens) {
       // TODO: difference for native??
-      network.registerAsset(new AnsAssetEntry(symbol, AssetInfo.from(tokenAddr)))
+      network.assetRegistry.register(new AnsAssetEntry(symbol, AssetInfo.from(tokenAddr)))
     }
 
     return []
-  }
-
-  private tokenAddrToName(tokens: Token[]) {
-    return (address: string) => {
-      const token = tokens.find(({ tokenAddr }) => tokenAddr === address)
-      if (!token) {
-        throw new Error(`Could not find token with address ${address}`)
-      }
-      return token.symbol.toLowerCase()
-    }
   }
 
   toAbstractPoolType(poolType: string): PoolType {
@@ -77,6 +54,28 @@ export class Astroport extends Exchange {
         return 'stable'
       default:
         throw new Error(`Unknown pool type: ${poolType}`)
+    }
+  }
+
+  private async fetchPoolList(): Promise<AstroportPoolList> {
+    return request(this.options.queryUrl, POOLS_QUERY)
+  }
+
+  private poolMetadata(pool_type: string, assets: string[]) {
+    return {
+      dex: this.dexName.toLowerCase(),
+      poolType: this.toAbstractPoolType(pool_type),
+      assets,
+    }
+  }
+
+  private tokenAddrToName(tokens: Token[]) {
+    return (address: string) => {
+      const token = tokens.find(({ tokenAddr }) => tokenAddr === address)
+      if (!token) {
+        throw new Error(`Could not find token with address ${address}`)
+      }
+      return token.symbol.toLowerCase()
     }
   }
 }
@@ -115,6 +114,7 @@ interface AstroportPool {
   reward_proxy_address: null
   prices: Prices
 }
+
 interface Prices {
   token1_address: string
   token2_address: string

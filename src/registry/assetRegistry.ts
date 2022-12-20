@@ -9,17 +9,13 @@ export interface RegistryDefaults {
   contractRegistry?: Map<string, string>
 }
 
-export class NetworkRegistry {
+export class AssetRegistry {
   protected assetRegistry: Map<string, CwAssetInfo>
   protected unknownAssetRegistry: Map<string, string>
-  protected contractRegistry: Map<string, string>
 
-  constructor(
-    defaults: RegistryDefaults = {}
-  ) {
+  constructor(defaults: RegistryDefaults = {}) {
     const { assetRegistry, contractRegistry } = defaults
     this.assetRegistry = assetRegistry || new Map()
-    this.contractRegistry = contractRegistry || new Map()
     this.unknownAssetRegistry = new Map()
   }
 
@@ -34,10 +30,10 @@ export class NetworkRegistry {
     this.unknownAssetRegistry.set(name, address)
   }
 
-  public registerAsset(assetEntry: AnsAssetEntry) {
+  public register(assetEntry: AnsAssetEntry) {
     console.log(`Registering asset ${assetEntry.name}: ${assetEntry.info}`)
 
-    const existing = this.assetRegistry.get(assetEntry.name)
+    const existing = this.getRegistered(assetEntry.name)
     if (existing && existing.toString() !== assetEntry.info.toString()) {
       throw new Error(
         `Asset ${assetEntry.name}:${assetEntry.info} already registered with different info`
@@ -48,8 +44,8 @@ export class NetworkRegistry {
     return assetEntry
   }
 
-  public getRegisteredAsset(assetName: string): CwAssetInfo | undefined {
-    return this.assetRegistry?.get(assetName)
+  public getRegistered(assetName: string): CwAssetInfo | undefined {
+    return this.assetRegistry.get(assetName)
   }
 
   /**
@@ -66,7 +62,7 @@ export class NetworkRegistry {
     return entry?.[0]
   }
 
-  public exportAssets(): AnsAssetEntry[] {
+  public export(): AnsAssetEntry[] {
     return Array.from(this.assetRegistry.entries()).map(AnsAssetEntry.fromEntry)
   }
 }

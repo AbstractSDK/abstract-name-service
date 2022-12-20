@@ -1,9 +1,11 @@
 import { AnsAssetEntry, AssetInfo } from '../objects'
 import { AnsName } from '../objects/AnsName'
-import { NetworkRegistry, RegistryDefaults } from './networkRegistry'
-import { Exchange } from '../exchanges/exchange'
 import { Network } from './network'
 import { Junoswap } from '../exchanges/junoswap'
+import { ContractRegistry } from '../registry/contractRegistry'
+import { PoolRegistry } from '../registry/poolRegistry'
+import { AssetRegistry } from '../registry/assetRegistry'
+
 
 const JUNO_1 = 'juno-1'
 
@@ -15,13 +17,24 @@ export class Juno1 extends Network {
   options: Juno1Options
   private fetchedIbcAssetsCache: JunoswapIbcAsset[] | undefined
 
-  constructor(registry: NetworkRegistry, options: Juno1Options) {
-    super(JUNO_1, registry, [
-      new Junoswap({
-        poolListUrl:
-          'https://raw.githubusercontent.com/CosmosContracts/junoswap-asset-list/main/pools_list.json',
-      }),
-    ])
+  constructor(
+    assetRegistry: AssetRegistry,
+    contractRegistry: ContractRegistry,
+    poolRegistry: PoolRegistry,
+    options: Juno1Options
+  ) {
+    super({
+      networkId: JUNO_1,
+      assetRegistry,
+      contractRegistry,
+      poolRegistry,
+      exchanges: [
+        new Junoswap({
+          poolListUrl:
+            'https://raw.githubusercontent.com/CosmosContracts/junoswap-asset-list/main/pools_list.json',
+        }),
+      ],
+    })
     this.options = options
   }
 
@@ -31,20 +44,6 @@ export class Juno1 extends Network {
     //     const assetInfo = AssetInfo.native(asset.chain_id, asset.juno_denom)
     //     this.registry.registerAsset(new AnsAssetEntry(asset.symbol, assetInfo))
     //   }
-  }
-
-  private async fetchIbcAssets(): Promise<JunoswapIbcAsset[]> {
-    if (this.fetchedIbcAssetsCache) {
-      return this.fetchedIbcAssetsCache
-    }
-
-    const { ibcAssetsUrl } = this.options
-    if (!ibcAssetsUrl) return []
-
-    const ibcAssets: JunoswapIbcAssets = await fetch(ibcAssetsUrl).then((res) => res.json())
-    this.fetchedIbcAssetsCache = ibcAssets.tokens
-
-    return ibcAssets.tokens
   }
 
   async registerNativeAsset({ denom, symbol }: { denom: string; symbol: string }) {
@@ -61,7 +60,7 @@ export class Juno1 extends Network {
 
     // If it's not IBC, register it!
     if (!AssetInfo.isIbcDenom(denom)) {
-      return this.registry.registerAsset(new AnsAssetEntry(symbol, assetInfo))
+      return this.assetRegistry.register(new AnsAssetEntry(symbol, assetInfo))
     }
 
     // fetch the known ibc assets to compare
@@ -71,12 +70,26 @@ export class Juno1 extends Network {
     if (!matchingIbcAsset) {
       console.log(`Didn't find ${denom} ${symbol} in ${knownIbcAssets.length}`)
       // throw new Error(`No IBC asset found for denom ${denom}`)
-      this.registry.unknownAsset(symbol, denom)
+      this.assetRegistry.unknownAsset(symbol, denom)
       return
     }
 
     const ibcAssetName = AnsName.ibcAsset(matchingIbcAsset.chain_id, matchingIbcAsset.symbol)
-    return this.registry.registerAsset(new AnsAssetEntry(ibcAssetName, assetInfo))
+    return this.assetRegistry.register(new AnsAssetEntry(ibcAssetName, assetInfo))
+  }
+
+  private async fetchIbcAssets(): Promise<JunoswapIbcAsset[]> {
+    if (this.fetchedIbcAssetsCache) {
+      return this.fetchedIbcAssetsCache
+    }
+
+    const { ibcAssetsUrl } = this.options
+    if (!ibcAssetsUrl) return []
+
+    const ibcAssets: JunoswapIbcAssets = await fetch(ibcAssetsUrl).then((res) => res.json())
+    this.fetchedIbcAssetsCache = ibcAssets.tokens
+
+    return ibcAssets.tokens
   }
 }
 
@@ -98,14 +111,3 @@ interface JunoswapIbcAsset {
   logoURI: string
   external_deposit_uri?: string
 }
-
-/*
-
-new Uni5()
-new Junoswap(uni5)
-
-
-new Junoswap()
-new Uni5(junoswap)
-new Juno(uni5)
- */

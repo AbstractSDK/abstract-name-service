@@ -1,4 +1,4 @@
-import { AnsAssetEntry } from '../objects'
+import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry } from '../objects'
 import { Network } from '../networks/network'
 import { NetworkId } from './chains'
 
@@ -20,5 +20,27 @@ export class Chain {
     )
 
     return networkToAssets
+  }
+
+  async exportContracts(): Promise<Map<NetworkId, AnsContractEntry[]>> {
+    const networkToContracts = new Map<NetworkId, AnsContractEntry[]>()
+    await Promise.all(
+      this.networks.map(async (network) => {
+        networkToContracts.set(network.networkId, await network.exportContracts())
+      })
+    )
+
+    return networkToContracts
+  }
+
+  async exportPools(): Promise<Map<NetworkId, AnsPoolEntry[]>> {
+    const networkToPools = new Map<NetworkId, AnsPoolEntry[]>()
+    await Promise.all(
+      this.networks.map(async (network) => {
+        networkToPools.set(network.networkId, await network.exportPools())
+      })
+    )
+
+    return networkToPools
   }
 }

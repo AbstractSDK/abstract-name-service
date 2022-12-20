@@ -5,8 +5,8 @@
 // import { loadExchanges } from './loaders/exchange.loader'
 import { writeFile } from 'fs'
 // import the json from networks.json
-import { Juno } from './chains/Juno'
-import { Chains } from './chains/chains'
+import { Juno } from './chains'
+import { Chains } from './chains'
 
 type ChainName = string
 type NetworkId = string
@@ -17,10 +17,13 @@ async function main() {
   const chains = new Chains([juno])
 
   const assets = await chains.exportAssets()
-
   writeMapToFile(assets, outFile('assets2'))
 
+  const contracts = await chains.exportContracts()
+  writeMapToFile(contracts, outFile('contracts2'))
 
+  const pools = await chains.exportPools()
+  writeMapToFile(pools, outFile('pools2'))
 }
 
 main()

@@ -1,22 +1,39 @@
-import { NetworkRegistry } from './networkRegistry'
-import { Exchange } from '../exchanges/exchange'
 import { chains } from 'chain-registry'
 import { CosmWasmClient } from '@cosmjs/cosmwasm-stargate'
-import { AnsAssetEntry, AssetInfo } from '../objects'
+import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry, AssetInfo } from '../objects'
+import { Exchange } from '../exchanges'
+import { ContractRegistry } from '../registry/contractRegistry'
+import { PoolRegistry } from '../registry/poolRegistry'
+import { AssetRegistry } from '../registry/assetRegistry'
+
+
+interface INetwork {
+  networkId: string
+  assetRegistry: AssetRegistry
+  contractRegistry: ContractRegistry
+  poolRegistry: PoolRegistry
+  exchanges: Exchange[]
+}
 
 export abstract class Network {
   networkId: string
-  registry: NetworkRegistry
+  assetRegistry: AssetRegistry
+  contractRegistry: ContractRegistry
+  poolRegistry: PoolRegistry
   private exchanges: Exchange[]
 
-  constructor(networkId: string, registry: NetworkRegistry, exchanges: Exchange[]) {
+  protected constructor({
+    networkId,
+    assetRegistry,
+    contractRegistry,
+    poolRegistry,
+    exchanges,
+  }: INetwork) {
     this.networkId = networkId
-    this.registry = registry
+    this.assetRegistry = assetRegistry
+    this.contractRegistry = contractRegistry
+    this.poolRegistry = poolRegistry
     this.exchanges = exchanges
-  }
-
-  registerExchangeAssets() {
-    this.exchanges.forEach((exchange) => exchange.registerAssets(this))
   }
 
   /** if it's a native asset, we check if its registered already. If not registered, it is not a preknown asset, so we generate a new entry */
@@ -25,23 +42,15 @@ export abstract class Network {
 
     // If it's not IBC, register it!
     if (!AssetInfo.isIbcDenom(denom)) {
-      return this.registry.registerAsset(new AnsAssetEntry(symbol, assetInfo))
+      return this.assetRegistry.register(new AnsAssetEntry(symbol, assetInfo))
     }
 
     // We don't know any ibc denoms by default
-    this.registry.unknownAsset(symbol, denom)
-  }
-
-  public registerAsset(assetEntry: AnsAssetEntry) {
-    return this.registry.registerAsset(assetEntry)
-  }
-
-  public getRegisteredAsset(assetName: string): CwAssetInfo | undefined {
-    return this.registry.getRegisteredAsset(assetName)
+    this.assetRegistry.unknownAsset(symbol, denom)
   }
 
   public getRegisteredSymbolByAddress(address: string): string | undefined {
-    return this.registry.getRegisteredSymbolByAddress(address)
+    return this.assetRegistry.getRegisteredSymbolByAddress(address)
   }
 
   public async queryClient(): Promise<CosmWasmClient> {
@@ -56,6 +65,16 @@ export abstract class Network {
 
   async exportAssets(): Promise<AnsAssetEntry[]> {
     await Promise.all(this.exchanges.map((exchange) => exchange.registerAssets(this)))
-    return this.registry.exportAssets()
+    return this.assetRegistry.export()
+  }
+
+  async exportContracts(): Promise<AnsContractEntry[]> {
+    await Promise.all(this.exchanges.map((exchange) => exchange.registerContracts(this)))
+    return this.contractRegistry.export()
+  }
+
+  async exportPools(): Promise<AnsPoolEntry[]> {
+    await Promise.all(this.exchanges.map((exchange) => exchange.registerPools(this)))
+    return this.poolRegistry.export()
   }
 }

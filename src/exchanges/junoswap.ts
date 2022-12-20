@@ -1,14 +1,6 @@
-import {
-  AnsAssetEntry,
-  AnsContractEntry,
-  AnsPoolEntry,
-  AssetInfo,
-  PoolId,
-  UncheckedAssetInfo,
-} from '../objects'
+import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
 import { Exchange } from './exchange'
 import { AnsName } from '../objects/AnsName'
-import { NetworkRegistry } from '../networks/networkRegistry'
 import { Network } from '../networks/network'
 
 const JUNOSWAP_POOL_TYPE: PoolType = 'constant_product'
@@ -30,14 +22,17 @@ export class Junoswap extends Exchange {
     this.options = options
   }
 
-  async registerPools(): Promise<AnsPoolEntry[]> {
+  async registerPools(network: Network) {
     const poolList = await this.fetchPoolList()
 
-    const ansPoolEntries = poolList.pools.map(({ pool_assets, swap_address }: JunoswapPool) => {
-      return new AnsPoolEntry(PoolId.contract(swap_address), this.buildPoolMetadata(pool_assets))
+    poolList.pools.forEach(({ pool_assets, swap_address }: JunoswapPool) => {
+      network.poolRegistry.register(
+        new AnsPoolEntry(
+          PoolId.contract(swap_address),
+          this.buildPoolMetadata(network, pool_assets)
+        )
+      )
     })
-
-    return ansPoolEntries
   }
 
   async registerAssets(network: Network): Promise<AnsAssetEntry[]> {
@@ -59,19 +54,19 @@ export class Junoswap extends Exchange {
         })
       } else {
         const cw20AssetEntry = new AnsAssetEntry(symbol, AssetInfo.cw20(token_address))
-        network.registerAsset(cw20AssetEntry)
+        network.assetRegistry.register(cw20AssetEntry)
       }
     }
 
     // add LP tokens for pools
     for (const { pool_assets, swap_address } of pools) {
       // For example, lp/atom,osmo,
-      const lpTokenSymbol = this.lpTokenName(this.extractAssetSymbols(network, pool_assets))
+      const lpTokenSymbol = this.lpTokenName(this.findRegisteredAssetSymbols(network, pool_assets))
       const lpTokenAddress = await this.queryLpTokenAddress(network, swap_address)
 
       const lpTokenEntry = new AnsAssetEntry(lpTokenSymbol, AssetInfo.cw20(lpTokenAddress))
 
-      network.registerAsset(lpTokenEntry)
+      network.assetRegistry.register(lpTokenEntry)
     }
 
     return []
@@ -80,24 +75,22 @@ export class Junoswap extends Exchange {
   async registerContracts(network: Network): Promise<AnsContractEntry[]> {
     const poolList = await this.fetchPoolList()
 
-    const ansContractEntries: AnsContractEntry[] = []
-
     poolList.pools.forEach(({ staking_address, pool_assets }) => {
       if (!staking_address) return
 
-      const contractName = AnsName.stakingContract(this.extractAssetSymbols(network, pool_assets))
+      const contractName = AnsName.stakingContract(
+        this.findRegisteredAssetSymbols(network, pool_assets)
+      )
 
       const newEntry = new AnsContractEntry(
         this.dexName.toLowerCase(),
         contractName,
         staking_address
       )
-      if (!ansContractEntries.some((entry) => entry.equals(newEntry))) {
-        ansContractEntries.push(newEntry)
-      }
+      network.contractRegistry.register(newEntry)
     })
 
-    return ansContractEntries
+    return []
   }
 
   private async fetchPoolList(): Promise<JunoswapPoolList> {
@@ -111,11 +104,14 @@ export class Junoswap extends Exchange {
     return poolList
   }
 
-  private buildPoolMetadata(pool_assets: JunoswapPoolAsset[]): AbstractPoolMetadata {
+  private buildPoolMetadata(
+    network: Network,
+    pool_assets: JunoswapPoolAsset[]
+  ): AbstractPoolMetadata {
     return {
       dex: this.dexName.toLowerCase(),
       poolType: JUNOSWAP_POOL_TYPE,
-      assets: pool_assets.map(({ symbol }) => symbol.toLowerCase()),
+      assets: this.findRegisteredAssetSymbols(network, pool_assets),
     }
   }
 
@@ -129,7 +125,10 @@ export class Junoswap extends Exchange {
     return poolInfo.lp_token_address
   }
 
-  private extractAssetSymbols(network: Network, junoswapPoolAssets: JunoswapPoolAsset[]): string[] {
+  private findRegisteredAssetSymbols(
+    network: Network,
+    junoswapPoolAssets: JunoswapPoolAsset[]
+  ): string[] {
     return junoswapPoolAssets.map(({ token_address, native, denom, symbol }) => {
       const searchBy = native ? denom : token_address
       const registeredSymbol = network.getRegisteredSymbolByAddress(searchBy)
