@@ -14,7 +14,6 @@ const uni_5 = new Uni5(new AssetRegistry(), new ContractRegistry(), new PoolRegi
 
 export class Juno extends Chain {
   constructor() {
-    super('juno', [uni_5])
-    // super('juno', [juno_1, uni_5])
+    super('juno', [juno_1, uni_5])
   }
 }

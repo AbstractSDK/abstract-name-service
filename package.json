@@ -8,9 +8,10 @@
   "type": "commonjs",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "nodemon --watch src/**/*.ts --exec ts-node src/app.ts",
+    "dev": "nodemon --watch src/**/*.ts --exec ts-node src/scrape.ts",
     "build": "tsc",
-    "start": "node dist/app.js",
+    "start": "node dist/scrape.js",
+    "scrape": "pnpm run build && pnpm run start",
     "lint": "eslint --fix --quiet src/**/*.ts",
     "format": "prettier --loglevel silent --write src/**/*.ts",
     "test": "jest",

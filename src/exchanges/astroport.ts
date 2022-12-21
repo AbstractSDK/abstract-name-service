@@ -61,7 +61,7 @@ export class Astroport extends Exchange {
   }
 
   /**
-   * @todo
+   * @todo we need to be able to resolve the staking contracts
    */
   async registerContracts(network: Network) {
     throw new Error('Method not implemented.')
