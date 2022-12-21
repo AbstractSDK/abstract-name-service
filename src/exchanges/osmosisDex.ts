@@ -1,7 +1,8 @@
-import { AnsAssetEntry, AssetInfo } from '../objects'
+import { AnsAssetEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
 import { Exchange } from './exchange'
 import { Network } from '../networks/network'
 import { ChainRegistry } from '../objects/ChainRegistry'
+import { NotFoundError } from '../registry/IRegistry'
 
 const OSMOSIS = 'Osmosis'
 
@@ -71,9 +72,8 @@ export class OsmosisDex extends Exchange {
               // persistence>xprt
               const ansName = ChainRegistry.externalChainDenomToAnsName(baseDenom)
 
-              network.assetRegistry.register(
-                new AnsAssetEntry(ansName, AssetInfo.native(denom))
-              )
+              network.assetRegistry.register(new AnsAssetEntry(ansName, AssetInfo.native(denom)))
+              await new Promise((resolve) => setTimeout(resolve, 250))
             } else {
               // NOT IBC
 
@@ -95,30 +95,52 @@ export class OsmosisDex extends Exchange {
   }
 
   async registerPools(network: Network) {
-    console.error(`registerPools not implemented for ${this.name}`)
+    const poolList = await this.fetchPoolList()
+    console.log(`Retrieved ${poolList.pools.length} pools for ${this.name} on ${network.networkId}`)
 
-    return
-    // const poolList = await this.fetchPoolList()
-    // console.log(`Retrieved ${poolList.pools.length} pools for ${this.name} on ${network.networkId}`)
-    //
-    // poolList.pools.forEach((pool: OsmosisPool) => {
-    //   const { pool_assets, id } = pool
-    //
-    //   const assets = pool_assets?.map(({ token }) => token).map(({ denom }) => denom.toLowerCase())
-    //   if (!assets) return
-    //   const poolType = this.determinePoolType(pool)
-    //   if (!poolType) return
-    //
-    //   network.poolRegistry.register(
-    //     new AnsPoolEntry(PoolId.id(+id), {
-    //       dex: this.name.toLowerCase(),
-    //       pool_type: poolType,
-    //       assets,
-    //     })
-    //   )
-    // })
+    poolList.pools.forEach((pool: OsmosisPool) => {
+      const { pool_assets, id } = pool
+
+      const poolDenoms = pool_assets?.map(({ token }) => token).map(({ denom }) => denom)
+      if (!poolDenoms) return
+
+      const poolType = this.determineOsmosisPoolType(pool)
+      if (!poolType) return
+
+      const poolId = PoolId.id(+id)
+
+      let namesByDenoms: string[]
+
+      try {
+        namesByDenoms = network.assetRegistry.getNamesByDenoms(poolDenoms)
+      } catch (e) {
+        if (e instanceof NotFoundError) {
+          console.log(`Skipping pool ${id} because not all denoms are registered`)
+          network.poolRegistry.unknown(
+            new AnsPoolEntry(poolId, {
+              dex: this.name.toLowerCase(),
+              pool_type: poolType,
+              assets: poolDenoms,
+            })
+          )
+          return
+        }
+        throw e
+      }
+
+      network.poolRegistry.register(
+        new AnsPoolEntry(poolId, {
+          dex: this.name.toLowerCase(),
+          pool_type: poolType,
+          assets: namesByDenoms,
+        })
+      )
+    })
   }
 
+  /**
+   * Fetch a list of osmosis pools and only take the highest ones by volume.
+   */
   private async fetchPoolList(): Promise<OsmosisPoolList> {
     if (this.poolListCache) {
       return this.poolListCache
@@ -147,7 +169,7 @@ export class OsmosisDex extends Exchange {
     return poolList
   }
 
-  private determinePoolType = ({
+  private determineOsmosisPoolType = ({
     pool_assets,
     pool_params,
     id,

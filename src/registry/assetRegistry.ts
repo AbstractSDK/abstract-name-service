@@ -1,15 +1,14 @@
 import { chains } from 'chain-registry'
 import { AnsAssetEntry } from '../objects'
-import { CosmWasmClient } from '@cosmjs/cosmwasm-stargate'
 import { match, P } from 'ts-pattern'
-import { Exchange } from '../exchanges/exchange'
+import { IRegistry, NotFoundError } from './IRegistry'
 
 export interface RegistryDefaults {
   assetRegistry?: Map<string, CwAssetInfo>
   contractRegistry?: Map<string, string>
 }
 
-export class AssetRegistry {
+export class AssetRegistry implements IRegistry<AnsAssetEntry> {
   protected assetRegistry: Map<string, CwAssetInfo>
   protected unknownAssetRegistry: Map<string, string>
 
@@ -56,7 +55,6 @@ export class AssetRegistry {
     return this.assetRegistry.get(assetName)
   }
 
-
   /**
    * Returns the asset symbol of the registered asset if found.
    */
@@ -71,11 +69,11 @@ export class AssetRegistry {
     return entry?.[0]
   }
 
-  public getNamesByAddresses(addresses: string[]): string[] {
+  public getNamesByDenoms(addresses: string[]): string[] {
     return addresses.map((address) => {
       const registered = this.getDenom(address)
       if (!registered) {
-        throw new Error(`No registered asset found for ${address} }`)
+        throw new NotFoundError(`No registered asset found for ${address} }`)
       }
       return registered
     })
@@ -83,5 +81,9 @@ export class AssetRegistry {
 
   public export(): AnsAssetEntry[] {
     return Array.from(this.assetRegistry.entries()).map(AnsAssetEntry.fromEntry)
+  }
+
+  unknown(entry: AnsAssetEntry): void {
+    this.unknownAssetRegistry.set(entry.name, entry.info.toString())
   }
 }

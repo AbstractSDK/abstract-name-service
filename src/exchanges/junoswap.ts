@@ -2,6 +2,7 @@ import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry, AssetInfo, PoolId } from
 import { Exchange } from './exchange'
 import { AnsName } from '../objects/AnsName'
 import { Network } from '../networks/network'
+import { NotFoundError } from '../registry/IRegistry'
 
 const JUNOSWAP_POOL_TYPE: PoolType = 'ConstantProduct'
 
@@ -121,7 +122,7 @@ export class Junoswap extends Exchange {
       poolAddress,
       WASMSWAP_INFO_QUERY
     )
-    if (!poolInfo.lp_token_address) throw new Error(`No LP token found for pool ${poolAddress}`)
+    if (!poolInfo.lp_token_address) throw new NotFoundError(`No LP token found for pool ${poolAddress}`)
     return poolInfo.lp_token_address
   }
 
@@ -133,7 +134,7 @@ export class Junoswap extends Exchange {
       const searchBy = native ? denom : token_address
       const registeredSymbol = network.assetRegistry.getDenom(searchBy)
       if (!registeredSymbol) {
-        throw new Error(`No registered asset found for ${searchBy} ${symbol}`)
+        throw new NotFoundError(`No registered asset found for ${searchBy} ${symbol}`)
       }
       return registeredSymbol
     })

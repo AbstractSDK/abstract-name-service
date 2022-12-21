@@ -1,22 +1,18 @@
 import { AnsContractEntry } from '../objects'
+import { AlreadyRegisteredError, IRegistry } from './IRegistry'
 
 export interface RegistryDefaults {
   contractRegistry?: AnsContractEntry[]
 }
 
-export class ContractRegistry {
+export class ContractRegistry implements IRegistry<AnsContractEntry> {
   protected contractRegistry: AnsContractEntry[]
+  protected unknownRegistry: AnsContractEntry[] = []
 
   constructor(defaults: RegistryDefaults = {}) {
     const { contractRegistry } = defaults
     this.contractRegistry = contractRegistry || []
   }
-
-  //
-  // public unknownContract(name: string, address: string) {
-  //   console.warn(`Adding unknown asset: ${name} with address: ${address}`)
-  //   this.unknownAssetRegistry.set(name, address)
-  // }
 
   public register(contractEntry: AnsContractEntry): AnsContractEntry {
     console.log(
@@ -27,7 +23,7 @@ export class ContractRegistry {
     if (existing) {
       if (!existing.equals(contractEntry)) {
         // TODO: unknown contracts
-        throw new Error(
+        throw new AlreadyRegisteredError(
           `Contract ${JSON.stringify(contractEntry.info)}:${
             contractEntry.address
           } already registered with different info`
@@ -50,5 +46,12 @@ export class ContractRegistry {
 
   public export(): AnsContractEntry[] {
     return this.contractRegistry
+  }
+
+  unknown(entry: AnsContractEntry): void {
+    console.warn(
+      `Adding unknown contract: ${JSON.stringify(entry.info)} with address: ${entry.address}`
+    )
+    this.unknownRegistry.push(entry)
   }
 }

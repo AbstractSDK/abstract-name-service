@@ -2,6 +2,7 @@ import { Exchange } from './exchange'
 import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
 import { gql, request } from 'graphql-request'
 import { Network } from '../networks/network'
+import { NotFoundError } from '../registry/IRegistry'
 
 const ASTROPORT = 'Astroport'
 
@@ -34,7 +35,7 @@ export class Astroport extends Exchange {
     pools
       .filter(({ lp_address }) => lp_address)
       .forEach(({ lp_address, prices: { token1_address, token2_address } }) => {
-        const resolvedAssetNames = network.assetRegistry.getNamesByAddresses([
+        const resolvedAssetNames = network.assetRegistry.getNamesByDenoms([
           token1_address,
           token2_address,
         ])
@@ -52,7 +53,7 @@ export class Astroport extends Exchange {
       const { token1_address, token2_address } = assets
 
       // Use the already-registered asset names
-      const assetNames = network.assetRegistry.getNamesByAddresses([token1_address, token2_address])
+      const assetNames = network.assetRegistry.getNamesByDenoms([token1_address, token2_address])
 
       network.poolRegistry.register(
         new AnsPoolEntry(PoolId.contract(pool_address), this.poolMetadata(pool_type, assetNames))
@@ -112,7 +113,7 @@ export class Astroport extends Exchange {
     return (address: string) => {
       const token = tokens.find(({ tokenAddr }) => tokenAddr === address)
       if (!token) {
-        throw new Error(`Could not find token with address ${address}`)
+        throw new NotFoundError(`Could not find token with address ${address}`)
       }
       return token.symbol.toLowerCase()
     }

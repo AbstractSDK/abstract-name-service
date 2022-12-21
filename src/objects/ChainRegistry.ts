@@ -1,11 +1,12 @@
 import { assets, chains } from 'chain-registry'
 import { AnsName } from './AnsName'
+import { NotFoundError } from '../registry/IRegistry'
 
 export class ChainRegistry {
   static chainIdToName(chainId: string): string {
     const chainName = chains.find((c) => c.chain_id === chainId)?.chain_name
     if (!chainName) {
-      throw new Error(`chain not found for chain id ${chainId}`)
+      throw new NotFoundError(`chain not found for chain id ${chainId}`)
     }
     return chainName
   }
@@ -23,7 +24,7 @@ export class ChainRegistry {
       }
     }
     if (!found) {
-      throw new Error(`asset not found for address ${searchDenom}`)
+      throw new NotFoundError(`asset not found for address ${searchDenom}`)
     }
     return AnsName.chainNameIbcAsset(found.chain, found.symbol)
   }
@@ -34,7 +35,7 @@ export class ChainRegistry {
       .find((a) => a.chain_name === chainName)
       ?.assets.find((a) => a.denom_units.some((u) => u.denom === denom))
     if (!asset) {
-      throw new Error(`asset not found for chain ${chainName} and denom ${denom}`)
+      throw new NotFoundError(`asset not found for chain ${chainName} and denom ${denom}`)
     }
     return asset.symbol.toLowerCase()
   }

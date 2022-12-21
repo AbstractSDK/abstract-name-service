@@ -8,6 +8,7 @@ import { PoolRegistry } from '../registry/poolRegistry'
 import { AssetRegistry } from '../registry/assetRegistry'
 import { Tendermint34Client } from '@cosmjs/tendermint-rpc'
 import { ChainRegistry } from '../objects/ChainRegistry'
+import { NotFoundError } from '../registry/IRegistry'
 
 
 interface INetwork {
@@ -17,6 +18,8 @@ interface INetwork {
   poolRegistry: PoolRegistry
   exchanges: Exchange[]
 }
+
+const testEndpoint = async (url: string) => await fetch(url).then((res) => res.status === 200).catch(() => false)
 
 export abstract class Network {
   networkId: string
@@ -70,14 +73,21 @@ export abstract class Network {
   }
 
   private async rpcUrl(): Promise<string> {
-    // const chain_name = chains.find(({ chain_id }) => chain_id === this.networkId)?.apis?.rpc?.[0]?.address
-    const chain_name = chains.find(({ chain_id }) => chain_id === this.networkId)?.chain_name
-    if (!chain_name) throw new Error(`Chain ${this.networkId} not found in chain-registry`)
+    const chain = chains.find(({ chain_id }) => chain_id === this.networkId)
+    if (!chain) throw new NotFoundError(`Chain ${this.networkId} not found in chain-registry`)
 
-    return `https://rpc.cosmos.directory/${chain_name}`
+    const rpc = `https://rpc.cosmos.directory/${chain}`
+    const chainRegistryRpcs = chain.apis?.rpc?.map(({ address }) => address) || []
+
+    const rpcs = [rpc, ...chainRegistryRpcs]
+
+    for (const rpc of rpcs) {
+      if (await testEndpoint(rpc)) return rpc
+    }
+    throw new Error(`No RPC found for ${this.networkId}`)
   }
 
- protected findNativeAssetSymbol(denom: string): string {
+  protected findNativeAssetSymbol(denom: string): string {
     return ChainRegistry.findSymbol(this.networkId, denom)
   }
 
