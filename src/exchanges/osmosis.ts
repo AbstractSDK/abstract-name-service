@@ -1,4 +1,4 @@
-import { AnsAssetEntry, AnsPoolEntry, PoolId } from '../objects'
+import { AnsAssetEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
 import { Exchange } from './exchange'
 import { Network } from '../networks/network'
 
@@ -55,64 +55,64 @@ export class Osmosis extends Exchange {
   }: OsmosisPool): PoolType | undefined => {
     if (pool_assets?.length) {
       if (pool_params.smooth_weight_change_params) {
-        return 'liquidity_bootstrap'
+        return 'LiquidityBootstrap'
       }
       const weights = pool_assets.map(({ weight }) => weight)
       if (weights.every((weight) => weight === weights[0])) {
-        return 'constant_product'
+        return 'ConstantProduct'
       }
-      return 'weighted'
+      return 'Weighted'
     }
 
     console.warn(`Id: ${id} has unknown pool type`, pool_assets, pool_params)
     return undefined
   }
 
-  async registerPools(network: Network) {
-    console.log(`Retrieving pools for ${this.dexName} on ${network.networkId}`)
-
+  async registerAssets(network: Network) {
     const poolList = await this.fetchPoolList()
-    console.log(
-      `Retrieved ${poolList.pools.length} pools for ${this.dexName} on ${network.networkId}`
-    )
+    throw new Error('Not implemented')
+    const ansAssetEntries: AnsAssetEntry[] = []
 
-    poolList.pools.forEach((pool: OsmosisPool) => {
-      const { pool_assets, id } = pool
-
-      const assets = pool_assets?.map(({ token }) => token).map(({ denom }) => denom.toLowerCase())
-      if (!assets) return
-      const poolType = this.determinePoolType(pool)
-      if (!poolType) return
-
-      network.poolRegistry.register(
-        new AnsPoolEntry(PoolId.id(+id), {
-          dex: this.dexName.toLowerCase(),
-          poolType,
-          assets,
-        })
-      )
-    })
-  }
-
-  async registerAssets(): Promise<AnsAssetEntry[]> {
-    // const poolList = await this.fetchPoolList(network as keyof typeof this.networkToPoolList)
-    //
-    // const ansAssetEntries: AnsAssetEntry[] = []
-    //
-    // poolList.pools
-    //   .flatMap(({ pool_assets }) => pool_assets)
-    //   .forEach(({ native, symbol, token_address, denom }) => {
-    //     // only add to ansAssetEntries if it's not already there
-    //     const newEntry = new AnsAssetEntry(
-    //       symbol,
-    //       native ? AssetInfo.native(denom) : AssetInfo.cw20(token_address)
-    //     )
-    //     if (!ansAssetEntries.some((entry) => entry.equals(newEntry))) {
-    //       ansAssetEntries.push(newEntry)
-    //     }
-    //   })
+    // Register the assets in the pools
+    poolList.pools
+      .flatMap(({ pool_assets }) => pool_assets)
+      .filter<PoolAssetsItem>((poolAsset): poolAsset is PoolAssetsItem => !!poolAsset)
+      .forEach(({ token: { denom } }) => {
+        // only add to ansAssetEntries if it's not already there
+        // TODO: search chain-registry
+        // const newEntry = new AnsAssetEntry(
+        //   symbol,
+        //   native ? AssetInfo.native(denom) : AssetInfo.cw20(token_address)
+        // )
+        // network.assetRegistry.register(newEntry)
+      })
 
     return []
+  }
+
+  async registerPools(network: Network) {
+    console.log(`Retrieving pools for ${this.name} on ${network.networkId}`)
+    throw new Error('Not implemented')
+
+    // const poolList = await this.fetchPoolList()
+    // console.log(`Retrieved ${poolList.pools.length} pools for ${this.name} on ${network.networkId}`)
+    //
+    // poolList.pools.forEach((pool: OsmosisPool) => {
+    //   const { pool_assets, id } = pool
+    //
+    //   const assets = pool_assets?.map(({ token }) => token).map(({ denom }) => denom.toLowerCase())
+    //   if (!assets) return
+    //   const poolType = this.determinePoolType(pool)
+    //   if (!poolType) return
+    //
+    //   network.poolRegistry.register(
+    //     new AnsPoolEntry(PoolId.id(+id), {
+    //       dex: this.name.toLowerCase(),
+    //       pool_type: poolType,
+    //       assets,
+    //     })
+    //   )
+    // })
   }
 }
 

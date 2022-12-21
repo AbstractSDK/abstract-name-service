@@ -1,9 +1,6 @@
 import { Chain } from './chain'
 import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry } from '../objects'
 
-export type ChainName = string
-export type NetworkId = string
-
 export class Chains {
   chains: Chain[]
 

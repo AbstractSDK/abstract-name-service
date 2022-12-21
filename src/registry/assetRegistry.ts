@@ -48,10 +48,11 @@ export class AssetRegistry {
     return this.assetRegistry.get(assetName)
   }
 
+
   /**
    * Returns the asset symbol of the registered asset if found.
    */
-  public getRegisteredSymbolByAddress(address: string): string | undefined {
+  public getRegisteredByAddress(address: string): string | undefined {
     const entry = Array.from(this.assetRegistry?.entries() || []).find(([k, v]) =>
       match(v)
         .with({ native: P.string }, ({ native }) => native === address)
@@ -60,6 +61,16 @@ export class AssetRegistry {
     )
 
     return entry?.[0]
+  }
+
+  public getNamesByAddresses(addresses: string[]): string[] {
+    return addresses.map((address) => {
+      const registered = this.getRegisteredByAddress(address)
+      if (!registered) {
+        throw new Error(`No registered asset found for ${address} }`)
+      }
+      return registered
+    })
   }
 
   public export(): AnsAssetEntry[] {

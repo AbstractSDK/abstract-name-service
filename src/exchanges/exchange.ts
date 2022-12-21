@@ -1,26 +1,24 @@
-import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry } from '../objects'
 import { AnsName } from '../objects/AnsName'
 import { Network } from '../networks/network'
 
+/**
+ * Class representing an exchange.
+ */
 export abstract class Exchange {
-  dexName: string
-  /** The supported networks for the chain that the exchange is on. */
+  name: string
 
   protected constructor(dexName: string) {
-    this.dexName = dexName
+    this.name = dexName
   }
 
-  // abstract supportsNetwork(network: string): boolean
-
+  abstract registerAssets(network: Network): void
   abstract registerPools(network: Network): void
-  abstract registerAssets(network: Network): Promise<AnsAssetEntry[]>
 
-  /** Retrieve the staking contracts for the given network. */
-  registerContracts(network: Network): Promise<AnsContractEntry[]> {
-    return Promise.resolve([])
-  }
+  /** Retrieve the (staking) contracts for the given network. */
+  registerContracts(_network: Network): void {}
 
+  /** Build the lp token name using this dex name. */
   lpTokenName(assets: string[]): string {
-    return AnsName.lpToken(this.dexName, assets)
+    return AnsName.lpToken(this.name, assets)
   }
 }

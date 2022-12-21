@@ -18,3 +18,7 @@ type AbstractContractEntry = {
   contract: string
   protocol: string
 }
+
+
+type ChainName = string
+type NetworkId = string

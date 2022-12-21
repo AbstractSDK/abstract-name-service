@@ -36,7 +36,9 @@ export abstract class Network {
     this.exchanges = exchanges
   }
 
-  /** if it's a native asset, we check if its registered already. If not registered, it is not a preknown asset, so we generate a new entry */
+  /**
+   * if it's a native asset, we check if its registered already. If not registered, it is not a preknown asset, so we generate a new entry
+   */
   public async registerNativeAsset({ denom, symbol }: { denom: string; symbol: string }) {
     const assetInfo = AssetInfo.native(denom)
 
@@ -45,12 +47,14 @@ export abstract class Network {
       return this.assetRegistry.register(new AnsAssetEntry(symbol, assetInfo))
     }
 
+    // TODO: check IBC registration
+
     // We don't know any ibc denoms by default
     this.assetRegistry.unknownAsset(symbol, denom)
   }
 
   public getRegisteredSymbolByAddress(address: string): string | undefined {
-    return this.assetRegistry.getRegisteredSymbolByAddress(address)
+    return this.assetRegistry.getRegisteredByAddress(address)
   }
 
   public async queryClient(): Promise<CosmWasmClient> {

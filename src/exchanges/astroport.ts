@@ -1,5 +1,5 @@
 import { Exchange } from './exchange'
-import { AnsAssetEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
+import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
 import { gql, request } from 'graphql-request'
 import { Network } from '../networks/network'
 
@@ -9,6 +9,10 @@ interface AstroportOptions {
   queryUrl: string
 }
 
+/**
+ * Astroport scraper.
+ * @todo: register the staking contracts
+ */
 export class Astroport extends Exchange {
   private options: AstroportOptions
 
@@ -17,12 +21,38 @@ export class Astroport extends Exchange {
     this.options = options
   }
 
+  async registerAssets(network: Network) {
+    const { tokens, pools } = await this.fetchPoolList()
+
+    // Register pool tokens
+    tokens.forEach(({ symbol, tokenAddr }) => {
+      // TODO: difference for native??
+      network.assetRegistry.register(new AnsAssetEntry(symbol, AssetInfo.from(tokenAddr)))
+    })
+
+    // Register LP tokens using the previously registered pool tokens
+    pools
+      .filter(({ lp_address }) => lp_address)
+      .forEach(({ lp_address, prices: { token1_address, token2_address } }) => {
+        const resolvedAssetNames = network.assetRegistry.getNamesByAddresses([
+          token1_address,
+          token2_address,
+        ])
+
+        const lpTokenName = this.lpTokenName(resolvedAssetNames)
+
+        network.assetRegistry.register(new AnsAssetEntry(lpTokenName, AssetInfo.from(lp_address)))
+      })
+  }
+
   async registerPools(network: Network) {
-    const { pools, tokens } = await this.fetchPoolList()
+    const { pools } = await this.fetchPoolList()
 
     pools.forEach(({ pool_type, pool_address, prices: assets }) => {
-      const assetAddresses = Object.values(assets).map((asset) => asset.toLowerCase())
-      const assetNames = assetAddresses.map(this.tokenAddrToName(tokens))
+      const { token1_address, token2_address } = assets
+
+      // Use the already-registered asset names
+      const assetNames = network.assetRegistry.getNamesByAddresses([token1_address, token2_address])
 
       network.poolRegistry.register(
         new AnsPoolEntry(PoolId.contract(pool_address), this.poolMetadata(pool_type, assetNames))
@@ -30,23 +60,36 @@ export class Astroport extends Exchange {
     })
   }
 
-  async registerAssets(network: Network): Promise<AnsAssetEntry[]> {
-    const { tokens } = await this.fetchPoolList()
-
-    for (const { symbol, tokenAddr } of tokens) {
-      // TODO: difference for native??
-      network.assetRegistry.register(new AnsAssetEntry(symbol, AssetInfo.from(tokenAddr)))
-    }
-
-    return []
+  /**
+   * @todo
+   */
+  async registerContracts(network: Network) {
+    throw new Error('Method not implemented.')
+    // const { pools } = await this.fetchPoolList()
+    // pools
+    //   .filter(({ stakeable }) => stakeable)
+    //   .forEach(({ pool_address, prices: { token1_address, token2_address } }) => {
+    //     const resolvedAssetNames = network.assetRegistry.getNamesByAddresses([
+    //       token1_address,
+    //       token2_address,
+    //     ])
+    //     const stakingContarctName = AnsName.stakingContract(resolvedAssetNames)
+    //
+    //     const newEntry = new AnsContractEntry(
+    //       this.dexName.toLowerCase(),
+    //       stakingContarctName,
+    //       pool_address
+    //     )
+    //     network.contractRegistry.register(newEntry)
+    //   })
   }
 
   toAbstractPoolType(poolType: string): PoolType {
     switch (poolType) {
       case 'xyk':
-        return 'constant_product'
+        return 'ConstantProduct'
       case 'stable':
-        return 'stable'
+        return 'Stable'
       default:
         throw new Error(`Unknown pool type: ${poolType}`)
     }
@@ -56,10 +99,10 @@ export class Astroport extends Exchange {
     return request(this.options.queryUrl, POOLS_QUERY)
   }
 
-  private poolMetadata(pool_type: string, assets: string[]) {
+  private poolMetadata(pool_type: string, assets: string[]): AbstractPoolMetadata {
     return {
-      dex: this.dexName.toLowerCase(),
-      poolType: this.toAbstractPoolType(pool_type),
+      dex: this.name.toLowerCase(),
+      pool_type: this.toAbstractPoolType(pool_type),
       assets,
     }
   }

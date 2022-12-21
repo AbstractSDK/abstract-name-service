@@ -8,22 +8,19 @@ import { writeFile } from 'fs'
 import { Juno } from './chains'
 import { Chains } from './chains'
 
-type ChainName = string
-type NetworkId = string
-
 async function main() {
   const juno = new Juno()
 
   const chains = new Chains([juno])
 
   const assets = await chains.exportAssets()
-  writeMapToFile(assets, outFile('assets2'))
+  writeMapToFile(assets, outFile('assets'))
 
   const contracts = await chains.exportContracts()
-  writeMapToFile(contracts, outFile('contracts2'))
+  writeMapToFile(contracts, outFile('contracts'))
 
   const pools = await chains.exportPools()
-  writeMapToFile(pools, outFile('pools2'))
+  writeMapToFile(pools, outFile('pools'))
 }
 
 main()

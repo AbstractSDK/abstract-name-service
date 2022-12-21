@@ -1,13 +1,12 @@
 import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry } from '../objects'
 import { Network } from '../networks/network'
-import { NetworkId } from './chains'
 
 export class Chain {
-  name: string
+  name: ChainName
   networks: Network[]
 
-  constructor(chainName: string, networks: Network[]) {
-    this.name = chainName.toLowerCase()
+  constructor(chainName: ChainName, networks: Network[]) {
+    this.name = chainName.toLowerCase() as ChainName
     this.networks = networks
   }
 

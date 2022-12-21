@@ -6,10 +6,10 @@ type AbstractPoolId =
       id: number
     }
 
-type PoolType = 'stable' | 'weighted' | 'liquidity_bootstrap' | 'constant_product'
+type PoolType = 'Stable' | 'Weighted' | 'LiquidityBootstrap' | 'ConstantProduct'
 
 type AbstractPoolMetadata = {
   dex: string
-  poolType: PoolType
+  pool_type: PoolType
   assets: string[]
 }

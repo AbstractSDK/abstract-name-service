@@ -3,7 +3,7 @@ import { Exchange } from './exchange'
 import { AnsName } from '../objects/AnsName'
 import { Network } from '../networks/network'
 
-const JUNOSWAP_POOL_TYPE: PoolType = 'constant_product'
+const JUNOSWAP_POOL_TYPE: PoolType = 'ConstantProduct'
 
 const WASMSWAP_INFO_QUERY = { info: {} }
 
@@ -13,6 +13,9 @@ interface JunoswapOptions {
 
 const JUNOSWAP = 'Junoswap'
 
+/**
+ * Junoswap scraper.
+ */
 export class Junoswap extends Exchange {
   private options: JunoswapOptions
   private poolListCache: JunoswapPoolList | undefined
@@ -35,7 +38,7 @@ export class Junoswap extends Exchange {
     })
   }
 
-  async registerAssets(network: Network): Promise<AnsAssetEntry[]> {
+  async registerAssets(network: Network) {
     const { pools } = await this.fetchPoolList()
     console.log(`Found ${pools.length} pools on Junoswap`)
 
@@ -47,7 +50,6 @@ export class Junoswap extends Exchange {
     // add assets for pools
     for (const { symbol, token_address, denom, native } of uncheckedJunoswapAssets) {
       if (native) {
-        // if it's a native asset, we check if its registered already. If not registered, it is not a preknown asset, so we generate a new entry
         await network.registerNativeAsset({
           denom,
           symbol,
@@ -68,27 +70,25 @@ export class Junoswap extends Exchange {
 
       network.assetRegistry.register(lpTokenEntry)
     }
-
-    return []
   }
 
-  async registerContracts(network: Network): Promise<AnsContractEntry[]> {
+  async registerContracts(network: Network) {
     const poolList = await this.fetchPoolList()
 
-    poolList.pools.forEach(({ staking_address, pool_assets }) => {
-      if (!staking_address) return
+    poolList.pools
+      .filter(({ staking_address }) => staking_address)
+      .forEach(({ staking_address, pool_assets }) => {
+        const contractName = AnsName.stakingContract(
+          this.findRegisteredAssetSymbols(network, pool_assets)
+        )
 
-      const contractName = AnsName.stakingContract(
-        this.findRegisteredAssetSymbols(network, pool_assets)
-      )
-
-      const newEntry = new AnsContractEntry(
-        this.dexName.toLowerCase(),
-        contractName,
-        staking_address
-      )
-      network.contractRegistry.register(newEntry)
-    })
+        const newEntry = new AnsContractEntry(
+          this.name.toLowerCase(),
+          contractName,
+          staking_address
+        )
+        network.contractRegistry.register(newEntry)
+      })
 
     return []
   }
@@ -109,8 +109,8 @@ export class Junoswap extends Exchange {
     pool_assets: JunoswapPoolAsset[]
   ): AbstractPoolMetadata {
     return {
-      dex: this.dexName.toLowerCase(),
-      poolType: JUNOSWAP_POOL_TYPE,
+      dex: this.name.toLowerCase(),
+      pool_type: JUNOSWAP_POOL_TYPE,
       assets: this.findRegisteredAssetSymbols(network, pool_assets),
     }
   }
