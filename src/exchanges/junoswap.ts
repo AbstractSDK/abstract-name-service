@@ -50,7 +50,7 @@ export class Junoswap extends Exchange {
     // add assets for pools
     for (const { symbol, token_address, denom, native } of uncheckedJunoswapAssets) {
       if (native) {
-        await network.registerNativeAsset({
+        await network.registerChainNativeAsset({
           denom,
           symbol,
         })
@@ -131,7 +131,7 @@ export class Junoswap extends Exchange {
   ): string[] {
     return junoswapPoolAssets.map(({ token_address, native, denom, symbol }) => {
       const searchBy = native ? denom : token_address
-      const registeredSymbol = network.getRegisteredSymbolByAddress(searchBy)
+      const registeredSymbol = network.assetRegistry.getDenom(searchBy)
       if (!registeredSymbol) {
         throw new Error(`No registered asset found for ${searchBy} ${symbol}`)
       }

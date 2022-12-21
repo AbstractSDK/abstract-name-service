@@ -7,20 +7,22 @@ import { writeFile } from 'fs'
 // import the json from networks.json
 import { Juno } from './chains'
 import { Chains } from './chains'
+import { Osmosis } from './chains/Osmosis'
 
 async function main() {
   const juno = new Juno()
 
-  const chains = new Chains([juno])
+  const chains = new Chains([new Osmosis()])
+  // const chains = new Chains([juno, ])
 
   const assets = await chains.exportAssets()
   writeMapToFile(assets, outFile('assets'))
 
-  const contracts = await chains.exportContracts()
-  writeMapToFile(contracts, outFile('contracts'))
-
-  const pools = await chains.exportPools()
-  writeMapToFile(pools, outFile('pools'))
+  // const contracts = await chains.exportContracts()
+  // writeMapToFile(contracts, outFile('contracts'))
+  //
+  // const pools = await chains.exportPools()
+  // writeMapToFile(pools, outFile('pools'))
 }
 
 main()

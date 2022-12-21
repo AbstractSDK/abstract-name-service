@@ -46,8 +46,12 @@ export class Juno1 extends Network {
     //   }
   }
 
-  async registerNativeAsset({ denom, symbol }: { denom: string; symbol: string }) {
+  async registerChainNativeAsset({ denom, symbol }: { denom: string; symbol?: string }) {
     const assetInfo = AssetInfo.native(denom)
+
+    if (!symbol) {
+      symbol = this.findNativeAssetSymbol(denom)
+    }
 
     // const registered = this.registry.getRegisteredAsset(symbol)
     // if (registered) {
@@ -74,7 +78,7 @@ export class Juno1 extends Network {
       return
     }
 
-    const ibcAssetName = AnsName.ibcAsset(matchingIbcAsset.chain_id, matchingIbcAsset.symbol)
+    const ibcAssetName = AnsName.chainIdIbcAsset(matchingIbcAsset.chain_id, matchingIbcAsset.symbol)
     return this.assetRegistry.register(new AnsAssetEntry(ibcAssetName, assetInfo))
   }
 

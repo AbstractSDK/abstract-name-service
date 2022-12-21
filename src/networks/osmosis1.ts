@@ -1,22 +1,22 @@
 import { ContractRegistry } from '../registry/contractRegistry'
 import { PoolRegistry } from '../registry/poolRegistry'
 import { Network } from './network'
-import { Osmosis } from '../exchanges'
+import { OsmosisDex } from '../exchanges'
 import { AssetRegistry } from '../registry/assetRegistry'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface Osmo1Options {}
+interface Osmosis1Options {}
 
-const CHAIN_ID = 'osmo-1'
+const CHAIN_ID = 'osmosis-1'
 
-export class Osmo1 extends Network {
-  private options: Osmo1Options
+export class Osmosis1 extends Network {
+  private options: Osmosis1Options
 
   constructor(
     assetRegistry: AssetRegistry,
     contractRegistry: ContractRegistry,
     poolRegistry: PoolRegistry,
-    options: Osmo1Options = {}
+    options: Osmosis1Options = {}
   ) {
     super({
       networkId: CHAIN_ID,
@@ -24,7 +24,7 @@ export class Osmo1 extends Network {
       contractRegistry: contractRegistry,
       poolRegistry: poolRegistry,
       exchanges: [
-        new Osmosis({
+        new OsmosisDex({
           poolUrl: 'https://lcd-osmosis.keplr.app/osmosis/gamm/v1beta1/pools?pagination.limit=1000',
           volumeUrl: 'https://api-osmosis.imperator.co/fees/v1/pools',
         }),

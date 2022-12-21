@@ -33,7 +33,7 @@ export class AssetRegistry {
   public register(assetEntry: AnsAssetEntry) {
     console.log(`Registering asset ${assetEntry.name}: ${JSON.stringify(assetEntry.info)}`)
 
-    const existing = this.getRegistered(assetEntry.name)
+    const existing = this.get(assetEntry.name)
     if (existing && existing.toString() !== assetEntry.info.toString()) {
       throw new Error(
         `Asset ${assetEntry.name}:${assetEntry.info} already registered with different info`
@@ -44,7 +44,15 @@ export class AssetRegistry {
     return assetEntry
   }
 
-  public getRegistered(assetName: string): CwAssetInfo | undefined {
+  public has(assetName: string): boolean {
+    return this.assetRegistry.has(assetName)
+  }
+
+  public hasDenom(denom: string): boolean {
+    return this.getDenom(denom) !== undefined
+  }
+
+  public get(assetName: string): CwAssetInfo | undefined {
     return this.assetRegistry.get(assetName)
   }
 
@@ -52,7 +60,7 @@ export class AssetRegistry {
   /**
    * Returns the asset symbol of the registered asset if found.
    */
-  public getRegisteredByAddress(address: string): string | undefined {
+  public getDenom(address: string): string | undefined {
     const entry = Array.from(this.assetRegistry?.entries() || []).find(([k, v]) =>
       match(v)
         .with({ native: P.string }, ({ native }) => native === address)
@@ -65,7 +73,7 @@ export class AssetRegistry {
 
   public getNamesByAddresses(addresses: string[]): string[] {
     return addresses.map((address) => {
-      const registered = this.getRegisteredByAddress(address)
+      const registered = this.getDenom(address)
       if (!registered) {
         throw new Error(`No registered asset found for ${address} }`)
       }

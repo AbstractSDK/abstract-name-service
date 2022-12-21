@@ -1,9 +1,12 @@
 import { ChainRegistry } from './ChainRegistry'
 
 export class AnsName {
-  static ibcAsset(chainId: string, asset: string): string {
-    const sourceChain = ChainRegistry.chainIdToName(chainId)
-    return `${sourceChain}>${asset}`
+  static chainIdIbcAsset(chainId: string, asset: string): string {
+    return this.chainNameIbcAsset(ChainRegistry.chainIdToName(chainId), asset)
+  }
+
+  static chainNameIbcAsset(chainName: string, asset: string): string {
+    return `${chainName.toLowerCase()}>${asset}`
   }
 
   static stakingContract(assetNames: string[]) {

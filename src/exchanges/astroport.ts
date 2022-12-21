@@ -64,7 +64,8 @@ export class Astroport extends Exchange {
    * @todo we need to be able to resolve the staking contracts
    */
   async registerContracts(network: Network) {
-    throw new Error('Method not implemented.')
+    console.error(`registerContracts not implemented for ${this.name}`)
+    return
     // const { pools } = await this.fetchPoolList()
     // pools
     //   .filter(({ stakeable }) => stakeable)

@@ -1,4 +1,3 @@
-import { assets } from 'chain-registry'
 import { AssetInfo } from './AssetInfo'
 
 export class AnsAssetEntry {
