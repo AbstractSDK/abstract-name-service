@@ -27,7 +27,8 @@
     ```
     Replacing `ans-asset-scraper` with the image name, and `3000:3000` with the `host:container` ports to publish.
 
-# Abstract Reference
+# Naming Convention Reference
+
 ## Contracts
 Staking contracts are stored in the CONTRACTS data structure in ANS. 
 Key:
