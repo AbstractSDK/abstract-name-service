@@ -67,6 +67,9 @@ Value:
  "native": "ibc/2DA4136457810BCB9DAAB620CA67BC342B17C3C70151CA70490A170DF7C9CB27"
 }
 ```
+
+This can be chained to express multi-hopped assets `ORIGIN_CHAIN>INTERMEDIATE_CHAIN>ASSET_NAME`.
+
 ### LP Tokens
 Key:
 ```
