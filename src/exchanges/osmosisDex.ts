@@ -24,7 +24,6 @@ export class OsmosisDex extends Exchange {
 
   async registerAssets(network: Network) {
     const poolList = await this.fetchPoolList()
-    const ansAssetEntries: AnsAssetEntry[] = []
 
     const ibcQueryClient = await network.ibcQueryClient()
 
@@ -77,7 +76,7 @@ export class OsmosisDex extends Exchange {
             } else {
               // NOT IBC
 
-              network.registerChainNativeAsset({ denom })
+              await network.registerNativeAsset({ denom })
             }
           } catch (e) {
             console.log("couldn't find asset", denom, e)

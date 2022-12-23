@@ -51,13 +51,12 @@ export class Junoswap extends Exchange {
     // add assets for pools
     for (const { symbol, token_address, denom, native } of uncheckedJunoswapAssets) {
       if (native) {
-        await network.registerChainNativeAsset({
+        await network.registerNativeAsset({
           denom,
           symbol,
         })
       } else {
-        const cw20AssetEntry = new AnsAssetEntry(symbol, AssetInfo.cw20(token_address))
-        network.assetRegistry.register(cw20AssetEntry)
+        network.registerLocalAsset(symbol, AssetInfo.cw20(token_address))
       }
     }
 
@@ -132,7 +131,7 @@ export class Junoswap extends Exchange {
   ): string[] {
     return junoswapPoolAssets.map(({ token_address, native, denom, symbol }) => {
       const searchBy = native ? denom : token_address
-      const registeredSymbol = network.assetRegistry.getDenom(searchBy)
+      const registeredSymbol = network.assetRegistry.getByDenom(searchBy)
       if (!registeredSymbol) {
         throw new NotFoundError(`No registered asset found for ${searchBy} ${symbol}`)
       }

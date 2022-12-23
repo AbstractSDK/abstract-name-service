@@ -9,6 +9,7 @@ import { AssetRegistry } from '../registry/assetRegistry'
 import { Tendermint34Client } from '@cosmjs/tendermint-rpc'
 import { ChainRegistry } from '../objects/ChainRegistry'
 import { NotFoundError } from '../registry/IRegistry'
+import { AnsName } from '../objects/AnsName'
 
 
 interface INetwork {
@@ -45,7 +46,7 @@ export abstract class Network {
   /**
    * if it's a native asset, we check if its registered already. If not registered, it is not a preknown asset, so we generate a new entry
    */
-  public async registerChainNativeAsset({ denom, symbol }: { denom: string; symbol?: string }) {
+  public async registerNativeAsset({ denom, symbol }: { denom: string; symbol?: string }) {
     const assetInfo = AssetInfo.native(denom)
 
     if (!symbol) {
@@ -54,13 +55,29 @@ export abstract class Network {
 
     // If it's not IBC, register it!
     if (!AssetInfo.isIbcDenom(denom)) {
-      return this.assetRegistry.register(new AnsAssetEntry(symbol, assetInfo))
+      return this.registerLocalAsset(symbol, assetInfo)
     }
 
     // TODO: check IBC registration
 
     // We don't know any ibc denoms by default
     this.assetRegistry.unknownAsset(symbol, denom)
+  }
+
+  /**
+   * Build a network-specific ans asset entry (juno>junox => ujunox)
+   */
+  public localAssetEntry(symbol: string, info: CwAssetInfo): AnsAssetEntry {
+    return new AnsAssetEntry(AnsName.chainIdIbcAsset(this.networkId, symbol), info)
+  }
+
+  /**
+   * Register an asset to the asset registry of this network.
+   * @param symbol lowercased symbol of the asset. Will be prefixed with this chain's name.
+   * @param info
+   */
+  public registerLocalAsset(symbol: string, info: CwAssetInfo) {
+    return this.assetRegistry.register(this.localAssetEntry(symbol, info))
   }
 
   public async queryClient(): Promise<CosmWasmClient> {

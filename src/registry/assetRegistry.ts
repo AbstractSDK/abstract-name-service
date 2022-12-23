@@ -48,7 +48,7 @@ export class AssetRegistry implements IRegistry<AnsAssetEntry> {
   }
 
   public hasDenom(denom: string): boolean {
-    return this.getDenom(denom) !== undefined
+    return this.getByDenom(denom) !== undefined
   }
 
   public get(assetName: string): CwAssetInfo | undefined {
@@ -58,11 +58,11 @@ export class AssetRegistry implements IRegistry<AnsAssetEntry> {
   /**
    * Returns the asset symbol of the registered asset if found.
    */
-  public getDenom(address: string): string | undefined {
+  public getByDenom(denom: string): string | undefined {
     const entry = Array.from(this.assetRegistry?.entries() || []).find(([k, v]) =>
       match(v)
-        .with({ native: P.string }, ({ native }) => native === address)
-        .with({ cw20: P.string }, ({ cw20 }) => cw20 === address)
+        .with({ native: P.select() }, (native) => native === denom)
+        .with({ cw20: P.select() }, (cw20) => cw20 === denom)
         .otherwise(() => false)
     )
 
@@ -71,7 +71,7 @@ export class AssetRegistry implements IRegistry<AnsAssetEntry> {
 
   public getNamesByDenoms(addresses: string[]): string[] {
     return addresses.map((address) => {
-      const registered = this.getDenom(address)
+      const registered = this.getByDenom(address)
       if (!registered) {
         throw new NotFoundError(`No registered asset found for ${address} }`)
       }

@@ -28,7 +28,7 @@ export class Astroport extends Exchange {
     // Register pool tokens
     tokens.forEach(({ symbol, tokenAddr }) => {
       // TODO: difference for native??
-      network.assetRegistry.register(new AnsAssetEntry(symbol, AssetInfo.from(tokenAddr)))
+      network.registerLocalAsset(symbol, AssetInfo.from(tokenAddr))
     })
 
     // Register LP tokens using the previously registered pool tokens

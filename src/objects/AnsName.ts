@@ -6,7 +6,7 @@ export class AnsName {
   }
 
   static chainNameIbcAsset(chainName: string, asset: string): string {
-    return `${chainName.toLowerCase()}>${asset}`
+    return `${chainName.toLowerCase().replace('testnet', '')}>${asset}`
   }
 
   static stakingContract(assetNames: string[]) {

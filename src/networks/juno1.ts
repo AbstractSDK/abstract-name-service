@@ -46,7 +46,7 @@ export class Juno1 extends Network {
     //   }
   }
 
-  async registerChainNativeAsset({ denom, symbol }: { denom: string; symbol?: string }) {
+  async registerNativeAsset({ denom, symbol }: { denom: string; symbol?: string }) {
     const assetInfo = AssetInfo.native(denom)
 
     if (!symbol) {
@@ -64,7 +64,7 @@ export class Juno1 extends Network {
 
     // If it's not IBC, register it!
     if (!AssetInfo.isIbcDenom(denom)) {
-      return this.assetRegistry.register(new AnsAssetEntry(symbol, assetInfo))
+      return this.registerLocalAsset(symbol, assetInfo)
     }
 
     // fetch the known ibc assets to compare

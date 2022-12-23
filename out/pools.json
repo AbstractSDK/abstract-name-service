@@ -9,8 +9,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "raw"
+            "juno>juno",
+            "juno>raw"
           ]
         }
       ],
@@ -22,7 +22,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "cosmoshub>atom"
           ]
         }
@@ -35,7 +35,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "axelar>usdc"
           ]
         }
@@ -48,7 +48,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "terra>ustc"
           ]
         }
@@ -61,7 +61,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "bitsong>btsg"
           ]
         }
@@ -74,7 +74,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "terra>lunc"
           ]
         }
@@ -87,7 +87,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "osmosis>osmo"
           ]
         }
@@ -100,7 +100,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "stargaze>stars"
           ]
         }
@@ -113,7 +113,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "chihuahua>huahua"
           ]
         }
@@ -126,7 +126,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "akash>akt"
           ]
         }
@@ -139,7 +139,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "persistence>xprt"
           ]
         }
@@ -152,7 +152,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "comdex>cmdx"
           ]
         }
@@ -165,7 +165,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "dig>dig"
           ]
         }
@@ -178,7 +178,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "secretnetwork>scrt"
           ]
         }
@@ -191,8 +191,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "neta"
+            "juno>juno",
+            "juno>neta"
           ]
         }
       ],
@@ -204,8 +204,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "canlab"
+            "juno>juno",
+            "juno>canlab"
           ]
         }
       ],
@@ -217,8 +217,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "tuck"
+            "juno>juno",
+            "juno>tuck"
           ]
         }
       ],
@@ -230,8 +230,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "hulc"
+            "juno>juno",
+            "juno>hulc"
           ]
         }
       ],
@@ -243,7 +243,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "bitcanna>bcna"
           ]
         }
@@ -256,7 +256,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "emoney>ngm"
           ]
         }
@@ -269,7 +269,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "emoney>eeur"
           ]
         }
@@ -282,8 +282,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "hope"
+            "juno>juno",
+            "juno>hope"
           ]
         }
       ],
@@ -295,8 +295,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "rac"
+            "juno>juno",
+            "juno>rac"
           ]
         }
       ],
@@ -308,8 +308,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "marble"
+            "juno>juno",
+            "juno>marble"
           ]
         }
       ],
@@ -321,8 +321,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "coin"
+            "juno>juno",
+            "juno>coin"
           ]
         }
       ],
@@ -334,8 +334,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "primo"
+            "juno>juno",
+            "juno>primo"
           ]
         }
       ],
@@ -347,8 +347,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "daisy"
+            "juno>juno",
+            "juno>daisy"
           ]
         }
       ],
@@ -360,8 +360,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "future"
+            "juno>juno",
+            "juno>future"
           ]
         }
       ],
@@ -373,8 +373,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "bfot"
+            "juno>juno",
+            "juno>bfot"
           ]
         }
       ],
@@ -386,8 +386,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "phmn"
+            "juno>juno",
+            "juno>phmn"
           ]
         }
       ],
@@ -399,8 +399,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "arto"
+            "juno>juno",
+            "juno>arto"
           ]
         }
       ],
@@ -412,8 +412,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "nmn"
+            "juno>juno",
+            "juno>nmn"
           ]
         }
       ],
@@ -425,8 +425,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "sgnl"
+            "juno>juno",
+            "juno>sgnl"
           ]
         }
       ],
@@ -438,8 +438,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "joe"
+            "juno>juno",
+            "juno>joe"
           ]
         }
       ],
@@ -451,7 +451,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "raw",
+            "juno>raw",
             "osmosis>osmo"
           ]
         }
@@ -464,7 +464,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "assetmantle>mntl"
           ]
         }
@@ -477,8 +477,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "punk"
+            "juno>juno",
+            "juno>punk"
           ]
         }
       ],
@@ -490,8 +490,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "glto"
+            "juno>juno",
+            "juno>glto"
           ]
         }
       ],
@@ -503,7 +503,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "sejuno",
+            "juno>sejuno",
             "cosmoshub>atom"
           ]
         }
@@ -516,8 +516,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "sejuno",
-            "raw"
+            "juno>sejuno",
+            "juno>raw"
           ]
         }
       ],
@@ -529,8 +529,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "bjuno",
-            "juno"
+            "juno>bjuno",
+            "juno>juno"
           ]
         }
       ],
@@ -542,8 +542,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "sejuno",
-            "juno"
+            "juno>sejuno",
+            "juno>juno"
           ]
         }
       ],
@@ -555,8 +555,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "seasy",
-            "juno"
+            "juno>seasy",
+            "juno>juno"
           ]
         }
       ],
@@ -568,8 +568,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "loop",
-            "raw"
+            "juno>loop",
+            "juno>raw"
           ]
         }
       ],
@@ -581,8 +581,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "muse"
+            "juno>juno",
+            "juno>muse"
           ]
         }
       ],
@@ -594,8 +594,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "drgn"
+            "juno>juno",
+            "juno>drgn"
           ]
         }
       ],
@@ -607,8 +607,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "verse"
+            "juno>juno",
+            "juno>verse"
           ]
         }
       ],
@@ -620,7 +620,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
+            "juno>juno",
             "teritori>tori"
           ]
         }
@@ -633,8 +633,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "ampjuno"
+            "juno>juno",
+            "juno>ampjuno"
           ]
         }
       ],
@@ -646,7 +646,7 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "muse",
+            "juno>muse",
             "axelar>usdc"
           ]
         }
@@ -659,8 +659,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno",
-            "czar"
+            "juno>juno",
+            "juno>czar"
           ]
         }
       ]
@@ -674,8 +674,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "junox",
-            "crab"
+            "juno>junox",
+            "juno>crab"
           ]
         }
       ],
@@ -687,8 +687,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "dao",
-            "junox"
+            "juno>dao",
+            "juno>junox"
           ]
         }
       ],
@@ -700,8 +700,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "junox",
-            "pood"
+            "juno>junox",
+            "juno>pood"
           ]
         }
       ],
@@ -713,8 +713,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "junox",
-            "dog"
+            "juno>junox",
+            "juno>dog"
           ]
         }
       ],
@@ -726,8 +726,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "junox",
-            "bull"
+            "juno>junox",
+            "juno>bull"
           ]
         }
       ],
@@ -739,8 +739,8 @@
           "dex": "junoswap",
           "pool_type": "ConstantProduct",
           "assets": [
-            "junox",
-            "cat"
+            "juno>junox",
+            "juno>cat"
           ]
         }
       ]
@@ -757,7 +757,7 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "axelar>usdc",
-            "osmo"
+            "osmosis>osmo"
           ]
         }
       ],
@@ -770,7 +770,33 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "cosmoshub>atom",
-            "osmo"
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 704
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "axelar>weth",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 712
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "axelar>wbtc",
+            "osmosis>osmo"
           ]
         }
       ],
@@ -783,7 +809,20 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "evmos>evmos",
-            "osmo"
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 584
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "secretnetwork>scrt",
+            "osmosis>osmo"
           ]
         }
       ],
@@ -796,7 +835,20 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "juno>juno",
-            "osmo"
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 812
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "axelar>axl",
+            "osmosis>osmo"
           ]
         }
       ],
@@ -809,7 +861,7 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "agoric>bld",
-            "osmo"
+            "osmosis>osmo"
           ]
         }
       ],
@@ -828,6 +880,19 @@
       ],
       [
         {
+          "id": 585
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "secretnetwork>scrt",
+            "cosmoshub>atom"
+          ]
+        }
+      ],
+      [
+        {
           "id": 9
         },
         {
@@ -835,33 +900,20 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "cronos>cro",
-            "osmo"
+            "osmosis>osmo"
           ]
         }
       ],
       [
         {
-          "id": 481
+          "id": 816
         },
         {
           "dex": "osmosis",
           "pool_type": "ConstantProduct",
           "assets": [
-            "emoney>eeur",
-            "osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 858
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "acrechain>acre",
-            "osmo"
+            "teritori>tori",
+            "osmosis>osmo"
           ]
         }
       ],
@@ -874,7 +926,7 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "akash>akt",
-            "osmo"
+            "osmosis>osmo"
           ]
         }
       ],
@@ -887,7 +939,7 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "stargaze>stars",
-            "osmo"
+            "osmosis>osmo"
           ]
         }
       ],
@@ -913,7 +965,7 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "axelar>wbnb",
-            "osmo"
+            "osmosis>osmo"
           ]
         }
       ],
@@ -932,27 +984,27 @@
       ],
       [
         {
-          "id": 560
+          "id": 858
         },
         {
           "dex": "osmosis",
           "pool_type": "ConstantProduct",
           "assets": [
-            "terra>ustc",
-            "osmo"
+            "acrechain>acre",
+            "osmosis>osmo"
           ]
         }
       ],
       [
         {
-          "id": 837
+          "id": 481
         },
         {
           "dex": "osmosis",
           "pool_type": "ConstantProduct",
           "assets": [
-            "agoric>ist",
-            "osmo"
+            "emoney>eeur",
+            "osmosis>osmo"
           ]
         }
       ],
@@ -965,7 +1017,20 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "persistence>xprt",
-            "osmo"
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 837
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "agoric>ist",
+            "osmosis>osmo"
           ]
         }
       ],
@@ -978,7 +1043,7 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "axelar>dot",
-            "osmo"
+            "osmosis>osmo"
           ]
         }
       ],
@@ -991,20 +1056,20 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "comdex>cmdx",
-            "osmo"
+            "osmosis>osmo"
           ]
         }
       ],
       [
         {
-          "id": 10
+          "id": 5
         },
         {
           "dex": "osmosis",
           "pool_type": "ConstantProduct",
           "assets": [
-            "cosmoshub>atom",
-            "cronos>cro"
+            "sentinel>dvpn",
+            "osmosis>osmo"
           ]
         }
       ],
@@ -1018,6 +1083,19 @@
           "assets": [
             "cosmoshub>atom",
             "comdex>cmdx"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 10
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "cosmoshub>atom",
+            "cronos>cro"
           ]
         }
       ],
@@ -1042,34 +1120,21 @@
           "dex": "osmosis",
           "pool_type": "Weighted",
           "assets": [
-            "ion",
-            "osmo"
+            "osmosis>ion",
+            "osmosis>osmo"
           ]
         }
       ],
       [
         {
-          "id": 832
+          "id": 6
         },
         {
           "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "jackal>jkl",
-            "osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 587
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
+          "pool_type": "Weighted",
           "assets": [
             "cosmoshub>atom",
-            "panacea>med"
+            "sentinel>dvpn"
           ]
         }
       ],
@@ -1088,32 +1153,6 @@
       ],
       [
         {
-          "id": 681
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "fetchhub>fet",
-            "osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 586
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "panacea>med",
-            "osmo"
-          ]
-        }
-      ],
-      [
-        {
           "id": 875
         },
         {
@@ -1122,19 +1161,6 @@
           "assets": [
             "acrechain>acre",
             "axelar>usdc"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 625
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "gravitybridge>grav",
-            "osmo"
           ]
         }
       ],
@@ -1153,40 +1179,14 @@
       ],
       [
         {
-          "id": 612
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "Weighted",
-          "assets": [
-            "persistence>xprt",
-            "terra>ustc"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 567
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "emoney>eeur",
-            "terra>ustc"
-          ]
-        }
-      ],
-      [
-        {
           "id": 11
         },
         {
           "dex": "osmosis",
           "pool_type": "ConstantProduct",
           "assets": [
-            "ion",
-            "osmo"
+            "osmosis>ion",
+            "osmosis>osmo"
           ]
         }
       ]
