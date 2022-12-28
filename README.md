@@ -35,7 +35,7 @@ Key:
 ```
 {
   protocol: 'junoswap',
-  contract: 'staking:juno,osmo',
+  contract: 'staking/juno,osmo',
 }
 ```
 Value:
