@@ -12,6 +12,7 @@
     "build": "tsc",
     "start": "node dist/scrape.js",
     "scrape": "pnpm run build && pnpm run start",
+    "scrape:all": "pnpm run srcape -c terra -c juno -c osmosis",
     "lint": "eslint --fix --quiet src/**/*.ts",
     "format": "prettier --loglevel silent --write src/**/*.ts",
     "test": "jest",
