@@ -5,29 +5,54 @@
 // import { loadExchanges } from './loaders/exchange.loader'
 import { readFile, writeFile } from 'fs'
 // import the json from networks.json
-import { Chains } from './chains'
+import { array, command, multioption, oneOf, run } from 'cmd-ts'
+import { Chain, ChainExporter, Juno } from './chains'
 import { Terra } from './chains/Terra'
+import { match } from 'ts-pattern'
+import { Osmosis } from './chains/Osmosis'
 
-// TODO: cli arguments
-async function main() {
-  // const juno = new Juno()
+const CHAIN_OPTIONS = ['terra', 'osmosis', 'juno'] as const
+type ChainOption = typeof CHAIN_OPTIONS[number]
 
-  // const osmosis = new Osmosis()
-  // const chains = new Chains([juno, osmosis])
+const main = command({
+  name: 'ans-scraper',
+  args: {
+    chainNames: multioption({
+      // stupid that it doesn't accept readonly array -_-
+      type: array(oneOf(CHAIN_OPTIONS.map((c) => c.toString()))),
+      description: '',
+      short: '-c',
+      long: 'chains',
+    }),
+  },
+  handler: async ({ chainNames }) => {
+    if (chainNames.length === 0) {
+      console.log('No chains specified, exiting...')
+      return
+    }
 
-  const chains = new Chains([new Terra()])
+    const chains: Chain[] = chainNames.map((chain) =>
+      match(chain as ChainOption)
+        .with('terra', () => new Terra())
+        .with('juno', () => new Juno())
+        .with('osmosis', () => new Osmosis())
+        .exhaustive()
+    )
 
-  const assets = await chains.exportAssets()
-  writeMapToFile(assets, outFile('assets'))
+    const exporter = new ChainExporter(chains)
 
-  const contracts = await chains.exportContracts()
-  writeMapToFile(contracts, outFile('contracts'))
+    const assets = await exporter.exportAssets()
+    writeMapToFile(assets, outFile('assets'))
 
-  const pools = await chains.exportPools()
-  writeMapToFile(pools, outFile('pools'))
-}
+    const contracts = await exporter.exportContracts()
+    writeMapToFile(contracts, outFile('contracts'))
 
-main()
+    const pools = await exporter.exportPools()
+    writeMapToFile(pools, outFile('pools'))
+  },
+})
+
+run(main, process.argv.slice(2))
 
 const outFile = (fileName: string) => `./out/${fileName}.json`
 

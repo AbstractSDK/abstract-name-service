@@ -1,7 +1,7 @@
 import { Chain } from './chain'
 import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry } from '../objects'
 
-export class Chains {
+export class ChainExporter {
   chains: Chain[]
 
   constructor(chains: Chain[]) {

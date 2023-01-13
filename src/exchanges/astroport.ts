@@ -1,11 +1,11 @@
 import { Exchange } from './exchange'
 import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
 import { gql, request } from 'graphql-request'
-import { Network } from '../networks/network'
 import { NotFoundError } from '../registry/IRegistry'
 import wretch from 'wretch'
 import { jsonrepair } from 'jsonrepair'
 import { AnsName } from '../objects/AnsName'
+import { Network } from '../networks/network'
 
 const ASTROPORT = 'Astroport'
 
