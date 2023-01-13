@@ -11,11 +11,13 @@ export interface RegistryDefaults {
 export class AssetRegistry implements IRegistry<AnsAssetEntry> {
   protected assetRegistry: Map<string, CwAssetInfo>
   protected unknownAssetRegistry: Map<string, string>
+  protected skippedRegistry: Map<string, Set<CwAssetInfo>>
 
   constructor(defaults: RegistryDefaults = {}) {
     const { assetRegistry, contractRegistry } = defaults
     this.assetRegistry = assetRegistry || new Map()
     this.unknownAssetRegistry = new Map()
+    this.skippedRegistry = new Map()
   }
 
   static nativeAssetDenoms(chainId: string): string[] {
@@ -33,10 +35,31 @@ export class AssetRegistry implements IRegistry<AnsAssetEntry> {
     console.log(`Registering asset ${assetEntry.name}: ${JSON.stringify(assetEntry.info)}`)
 
     const existing = this.get(assetEntry.name)
-    if (existing && existing.toString() !== assetEntry.info.toString()) {
-      throw new Error(
-        `Asset ${assetEntry.name}:${assetEntry.info} already registered with different info`
+
+    if (existing && JSON.stringify(existing) != JSON.stringify(assetEntry.info)) {
+      console.warn(
+        `Asset ${assetEntry.name}:${JSON.stringify(
+          assetEntry.info
+        )} already registered with different info: ${JSON.stringify(existing)}`
       )
+
+      // Skip this asset
+      if (!this.skippedRegistry.has(assetEntry.name)) {
+        this.skippedRegistry.set(assetEntry.name, new Set())
+      }
+      this.skippedRegistry.get(assetEntry.name)?.add(assetEntry.info)
+      this.skippedRegistry.get(assetEntry.name)?.add(existing)
+
+      return
+    }
+
+    if (this.skippedRegistry.has(assetEntry.name)) {
+      console.warn(
+        `Asset ${assetEntry.name} was skipped previously with different info: ${JSON.stringify(
+          this.skippedRegistry.get(assetEntry.name)
+        )}`
+      )
+      return
     }
 
     this.assetRegistry.set(assetEntry.name, assetEntry.info)
@@ -45,6 +68,13 @@ export class AssetRegistry implements IRegistry<AnsAssetEntry> {
 
   public has(assetName: string): boolean {
     return this.assetRegistry.has(assetName)
+  }
+
+  public hasSkipped(assetName: string): boolean {
+    return (
+      this.skippedRegistry.has(assetName) ||
+      [...this.skippedRegistry.values()].some((s) => JSON.stringify(s).includes(assetName))
+    )
   }
 
   public hasDenom(denom: string): boolean {
@@ -59,21 +89,23 @@ export class AssetRegistry implements IRegistry<AnsAssetEntry> {
    * Returns the asset symbol of the registered asset if found.
    */
   public getByDenom(denom: string): string | undefined {
-    const entry = Array.from(this.assetRegistry?.entries() || []).find(([k, v]) =>
-      match(v)
+    const entry = Array.from(this.assetRegistry?.entries() || []).find(([name, info]) =>
+      match(info)
         .with({ native: P.select() }, (native) => native === denom)
         .with({ cw20: P.select() }, (cw20) => cw20 === denom)
-        .otherwise(() => false)
+        .otherwise(() => {
+          false
+        })
     )
 
     return entry?.[0]
   }
 
-  public getNamesByDenoms(addresses: string[]): string[] {
-    return addresses.map((address) => {
-      const registered = this.getByDenom(address)
+  public getNamesByDenoms(denoms: string[]): string[] {
+    return denoms.map((denom) => {
+      const registered = this.getByDenom(denom)
       if (!registered) {
-        throw new NotFoundError(`No registered asset found for ${address} }`)
+        throw new NotFoundError(`No registered asset found for ${denom}`)
       }
       return registered
     })

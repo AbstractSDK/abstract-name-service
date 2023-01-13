@@ -3,11 +3,15 @@ import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry, AssetInfo, PoolId } from
 import { gql, request } from 'graphql-request'
 import { Network } from '../networks/network'
 import { NotFoundError } from '../registry/IRegistry'
+import wretch from 'wretch'
+import { jsonrepair } from 'jsonrepair'
+import { AnsName } from '../objects/AnsName'
 
 const ASTROPORT = 'Astroport'
 
 interface AstroportOptions {
   queryUrl: string
+  contractsUrl: string
 }
 
 /**
@@ -35,10 +39,22 @@ export class Astroport extends Exchange {
     pools
       .filter(({ lp_address }) => lp_address)
       .forEach(({ lp_address, prices: { token1_address, token2_address } }) => {
-        const resolvedAssetNames = network.assetRegistry.getNamesByDenoms([
-          token1_address,
-          token2_address,
-        ])
+        let resolvedAssetNames
+        try {
+          resolvedAssetNames = network.assetRegistry.getNamesByDenoms([
+            token1_address,
+            token2_address,
+          ])
+        } catch (e) {
+          if (e instanceof NotFoundError) {
+            // TODO
+            // if (network.assetRegistry.hasSkipped(token1_address)) {
+            //
+            // }
+          }
+          console.error(`Could not resolve assets for ${lp_address}`)
+          return
+        }
 
         const lpTokenName = this.lpTokenName(resolvedAssetNames)
 
@@ -52,8 +68,20 @@ export class Astroport extends Exchange {
     pools.forEach(({ pool_type, pool_address, prices: assets }) => {
       const { token1_address, token2_address } = assets
 
-      // Use the already-registered asset names
-      const assetNames = network.assetRegistry.getNamesByDenoms([token1_address, token2_address])
+      let assetNames
+      try {
+        // Use the already-registered asset names
+        assetNames = network.assetRegistry.getNamesByDenoms([token1_address, token2_address])
+      } catch (e) {
+        if (e instanceof NotFoundError) {
+          // TODO
+          // if (network.assetRegistry.hasSkipped(token1_address)) {
+          //
+          // }
+        }
+        console.error(`Could not resolve assets for ${pool_address}`)
+        return
+      }
 
       network.poolRegistry.register(
         new AnsPoolEntry(PoolId.contract(pool_address), this.poolMetadata(pool_type, assetNames))
@@ -65,25 +93,29 @@ export class Astroport extends Exchange {
    * @todo we need to be able to resolve the staking contracts
    */
   async registerContracts(network: Network) {
-    console.error(`registerContracts not implemented for ${this.name}`)
-    return
-    // const { pools } = await this.fetchPoolList()
-    // pools
-    //   .filter(({ stakeable }) => stakeable)
-    //   .forEach(({ pool_address, prices: { token1_address, token2_address } }) => {
-    //     const resolvedAssetNames = network.assetRegistry.getNamesByAddresses([
-    //       token1_address,
-    //       token2_address,
-    //     ])
-    //     const stakingContarctName = AnsName.stakingContract(resolvedAssetNames)
-    //
-    //     const newEntry = new AnsContractEntry(
-    //       this.dexName.toLowerCase(),
-    //       stakingContarctName,
-    //       pool_address
-    //     )
-    //     network.contractRegistry.register(newEntry)
-    //   })
+    const astroContracts: {
+      generator_address: string
+      [key: string]: string
+    } = await wretch(this.options.contractsUrl).get().text(jsonrepair).then(JSON.parse)
+
+    if (!astroContracts.generator_address) {
+      throw new Error('Could not find generator address')
+    }
+
+    // Export the registered pools and add the staking contract to generator address
+    const contractEntries = network.poolRegistry.export().map((pool) => {
+      const poolAssets = pool.metadata.assets.sort()
+
+      const stakingContractName = AnsName.stakingContract(poolAssets)
+
+      return new AnsContractEntry(
+        this.name.toLowerCase(),
+        stakingContractName,
+        astroContracts.generator_address
+      )
+    })
+
+    contractEntries.forEach(network.contractRegistry.register)
   }
 
   toAbstractPoolType(poolType: string): PoolType {

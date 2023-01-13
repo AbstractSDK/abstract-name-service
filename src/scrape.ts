@@ -3,17 +3,19 @@
  * so that env vars from the .env file are present in process.env
  */
 // import { loadExchanges } from './loaders/exchange.loader'
-import { writeFile } from 'fs'
+import { readFile, writeFile } from 'fs'
 // import the json from networks.json
-import { Juno } from './chains'
 import { Chains } from './chains'
-import { Osmosis } from './chains/Osmosis'
+import { Terra } from './chains/Terra'
 
+// TODO: cli arguments
 async function main() {
-  const juno = new Juno()
+  // const juno = new Juno()
 
-  const osmosis = new Osmosis()
-  const chains = new Chains([juno, osmosis])
+  // const osmosis = new Osmosis()
+  // const chains = new Chains([juno, osmosis])
+
+  const chains = new Chains([new Terra()])
 
   const assets = await chains.exportAssets()
   writeMapToFile(assets, outFile('assets'))
@@ -30,12 +32,27 @@ main()
 const outFile = (fileName: string) => `./out/${fileName}.json`
 
 // TODO: read existing and add, don't overwrite
-function writeMapToFile<K, V>(map: Map<K, V>, fileName: string) {
+function writeMapToFile<K, V>(newMap: Map<K, V>, fileName: string) {
   const { signal } = new AbortController()
 
-  writeFile(fileName, stringifyMap(map), { signal }, (err) => {
-    // When a request is aborted - the callback is called with an AbortError
-    console.error(err)
+  readFile(fileName, (err, data) => {
+    if (err) {
+      console.error(err)
+      return
+    }
+
+    const existingData = JSON.parse(data.toString())
+    const existingMap = new Map(Object.entries(existingData))
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const merged = new Map([...newMap, ...existingMap])
+
+    writeFile(fileName, stringifyMap(merged), { signal }, (err) => {
+      if (err) {
+        console.error(err)
+        return
+      }
+    })
   })
 }
 

@@ -1,3 +1,5 @@
+import { fromBech32 } from 'cosmwasm'
+
 export class AssetInfo {
   public static cw20 = (address: string): CwAssetInfo => ({
     cw20: address,
@@ -12,10 +14,13 @@ export class AssetInfo {
   })
 
   public static from(address: string): CwAssetInfo {
+    try {
+      fromBech32(address)
+      return AssetInfo.cw20(address)
+    } catch (e) {}
+
     if (this.isIbcDenom(address)) {
       return AssetInfo.native(address)
-    } else if (address.length === 44) {
-      return AssetInfo.cw20(address)
     }
     // non contracts are native
     return AssetInfo.native(address)

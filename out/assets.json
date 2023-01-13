@@ -1,4 +1,506 @@
 {
+  "terra2": {
+    "pisco-1": [
+      [
+        "terra2>astro",
+        {
+          "cw20": "terra167dsqkh2alurx997wmycw9ydkyu54gyswe3ygmrs4lwume3vmwks8ruqnv"
+        }
+      ],
+      [
+        "terra2>luna",
+        {
+          "native": "uluna"
+        }
+      ],
+      [
+        "terra2>stb",
+        {
+          "cw20": "terra1s50rr0vz05xmmkz5wnc2kqkjq5ldwjrdv4sqzf983pzfxuj7jgsq4ehcu2"
+        }
+      ],
+      [
+        "terra2>stbl",
+        {
+          "cw20": "terra1dw6s040xnv2sp8lfgeu8jjtwp0jtws6ahtmw2a3h9j9r0eddy47qesq8j2"
+        }
+      ],
+      [
+        "terra2>rand",
+        {
+          "cw20": "terra1dvhew6vf87m8m49cqrszpf9ht9efy84wtxdn7cdqsnevnwuynxss3apnve"
+        }
+      ],
+      [
+        "terra2>lunax",
+        {
+          "cw20": "terra138fmmywk3zvqezaqwnxyv8kyr8k7q4e7latncv0xreej62u9mx0su95h7d"
+        }
+      ],
+      [
+        "terra2>fatman",
+        {
+          "cw20": "terra1jftlml6ll7yp6u653efnsrtu34vtnyxs5dfqhwgck6n4hfkhv4qq2y9nw6"
+        }
+      ],
+      [
+        "terra2>adotest",
+        {
+          "cw20": "terra1nrmtff0m8hs8p832c7g5tngfen5gcx2l4ng3cgutjejgj7l2y84sqdn2lj"
+        }
+      ],
+      [
+        "terra2>tcw",
+        {
+          "cw20": "terra1kc6w05s5xj2r4w0g7p294q9man0x8flyecleht545urazg64u7xsa6dfk8"
+        }
+      ],
+      [
+        "terra2>auto",
+        {
+          "cw20": "terra19tfptlkhchm9j2y53yysezq3htw9qj0htchr6rvfn6mhxmw8lgvq6z9kzs"
+        }
+      ],
+      [
+        "terra2>neb",
+        {
+          "cw20": "terra16wratqzksepa6fytt6z5c27fkewq4gywaxt7rt4whuvqnrktpaaqzwgulj"
+        }
+      ],
+      [
+        "terra2>usdt",
+        {
+          "cw20": "terra1dwtyvyrkw0s7e0rucwgfwypr4m4emshvsf56nmjn3gertd2jwdzsjt33nl"
+        }
+      ],
+      [
+        "terra2>tvk",
+        {
+          "cw20": "terra1n65crrjdrdhaex9lfeur7vq9j6u9wl2xzmcjz6pev6h97mrkwncsgzwvae"
+        }
+      ],
+      [
+        "terra2>vkr",
+        {
+          "cw20": "terra1zn2pr0aprmaaa98l2au83w9ts993wfmmatgcsrgv8sswf0fjfhzsrpa73a"
+        }
+      ],
+      [
+        "terra2>ttta",
+        {
+          "cw20": "terra1jtu03gxpssmxcxydqs5dzsavdz8jum9a3un36tyuhyjhzamxf4gqlj2q48"
+        }
+      ],
+      [
+        "terra2>zero",
+        {
+          "cw20": "terra1ewdlmenvjc49felwd9u2x0j6gej8x9yamy4gmnmk4dpt6uqgsces4nkhqt"
+        }
+      ],
+      [
+        "terra2>usdc",
+        {
+          "cw20": "terra14m3gtr8072t0hsefclfn50w4tdcphn66hvcu8qqf9wmtjyc9uasszqckyc"
+        }
+      ],
+      [
+        "terra2>lunc",
+        {
+          "cw20": "terra13ykyge2kmq38juk3w9ddpaf57ndhzdm847ffzpmyj7e3qz504vaqnyzpuq"
+        }
+      ],
+      [
+        "terra2>ustc",
+        {
+          "cw20": "terra14gmyyd6d55g3zkep4wdm7x6sfrx8xfd25c8y6u3pr6nult5x0e8s53n0su"
+        }
+      ],
+      [
+        "terra2>beb",
+        {
+          "cw20": "terra1u60xlzenklehra93pvw6c47pfufqc5unfr689n6s4nhqff2pd9wqmy6mcs"
+        }
+      ],
+      [
+        "terra2>lunastro",
+        {
+          "cw20": "terra1k70yg2ud7srjzm0gdxl6gfy8slyy5tj8qhzg282gfj3grfv8w8eqg4jnz4"
+        }
+      ],
+      [
+        "terra2>xastro",
+        {
+          "cw20": "terra1ctzthkc0nzseppqtqlwq9mjwy9gq8ht2534rtcj3yplerm06snmqfc5ucr"
+        }
+      ],
+      [
+        "terra2>spxtst",
+        {
+          "cw20": "terra1dg4xl0y6f0c6hw0zx40mmjs2wsa5elemxp8tjnpzv55vhleuaeqqkr0ln2"
+        }
+      ],
+      [
+        "terra2>pxtst",
+        {
+          "cw20": "terra1zhjtk4ssppc3394a5c44535rsg9v2eduxmvwhvdhftvhq0s5fnrq5jgj9q"
+        }
+      ],
+      [
+        "terra2>cgtz",
+        {
+          "cw20": "terra1z30m34egfkt0ghzjjexfv4a9aedr2fnt8fwlahuels0el5zw0ayq6q8xmm"
+        }
+      ],
+      [
+        "terra2>ink",
+        {
+          "cw20": "terra1phelp9h5nsm6u54cveetxvfckq4ku59wuwzw69ys9px2va2yyw6spcf2rm"
+        }
+      ],
+      [
+        "terra2>dota",
+        {
+          "cw20": "terra1zldxw0acfqy6yz2ugyrpypyjngexdms2l7frwcfvfzw4udx9xq5s7nmzxg"
+        }
+      ],
+      [
+        "terra2>shit",
+        {
+          "cw20": "terra1jgsljpf9d6rxnvmpel4xn9rtdv9a95kkuqerymkekehljmkz59fq5hauyu"
+        }
+      ],
+      [
+        "terra2>lunvler",
+        {
+          "cw20": "terra1xrkwh0sml8d4cwy2p8waxrauz36ew3chqp2jej5d8m8nva82ghzqmmnq2a"
+        }
+      ],
+      [
+        "terra2>atn",
+        {
+          "cw20": "terra1af7rxwtj0jfgjmuf0pnyadfyz3a3s9ksw4t2t8acgdd0z4tlp8jsk87803"
+        }
+      ],
+      [
+        "terra2>ser",
+        {
+          "cw20": "terra1etja32v7ukwnuaxt50gnz6pyqchry5xdletmgmf79vxs326u4kzsv3jkp3"
+        }
+      ],
+      [
+        "terra2>bun",
+        {
+          "cw20": "terra17tnjjddxeazyx0k20prwz9vxv7d49u06w9r7heqkyplgghsgnu6srwqf3a"
+        }
+      ],
+      [
+        "terra2>test",
+        {
+          "cw20": "terra1jpwgvk8dd7mv5yqm8n84jd548qf95qkluvrnfs3en9kl3j2dauuq464k0q"
+        }
+      ],
+      [
+        "terra2>cfe",
+        {
+          "cw20": "terra1epsx982m4jt0y8crefs6adzcp09tyn5syn7k7ep6ewaknc72pctqfccq2j"
+        }
+      ],
+      [
+        "terra2>ppo",
+        {
+          "cw20": "terra195kvy3rhuc9vr3s56u22s6cqnmcst066062edpqgyuaxsgygmexqdkp3g0"
+        }
+      ],
+      [
+        "terra2>wic",
+        {
+          "cw20": "terra10w4ujjlf9dljqmy94m9370l8ld7y4upnh7dkgjlwdl0rlel5nlnsq682k3"
+        }
+      ],
+      [
+        "terra2>weth",
+        {
+          "cw20": "terra1lz4vhnt5xwnd7tpkezqddvp9ax4y39l4ydtjzxrdy2hy6tuvjpuqh7uwtl"
+        }
+      ],
+      [
+        "terra2>sayve",
+        {
+          "cw20": "terra1fjdlrkqjz5m6sx45ewekq55890k430p5fzr49fe72dmqpqcy349sjt5hxk"
+        }
+      ],
+      [
+        "terra2>solid",
+        {
+          "cw20": "terra14teydg6lag35azm4c8p25tnqjh4c6266l5a9vrwqh7q44shwqqlqsn5xxk"
+        }
+      ],
+      [
+        "terra2>tpt",
+        {
+          "cw20": "terra1hrqtlpv42h3tax6hrdx3q6a4wvzhac0yuc7dqkw0hehqde9775ns4hldnf"
+        }
+      ],
+      [
+        "terra2>coina",
+        {
+          "cw20": "terra1gmmnmy57j2x0rt7pxw70nuxmfnujgt8cg0zfmgxm6cd5paj727ws9nmmtk"
+        }
+      ],
+      [
+        "terra2>coinb",
+        {
+          "cw20": "terra1xdpvn7z7df7c8kcqqah3fr06z5t7cu4s0afeg3m4sa9hnr66d5hsslhu54"
+        }
+      ],
+      [
+        "terra2>coinc",
+        {
+          "cw20": "terra1u7er04nutrj09a8wyu2y7j8cf9pz9jn5s0nde7s2xnklzattptzqeuxadq"
+        }
+      ],
+      [
+        "terra2>sun",
+        {
+          "cw20": "terra19yql7a5ulxr0634cfp7rhkhqg20f35tg75g2c93n29m5z09tds9qrgnz24"
+        }
+      ],
+      [
+        "terra2>moon",
+        {
+          "cw20": "terra120t9eqmt8m78nwdfshf0xj502940pqmk07e7v3scl7eu9qqcjn8sjdjv03"
+        }
+      ],
+      [
+        "terra2>ptoken",
+        {
+          "cw20": "terra1jm34fhu6gk7fvasqc6w9cg0v5f9qdam2zvv6hcwkxhnzfsne6tuqmgk9md"
+        }
+      ],
+      [
+        "terra2>ulp",
+        {
+          "cw20": "terra1ueug79x7hy76676mf0hpgt0yhuu47nnynmf9yf9pwyha2mwn63pqyk977u"
+        }
+      ],
+      [
+        "terra2>ttt",
+        {
+          "cw20": "terra1t8y84phkr0e23km4kq2glryfhwjcqh327zzx8xzlg5a445fv97usk36f5d"
+        }
+      ],
+      [
+        "terra2>earth",
+        {
+          "cw20": "terra187xrhnyklvdt0r7hvhvwrnqkplvzr2yr73507vn9ydrkalv08pesxxrr5m"
+        }
+      ],
+      [
+        "terra2>saturn",
+        {
+          "cw20": "terra16kghtjnpf86qggemjesrxvr9ryenrzaur3l705p6ndq9cylgneqqpwzeze"
+        }
+      ],
+      [
+        "terra2>axl",
+        {
+          "native": "ibc/d70f005de981f6effb3ad1df85601258d1c01b9dedc1f7c1b95c0993e83cf389"
+        }
+      ],
+      [
+        "terra2>ampluna",
+        {
+          "cw20": "terra1xgvp6p0qml53reqdyxgcl8ttl0pkh0n2mtx2n7tzfahn6e0vca7s0g7sg6"
+        }
+      ],
+      [
+        "terra2>capa",
+        {
+          "cw20": "terra17pgd4kcs50n6tjha48tuzr9d2md6gz30pc49dcv33mt2xr4yz9hq7nuw97"
+        }
+      ],
+      [
+        "terra2>uusd",
+        {
+          "native": "uusd"
+        }
+      ],
+      [
+        "terra2>steak",
+        {
+          "cw20": "terra1xztnx8mm7dagn4ck3dgylaqucp6h6agw83pmyc29hnplq7355trs78fkcq"
+        }
+      ],
+      [
+        "terra2>orne",
+        {
+          "cw20": "terra17lpau4t55q48g0utuh4cf0mderjkvddv0pdu3lazm6znnp95fq4susnck5"
+        }
+      ],
+      [
+        "astroport/terra2>luna,terra2>saturn",
+        {
+          "cw20": "terra1n5w8n85cx7yns65y4dfkugezfdp9qpl2t603ay3v6fn55nlwak8qsxmz6z"
+        }
+      ],
+      [
+        "astroport/terra2>earth,terra2>luna",
+        {
+          "cw20": "terra13v2mfd28xqz3kzv08gy03378kvgg9yxk76dzdw39dwrsqpjmj2rssnt08k"
+        }
+      ],
+      [
+        "astroport/terra2>astro,terra2>luna",
+        {
+          "cw20": "terra1886vn036tc9e7ejx8pe4nkhts3gwpdfegwc4n3u77n0q76fjdthqarl8uc"
+        }
+      ],
+      [
+        "astroport/terra2>stb,terra2>stbl",
+        {
+          "cw20": "terra1hwwzt7sv386me5t7hy9ujafy6mfnyjl0h8cn92lnqd58jjmeksqstja4ng"
+        }
+      ],
+      [
+        "astroport/terra2>luna,terra2>stb",
+        {
+          "cw20": "terra1wfl4rrghs2glm874dnzfknl62j2uw6n62mdzcyplg5hfwegyhkzqgkec9z"
+        }
+      ],
+      [
+        "astroport/terra2>luna,terra2>rand",
+        {
+          "cw20": "terra1256asxue86yescyx6utx3kts34a6t99eg3dra7f6rlsv4a5kpdrsy87esp"
+        }
+      ],
+      [
+        "astroport/terra2>luna,terra2>usdc",
+        {
+          "cw20": "terra1fnj96l5s2p27kzpxvx8gmgnstt826lkxwvcy2sztmagfp07kzecstnyxqc"
+        }
+      ],
+      [
+        "astroport/terra2>luna,terra2>zero",
+        {
+          "cw20": "terra1z4kux3ujvmvjtlsnkm7erhxutzsej5mdum605dchpt3jxsse3uhswajh43"
+        }
+      ],
+      [
+        "astroport/terra2>astro,terra2>usdt",
+        {
+          "cw20": "terra1rpwqdgzu8pu58tnythcxwvf7c4jymqzuad360g0jy3p6y0g3pfds0esvq3"
+        }
+      ],
+      [
+        "astroport/terra2>lunc,terra2>usdc",
+        {
+          "cw20": "terra1h6pppcsrhfevl6acljjwnaxh2x2vfpged866d79zfxwkmch80ruqg0gd3f"
+        }
+      ],
+      [
+        "astroport/terra2>usdc,terra2>ustc",
+        {
+          "cw20": "terra10v7yez3qgnc59ltnsjxw4ezk87tmetuwtpvuv68dc92w67xc345sdexr5m"
+        }
+      ],
+      [
+        "astroport/terra2>auto,terra2>tcw",
+        {
+          "cw20": "terra12jens0q57f8u5l3cgdrfskl58fktdcex9tjt2tayen6pe2rdywlsmvvw3d"
+        }
+      ],
+      [
+        "astroport/terra2>luna,terra2>vkr",
+        {
+          "cw20": "terra1aksvr9g24xgagcwuuqu679swavsevvv4a5rdeppy6uyyve0djn2qkkd5n6"
+        }
+      ],
+      [
+        "astroport/terra2>luna,terra2>lunastro",
+        {
+          "cw20": "terra1w0afq7msuwtesaej0wf2awwcvdsn4jfl6ur9y93qfkfpgmeg3z4q32yucv"
+        }
+      ],
+      [
+        "astroport/terra2>astro,terra2>stbl",
+        {
+          "cw20": "terra17yl2acrquuk9n7u0eyf94e7uvjau2lxek2htgwltn4tm9xyrft5qu3r2v8"
+        }
+      ],
+      [
+        "astroport/terra2>astro,terra2>xastro",
+        {
+          "cw20": "terra1h5hf9yq8dfr2xen6pj6tte0eqyqs0m5ruphzmzplj7xu2xxqw0ssdnr0nv"
+        }
+      ],
+      [
+        "astroport/terra2>luna,terra2>lunax",
+        {
+          "cw20": "terra1ah3f5kl3q50nu4dzwayaxef5ue4j4qwj5sg8m2wpnye2qvnmpw9s45f0dl"
+        }
+      ],
+      [
+        "astroport/terra2>fatman,terra2>stbl",
+        {
+          "cw20": "terra15q47ap523knpcq4j8zryu7wx8xks8zhxmzh0jlgj2q45vv4gn0hq0gg8xd"
+        }
+      ],
+      [
+        "astroport/terra2>luna,terra2>tcw",
+        {
+          "cw20": "terra1xez8sz63ttrcc44urh8gavky9tp0tle9yau8fzuxgmc7uutsummqynjafe"
+        }
+      ],
+      [
+        "astroport/terra2>luna,terra2>tvk",
+        {
+          "cw20": "terra1xkyywj7rffheu0h64520u2ngy95q6jks9zfwk3dhry2zwammjdaqq8c3rr"
+        }
+      ],
+      [
+        "astroport/terra2>pxtst,terra2>spxtst",
+        {
+          "cw20": "terra1tjm9vv5m0pktnh50ewa3x39fhr34ysv60wctl9guauxvqjzwcq5smjuva5"
+        }
+      ],
+      [
+        "astroport/terra2>beb,terra2>luna",
+        {
+          "cw20": "terra1zy8c9uqx00r9w4pujg2ffu9h5m5mtgmwdrerzuty76k22anuwceqawu72t"
+        }
+      ],
+      [
+        "astroport/terra2>luna,terra2>neb",
+        {
+          "cw20": "terra19pak9p6pq9w2djc92ajx0wy3uzlqkcxmlsygpylz97rqclmlktjs5zsmjs"
+        }
+      ],
+      [
+        "astroport/terra2>astro,terra2>rand",
+        {
+          "cw20": "terra1v67lgndcyp664e402sad7evn0lh2t86s36mqum40qjxveq66jdzq23qd3k"
+        }
+      ],
+      [
+        "astroport/terra2>rand,terra2>stb",
+        {
+          "cw20": "terra1tjypjq5qsd3p4p9jz3wx2zwyn58lhfd8uzrkrkclfwtzh67sy6wq97dgu8"
+        }
+      ],
+      [
+        "astroport/terra2>astro,terra2>ttta",
+        {
+          "cw20": "terra1jka4h9x3snd24qcz0elnpf5gaj0yxze2m34nx2uzaqzgpacdp00qwh5u0z"
+        }
+      ],
+      [
+        "astroport/terra2>fatman,terra2>luna",
+        {
+          "cw20": "terra18yasx0ne62p9gl69dd0gv0ujal9406cj7845rr2at4uslvs6nwvq4kayaf"
+        }
+      ]
+    ]
+  },
   "osmosis": {
     "osmosis-1": [
       [

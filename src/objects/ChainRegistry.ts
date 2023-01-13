@@ -6,6 +6,7 @@ export class ChainRegistry {
   static chainIdToName(chainId: string): string {
     const chainName = chains.find((c) => c.chain_id === chainId)?.chain_name
     if (!chainName) {
+      if (chainId === 'pisco-1') return 'terra2testnet'
       throw new NotFoundError(`chain not found for chain id ${chainId}`)
     }
     return chainName
