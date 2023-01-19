@@ -1,6 +1,5 @@
-import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
+import { AnsAssetEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
 import { Exchange } from './exchange'
-import { AnsName } from '../objects/AnsName'
 import { Network } from '../networks/network'
 import { NotFoundError } from '../registry/IRegistry'
 
@@ -78,15 +77,9 @@ export class Junoswap extends Exchange {
     poolList.pools
       .filter(({ staking_address }) => staking_address)
       .forEach(({ staking_address, pool_assets }) => {
-        const contractName = AnsName.stakingContract(
-          this.findRegisteredAssetSymbols(network, pool_assets)
-        )
+        const assetNames = this.findRegisteredAssetSymbols(network, pool_assets)
 
-        const newEntry = new AnsContractEntry(
-          this.name.toLowerCase(),
-          contractName,
-          staking_address
-        )
+        const newEntry = this.stakingContractEntry(assetNames, staking_address)
         network.contractRegistry.register(newEntry)
       })
 
@@ -121,7 +114,8 @@ export class Junoswap extends Exchange {
       poolAddress,
       WASMSWAP_INFO_QUERY
     )
-    if (!poolInfo.lp_token_address) throw new NotFoundError(`No LP token found for pool ${poolAddress}`)
+    if (!poolInfo.lp_token_address)
+      throw new NotFoundError(`No LP token found for pool ${poolAddress}`)
     return poolInfo.lp_token_address
   }
 

@@ -338,18 +338,6 @@
         }
       ],
       [
-        "astroport/terra2>luna,terra2>saturn",
-        {
-          "cw20": "terra1n5w8n85cx7yns65y4dfkugezfdp9qpl2t603ay3v6fn55nlwak8qsxmz6z"
-        }
-      ],
-      [
-        "astroport/terra2>earth,terra2>luna",
-        {
-          "cw20": "terra13v2mfd28xqz3kzv08gy03378kvgg9yxk76dzdw39dwrsqpjmj2rssnt08k"
-        }
-      ],
-      [
         "astroport/terra2>astro,terra2>luna",
         {
           "cw20": "terra1886vn036tc9e7ejx8pe4nkhts3gwpdfegwc4n3u77n0q76fjdthqarl8uc"
@@ -368,15 +356,27 @@
         }
       ],
       [
-        "astroport/terra2>luna,terra2>rand",
+        "astroport/terra2>luna,terra2>vkr",
         {
-          "cw20": "terra1256asxue86yescyx6utx3kts34a6t99eg3dra7f6rlsv4a5kpdrsy87esp"
+          "cw20": "terra1aksvr9g24xgagcwuuqu679swavsevvv4a5rdeppy6uyyve0djn2qkkd5n6"
         }
       ],
       [
-        "astroport/terra2>luna,terra2>usdc",
+        "astroport/terra2>lunc,terra2>usdc",
         {
-          "cw20": "terra1fnj96l5s2p27kzpxvx8gmgnstt826lkxwvcy2sztmagfp07kzecstnyxqc"
+          "cw20": "terra1h6pppcsrhfevl6acljjwnaxh2x2vfpged866d79zfxwkmch80ruqg0gd3f"
+        }
+      ],
+      [
+        "astroport/terra2>astro,terra2>stbl",
+        {
+          "cw20": "terra17yl2acrquuk9n7u0eyf94e7uvjau2lxek2htgwltn4tm9xyrft5qu3r2v8"
+        }
+      ],
+      [
+        "astroport/terra2>fatman,terra2>stbl",
+        {
+          "cw20": "terra15q47ap523knpcq4j8zryu7wx8xks8zhxmzh0jlgj2q45vv4gn0hq0gg8xd"
         }
       ],
       [
@@ -392,12 +392,6 @@
         }
       ],
       [
-        "astroport/terra2>lunc,terra2>usdc",
-        {
-          "cw20": "terra1h6pppcsrhfevl6acljjwnaxh2x2vfpged866d79zfxwkmch80ruqg0gd3f"
-        }
-      ],
-      [
         "astroport/terra2>usdc,terra2>ustc",
         {
           "cw20": "terra10v7yez3qgnc59ltnsjxw4ezk87tmetuwtpvuv68dc92w67xc345sdexr5m"
@@ -410,21 +404,9 @@
         }
       ],
       [
-        "astroport/terra2>luna,terra2>vkr",
-        {
-          "cw20": "terra1aksvr9g24xgagcwuuqu679swavsevvv4a5rdeppy6uyyve0djn2qkkd5n6"
-        }
-      ],
-      [
         "astroport/terra2>luna,terra2>lunastro",
         {
           "cw20": "terra1w0afq7msuwtesaej0wf2awwcvdsn4jfl6ur9y93qfkfpgmeg3z4q32yucv"
-        }
-      ],
-      [
-        "astroport/terra2>astro,terra2>stbl",
-        {
-          "cw20": "terra17yl2acrquuk9n7u0eyf94e7uvjau2lxek2htgwltn4tm9xyrft5qu3r2v8"
         }
       ],
       [
@@ -440,9 +422,21 @@
         }
       ],
       [
-        "astroport/terra2>fatman,terra2>stbl",
+        "astroport/terra2>pxtst,terra2>spxtst",
         {
-          "cw20": "terra15q47ap523knpcq4j8zryu7wx8xks8zhxmzh0jlgj2q45vv4gn0hq0gg8xd"
+          "cw20": "terra1tjm9vv5m0pktnh50ewa3x39fhr34ysv60wctl9guauxvqjzwcq5smjuva5"
+        }
+      ],
+      [
+        "astroport/terra2>fatman,terra2>luna",
+        {
+          "cw20": "terra18yasx0ne62p9gl69dd0gv0ujal9406cj7845rr2at4uslvs6nwvq4kayaf"
+        }
+      ],
+      [
+        "astroport/terra2>luna,terra2>usdc",
+        {
+          "cw20": "terra1fnj96l5s2p27kzpxvx8gmgnstt826lkxwvcy2sztmagfp07kzecstnyxqc"
         }
       ],
       [
@@ -455,12 +449,6 @@
         "astroport/terra2>luna,terra2>tvk",
         {
           "cw20": "terra1xkyywj7rffheu0h64520u2ngy95q6jks9zfwk3dhry2zwammjdaqq8c3rr"
-        }
-      ],
-      [
-        "astroport/terra2>pxtst,terra2>spxtst",
-        {
-          "cw20": "terra1tjm9vv5m0pktnh50ewa3x39fhr34ysv60wctl9guauxvqjzwcq5smjuva5"
         }
       ],
       [
@@ -494,9 +482,15 @@
         }
       ],
       [
-        "astroport/terra2>fatman,terra2>luna",
+        "astroport/terra2>luna,terra2>rand",
         {
-          "cw20": "terra18yasx0ne62p9gl69dd0gv0ujal9406cj7845rr2at4uslvs6nwvq4kayaf"
+          "cw20": "terra1256asxue86yescyx6utx3kts34a6t99eg3dra7f6rlsv4a5kpdrsy87esp"
+        }
+      ],
+      [
+        "astroport/terra2>adotest,terra2>luna",
+        {
+          "cw20": "terra17s2azm7lr55w2pk9lscwwgnlwaft4gsva7dhad5vhyk7h0fu6n7qae2pre"
         }
       ]
     ]

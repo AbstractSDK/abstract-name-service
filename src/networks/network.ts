@@ -11,7 +11,6 @@ import { ChainRegistry } from '../objects/ChainRegistry'
 import { NotFoundError } from '../registry/IRegistry'
 import { AnsName } from '../objects/AnsName'
 
-
 interface INetwork {
   networkId: string
   assetRegistry: AssetRegistry
@@ -20,7 +19,10 @@ interface INetwork {
   exchanges: Exchange[]
 }
 
-const testEndpoint = async (url: string) => await fetch(url).then((res) => res.status === 200).catch(() => false)
+const testEndpoint = async (url: string) =>
+  await fetch(url)
+    .then((res) => res.status === 200)
+    .catch(() => false)
 
 export abstract class Network {
   networkId: string
@@ -122,6 +124,4 @@ export abstract class Network {
     await Promise.all(this.exchanges.map((exchange) => exchange.registerPools(this)))
     return this.poolRegistry.export()
   }
-
-
 }

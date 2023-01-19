@@ -1,6 +1,6 @@
 import { ChainRegistry } from './ChainRegistry'
 
-export class AnsName {
+export abstract class AnsName {
   static chainIdIbcAsset(chainId: string, asset: string): string {
     return this.chainNameIbcAsset(ChainRegistry.chainIdToName(chainId), asset)
   }
@@ -9,8 +9,9 @@ export class AnsName {
     return `${chainName.toLowerCase().replace('testnet', '')}>${asset}`
   }
 
-  static stakingContract(assetNames: string[]) {
-    return `staking/${this.joinAssetNames(assetNames)}`
+  /* `staking/${providerName}/${this.joinAssetNames(assetNames)}`  */
+  static stakingContract(providerName: string, assetNames: string[]) {
+    return ['staking', providerName, this.joinAssetNames(assetNames)].join('/')
   }
 
   static lpToken(dexName: string, assetNames: string[]): string {

@@ -1,11 +1,11 @@
 import { Exchange } from './exchange'
 import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
-import { gql, request } from 'graphql-request'
+import { gql } from 'graphql-request'
 import { NotFoundError } from '../registry/IRegistry'
 import wretch from 'wretch'
 import { jsonrepair } from 'jsonrepair'
-import { AnsName } from '../objects/AnsName'
 import { Network } from '../networks/network'
+import { match, P } from 'ts-pattern'
 
 const ASTROPORT = 'Astroport'
 
@@ -20,6 +20,7 @@ interface AstroportOptions {
  */
 export class Astroport extends Exchange {
   private options: AstroportOptions
+  private poolListCache: AstroportPoolList | undefined
 
   constructor(options: AstroportOptions) {
     super(ASTROPORT)
@@ -102,20 +103,35 @@ export class Astroport extends Exchange {
       throw new Error('Could not find generator address')
     }
 
+    const { generator_address: stakingAddress } = astroContracts
+
+    const { pools } = await this.fetchPoolList()
+
     // Export the registered pools and add the staking contract to generator address
-    const contractEntries = network.poolRegistry.export().map((pool) => {
-      const poolAssets = pool.metadata.assets.sort()
+    const contractEntries = network.poolRegistry
+      .export()
+      .map((pool) => {
+        const registeredAddress = match(pool.id)
+          .with({ contract: P.select() }, (c) => c)
+          .otherwise(() => {
+            throw new Error('Unexpected pool id')
+          })
+        const matching = pools.find(({ pool_address }) => pool_address === registeredAddress)
+        if (!matching) {
+          throw new Error(`Could not find pool with address ${registeredAddress}`)
+        } else if (!matching.stakeable) {
+          console.warn(`Pool ${matching.pool_address} is not stakeable`)
+          // Skip not stakeable pools
+          return
+        }
 
-      const stakingContractName = AnsName.stakingContract(poolAssets)
+        const poolAssets = pool.metadata.assets.sort()
 
-      return new AnsContractEntry(
-        this.name.toLowerCase(),
-        stakingContractName,
-        astroContracts.generator_address
-      )
-    })
+        return this.stakingContractEntry(poolAssets, stakingAddress)
+      })
+      .filter((e): e is AnsContractEntry => !!e)
 
-    contractEntries.forEach(network.contractRegistry.register)
+    contractEntries.forEach((entry) => network.contractRegistry.register(entry))
   }
 
   toAbstractPoolType(poolType: string): PoolType {
@@ -130,7 +146,14 @@ export class Astroport extends Exchange {
   }
 
   private async fetchPoolList(): Promise<AstroportPoolList> {
-    return request(this.options.queryUrl, POOLS_QUERY)
+    if (!this.poolListCache) {
+      // TEMPORARY UNTIL ASTROPORT API IS FIXED
+      const local = '../../data/terra2/pisco-1/astroport-pool-list.json'
+      const localPoolList: AstroportPoolList = await import(local).then(({ data }) => data)
+      this.poolListCache = localPoolList
+      // this.poolListCache = this.poolListCache = await request(this.options.queryUrl, POOLS_QUERY)
+    }
+    return this.poolListCache!
   }
 
   private poolMetadata(pool_type: string, assets: string[]): AbstractPoolMetadata {

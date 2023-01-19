@@ -1,6 +1,28 @@
 {
   "terra2": {
-    "pisco-1": []
+    "pisco-1": [
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>astro,terra2>luna"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>stb,terra2>stbl"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>luna,terra2>stb"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ]
+    ]
   },
   "osmosis": {
     "osmosis-1": []
