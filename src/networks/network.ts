@@ -51,6 +51,10 @@ export abstract class Network {
   public async registerNativeAsset({ denom, symbol }: { denom: string; symbol?: string }) {
     const assetInfo = AssetInfo.native(denom)
 
+    if (this.assetRegistry.hasDenom(denom)) {
+      return
+    }
+
     if (!symbol) {
       symbol = this.findNativeAssetSymbol(denom)
     }

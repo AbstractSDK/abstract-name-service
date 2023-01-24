@@ -1,5 +1,3 @@
-
-
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 import { ContractRegistry } from '../registry/contractRegistry'
 import { PoolRegistry } from '../registry/poolRegistry'
