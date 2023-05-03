@@ -1,6 +1,5 @@
 import { Exchange } from './exchange'
 import { AnsAssetEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
-import { gql } from 'graphql-request'
 import { NotFoundError } from '../registry/IRegistry'
 import wretch from 'wretch'
 import { jsonrepair } from 'jsonrepair'
@@ -26,13 +25,14 @@ interface AstroportOptions {
 const ALL_PAIRS_CACHE_KEY = 'allPairs'
 const TOP_PAIRS_CACHE_KEY = 'topPairs'
 
+const TOP_PAIR_COUNT = 50
+
 /**
  * Astroport scraper.
  * @todo: register the staking contracts
  */
 export class Astroport extends Exchange {
   private options: AstroportOptions
-  private poolListCache: AstroportPoolList | undefined
   private localCache: LocalCache
 
   constructor(options: AstroportOptions) {
@@ -46,16 +46,22 @@ export class Astroport extends Exchange {
 
     for (const assetInfo of assets) {
       await match(assetInfo)
-        .with({ cw20: P.select() }, (_, cw20Info) => {
-          network.registerCw20Info(cw20Info)
+        .with({ cw20: P.select() }, async (_, cw20Info) => {
+          await network.registerCw20Info(cw20Info)
         })
-        .with({ native: P.select() }, (_, nativeInfo) => {
-          network.registerNativeAssetInfo(nativeInfo)
+        .with({ native: P.select() }, async (_, nativeInfo) => {
+          await network.registerNativeAssetInfo(nativeInfo)
         })
         .otherwise((a) => {
           throw new Error(`Unknown asset type ${a}`)
         })
     }
+
+    console.log(
+      `Registered ${JSON.stringify(network.assetRegistry.assetRegistry)} assets for ${
+        this.name
+      } on ${network.networkId}`
+    )
 
     // TODO: LP tokens
 
@@ -302,14 +308,17 @@ export class Astroport extends Exchange {
     return allPairs
   }
 
-  private async fetchTopPairs(network: Network, count?: number): Promise<PairInfo[]> {
+  private async fetchTopPairs(
+    network: Network,
+    count: number = TOP_PAIR_COUNT
+  ): Promise<PairInfo[]> {
     const cachedTopPairs = await this.localCache.get<PairInfo[]>(TOP_PAIRS_CACHE_KEY)
-    if (cachedTopPairs) {
+    if (cachedTopPairs && cachedTopPairs.length === count) {
       console.log(`Loaded ${cachedTopPairs.length} pairs from cache`)
       return cachedTopPairs
     }
     const allPairs = await this.fetchSortedPairs(network)
-    const topPairs = allPairs.slice(0, count || 30)
+    const topPairs = allPairs.slice(0, count)
 
     console.log(`Top pairs: ${topPairs.map((p) => p.contract_addr).join(', ')}`)
 
@@ -320,36 +329,25 @@ export class Astroport extends Exchange {
   }
 
   private async pairTotalShare(network: Network, pairAddr: string): Promise<string> {
-    if (await this.localCache.hasValue(pairAddr, 'total_share')) {
-      return await this.localCache.getValueUnchecked(pairAddr, 'total_share')
+    if (await this.localCache.hasValue('total_share', pairAddr)) {
+      return await this.localCache.getValueUnchecked('total_share', pairAddr)
     }
     const client = await network.queryClient()
     const pairQClient = new AstroportPairQueryClient(client, pairAddr)
 
-    console.log(`Fetching total share for ${pairAddr}`)
-
     try {
       const { total_share } = await pairQClient.cumulativePrices()
-      await this.localCache.setValue(pairAddr, total_share, 'total_share')
+      await this.localCache.setValue('total_share', pairAddr, total_share)
       console.log(`Fetched total share for ${pairAddr}: ${total_share}`)
 
       // Wait a bit
-      await new Promise((resolve) => setTimeout(resolve, 200))
+      await new Promise((resolve) => setTimeout(resolve, 100))
 
       return total_share
     } catch (e) {
       console.warn(`Could not fetch total share for ${pairAddr}: ${e}`)
       return '0'
     }
-  }
-
-  private async fetchPoolList(network: Network): Promise<AstroportPoolList> {
-    if (!this.poolListCache) {
-      const allPairs = this.fetchAllPairs(network)
-
-      // this.poolListCache = {}
-    }
-    return this.poolListCache!
   }
 
   private poolMetadata(pairType: PairType, assets: string[]): AbstractPoolMetadata {
@@ -359,61 +357,4 @@ export class Astroport extends Exchange {
       assets,
     }
   }
-
-  private tokenAddrToName(tokens: Token[]) {
-    return (address: string) => {
-      const token = tokens.find(({ tokenAddr }) => tokenAddr === address)
-      if (!token) {
-        throw new NotFoundError(`Could not find token with address ${address}`)
-      }
-      return token.symbol.toLowerCase()
-    }
-  }
-}
-
-// Unused now that they have closed their API
-const POOLS_QUERY = gql`
-  query Query {
-    pools {
-      pool_type
-      pool_address
-      stakeable
-      lp_address
-      reward_proxy_address
-      prices {
-        token1_address
-        token2_address
-      }
-    }
-    tokens {
-      name
-      symbol
-      tokenAddr
-    }
-  }
-`
-
-interface AstroportPoolList {
-  pools: AstroportPool[]
-  tokens: Token[]
-}
-
-interface AstroportPool {
-  pool_type: string
-  pool_address: string
-  stakeable: boolean
-  lp_address: string
-  reward_proxy_address: null
-  prices: Prices
-}
-
-interface Prices {
-  token1_address: string
-  token2_address: string
-}
-
-interface Token {
-  name: string
-  symbol: string
-  tokenAddr: string
 }

@@ -8,6 +8,10 @@ export class ChainExporter {
     this.chains = chains
   }
 
+  async registerAll() {
+    await Promise.all(this.chains.map(async (chain) => await chain.registerAll()))
+  }
+
   async exportAssets(): Promise<Map<ChainName, Map<NetworkId, AnsAssetEntry[]>>> {
     const chainData = new Map<ChainName, Map<NetworkId, AnsAssetEntry[]>>()
     await Promise.all(

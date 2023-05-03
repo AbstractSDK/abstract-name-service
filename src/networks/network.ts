@@ -26,6 +26,11 @@ const testEndpoint = async (url: string) =>
     .then((res) => res.status === 200)
     .catch(() => false)
 
+interface IbcAssetInfo {
+  baseDenom: string
+  path: string
+}
+
 export abstract class Network {
   networkId: string
   assetRegistry: AssetRegistry
@@ -101,8 +106,10 @@ export abstract class Network {
   public async registerIbcAsset(denom: string) {
     let resolvedBaseDenom: string
     // Check if we already know the base denom
-    if (await this.globalCache.hasValue(denom, 'ibcBaseDenoms')) {
-      resolvedBaseDenom = await this.globalCache.getValueUnchecked(denom, 'ibcBaseDenoms')
+    if (await this.globalCache.hasValue('ibcBaseDenoms', denom)) {
+      resolvedBaseDenom = (
+        await this.globalCache.getValueUnchecked<IbcAssetInfo>('ibcBaseDenoms', denom)
+      ).baseDenom
     } else {
       const ibcQueryClient = await this.ibcQueryClient()
 
@@ -133,12 +140,14 @@ export abstract class Network {
       // ['transfer', 'channel-4']
       const [portId, channelId] = splitPath
 
+      // const channelInfo = await ibcQueryClient.ibc.channel.channel(portId, channelId);
+
       if (portId !== 'transfer') {
         console.warn(`Denom trace path for ${denom} is not transfer, but ${portId}`)
         return this.assetRegistry.unknownAsset(baseDenom, denom)
       }
       resolvedBaseDenom = baseDenom
-      await this.globalCache.setValue(denom, baseDenom, 'ibcBaseDenoms')
+      await this.globalCache.setValue<IbcAssetInfo>('ibcBaseDenoms', denom, { baseDenom, path })
     }
 
     // persistence>xprt
@@ -180,15 +189,15 @@ export abstract class Network {
 
   public async queryCw20Symbol(cw20Address: string): Promise<string> {
     // check if we already know the symbol
-    if (await this.globalCache.hasValue(cw20Address, 'cw20Symbols')) {
-      return await this.globalCache.getValueUnchecked(cw20Address, 'cw20Symbols')
+    if (await this.globalCache.hasValue('cw20Symbols', cw20Address)) {
+      return await this.globalCache.getValueUnchecked('cw20Symbols', cw20Address)
     }
 
     const client = new Cw20QueryClient(await this.queryClient(), cw20Address)
     try {
       const info = await client.tokenInfo()
       const symbol = info.symbol.toLowerCase()
-      await this.globalCache.setValue(cw20Address, symbol, 'cw20Symbols')
+      await this.globalCache.setValue('cw20Symbols', cw20Address, symbol)
       return symbol
     } catch (e) {
       throw new Error(`Failed to query cw20 symbol for ${cw20Address}: ${e}`)
@@ -227,18 +236,24 @@ export abstract class Network {
     return ChainRegistry.findSymbol(this.networkId, denom)
   }
 
-  async exportAssets(): Promise<AnsAssetEntry[]> {
+  /**
+   * Register everything that is known about this network.
+   */
+  async registerAll() {
     await Promise.all(this.exchanges.map((exchange) => exchange.registerAssets(this)))
+    await Promise.all(this.exchanges.map((exchange) => exchange.registerContracts(this)))
+    await Promise.all(this.exchanges.map((exchange) => exchange.registerPools(this)))
+  }
+
+  async exportAssets(): Promise<AnsAssetEntry[]> {
     return this.assetRegistry.export()
   }
 
   async exportContracts(): Promise<AnsContractEntry[]> {
-    await Promise.all(this.exchanges.map((exchange) => exchange.registerContracts(this)))
     return this.contractRegistry.export()
   }
 
   async exportPools(): Promise<AnsPoolEntry[]> {
-    await Promise.all(this.exchanges.map((exchange) => exchange.registerPools(this)))
     return this.poolRegistry.export()
   }
 }

@@ -20,9 +20,9 @@ export class Phoenix1 extends Network {
   ) {
     super({
       networkId: PHOENIX_1,
-      assetRegistry: assetRegistry,
-      contractRegistry: contractRegistry,
-      poolRegistry: poolRegistry,
+      assetRegistry,
+      contractRegistry,
+      poolRegistry,
       exchanges: [
         new Astroport({
           contractsUrl:

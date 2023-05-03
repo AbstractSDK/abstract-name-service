@@ -10,7 +10,7 @@ export interface RegistryDefaults {
 }
 
 export class AssetRegistry implements IRegistry<AnsAssetEntry> {
-  protected assetRegistry: Map<string, CwAssetInfo>
+  assetRegistry: Map<string, CwAssetInfo>
   protected unknownAssetRegistry: Map<string, string>
   protected skippedRegistry: Map<string, Set<CwAssetInfo>>
   protected globalCache: LocalCache

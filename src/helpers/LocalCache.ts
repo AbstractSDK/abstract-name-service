@@ -42,34 +42,32 @@ class LocalCache {
     await fs.writeFile(cacheFile, JSON.stringify(value), 'utf-8')
   }
 
-  async getValue<T>(key: string, cacheName: string): Promise<T | undefined> {
-    const cacheFile = path.join(this.cacheDir, `${cacheName}.json`)
-
+  async getValue<T>(cacheName: string, key: string): Promise<T | undefined> {
     try {
-      return this.getValueUnchecked<T>(key, cacheName)
+      return this.getValueUnchecked<T>(cacheName, key)
     } catch (err) {
       // If cache file doesn't exist or there's an error reading it, return undefined
       return undefined
     }
   }
 
-  async getValueUnchecked<T>(key: string, cacheName: string): Promise<T> {
+  async getValueUnchecked<T>(cacheName: string, key: string): Promise<T> {
     const cacheFile = path.join(this.cacheDir, `${cacheName}.json`)
     const cacheContent = await fs.readFile(cacheFile, 'utf-8')
     const cacheData: CacheData = JSON.parse(cacheContent)
     return cacheData[key] as T
   }
 
-  async hasValue(key: string, cacheName: string): Promise<boolean> {
+  async hasValue(cacheName: string, key: string): Promise<boolean> {
     try {
-      const value = await this.getValue(key, cacheName)
+      const value = await this.getValue(cacheName, key)
       return value !== undefined
     } catch (err) {
       return false
     }
   }
 
-  async setValue<T>(key: string, value: T, cacheName: string): Promise<void> {
+  async setValue<T>(cacheName: string, key: string, value: T): Promise<void> {
     const cacheFile = path.join(this.cacheDir, `${cacheName}.json`)
     let cacheData: CacheData = {}
 

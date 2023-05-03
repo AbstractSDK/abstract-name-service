@@ -43,15 +43,18 @@ const main = command({
     )
 
     const exporter = new ChainExporter(chains)
+    await exporter.registerAll()
 
     const assets = await exporter.exportAssets()
-    writeChainDataMapToFile(assets, outFile('assets'))
-
     const pools = await exporter.exportPools()
-    writeChainDataMapToFile(pools, outFile('pools'))
-
     const contracts = await exporter.exportContracts()
-    console.log(contracts)
+
+    console.log(`Assets: ${JSON.stringify(assets)}`)
+    console.log(`Contracts: ${JSON.stringify(contracts)}`)
+    console.log(`Pools: ${JSON.stringify(pools)}`)
+
+    writeChainDataMapToFile(assets, outFile('assets'))
+    writeChainDataMapToFile(pools, outFile('pools'))
     writeChainDataMapToFile(contracts, outFile('contracts'))
   },
 })

@@ -1,1 +1,34 @@
-{"ibc/CBF67A2BCF6CAE343FDF251E510C8E18C361FC02B23430C121116E0811835DEF":"uusdt"}
+{
+  "ibc/177904239844D7D0E59D04F864D1278C07A80688EA67BCFA940E954FFA4CF699": {
+    "baseDenom": "uluna",
+    "path": "transfer/channel-8"
+  },
+  "ibc/0EFC7B44625187BFB60AF09FF28A25FA49B68B959A505CC5313DF0498D8CF528": {
+    "baseDenom": "ustrd",
+    "path": "transfer/channel-46"
+  },
+  "ibc/08095CEDEA29977C9DD0CE9A48329FDA622C183359D5F90CF04CC4FF80CBE431": {
+    "baseDenom": "stuluna",
+    "path": "transfer/channel-46"
+  },
+  "ibc/B3504E092456BA618CC28AC671A71FB08C6CA0FD0BE7C8A5B5A3E2DD933CC9E4": {
+    "baseDenom": "uusdc",
+    "path": "transfer/channel-6"
+  },
+  "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2": {
+    "baseDenom": "uatom",
+    "path": "transfer/channel-0"
+  },
+  "ibc/36A02FFC4E74DF4F64305130C3DFA1B06BEAC775648927AA44467C76A77AB8DB": {
+    "baseDenom": "uwhale",
+    "path": "transfer/channel-86"
+  },
+  "ibc/517E13F14A1245D4DE8CF467ADD4DA0058974CDCC880FA6AE536DBCA1D16D84E": {
+    "baseDenom": "factory/migaloo1mf6ptkssddfmxvhdx0ech0k03ktp6kf9yk59renau2gvht3nq2gqdhts4u/boneWhale",
+    "path": "transfer/channel-86"
+  },
+  "ibc/B3F639855EE7478750CC8F82072307ED6E131A8EFF20345E1D136B50C4E5EC36": {
+    "baseDenom": "factory/migaloo1436kxs0w2es6xlqpp9rd35e3d0cjnw4sv8j3a7483sgks29jqwgshqdky4/ampWHALE",
+    "path": "transfer/channel-86"
+  }
+}
