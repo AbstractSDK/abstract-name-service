@@ -1,7 +1,6 @@
-import { AnsAssetEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
+import { AnsPoolEntry, PoolId } from '../objects'
 import { Exchange } from './exchange'
 import { Network } from '../networks/network'
-import { ChainRegistry } from '../objects/ChainRegistry'
 import { NotFoundError } from '../registry/IRegistry'
 
 const OSMOSIS = 'Osmosis'
@@ -39,45 +38,7 @@ export class OsmosisDex extends Exchange {
           if (network.assetRegistry.hasDenom(denom)) return
 
           try {
-            if (AssetInfo.isIbcDenom(denom)) {
-              const denomTrace = await ibcQueryClient.ibc.transfer
-                .denomTrace(denom)
-                .then(({ denomTrace }) => {
-                  if (!denomTrace) {
-                    throw new Error(`No denom trace for ${denom}`)
-                  }
-                  return denomTrace
-                })
-
-              // { path: 'transfer/channel-4', baseDenom: 'uxprt' }
-              const { baseDenom, path } = denomTrace
-
-              // [ 'transfer', 'channel-4' ]
-              const splitPath = path.split('/')
-
-              if (splitPath.length !== 2) {
-                console.log(`Skipping ${denom} because path is not 2 in length: ${path}`)
-                return
-              }
-
-              // ['transfer', 'channel-4']
-              const [portId, channelId] = splitPath
-
-              if (portId !== 'transfer') {
-                console.warn(`Denom trace path for ${denom} is not transfer, but ${portId}`)
-                return
-              }
-
-              // persistence>xprt
-              const ansName = ChainRegistry.externalChainDenomToAnsName(baseDenom)
-
-              network.assetRegistry.register(new AnsAssetEntry(ansName, AssetInfo.native(denom)))
-              await new Promise((resolve) => setTimeout(resolve, 250))
-            } else {
-              // NOT IBC
-
-              await network.registerNativeAsset({ denom })
-            }
+            await network.registerNativeAsset({ denom })
           } catch (e) {
             console.log("couldn't find asset", denom, e)
           }

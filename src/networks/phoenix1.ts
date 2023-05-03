@@ -25,7 +25,6 @@ export class Phoenix1 extends Network {
       poolRegistry: poolRegistry,
       exchanges: [
         new Astroport({
-          queryUrl: 'https://terra2-api.astroport.fi/graphql',
           contractsUrl:
             'https://raw.githubusercontent.com/astroport-fi/astroport-changelog/main/terra-2/phoenix-1/core_phoenix.json',
         }),

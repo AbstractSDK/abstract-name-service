@@ -10,7 +10,7 @@
     "preinstall": "npx only-allow pnpm",
     "dev": "nodemon --watch src/**/*.ts --exec ts-node src/scrape.ts",
     "build": "tsc",
-    "start": "node dist/scrape.js",
+    "start": "node  --trace-warnings dist/scrape.js",
     "scrape": "pnpm run build && pnpm run start",
     "scrape:all": "pnpm run srcape -c terra -c juno -c osmosis",
     "lint": "eslint --fix --quiet src/**/*.ts",
@@ -20,7 +20,7 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@abstract-os/abstract.js": "0.9.1",
+    "@abstract-os/abstract.js": "0.14.0",
     "@cosmjs/amino": "^0.29.5",
     "@cosmjs/cosmwasm-stargate": "^0.29.5",
     "@cosmjs/proto-signing": "^0.29.5",
@@ -37,6 +37,7 @@
     "jsonrepair": "^3.0.2",
     "mnemonist": "^0.39.5",
     "osmojs": "^13.0.1",
+    "source-map-support": "^0.5.21",
     "ts-pattern": "^4.0.6",
     "wretch": "^2.3.2"
   },
@@ -44,6 +45,7 @@
     "@types/dotenv": "^8.2.0",
     "@types/jest": "^29.2.4",
     "@types/node": "^18.11.15",
+    "@types/source-map-support": "^0.5.6",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
     "eslint": "^8.29.0",

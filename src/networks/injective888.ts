@@ -7,9 +7,9 @@ import { Astroport } from '../exchanges'
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Pisco1Options {}
 
-const PISCO_1 = 'pisco-1'
+const INJECTIVE_888 = 'injective-888'
 
-export class Pisco1 extends Network {
+export class Injective888 extends Network {
   private options: Pisco1Options
 
   constructor(
@@ -19,14 +19,14 @@ export class Pisco1 extends Network {
     options: Pisco1Options = {}
   ) {
     super({
-      networkId: PISCO_1,
+      networkId: INJECTIVE_888,
       assetRegistry: assetRegistry,
       contractRegistry: contractRegistry,
       poolRegistry: poolRegistry,
       exchanges: [
         new Astroport({
           contractsUrl:
-            'https://raw.githubusercontent.com/astroport-fi/astroport-changelog/main/terra-2/pisco-1/core_pisco.json',
+            'https://github.com/astroport-fi/astroport-changelog/blob/main/injective/injective-888/core_testnet.json',
         }),
       ],
     })

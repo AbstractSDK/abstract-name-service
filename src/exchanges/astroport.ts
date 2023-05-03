@@ -1,18 +1,30 @@
 import { Exchange } from './exchange'
-import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
+import { AnsAssetEntry, AnsPoolEntry, AssetInfo, PoolId } from '../objects'
 import { gql } from 'graphql-request'
 import { NotFoundError } from '../registry/IRegistry'
 import wretch from 'wretch'
 import { jsonrepair } from 'jsonrepair'
 import { Network } from '../networks/network'
 import { match, P } from 'ts-pattern'
+import { AstroportFactoryQueryClient } from '../clients/astroport/AstroportFactory.client'
+import {
+  AssetInfo as AstroportAssetInfo,
+  PairInfo,
+  PairsResponse,
+  PairType,
+} from '../clients/astroport/AstroportFactory.types'
+import LocalCache from '../helpers/LocalCache'
+import { AstroportPairQueryClient } from '../clients/astroport/AstroportPair.client'
 
 const ASTROPORT = 'Astroport'
 
 interface AstroportOptions {
-  queryUrl: string
+  // queryUrl: string
   contractsUrl: string
 }
+
+const ALL_PAIRS_CACHE_KEY = 'allPairs'
+const TOP_PAIRS_CACHE_KEY = 'topPairs'
 
 /**
  * Astroport scraper.
@@ -21,83 +33,88 @@ interface AstroportOptions {
 export class Astroport extends Exchange {
   private options: AstroportOptions
   private poolListCache: AstroportPoolList | undefined
+  private localCache: LocalCache
 
   constructor(options: AstroportOptions) {
     super(ASTROPORT)
     this.options = options
+    this.localCache = new LocalCache('astroport')
   }
 
   async registerAssets(network: Network) {
-    const { tokens, pools } = await this.fetchPoolList()
+    const assets = await this.fetchTopAssets(network)
 
-    // Register pool tokens
-    tokens.forEach(({ symbol, tokenAddr }) => {
-      // TODO: difference for native??
-      network.registerLocalAsset(symbol, AssetInfo.from(tokenAddr))
-    })
+    for (const assetInfo of assets) {
+      await match(assetInfo)
+        .with({ cw20: P.select() }, (_, cw20Info) => {
+          network.registerCw20Info(cw20Info)
+        })
+        .with({ native: P.select() }, (_, nativeInfo) => {
+          network.registerNativeAssetInfo(nativeInfo)
+        })
+        .otherwise((a) => {
+          throw new Error(`Unknown asset type ${a}`)
+        })
+    }
 
-    // Register LP tokens using the previously registered pool tokens
-    pools
-      .filter(({ lp_address }) => lp_address)
-      .forEach(({ lp_address, prices: { token1_address, token2_address } }) => {
-        let resolvedAssetNames
-        try {
-          resolvedAssetNames = network.assetRegistry.getNamesByDenoms([
-            token1_address,
-            token2_address,
-          ])
-        } catch (e) {
-          if (e instanceof NotFoundError) {
-            // TODO
-            // if (network.assetRegistry.hasSkipped(token1_address)) {
-            //
-            // }
-          }
-          console.error(`Could not resolve assets for ${lp_address}`)
-          return
-        }
+    // TODO: LP tokens
 
-        const lpTokenName = this.lpTokenName(resolvedAssetNames)
+    // // Register LP tokens using the previously registered pool tokens
+    // pools
+    //   .filter(({ lp_address }) => lp_address)
+    //   .forEach(({ lp_address, prices: { token1_address, token2_address } }) => {
+    //     let resolvedAssetNames
+    //     try {
+    //       resolvedAssetNames = network.assetRegistry.getNamesByDenoms([
+    //         token1_address,
+    //         token2_address,
+    //       ])
+    //     } catch (e) {
+    //       if (e instanceof NotFoundError) {
+    //         // TODO
+    //         // if (network.assetRegistry.hasSkipped(token1_address)) {
+    //         //
+    //         // }
+    //       }
+    //       console.error(`Could not resolve assets for ${lp_address}`)
+    //       return
+    //     }
+    //
+    //     const lpTokenName = this.lpTokenName(resolvedAssetNames)
+    //
+    //     network.assetRegistry.register(new AnsAssetEntry(lpTokenName, AssetInfo.from(lp_address)))
+    //   })
+  }
 
-        network.assetRegistry.register(new AnsAssetEntry(lpTokenName, AssetInfo.from(lp_address)))
-      })
+  private async fetchAllAssets(network: Network): Promise<CwAssetInfo[]> {
+    const assetInfos = await this.fetchAllPairs(network).then((pairs) =>
+      pairs.flatMap((pair) => pair.asset_infos)
+    )
+
+    return assetInfos.map((assetInfo: AstroportAssetInfo) =>
+      this.astroportInfoToAssetInfo(assetInfo)
+    )
+  }
+
+  private async fetchTopAssets(network: Network): Promise<CwAssetInfo[]> {
+    const assetInfos = await this.fetchTopPairs(network).then((pairs) =>
+      pairs.flatMap((pair) => pair.asset_infos)
+    )
+
+    return assetInfos.map((assetInfo: AstroportAssetInfo) =>
+      this.astroportInfoToAssetInfo(assetInfo)
+    )
+  }
+
+  private astroportInfoToAssetInfo(assetInfo: AstroportAssetInfo) {
+    return match<AstroportAssetInfo>(assetInfo)
+      .with({ native_token: { denom: P.select() } }, (denom) => AssetInfo.native(denom))
+      .with({ token: { contract_addr: P.select() } }, (token) => AssetInfo.cw20(token))
+      .exhaustive()
   }
 
   async registerPools(network: Network) {
-    const { pools } = await this.fetchPoolList()
-
-    pools.forEach(({ pool_type, pool_address, prices: assets }) => {
-      const { token1_address, token2_address } = assets
-
-      let assetNames
-      try {
-        // Use the already-registered asset names
-        assetNames = network.assetRegistry.getNamesByDenoms([token1_address, token2_address])
-      } catch (e) {
-        if (e instanceof NotFoundError) {
-          // TODO
-          // if (network.assetRegistry.hasSkipped(token1_address)) {
-          //
-          // }
-        }
-        console.error(`Could not resolve assets for ${pool_address}`)
-        return
-      }
-
-      network.poolRegistry.register(
-        new AnsPoolEntry(PoolId.contract(pool_address), this.poolMetadata(pool_type, assetNames))
-      )
-    })
-  }
-
-  /**
-   * @todo we need to be able to resolve the staking contracts
-   */
-  async registerContracts(network: Network) {
-    const astroContracts: {
-      generator_address: string
-      [key: string]: string
-    } = await wretch(this.options.contractsUrl).get().text(jsonrepair).then(JSON.parse)
+    const astroContracts = await this.retrieveAstroContracts()
 
     if (!astroContracts.generator_address) {
       throw new Error('Could not find generator address')
@@ -105,61 +122,240 @@ export class Astroport extends Exchange {
 
     const { generator_address: stakingAddress } = astroContracts
 
-    const { pools } = await this.fetchPoolList()
+    const pairs = await this.fetchTopPairs(network)
 
-    // Export the registered pools and add the staking contract to generator address
-    const contractEntries = network.poolRegistry
-      .export()
-      .map((pool) => {
-        const registeredAddress = match(pool.id)
-          .with({ contract: P.select() }, (c) => c)
-          .otherwise(() => {
-            throw new Error('Unexpected pool id')
-          })
-        const matching = pools.find(({ pool_address }) => pool_address === registeredAddress)
-        if (!matching) {
-          throw new Error(`Could not find pool with address ${registeredAddress}`)
-        } else if (!matching.stakeable) {
-          console.warn(`Pool ${matching.pool_address} is not stakeable`)
-          // Skip not stakeable pools
+    pairs.forEach(({ pair_type, liquidity_token, asset_infos, contract_addr }) => {
+      let assetNames
+      try {
+        // Use the already-registered asset names
+        const infos = asset_infos.map(this.astroportInfoToAssetInfo)
+        assetNames = network.assetRegistry.getNamesByInfos(infos)
+      } catch (e) {
+        if (e instanceof NotFoundError) {
+          // TODO
+          // if (network.assetRegistry.hasSkipped(token1_address)) {
+          //
+          // }
+        }
+        console.error(`Could not resolve assets for pool with addr ${contract_addr}`)
+        return
+      }
+
+      const poolMetadata = this.poolMetadata(pair_type, assetNames)
+
+      network.poolRegistry.register(new AnsPoolEntry(PoolId.contract(contract_addr), poolMetadata))
+
+      // TODO: this is in the wrong place lol
+      const lpTokenName = this.lpTokenName(assetNames)
+      network.assetRegistry.register(
+        new AnsAssetEntry(lpTokenName, AssetInfo.from(liquidity_token))
+      )
+
+      const stakingContract = this.stakingContractEntry(assetNames, stakingAddress)
+
+      network.contractRegistry.register(stakingContract)
+    })
+  }
+
+  /*  async registerPools(network: Network) {
+
+      const { pools } = await this.fetchPoolList(network)
+
+      pools.forEach(({ pool_type, pool_address, prices: assets }) => {
+        const { token1_address, token2_address } = assets
+
+        let assetNames
+        try {
+          // Use the already-registered asset names
+          assetNames = network.assetRegistry.getNamesByDenoms([token1_address, token2_address])
+        } catch (e) {
+          if (e instanceof NotFoundError) {
+            // TODO
+            // if (network.assetRegistry.hasSkipped(token1_address)) {
+            //
+            // }
+          }
+          console.error(`Could not resolve assets for ${pool_address}`)
           return
         }
 
-        const poolAssets = pool.metadata.assets.sort()
-
-        return this.stakingContractEntry(poolAssets, stakingAddress)
+        network.poolRegistry.register(
+          new AnsPoolEntry(PoolId.contract(pool_address), this.poolMetadata(pool_type, assetNames))
+        )
       })
-      .filter((e): e is AnsContractEntry => !!e)
+    }*/
 
-    contractEntries.forEach((entry) => network.contractRegistry.register(entry))
+  /**
+   * @todo we need to be able to resolve the staking contracts
+   */
+  async registerContracts(network: Network) {
+    // const astroContracts = await this.retrieveAstroContracts()
+    //
+    // if (!astroContracts.generator_address) {
+    //   throw new Error('Could not find generator address')
+    // }
+    //
+    // const { generator_address: stakingAddress } = astroContracts
+    //
+    // const { pools } = await this.fetchPoolList(network)
+    //
+    // // Export the registered pools and add the staking contract to generator address
+    // const contractEntries = network.poolRegistry
+    //   .export()
+    //   .map((pool) => {
+    //     const registeredAddress = match(pool.id)
+    //       .with({ contract: P.select() }, (c) => c)
+    //       .otherwise(() => {
+    //         throw new Error('Unexpected pool id')
+    //       })
+    //     const matching = pools.find(({ pool_address }) => pool_address === registeredAddress)
+    //     if (!matching) {
+    //       throw new Error(`Could not find pool with address ${registeredAddress}`)
+    //     } else if (!matching.stakeable) {
+    //       console.warn(`Pool ${matching.pool_address} is not stakeable`)
+    //       // Skip not stakeable pools
+    //       return
+    //     }
+    //
+    //     const poolAssets = pool.metadata.assets.sort()
+    //
+    //     return this.stakingContractEntry(poolAssets, stakingAddress)
+    //   })
+    //   .filter((e): e is AnsContractEntry => !!e)
+    //
+    // contractEntries.forEach((entry) => network.contractRegistry.register(entry))
   }
 
-  toAbstractPoolType(poolType: string): PoolType {
-    switch (poolType) {
-      case 'xyk':
-        return 'ConstantProduct'
-      case 'stable':
-        return 'Stable'
-      default:
+  private async retrieveAstroContracts(): Promise<{
+    generator_address: string
+    factory_address: string
+    [k: string]: string
+  }> {
+    return await wretch(this.options.contractsUrl).get().text(jsonrepair).then(JSON.parse)
+  }
+
+  toAbstractPoolType(poolType: PairType): PoolType {
+    return match(poolType)
+      .with({ xyk: P.select() }, () => 'ConstantProduct' as const)
+      .with({ stable: P.select() }, () => 'Stable' as const)
+      .with({ concentrated: P.select() }, () => 'Weighted' as const)
+      .otherwise(() => {
         throw new Error(`Unknown pool type: ${poolType}`)
+      })
+  }
+
+  private async fetchAllPairs(network: Network): Promise<PairInfo[]> {
+    // Try to get data from the cache
+    const cachedPairs = await this.localCache.get<PairInfo[]>(ALL_PAIRS_CACHE_KEY)
+    if (cachedPairs) {
+      console.log(`Loaded ${cachedPairs.length} pairs from cache`)
+      return cachedPairs
+    }
+
+    const { factory_address } = await this.retrieveAstroContracts()
+    const client = await network.queryClient()
+
+    const factoryQClient = new AstroportFactoryQueryClient(client, factory_address)
+
+    let startAfter: AstroportAssetInfo[] | undefined = undefined
+    const allPairs: PairsResponse['pairs'] = []
+
+    do {
+      // @ts-ignore
+      const { pairs } = await factoryQClient.pairs({ limit: 30, startAfter })
+
+      console.log(`Fetched ${pairs.length} pairs`)
+      if (pairs.length === 0) {
+        break
+      }
+
+      allPairs.push(...pairs)
+      startAfter = pairs[pairs.length - 1]?.asset_infos
+      console.log(`Next startAfter: ${JSON.stringify(startAfter)}`)
+    } while (startAfter)
+    // Save fetched data to cache
+    await this.localCache.set(ALL_PAIRS_CACHE_KEY, allPairs)
+
+    return allPairs
+  }
+
+  private async fetchSortedPairs(network: Network): Promise<PairInfo[]> {
+    const allPairs = await this.fetchAllPairs(network)
+    const pairAddrToShares = new Map<string, string>()
+
+    for (const { contract_addr } of allPairs) {
+      pairAddrToShares.set(contract_addr, await this.pairTotalShare(network, contract_addr))
+    }
+
+    // sort the pairs based on their value
+    allPairs.sort((a, b) => {
+      const aVal = pairAddrToShares.get(a.contract_addr)
+      const bVal = pairAddrToShares.get(b.contract_addr)
+
+      if (!aVal || !bVal) {
+        throw new Error('Could not find value for pair')
+      }
+
+      return Number(aVal) - Number(bVal)
+    })
+
+    return allPairs
+  }
+
+  private async fetchTopPairs(network: Network, count?: number): Promise<PairInfo[]> {
+    const cachedTopPairs = await this.localCache.get<PairInfo[]>(TOP_PAIRS_CACHE_KEY)
+    if (cachedTopPairs) {
+      console.log(`Loaded ${cachedTopPairs.length} pairs from cache`)
+      return cachedTopPairs
+    }
+    const allPairs = await this.fetchSortedPairs(network)
+    const topPairs = allPairs.slice(0, count || 30)
+
+    console.log(`Top pairs: ${topPairs.map((p) => p.contract_addr).join(', ')}`)
+
+    // Save fetched data to cache
+    await this.localCache.set(TOP_PAIRS_CACHE_KEY, topPairs)
+
+    return topPairs
+  }
+
+  private async pairTotalShare(network: Network, pairAddr: string): Promise<string> {
+    if (await this.localCache.hasValue(pairAddr, 'total_share')) {
+      return await this.localCache.getValueUnchecked(pairAddr, 'total_share')
+    }
+    const client = await network.queryClient()
+    const pairQClient = new AstroportPairQueryClient(client, pairAddr)
+
+    console.log(`Fetching total share for ${pairAddr}`)
+
+    try {
+      const { total_share } = await pairQClient.cumulativePrices()
+      await this.localCache.setValue(pairAddr, total_share, 'total_share')
+      console.log(`Fetched total share for ${pairAddr}: ${total_share}`)
+
+      // Wait a bit
+      await new Promise((resolve) => setTimeout(resolve, 200))
+
+      return total_share
+    } catch (e) {
+      console.warn(`Could not fetch total share for ${pairAddr}: ${e}`)
+      return '0'
     }
   }
 
-  private async fetchPoolList(): Promise<AstroportPoolList> {
+  private async fetchPoolList(network: Network): Promise<AstroportPoolList> {
     if (!this.poolListCache) {
-      // TEMPORARY UNTIL ASTROPORT API IS FIXED
-      const local = '../../data/terra2/pisco-1/astroport-pool-list.json'
-      const localPoolList: AstroportPoolList = await import(local).then(({ data }) => data)
-      this.poolListCache = localPoolList
-      // this.poolListCache = this.poolListCache = await request(this.options.queryUrl, POOLS_QUERY)
+      const allPairs = this.fetchAllPairs(network)
+
+      // this.poolListCache = {}
     }
     return this.poolListCache!
   }
 
-  private poolMetadata(pool_type: string, assets: string[]): AbstractPoolMetadata {
+  private poolMetadata(pairType: PairType, assets: string[]): AbstractPoolMetadata {
     return {
       dex: this.name.toLowerCase(),
-      pool_type: this.toAbstractPoolType(pool_type),
+      pool_type: this.toAbstractPoolType(pairType),
       assets,
     }
   }
@@ -175,6 +371,7 @@ export class Astroport extends Exchange {
   }
 }
 
+// Unused now that they have closed their API
 const POOLS_QUERY = gql`
   query Query {
     pools {

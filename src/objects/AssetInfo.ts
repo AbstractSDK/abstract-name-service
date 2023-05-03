@@ -1,6 +1,15 @@
 import { fromBech32 } from 'cosmwasm'
+import { match, P } from 'ts-pattern'
 
 export class AssetInfo {
+  public static toDenom(assetInfo: CwAssetInfo): string {
+    return match(assetInfo)
+      .with({ cw20: P.select() }, (cw20) => cw20)
+      .with({ cw1155: P.select() }, (cw1155) => cw1155[0])
+      .with({ native: P.select() }, (native) => native)
+      .exhaustive()
+  }
+
   public static cw20 = (address: string): CwAssetInfo => ({
     cw20: address,
   })

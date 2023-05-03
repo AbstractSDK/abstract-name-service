@@ -10,6 +10,9 @@ import { Chain, ChainExporter, Juno } from './chains'
 import { Terra2 } from './chains/Terra2'
 import { match } from 'ts-pattern'
 import { Osmosis } from './chains/Osmosis'
+import { install as sourceMapSupportInstall } from 'source-map-support'
+
+sourceMapSupportInstall()
 
 const CHAIN_OPTIONS = ['terra', 'osmosis', 'juno'] as const
 type ChainOption = typeof CHAIN_OPTIONS[number]

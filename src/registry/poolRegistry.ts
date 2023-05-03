@@ -15,7 +15,9 @@ export class PoolRegistry implements IRegistry<AnsPoolEntry> {
   }
 
   public register(poolEntry: AnsPoolEntry): AnsPoolEntry {
-    console.log(`Registering pool ${JSON.stringify(poolEntry.id)}: ${poolEntry.metadata}`)
+    console.log(
+      `Registering pool ${JSON.stringify(poolEntry.id)}: ${JSON.stringify(poolEntry.metadata)}`
+    )
 
     const existing = this.get(poolEntry.id)
 
@@ -46,7 +48,9 @@ export class PoolRegistry implements IRegistry<AnsPoolEntry> {
   }
 
   public unknown(poolEntry: AnsPoolEntry) {
-    console.warn(`Adding unknown pool: ${JSON.stringify(poolEntry.id)} with metadata: ${poolEntry.metadata}`)
+    console.warn(
+      `Adding unknown pool: ${JSON.stringify(poolEntry.id)} with metadata: ${poolEntry.metadata}`
+    )
     this.unknownRegistry.push(poolEntry)
   }
 

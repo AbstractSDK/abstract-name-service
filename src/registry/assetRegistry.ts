@@ -1,7 +1,8 @@
 import { chains } from 'chain-registry'
-import { AnsAssetEntry } from '../objects'
+import { AnsAssetEntry, AssetInfo } from '../objects'
 import { match, P } from 'ts-pattern'
 import { IRegistry, NotFoundError } from './IRegistry'
+import LocalCache from '../helpers/LocalCache'
 
 export interface RegistryDefaults {
   assetRegistry?: Map<string, CwAssetInfo>
@@ -12,12 +13,14 @@ export class AssetRegistry implements IRegistry<AnsAssetEntry> {
   protected assetRegistry: Map<string, CwAssetInfo>
   protected unknownAssetRegistry: Map<string, string>
   protected skippedRegistry: Map<string, Set<CwAssetInfo>>
+  protected globalCache: LocalCache
 
   constructor(defaults: RegistryDefaults = {}) {
     const { assetRegistry, contractRegistry } = defaults
     this.assetRegistry = assetRegistry || new Map()
     this.unknownAssetRegistry = new Map()
     this.skippedRegistry = new Map()
+    this.globalCache = new LocalCache('assetRegistry')
   }
 
   static nativeAssetDenoms(chainId: string): string[] {
@@ -32,11 +35,10 @@ export class AssetRegistry implements IRegistry<AnsAssetEntry> {
   }
 
   public register(assetEntry: AnsAssetEntry) {
-    console.log(`Registering asset ${assetEntry.name}: ${JSON.stringify(assetEntry.info)}`)
-
     const existing = this.get(assetEntry.name)
 
-    if (existing && JSON.stringify(existing) != JSON.stringify(assetEntry.info)) {
+    if (existing) {
+      if (JSON.stringify(existing) === JSON.stringify(assetEntry.info)) return
       console.warn(
         `Asset ${assetEntry.name}:${JSON.stringify(
           assetEntry.info
@@ -61,6 +63,8 @@ export class AssetRegistry implements IRegistry<AnsAssetEntry> {
       )
       return
     }
+
+    console.log(`Registering asset ${assetEntry.name}: ${JSON.stringify(assetEntry.info)}`)
 
     this.assetRegistry.set(assetEntry.name, assetEntry.info)
     return assetEntry
@@ -93,12 +97,14 @@ export class AssetRegistry implements IRegistry<AnsAssetEntry> {
       match(info)
         .with({ native: P.select() }, (native) => native === denom)
         .with({ cw20: P.select() }, (cw20) => cw20 === denom)
-        .otherwise(() => {
-          false
-        })
+        .otherwise(() => false)
     )
 
     return entry?.[0]
+  }
+
+  public getNamesByInfos(info: CwAssetInfo[]): string[] {
+    return this.getNamesByDenoms(info.map(AssetInfo.toDenom))
   }
 
   public getNamesByDenoms(denoms: string[]): string[] {

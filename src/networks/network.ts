@@ -10,6 +10,8 @@ import { Tendermint34Client } from '@cosmjs/tendermint-rpc'
 import { ChainRegistry } from '../objects/ChainRegistry'
 import { NotFoundError } from '../registry/IRegistry'
 import { AnsName } from '../objects/AnsName'
+import { Cw20QueryClient } from '@abstract-os/abstract.js'
+import LocalCache from '../helpers/LocalCache'
 
 interface INetwork {
   networkId: string
@@ -29,6 +31,7 @@ export abstract class Network {
   assetRegistry: AssetRegistry
   contractRegistry: ContractRegistry
   poolRegistry: PoolRegistry
+  globalCache: LocalCache
   private exchanges: Exchange[]
 
   protected constructor({
@@ -43,6 +46,11 @@ export abstract class Network {
     this.contractRegistry = contractRegistry
     this.poolRegistry = poolRegistry
     this.exchanges = exchanges
+    this.globalCache = new LocalCache(networkId)
+  }
+
+  public async registerNativeAssetInfo(info: Extract<CwAssetInfo, { native: unknown }>) {
+    return await this.registerNativeAsset({ denom: info.native, symbol: undefined })
   }
 
   /**
@@ -55,19 +63,90 @@ export abstract class Network {
       return
     }
 
+    if (AssetInfo.isIbcDenom(denom)) {
+      // deal with IBC assets
+      try {
+        return await this.registerIbcAsset(denom)
+      } catch (e) {
+        console.error(`Failed to register IBC asset ${denom}: ${e}`)
+        // TODO: check IBC registration
+        // TODO: use implementation in OsmosisDex
+
+        // We don't know any ibc denoms by default
+        return this.assetRegistry.unknownAsset(denom, denom)
+      }
+    }
+
     if (!symbol) {
-      symbol = this.findNativeAssetSymbol(denom)
+      try {
+        symbol = this.findNativeAssetSymbol(denom)
+      } catch (e) {
+        if (e instanceof NotFoundError) {
+          console.error(`Failed to find symbol for ${denom}: ${e}`)
+          return this.assetRegistry.unknownAsset(denom, denom)
+        } else {
+          throw e
+        }
+      }
     }
 
     // If it's not IBC, register it!
-    if (!AssetInfo.isIbcDenom(denom)) {
-      return this.registerLocalAsset(symbol, assetInfo)
+    return this.registerLocalAsset(symbol, assetInfo)
+  }
+
+  /**
+   * Take an IBC asset denom, attempt to find its details, then register it
+   * @param denom
+   */
+  public async registerIbcAsset(denom: string) {
+    let resolvedBaseDenom: string
+    // Check if we already know the base denom
+    if (await this.globalCache.hasValue(denom, 'ibcBaseDenoms')) {
+      resolvedBaseDenom = await this.globalCache.getValueUnchecked(denom, 'ibcBaseDenoms')
+    } else {
+      const ibcQueryClient = await this.ibcQueryClient()
+
+      let denomTrace
+      try {
+        denomTrace = await ibcQueryClient.ibc.transfer.denomTrace(denom).then(({ denomTrace }) => {
+          if (!denomTrace) {
+            throw new Error(`No denom trace for ${denom}`)
+          }
+          return denomTrace
+        })
+      } catch (e) {
+        console.error(`Failed to get denom trace for ${denom}: ${e}`)
+        throw e
+      }
+
+      // { path: 'transfer/channel-4', baseDenom: 'uxprt' }
+      const { path, baseDenom } = denomTrace
+
+      // [ 'transfer', 'channel-4' ]
+      const splitPath = path.split('/')
+
+      if (splitPath.length !== 2) {
+        console.log(`Skipping ${denom} because path is not 2 in length: ${path}`)
+        return this.assetRegistry.unknownAsset(baseDenom, denom)
+      }
+
+      // ['transfer', 'channel-4']
+      const [portId, channelId] = splitPath
+
+      if (portId !== 'transfer') {
+        console.warn(`Denom trace path for ${denom} is not transfer, but ${portId}`)
+        return this.assetRegistry.unknownAsset(baseDenom, denom)
+      }
+      resolvedBaseDenom = baseDenom
+      await this.globalCache.setValue(denom, baseDenom, 'ibcBaseDenoms')
     }
 
-    // TODO: check IBC registration
+    // persistence>xprt
+    const ansName = ChainRegistry.externalChainDenomToAnsName(resolvedBaseDenom)
 
-    // We don't know any ibc denoms by default
-    this.assetRegistry.unknownAsset(symbol, denom)
+    // Pause before executing a new query
+    await new Promise((resolve) => setTimeout(resolve, 200))
+    return this.assetRegistry.register(new AnsAssetEntry(ansName, AssetInfo.native(denom)))
   }
 
   /**
@@ -86,6 +165,36 @@ export abstract class Network {
     return this.assetRegistry.register(this.localAssetEntry(symbol, info))
   }
 
+  public async registerCw20Info(info: Extract<CwAssetInfo, { cw20: unknown }>) {
+    return this.registerCw20Asset(info.cw20)
+  }
+
+  public async registerCw20Asset(cw20Address: string) {
+    if (this.assetRegistry.hasDenom(cw20Address)) {
+      return
+    }
+    const symbol = await this.queryCw20Symbol(cw20Address)
+
+    return this.registerLocalAsset(symbol, AssetInfo.cw20(cw20Address))
+  }
+
+  public async queryCw20Symbol(cw20Address: string): Promise<string> {
+    // check if we already know the symbol
+    if (await this.globalCache.hasValue(cw20Address, 'cw20Symbols')) {
+      return await this.globalCache.getValueUnchecked(cw20Address, 'cw20Symbols')
+    }
+
+    const client = new Cw20QueryClient(await this.queryClient(), cw20Address)
+    try {
+      const info = await client.tokenInfo()
+      const symbol = info.symbol.toLowerCase()
+      await this.globalCache.setValue(cw20Address, symbol, 'cw20Symbols')
+      return symbol
+    } catch (e) {
+      throw new Error(`Failed to query cw20 symbol for ${cw20Address}: ${e}`)
+    }
+  }
+
   public async queryClient(): Promise<CosmWasmClient> {
     return CosmWasmClient.connect(await this.rpcUrl())
   }
@@ -98,6 +207,10 @@ export abstract class Network {
   private async rpcUrl(): Promise<string> {
     const chain = chains.find(({ chain_id }) => chain_id === this.networkId)
     if (!chain) throw new NotFoundError(`Chain ${this.networkId} not found in chain-registry`)
+
+    if (this.networkId === 'phoenix-1') {
+      return 'https://terra-rpc.polkachu.com/'
+    }
 
     const rpc = `https://rpc.cosmos.directory/${chain}`
     const chainRegistryRpcs = chain.apis?.rpc?.map(({ address }) => address) || []
