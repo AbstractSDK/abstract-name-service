@@ -22,8 +22,8 @@ interface AstroportOptions {
   contractsUrl: string
 }
 
-const ALL_PAIRS_CACHE_KEY = 'allPairs'
-const TOP_PAIRS_CACHE_KEY = 'topPairs'
+const ALL_PAIRS_CACHE_KEY = 'allPairs2'
+const TOP_PAIRS_CACHE_KEY = 'topPairs2'
 
 const TOP_PAIR_COUNT = 50
 

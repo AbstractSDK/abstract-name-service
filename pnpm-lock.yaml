@@ -26,8 +26,8 @@ dependencies:
     specifier: ^2.0.0
     version: 2.0.0
   chain-registry:
-    specifier: ^1.5.0
-    version: 1.6.0
+    specifier: ^1.13.0
+    version: 1.13.0
   cmd-ts:
     specifier: ^0.11.0
     version: 0.11.0
@@ -437,6 +437,13 @@ packages:
       regenerator-runtime: 0.13.11
     dev: false
 
+  /@babel/runtime@7.21.5:
+    resolution: {integrity: sha512-8jI69toZqqcsnqGGqwGS4Qb1VwLOEp4hz+CXPywcvjs60u3B4Pom/U/7rm4W8tMOYEB+E9wgD0mW1l3r8qlI9Q==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.13.11
+    dev: false
+
   /@babel/template@7.18.10:
     resolution: {integrity: sha512-TI+rCtooWHr3QJ27kJxfjutghu44DLnasDMwpDqCXVTal9RLp3RSYNh4NdBrRP2cQAoG9A8juOQl6P6oZG4JxA==}
     engines: {node: '>=6.9.0'}
@@ -477,10 +484,10 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@chain-registry/types@0.14.0:
-    resolution: {integrity: sha512-TlIqc3CijT734no7RiYBfUvCG2fory0blwrBcK4XTYOCi2vANsxfDdiPLFQcaSETYDd14DdjhrdXwMocEeOnLQ==}
+  /@chain-registry/types@0.16.0:
+    resolution: {integrity: sha512-4j6vq2Vqn/nF+UBjvRPUVs6eM3+5rJ+dPmEWpd/OoNH3wTy1k6aoilcSTZRR//vGcI5EOVGsxhhJxUzo2qqweA==}
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.21.5
     dev: false
 
   /@confio/ics23@0.6.8:
@@ -1830,11 +1837,11 @@ packages:
     resolution: {integrity: sha512-1MgUzEkoMO6gKfXflStpYgZDlFM7M/ck/bgfVCACO5vnAf0fXoNVHdWtqGU+MYca+4bL9Z5bpOVmR33cWW9G2A==}
     dev: true
 
-  /chain-registry@1.6.0:
-    resolution: {integrity: sha512-1eZpMNoYwiwH8xmhfcAaa5wbY1bKdEQtUJrjUdWcBZvpwUPJTSAZ8UbCvuA/NP4Mwcrkko5kFcgqWDcxG2+w3w==}
+  /chain-registry@1.13.0:
+    resolution: {integrity: sha512-LFfKuEN2fV1QHJuTdqz1VmdiMGy87yAAYODy6i6/9tC+m6hwDroIPhR8iwuY4BxyJMZj9yr2cpD8m+8X8cZ/PA==}
     dependencies:
-      '@babel/runtime': 7.20.6
-      '@chain-registry/types': 0.14.0
+      '@babel/runtime': 7.21.5
+      '@chain-registry/types': 0.16.0
     dev: false
 
   /chalk@2.4.2:

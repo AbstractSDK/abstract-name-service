@@ -482,5 +482,44 @@
         "juno1rnftahwja0xf3xrng33h9hyqs5s270rga92a999ynd8a4wj5c0nsgvevgg"
       ]
     ]
+  },
+  "neutron": {
+    "pion-1": [
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/cosmoshub>atom,neutron>usdc"
+        },
+        "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/cosmoshub>atom,neutron>ntrn"
+        },
+        "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/neutron>ntrn,neutron>usdc"
+        },
+        "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/neutron>ntrn,neutron>usdt"
+        },
+        "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/neutron>usdc,neutron>usdt"
+        },
+        "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
+      ]
+    ]
   }
 }

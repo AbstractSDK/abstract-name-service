@@ -1634,5 +1634,63 @@
         }
       ]
     ]
+  },
+  "neutron": {
+    "pion-1": [
+      [
+        "neutron>ntrn",
+        {
+          "native": "untrn"
+        }
+      ],
+      [
+        "cosmoshub>atom",
+        {
+          "native": "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9"
+        }
+      ],
+      [
+        "neutron>usdc",
+        {
+          "cw20": "neutron1h6pztc3fn7h22jm60xx90tk7hln7xg8x0nazef58gqv0n4uw9vqq9khy43"
+        }
+      ],
+      [
+        "neutron>usdt",
+        {
+          "cw20": "neutron1vpsgrzedwd8fezpsu9fcfewvp6nmv4kzd7a6nutpmgeyjk3arlqsypnlhm"
+        }
+      ],
+      [
+        "astroport/cosmoshub>atom,neutron>usdc",
+        {
+          "cw20": "neutron1udyyall24fz289eka8k8v5kdhm0s270pdezf7j0vsls8jez4r96sn49q28"
+        }
+      ],
+      [
+        "astroport/cosmoshub>atom,neutron>ntrn",
+        {
+          "cw20": "neutron1799j4qcwqnrl4mdu4ryjkpdpqwjdjjj7x5tjc5swwfq3faqd7lrsdn659k"
+        }
+      ],
+      [
+        "astroport/neutron>ntrn,neutron>usdc",
+        {
+          "cw20": "neutron1rj46djhzcdaq7es4h5t5g8tc5gv2eztfck0nav8ukl93thzf0x2s0aad2p"
+        }
+      ],
+      [
+        "astroport/neutron>ntrn,neutron>usdt",
+        {
+          "cw20": "neutron1lc68sy8vkhpjuv5258l7x0a3qkulu9kpxzuc655h0j9cl2sxr0nsl2x8uw"
+        }
+      ],
+      [
+        "astroport/neutron>usdc,neutron>usdt",
+        {
+          "cw20": "neutron1jxjjyzhfjwvnhp9eqazqjyxu4dcsm86zcl7hp5urkccrpvdf38zq7pnglc"
+        }
+      ]
+    ]
   }
 }
