@@ -27,6 +27,7 @@ export class Pion1 extends Network {
         new Astroport({
           contractsUrl:
             'https://raw.githubusercontent.com/astroport-fi/astroport-changelog/main/neutron/pion-1/core_testnet.json',
+            cacheSuffix: PION_1
         }),
       ],
     })

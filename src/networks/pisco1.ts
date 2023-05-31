@@ -27,6 +27,7 @@ export class Pisco1 extends Network {
         new Astroport({
           contractsUrl:
             'https://raw.githubusercontent.com/astroport-fi/astroport-changelog/main/terra-2/pisco-1/core_pisco.json',
+            cacheSuffix: PISCO_1
         }),
       ],
     })

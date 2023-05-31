@@ -1,28 +1,5 @@
 {
   "terra2": {
-    "pisco-1": [
-      [
-        {
-          "protocol": "astroport",
-          "contract": "staking/astroport/terra2>astro,terra2>luna"
-        },
-        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
-      ],
-      [
-        {
-          "protocol": "astroport",
-          "contract": "staking/astroport/terra2>stb,terra2>stbl"
-        },
-        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
-      ],
-      [
-        {
-          "protocol": "astroport",
-          "contract": "staking/astroport/terra2>luna,terra2>stb"
-        },
-        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
-      ]
-    ],
     "phoenix-1": [
       [
         {
@@ -184,6 +161,127 @@
           "contract": "staking/astroport/axelar>usdc,terra2>steak"
         },
         "terra1ksvlfex49desf4c452j6dewdjs6c48nafemetuwjyj6yexd7x3wqvwa7j9"
+      ]
+    ],
+    "pisco-1": [
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>astro,terra2>xsayve"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>xastro,terra2>xsayve"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>astro,terra2>lunax"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>lunax,terra2>sayve"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>lunax,terra2>xastro"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>lunax,terra2>rand"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>lunax,terra2>steak"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>astro,terra2>ulp"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>earth,terra2>ulp"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>lunc,terra2>ustc"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>astro,terra2>lunc"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>dota,terra2>lunc"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>usdc,terra2>ustc"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>strd,terra2>xastro"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>astro,terra2>usdc"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>test-a,terra2>test-b"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/terra2>astro,terra2>earth"
+        },
+        "terra1gc4d4v82vjgkz0ag28lrmlxx3tf6sq69tmaujjpe7jwmnqakkx0qm28j2l"
       ]
     ]
   },

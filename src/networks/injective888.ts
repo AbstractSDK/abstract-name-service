@@ -27,6 +27,7 @@ export class Injective888 extends Network {
         new Astroport({
           contractsUrl:
             'https://github.com/astroport-fi/astroport-changelog/blob/main/injective/injective-888/core_testnet.json',
+            cacheSuffix: INJECTIVE_888
         }),
       ],
     })
