@@ -682,83 +682,11 @@
     ]
   },
   "juno": {
-    "uni-5": [
+    "uni-6": [
       [
         "juno>junox",
         {
           "native": "ujunox"
-        }
-      ],
-      [
-        "juno>crab",
-        {
-          "cw20": "juno12wwfatmpqnxdqk0ka8rpd4ud4frc97srtv55mmlf7xunux6led8s8wtgx2"
-        }
-      ],
-      [
-        "juno>dao",
-        {
-          "cw20": "juno1lqhg97uxqlm7qhl4dylm2ynzf6z8r3px9epc23epkcu3703tal7qwj6vun"
-        }
-      ],
-      [
-        "juno>pood",
-        {
-          "cw20": "juno174a3wz38p2rzqznm9npar95zpp5tpfe420amyj7qfs5373nklmqsqutetv"
-        }
-      ],
-      [
-        "juno>dog",
-        {
-          "cw20": "juno1sds2hju9gnc6g4jhu78kvxe8snwk80zypq6qlny7jv4pfmz5s9fqzl6s3g"
-        }
-      ],
-      [
-        "juno>bull",
-        {
-          "cw20": "juno1c5zfjmrvja82jrwceml4d3x7xhtz8hzvwksre5u23q8q2xyxx2vqa9d7zg"
-        }
-      ],
-      [
-        "juno>cat",
-        {
-          "cw20": "juno1u3p88cklq0tt7frfwfjchhcs5ss0tjzwkxgr32m50j5pjnkxdzdszuj02h"
-        }
-      ],
-      [
-        "junoswap/juno>crab,juno>junox",
-        {
-          "cw20": "juno1lgsnuhss0s9swc3ykeh32r8z60gses0dhawzl2wtdeatncrqm3jq8vfpn2"
-        }
-      ],
-      [
-        "junoswap/juno>dao,juno>junox",
-        {
-          "cw20": "juno1xcd9kf3eecktewmw0tp79yaqs0e3q0zpztvpfhwsmdwyg93fjfsqaayler"
-        }
-      ],
-      [
-        "junoswap/juno>junox,juno>pood",
-        {
-          "cw20": "juno1yqw92zrxyzru5csvs89huldw4ahlge2dvjcukafwgqcaa0st34lsnunjs2"
-        }
-      ],
-      [
-        "junoswap/juno>dog,juno>junox",
-        {
-          "cw20": "juno1wzc2n7ka5s7jtcl6kh7yds7zx6yfur54phwesnq3kv0qjd5hyzlqmldwca"
-        }
-      ],
-      [
-        "junoswap/juno>bull,juno>junox",
-        {
-          "cw20": "juno10vpjmzacptuvl6rp8efrt0sketmzm8tnwefza2mkr7e0vttgj8nqkx7cke"
-        }
-      ],
-      [
-        "junoswap/juno>cat,juno>junox",
-        {
-          "cw20": "juno1t8qeltzejququ7jrl2y3wczarfre0njqrtj8xyvg7r5c7866ydkqpw4cgt"
         }
       ]
     ],
