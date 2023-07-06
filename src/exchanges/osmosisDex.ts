@@ -3,11 +3,12 @@ import { Exchange } from './exchange'
 import { Network } from '../networks/network'
 import { NotFoundError } from '../registry/IRegistry'
 
+
 const OSMOSIS = 'Osmosis'
 
 interface OsmosisOptions {
   poolUrl: string
-  volumeUrl: string
+  volumeUrl: string | undefined
 }
 
 export class OsmosisDex extends Exchange {
@@ -110,20 +111,27 @@ export class OsmosisDex extends Exchange {
     const { poolUrl, volumeUrl } = this.options
     let poolList: OsmosisPoolList = await fetch(poolUrl).then((res) => res.json())
 
-    // retrieve the highest volume pools, to sort the actual pools by volume
-    const volumeList: OsmosisPoolVolumeList = await fetch(volumeUrl).then((res) => res.json())
 
-    // sort the pools by volume
-    const sortedPools = poolList.pools.sort((a, b) => {
-      const aVolume = volumeList.data.find((pool) => pool.pool_id === a.id)?.volume_7d ?? 0
-      const bVolume = volumeList.data.find((pool) => pool.pool_id === b.id)?.volume_7d ?? 0
-      return bVolume - aVolume
-    })
+    // If the volumeUrl is specified, we sort the actual pools by volume
+    if(volumeUrl){
+      // retrieve the highest volume pools, to sort the actual pools by volume
+      const volumeList: OsmosisPoolVolumeList = await fetch(volumeUrl)
+        .then((res) => res.json())
 
-    poolList = {
-      ...poolList,
-      pools: sortedPools.slice(0, volumeList.data.length),
+      // sort the pools by volume
+      const sortedPools = poolList.pools.sort((a, b) => {
+        const aVolume = volumeList.data.find((pool) => pool.pool_id === a.id)?.volume_7d ?? 0
+        const bVolume = volumeList.data.find((pool) => pool.pool_id === b.id)?.volume_7d ?? 0
+        return bVolume - aVolume
+      })
+      
+      poolList = {
+        ...poolList,
+        pools: sortedPools.slice(0, volumeList.data.length),
+      }
     }
+
+  
     this.poolListCache = poolList
 
     return poolList
