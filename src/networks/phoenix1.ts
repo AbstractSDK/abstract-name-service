@@ -27,7 +27,7 @@ export class Phoenix1 extends Network {
         new Astroport({
           contractsUrl:
             'https://raw.githubusercontent.com/astroport-fi/astroport-changelog/main/terra-2/phoenix-1/core_phoenix.json',
-            cacheSuffix: PHOENIX_1
+          cacheSuffix: PHOENIX_1,
         }),
       ],
     })

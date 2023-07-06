@@ -1,33 +1,32 @@
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 import { ContractRegistry } from '../registry/contractRegistry'
 import { PoolRegistry } from '../registry/poolRegistry'
 import { Network } from './network'
-import { OsmosisDex } from '../exchanges'
+import { Junoswap } from '../exchanges'
 import { AssetRegistry } from '../registry/assetRegistry'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface Osmosis1Options {}
+interface Uni5Options {}
 
-const CHAIN_ID = 'osmosis-1'
+const UNI_6 = 'uni-6'
 
-export class Osmosis1 extends Network {
-  private options: Osmosis1Options
+export class Uni5 extends Network {
+  private options: Uni5Options
 
   constructor(
     assetRegistry: AssetRegistry,
     contractRegistry: ContractRegistry,
     poolRegistry: PoolRegistry,
-    options: Osmosis1Options = {}
+    options: Uni5Options = {}
   ) {
     super({
-      networkId: CHAIN_ID,
+      networkId: UNI_6,
       assetRegistry: assetRegistry,
       contractRegistry: contractRegistry,
       poolRegistry: poolRegistry,
       exchanges: [
-        new OsmosisDex({
-          poolUrl:
-            'https://lcd.osmotest5.osmosis.zone/osmosis/gamm/v1beta1/pools?pagination.limit=1000',
-          volumeUrl: 'https://api.osmotest5.osmosis.zone/fees/v1/pools',
+        new Junoswap({
+          poolListUrl: 'https://wasmswap.io/pools_list.testnet.json',
         }),
       ],
     })

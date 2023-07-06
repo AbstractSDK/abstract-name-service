@@ -246,9 +246,13 @@ export class Astroport extends Exchange {
       .with({ xyk: P.select() }, () => 'ConstantProduct' as const)
       .with({ stable: P.select() }, () => 'Stable' as const)
       .with({ concentrated: P.select() }, () => 'Weighted' as const)
-      .with({ custom: P.select() }, (c) => match(c).with('concentrated', () => 'Weighted' as const).otherwise(() => {
-        throw new Error(`Unknown custom type: ${JSON.stringify(c)}`)
-      }))
+      .with({ custom: P.select() }, (c) =>
+        match(c)
+          .with('concentrated', () => 'Weighted' as const)
+          .otherwise(() => {
+            throw new Error(`Unknown custom type: ${JSON.stringify(c)}`)
+          })
+      )
       .otherwise(() => {
         throw new Error(`Unknown pool type: ${JSON.stringify(poolType)}`)
       })
@@ -273,9 +277,9 @@ export class Astroport extends Exchange {
     do {
       let pairs = []
       try {
-      // @ts-ignore
-      const { pairs: pairsR } = await factoryQClient.pairs({ limit: 30, startAfter })
-      pairs = pairsR
+        // @ts-ignore
+        const { pairs: pairsR } = await factoryQClient.pairs({ limit: 30, startAfter })
+        pairs = pairsR
       } catch (e) {
         console.error(e)
         break

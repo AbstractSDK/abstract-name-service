@@ -5,18 +5,18 @@ import { OsmosisDex } from '../exchanges'
 import { AssetRegistry } from '../registry/assetRegistry'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface Osmosis1Options {}
+interface OsmoTest5Options {}
 
-const CHAIN_ID = 'osmosis-1'
+const CHAIN_ID = 'osmotest-5'
 
-export class Osmosis1 extends Network {
-  private options: Osmosis1Options
+export class OsmoTest5 extends Network {
+  private options: OsmoTest5Options
 
   constructor(
     assetRegistry: AssetRegistry,
     contractRegistry: ContractRegistry,
     poolRegistry: PoolRegistry,
-    options: Osmosis1Options = {}
+    options: OsmoTest5Options = {}
   ) {
     super({
       networkId: CHAIN_ID,

@@ -49,8 +49,8 @@ export class Wynd extends Exchange {
             .with({ token: P.select() }, async (token) => {
               let symbol = network.assetRegistry.getByDenom(token)
               if (!symbol) {
-                let tokenClient = new Cw20QueryClient(client, token)
-                let tokenInfo = await tokenClient.tokenInfo().catch(() => undefined)
+                const tokenClient = new Cw20QueryClient(client, token)
+                const tokenInfo = await tokenClient.tokenInfo().catch(() => undefined)
                 if (!tokenInfo) throw new NotFoundError(`Asset ${token} not found`)
                 symbol = tokenInfo.symbol.toLowerCase()
               }
