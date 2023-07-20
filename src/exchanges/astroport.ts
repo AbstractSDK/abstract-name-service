@@ -23,8 +23,8 @@ interface AstroportOptions {
   cacheSuffix: string
 }
 
-const ALL_PAIRS_CACHE_KEY = 'allPairs2'
-const TOP_PAIRS_CACHE_KEY = 'topPairs2'
+const ALL_PAIRS_CACHE_KEY = 'allPairs'
+const TOP_PAIRS_CACHE_KEY = 'topPairs'
 
 const TOP_PAIR_COUNT = 50
 
@@ -43,6 +43,9 @@ export class Astroport extends Exchange {
   }
 
   async registerAssets(network: Network) {
+    // TODO: check if not cw20
+    const { astro_token_address } = await this.retrieveAstroContracts()
+    await network.registerCw20Asset(astro_token_address)
     const assets = await this.fetchTopAssets(network)
 
     for (const assetInfo of assets) {
@@ -236,6 +239,7 @@ export class Astroport extends Exchange {
   private async retrieveAstroContracts(): Promise<{
     generator_address: string
     factory_address: string
+    astro_token_address: string
     [k: string]: string
   }> {
     return await wretch(this.options.contractsUrl).get().text(jsonrepair).then(JSON.parse)
@@ -246,9 +250,13 @@ export class Astroport extends Exchange {
       .with({ xyk: P.select() }, () => 'ConstantProduct' as const)
       .with({ stable: P.select() }, () => 'Stable' as const)
       .with({ concentrated: P.select() }, () => 'Weighted' as const)
-      .with({ custom: P.select() }, (c) => match(c).with('concentrated', () => 'Weighted' as const).otherwise(() => {
-        throw new Error(`Unknown custom type: ${JSON.stringify(c)}`)
-      }))
+      .with({ custom: P.select() }, (c) =>
+        match(c)
+          .with('concentrated', () => 'Weighted' as const)
+          .otherwise(() => {
+            throw new Error(`Unknown custom type: ${JSON.stringify(c)}`)
+          })
+      )
       .otherwise(() => {
         throw new Error(`Unknown pool type: ${JSON.stringify(poolType)}`)
       })
@@ -273,9 +281,9 @@ export class Astroport extends Exchange {
     do {
       let pairs = []
       try {
-      // @ts-ignore
-      const { pairs: pairsR } = await factoryQClient.pairs({ limit: 30, startAfter })
-      pairs = pairsR
+        // @ts-ignore
+        const { pairs: pairsR } = await factoryQClient.pairs({ limit: 30, startAfter })
+        pairs = pairsR
       } catch (e) {
         console.error(e)
         break
