@@ -12,6 +12,9 @@ import { NotFoundError } from '../registry/IRegistry'
 import { AnsName } from '../objects/AnsName'
 import { Cw20QueryClient } from '@abstract-os/abstract.js'
 import LocalCache from '../helpers/LocalCache'
+import { bech32 } from 'bech32'
+import { Cw20Helper } from '../helpers/Cw20Helper'
+import { Chain } from '@chain-registry/types'
 
 interface INetwork {
   networkId: string
@@ -33,6 +36,7 @@ interface IbcAssetInfo {
 
 export abstract class Network {
   networkId: string
+  chain: Chain
   assetRegistry: AssetRegistry
   contractRegistry: ContractRegistry
   poolRegistry: PoolRegistry
@@ -47,6 +51,7 @@ export abstract class Network {
     exchanges,
   }: INetwork) {
     this.networkId = networkId
+    this.chain = ChainRegistry.findChainBy({ chain_id: networkId })
     this.assetRegistry = assetRegistry
     this.contractRegistry = contractRegistry
     this.poolRegistry = poolRegistry
@@ -146,12 +151,29 @@ export abstract class Network {
         console.warn(`Denom trace path for ${denom} is not transfer, but ${portId}`)
         return this.assetRegistry.unknownAsset(baseDenom, denom)
       }
+
+      console.log(`Has portId: ${portId} and channelId: ${channelId}`)
       resolvedBaseDenom = baseDenom
       await this.globalCache.setValue<IbcAssetInfo>('ibcBaseDenoms', denom, { baseDenom, path })
     }
 
-    // persistence>xprt
-    const ansName = ChainRegistry.externalChainDenomToAnsName(resolvedBaseDenom)
+    let ansName
+    // resolvedBaseDenom may be a cw20... so if it starts with cw20 then
+    if (resolvedBaseDenom.startsWith('cw20:')) {
+      const cw20Address = resolvedBaseDenom.replace('cw20:', '')
+      const { prefix } = bech32.decode(cw20Address)
+      const chain = ChainRegistry.findChainBy({
+        bech32_prefix: prefix,
+        network_type: this.chain.network_type,
+      })
+
+      const symbol = await Cw20Helper.init(chain, cw20Address).then((helper) => helper.getSymbol())
+
+      ansName = AnsName.chainNameIbcAsset(chain.chain_name, symbol)
+    } else {
+      // persistence>xprt
+      ansName = ChainRegistry.externalChainDenomToAnsName(resolvedBaseDenom)
+    }
 
     // Pause before executing a new query
     await new Promise((resolve) => setTimeout(resolve, 200))
@@ -193,15 +215,10 @@ export abstract class Network {
       return await this.globalCache.getValueUnchecked('cw20Symbols', cw20Address)
     }
 
-    const client = new Cw20QueryClient(await this.queryClient(), cw20Address)
-    try {
-      const info = await client.tokenInfo()
-      const symbol = info.symbol.toLowerCase()
-      await this.globalCache.setValue('cw20Symbols', cw20Address, symbol)
-      return symbol
-    } catch (e) {
-      throw new Error(`Failed to query cw20 symbol for ${cw20Address}: ${e}`)
-    }
+    const client = new Cw20Helper(new Cw20QueryClient(await this.queryClient(), cw20Address))
+    const symbol = await client.getSymbol()
+    await this.globalCache.setValue('cw20Symbols', cw20Address, symbol)
+    return symbol
   }
 
   public async queryClient(): Promise<CosmWasmClient> {

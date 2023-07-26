@@ -4,6 +4,9 @@ dependencies:
   '@abstract-os/abstract.js':
     specifier: 0.14.0
     version: 0.14.0(@cosmjs/amino@0.29.5)(@cosmjs/cosmwasm-stargate@0.29.5)(cosmwasm@1.1.1)
+  '@chain-registry/types':
+    specifier: ^0.16.0
+    version: 0.16.0
   '@cosmjs/amino':
     specifier: ^0.29.5
     version: 0.29.5
@@ -46,6 +49,9 @@ dependencies:
   jsonrepair:
     specifier: ^3.0.2
     version: 3.0.2
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
   mnemonist:
     specifier: ^0.39.5
     version: 0.39.5
@@ -69,6 +75,9 @@ devDependencies:
   '@types/jest':
     specifier: ^29.2.4
     version: 29.2.4
+  '@types/lodash':
+    specifier: ^4.14.196
+    version: 4.14.196
   '@types/node':
     specifier: ^18.11.15
     version: 18.11.15
@@ -1387,6 +1396,10 @@ packages:
 
   /@types/json-schema@7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
+    dev: true
+
+  /@types/lodash@4.14.196:
+    resolution: {integrity: sha512-22y3o88f4a94mKljsZcanlNWPzO0uBsBdzLAngf2tp533LzZcQzb6+eZPJ+vCTt+bqF2XnvT9gejTLsAcJAJyQ==}
     dev: true
 
   /@types/long@4.0.2:
@@ -3281,7 +3294,7 @@ packages:
   /ledger-cosmos-js@2.1.8:
     resolution: {integrity: sha512-Gl7SWMq+3R9OTkF1hLlg5+1geGOmcHX9OdS+INDsGNxSiKRWlsWCvQipGoDnRIQ6CPo2i/Ze58Dw0Mt/l3UYyA==}
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.21.5
       '@ledgerhq/hw-transport': 5.51.1
       bech32: 1.1.4
       ripemd160: 2.0.2
@@ -3338,6 +3351,10 @@ packages:
   /lodash.unescape@4.0.1:
     resolution: {integrity: sha512-DhhGRshNS1aX6s5YdBE3njCCouPgnG29ebyHvImlZzXZf2SHgt+J08DHgytTPnpywNbO1Y8mNUFyQuIDBq2JZg==}
     dev: true
+
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: false
 
   /long@4.0.0:
     resolution: {integrity: sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==}

@@ -53,7 +53,11 @@ export class AstroportGql extends Exchange {
 
     const { pools } = await this.fetchGraphql(network)
 
-    await network.registerCw20Asset(astro_token_address)
+    if (AssetInfo.isIbcDenom(astro_token_address)) {
+      await network.registerNativeAsset({ denom: astro_token_address })
+    } else {
+      await network.registerCw20Asset(astro_token_address)
+    }
 
     for (const { assets } of pools) {
       for (const { address, symbol } of assets) {

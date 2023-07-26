@@ -476,5 +476,567 @@
         }
       ]
     ]
+  },
+  "osmosis": {
+    "osmosis-1": [
+      [
+        "osmosis>osmo",
+        {
+          "native": "uosmo"
+        }
+      ],
+      [
+        "osmosis>ion",
+        {
+          "native": "uion"
+        }
+      ],
+      [
+        "juno>neta",
+        {
+          "native": "ibc/297C64CC42B5A8D8F82FE2EBE208A6FE8F94B86037FA28C4529A23701C228F7A"
+        }
+      ],
+      [
+        "umee>umee",
+        {
+          "native": "ibc/67795E528DF67C5606FC20F824EA39A6EF55BA133F4DC79C90A8C47A0901E17C"
+        }
+      ],
+      [
+        "cronos>cro",
+        {
+          "native": "ibc/E6931F78057F7CC5DA0FD6CEF82FF39373A6E0452BF1FD76910B93292CF356C1"
+        }
+      ],
+      [
+        "secretnetwork>scrt",
+        {
+          "native": "ibc/0954E1C28EB7AF5B72D24F3BC2B47BBB2FDF91BDDFD57B74B99E133AED40972A"
+        }
+      ],
+      [
+        "stargaze>stars",
+        {
+          "native": "ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4"
+        }
+      ],
+      [
+        "axelar>dot",
+        {
+          "native": "ibc/3FF92D26B407FD61AE95D975712A7C319CDE28DE4D80BDC9978D935932B991D7"
+        }
+      ],
+      [
+        "cosmoshub>atom",
+        {
+          "native": "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
+        }
+      ],
+      [
+        "sommelier>somm",
+        {
+          "native": "ibc/9BBA9A1C257E971E38C1422780CE6F0B0686F0A3085E2D61118D904BFE0F5F5E"
+        }
+      ],
+      [
+        "evmos>evmos",
+        {
+          "native": "ibc/6AE98883D4D5D5FF9E50D7130F1305DA2FFA0C652D1DD9C123657C6B4EB2DF8A"
+        }
+      ],
+      [
+        "kava>kava",
+        {
+          "native": "ibc/57AA1A70A4BC9769C525EBF6386F7A21536E04A79D62E1981EFCEF9428EBB205"
+        }
+      ],
+      [
+        "axelar>wbtc",
+        {
+          "native": "ibc/D1542AA8762DB13087D8364F3EA6509FD6F009A34F00426AF9E4F9FA85CBBF1F"
+        }
+      ],
+      [
+        "mars>mars",
+        {
+          "native": "ibc/573FCD90FACEE750F55A8864EF7D38265F07E5A9273FA0E8DAFD39951332B580"
+        }
+      ],
+      [
+        "axelar>axl",
+        {
+          "native": "ibc/903A61A498756EA560B85A85132D3AEE21B5DEDD41213725D22ABF276EA6945E"
+        }
+      ],
+      [
+        "axelar>usdc",
+        {
+          "native": "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858"
+        }
+      ],
+      [
+        "migaloo>whale",
+        {
+          "native": "ibc/EDD6F0D66BCD49C1084FB2C35353B4ACD7B9191117CE63671B61320548F7C89D"
+        }
+      ],
+      [
+        "axelar>wmatic",
+        {
+          "native": "ibc/AB589511ED0DD5FA56171A39978AFBF1371DB986EC1C3526CE138A16377E39BB"
+        }
+      ],
+      [
+        "agoric>ist",
+        {
+          "native": "ibc/92BE0717F4678905E53F4E45B2DED18BC0CB97BF1F8B6A25AFEDF3D5A879B4D5"
+        }
+      ],
+      [
+        "fetchhub>fet",
+        {
+          "native": "ibc/5D1F516200EE8C6B2354102143B78A2DEDA25EDE771AC0F8DC3C1837C8FD4447"
+        }
+      ],
+      [
+        "akash>akt",
+        {
+          "native": "ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4"
+        }
+      ],
+      [
+        "agoric>bld",
+        {
+          "native": "ibc/2DA9C149E9AD2BD27FEFA635458FB37093C256C1A940392634A16BEA45262604"
+        }
+      ],
+      [
+        "terra>ustc",
+        {
+          "native": "ibc/BE1BB42D4BE3C30D50B68D7C41DB4DFCE9678E8EF8C539F6E6A9345048894FCC"
+        }
+      ],
+      [
+        "axelar>usdt",
+        {
+          "native": "ibc/8242AD24008032E457D2E12D46588FD39FB54FB29680C6C7663D296B383C37C4"
+        }
+      ],
+      [
+        "axelar>wavax",
+        {
+          "native": "ibc/6F62F01D913E3FFE472A38C78235B8F021B511BC6596ADFF02615C8F83D3B373"
+        }
+      ],
+      [
+        "bitsong>btsg",
+        {
+          "native": "ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452"
+        }
+      ],
+      [
+        "bitsong>404dr",
+        {
+          "native": "ibc/B797E4F42CD33C50511B341E50C5CC0E8EF0D93B1E1247ABAA071583B8619202"
+        }
+      ],
+      [
+        "impacthub>ixo",
+        {
+          "native": "ibc/F3FF7A84A73B62921538642F9797C423D2B4C4ACB3C7FCFFCE7F12AA69909C4B"
+        }
+      ],
+      [
+        "konstellation>darc",
+        {
+          "native": "ibc/346786EA82F41FE55FAD14BF69AD8BA9B36985406E43F3CB23E6C45A285A9593"
+        }
+      ],
+      [
+        "oraichain>orai",
+        {
+          "native": "ibc/161D7D62BAB3B9C39003334F1671208F43C06B643CC9EDBBE82B64793C857F1D"
+        }
+      ],
+      [
+        "onomy>nom",
+        {
+          "native": "ibc/B9606D347599F0F2FDF82BA3EE339000673B7D274EA50F59494DC51EFCD42163"
+        }
+      ],
+      [
+        "regen>regen",
+        {
+          "native": "ibc/1DCC8A6CB5689018431323953344A9F6CC4D0BFB261E88C9F7777372C10CD076"
+        }
+      ],
+      [
+        "dig>dig",
+        {
+          "native": "ibc/307E5C96C8F60D1CBEE269A9A86C0834E1DB06F2B3788AE4F716EDB97A48B97D"
+        }
+      ],
+      [
+        "bitsong>testa",
+        {
+          "native": "ibc/022A879A5301CBCACF96216C967805F15C33C615B74DC7236027C1BA1BF664FF"
+        }
+      ],
+      [
+        "vidulum>vdl",
+        {
+          "native": "ibc/E7B35499CFBEB0FF5778127ABA4FB2C4B79A6B8D3D831D4379C4048C238796BD"
+        }
+      ],
+      [
+        "emoney>eeur",
+        {
+          "native": "ibc/5973C068568365FFF40DEDCF1A1CB7582B6116B731CD31A12231AE25E20B871F"
+        }
+      ],
+      [
+        "axelar>mkr",
+        {
+          "native": "ibc/D27DDDF34BB47E5D5A570742CC667DE53277867116CCCA341F27785E899A70F3"
+        }
+      ],
+      [
+        "sentinel>dvpn",
+        {
+          "native": "ibc/9712DBB13B9631EDFA9BF61B55F1B2D290B2ADB67E3A4EB3A875F3B6081B3B84"
+        }
+      ],
+      [
+        "persistence>xprt",
+        {
+          "native": "ibc/A0CC0CF735BFB30E730C70019D4218A1244FF383503FF7579C9201AB93CA9293"
+        }
+      ],
+      [
+        "irisnet>iris",
+        {
+          "native": "ibc/7C4D60AA95E5A7558B0A364860979CA34B7FF8AAF255B87AF9E879374470CEC0"
+        }
+      ],
+      [
+        "tgrade>tgd",
+        {
+          "native": "ibc/1E09CB0F506ACF12FDE4683FB6B34DA62FB4BE122641E0D93AAF98A87675676C"
+        }
+      ],
+      [
+        "emoney>ngm",
+        {
+          "native": "ibc/1DC495FCEFDA068A3820F903EDBD78B942FBD204D7E93D3BA2B432E9669D1A59"
+        }
+      ],
+      [
+        "juno>joe",
+        {
+          "native": "ibc/0CB9DB3441D0D50F35699DEE22B9C965487E83FB2D9F483D1CC5CA34E856C484"
+        }
+      ],
+      [
+        "beezee>bze",
+        {
+          "native": "ibc/C822645522FC3EECF817609AA38C24B64D04F5C267A23BCCF8F2E3BC5755FA88"
+        }
+      ],
+      [
+        "cerberus>crbrus",
+        {
+          "native": "ibc/41999DF04D9441DAC0DF5D8291DF4333FBCBA810FFD63FDCE34FDF41EF37B6F7"
+        }
+      ],
+      [
+        "bitsong>clay",
+        {
+          "native": "ibc/7ABF696369EFB3387DF22B6A24204459FE5EFD010220E8E5618DC49DB877047B"
+        }
+      ],
+      [
+        "bitsong>enmoda",
+        {
+          "native": "ibc/051A38BBEF92B9D8293AFBE1FA293E704359E9CB28297A0FD5DBA3E9CCEE9AB1"
+        }
+      ],
+      [
+        "bitsong>ldon",
+        {
+          "native": "ibc/BE95D1E09F5A44FC5409F4E0F52750DF2A868D865BC91F3C3EE3C83235789D18"
+        }
+      ],
+      [
+        "microtick>tick",
+        {
+          "native": "ibc/655BCEF3CDEBE32863FF281DBBE3B06160339E9897DC9C9C9821932A5F8BA6F8"
+        }
+      ],
+      [
+        "acrechain>cnto",
+        {
+          "native": "ibc/D38BB3DD46864694F009AF01DA5A815B3A875F8CC52FF5679BFFCC35DC7451D5"
+        }
+      ],
+      [
+        "bitsong>karina",
+        {
+          "native": "ibc/6A6174468758D207DD2D880363BF699C6568A29E87651337AEDAFD9E69EA7E58"
+        }
+      ],
+      [
+        "comdex>cmst",
+        {
+          "native": "ibc/23CA6C8D1AB2145DD13EB1E089A2E3F960DC298B468CCE034E19E5A78B61136E"
+        }
+      ],
+      [
+        "terra>lunc",
+        {
+          "native": "ibc/0EF15DF2F02480ADE0BB6E85D9EBB5DAEA2836D3860E9F97F9AADE4F57A31AA0"
+        }
+      ],
+      [
+        "bitsong>rwne",
+        {
+          "native": "ibc/56C276FC136E239449DCE664292DBEEF5795C4EF4B5B35DB98BD1C0948274867"
+        }
+      ],
+      [
+        "kichain>xki",
+        {
+          "native": "ibc/B547DC9B897E7C3AA5B824696110B8E3D2C31E3ED3F02FF363DCBAD82457E07E"
+        }
+      ],
+      [
+        "gravitybridge>weth",
+        {
+          "native": "ibc/65381C5F3FD21442283D56925E62EA524DED8B6927F0FF94E21E0020954C40B5"
+        }
+      ],
+      [
+        "bostrom>boot",
+        {
+          "native": "ibc/FE2CD1E6828EC0FAB8AF39BAC45BC25B965BA67CCBC50C13A14BD610B0D1E2C4"
+        }
+      ]
+    ],
+    "osmo-test-5": [
+      [
+        "osmosis5>osmo",
+        {
+          "native": "uosmo"
+        }
+      ],
+      [
+        "osmosis5>ion",
+        {
+          "native": "uion"
+        }
+      ],
+      [
+        "chain4energy>c4e",
+        {
+          "native": "ibc/E3D323CB6F427C49E56F913C853A416F6B71BAA9B0164625AD0203266F92B3ED"
+        }
+      ],
+      [
+        "mars>mars",
+        {
+          "native": "ibc/2E7368A14AC9AB7870F32CFEA687551C5064FA861868EDF7437BC877358A81F9"
+        }
+      ],
+      [
+        "axelar>ausdc",
+        {
+          "native": "ibc/6F34E1BD664C36CE49ACC28E60D62559A5F96C4F9A6CCE4FC5A67B2852E24CFE"
+        }
+      ],
+      [
+        "akash>akt",
+        {
+          "native": "ibc/7153C8C55DB988805FAC69E449B680A8BAAC15944B87CF210ADCD1A3A9542857"
+        }
+      ],
+      [
+        "nolus>nls",
+        {
+          "native": "ibc/5E7589614F0B4B80D91923D15D8EB0972AAA6226F7566921F1D6A07EA0DB0D2C"
+        }
+      ],
+      [
+        "axelar>usdc",
+        {
+          "native": "ibc/B3504E092456BA618CC28AC671A71FB08C6CA0FD0BE7C8A5B5A3E2DD933CC9E4"
+        }
+      ],
+      [
+        "evmos>tevmos",
+        {
+          "native": "ibc/F7985F7A0D7D56189F23404FA802EC957F9DB1C78274C8AFC70CA4E69EE9852A"
+        }
+      ],
+      [
+        "kyvedevnet>kyve",
+        {
+          "native": "ibc/AB8AF05799E299FB5C5C80781DA35887F53E029745D20E5641233DB4E6B28515"
+        }
+      ],
+      [
+        "quasar>qsr",
+        {
+          "native": "ibc/206DE6A2D1882D91A12F01C8BD85A33C9673C6A39761D36CF736436D6EF4C588"
+        }
+      ],
+      [
+        "juno>junox",
+        {
+          "native": "ibc/8E2FEFCBD754FA3C97411F0126B9EC76191BAA1B3959CB73CECF396A4037BBF0"
+        }
+      ],
+      [
+        "neutron>ntrn",
+        {
+          "native": "ibc/B9D46CE056020FEC3524850AAC90172D8FEAA159579A865AC64D31D1113BDD6D"
+        }
+      ],
+      [
+        "cosmoshub>atom",
+        {
+          "native": "ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477"
+        }
+      ],
+      [
+        "quicksilver>qck",
+        {
+          "native": "ibc/F37CF69589DE12342758382F8770C0852CD8D2E4519F55166EBDAF472AD667C9"
+        }
+      ]
+    ]
+  },
+  "neutron": {
+    "pion-1": [
+      [
+        "terra2>astro",
+        {
+          "native": "ibc/EFB00E728F98F0C4BBE8CA362123ACAB466EDA2826DC6837E49F4C1902F21BBA"
+        }
+      ],
+      [
+        "neutron>ntrn",
+        {
+          "native": "untrn"
+        }
+      ],
+      [
+        "mars>mars",
+        {
+          "native": "ibc/584A4A23736884E0C198FD1EE932455A9357A492A7B94324E4A02B5628687831"
+        }
+      ],
+      [
+        "neutron>usdt",
+        {
+          "cw20": "neutron1vpsgrzedwd8fezpsu9fcfewvp6nmv4kzd7a6nutpmgeyjk3arlqsypnlhm"
+        }
+      ],
+      [
+        "cosmoshub>atom",
+        {
+          "native": "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9"
+        }
+      ],
+      [
+        "neutron>usdc",
+        {
+          "cw20": "neutron1h6pztc3fn7h22jm60xx90tk7hln7xg8x0nazef58gqv0n4uw9vqq9khy43"
+        }
+      ],
+      [
+        "neutron>rwds",
+        {
+          "cw20": "neutron10pvmucpm8lepdcax080ju9gwcc4mckh3kpuwthkyazjpmqwzmmqsayu6hs"
+        }
+      ],
+      [
+        "astroport/neutron>ntrn,terra2>astro",
+        {
+          "cw20": "neutron1cxzfrnpjpptlwpwz6x0c4s5ephzxf0xm32p8tau2y5l2k2qv6e9sjznux9"
+        }
+      ],
+      [
+        "astroport/mars>mars,terra2>astro",
+        {
+          "cw20": "neutron1en42zf608j4uu6pkaedqm80x4tkamz7zss33azakp804eny9a2xqqsktkq"
+        }
+      ],
+      [
+        "astroport/cosmoshub>atom,neutron>usdt",
+        {
+          "cw20": "neutron13c9cqcwm4ppa6wtjwnc5jt46zhl0vmq8txwvuuyflh49ju07ylaqqpg5xg"
+        }
+      ],
+      [
+        "astroport/cosmoshub>atom,neutron>usdc",
+        {
+          "cw20": "neutron1udyyall24fz289eka8k8v5kdhm0s270pdezf7j0vsls8jez4r96sn49q28"
+        }
+      ],
+      [
+        "astroport/neutron>ntrn,neutron>usdc",
+        {
+          "cw20": "neutron1rj46djhzcdaq7es4h5t5g8tc5gv2eztfck0nav8ukl93thzf0x2s0aad2p"
+        }
+      ],
+      [
+        "astroport/neutron>usdt,terra2>astro",
+        {
+          "cw20": "neutron1tr6suwsphn5vlyv3nxvngspezncgr4ftfhwq3pg989ytaswu7sys3g8sc0"
+        }
+      ],
+      [
+        "astroport/neutron>ntrn,neutron>usdt",
+        {
+          "cw20": "neutron1lc68sy8vkhpjuv5258l7x0a3qkulu9kpxzuc655h0j9cl2sxr0nsl2x8uw"
+        }
+      ],
+      [
+        "astroport/neutron>usdc,terra2>astro",
+        {
+          "cw20": "neutron1chenpwkejxes2u4tfyuj4jlq822tp5zv4f58d6xeqwv5ypc3vfws35d8xy"
+        }
+      ],
+      [
+        "astroport/cosmoshub>atom,terra2>astro",
+        {
+          "cw20": "neutron18pyp0d0fevs9ped8m7sqp04zsslgha90r9nr965rjea05vv53v9s846j6s"
+        }
+      ],
+      [
+        "astroport/neutron>usdc,neutron>usdt",
+        {
+          "cw20": "neutron1jxjjyzhfjwvnhp9eqazqjyxu4dcsm86zcl7hp5urkccrpvdf38zq7pnglc"
+        }
+      ],
+      [
+        "astroport/neutron>rwds,terra2>astro",
+        {
+          "cw20": "neutron1nztrhwfa0uz5y3vtpw9gj9xgvah7vmd8lw4k5958mzg6p9y9lx4q28nsuj"
+        }
+      ],
+      [
+        "astroport/neutron>rwds,neutron>usdt",
+        {
+          "cw20": "neutron1xdwk0k57k6n3pqs3vme8mxwueav8c5qen3hv7psgs2k9weg5gyjsd4e2e6"
+        }
+      ],
+      [
+        "astroport/cosmoshub>atom,neutron>ntrn",
+        {
+          "cw20": "neutron1799j4qcwqnrl4mdu4ryjkpdpqwjdjjj7x5tjc5swwfq3faqd7lrsdn659k"
+        }
+      ]
+    ]
   }
 }
