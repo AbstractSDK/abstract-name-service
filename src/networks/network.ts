@@ -236,6 +236,8 @@ export abstract class Network {
 
     if (this.networkId === 'phoenix-1') {
       return 'https://terra-rpc.polkachu.com/'
+    } else if (this.networkId === 'neutron-1') {
+      return 'https://rpc-kralum.neutron-1.neutron.org/'
     }
 
     const rpc = `https://rpc.cosmos.directory/${chain}`

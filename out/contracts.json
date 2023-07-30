@@ -447,7 +447,7 @@
       [
         {
           "protocol": "astroport",
-          "contract": "staking/astroport/neutron>ntrn,terra2>astro"
+          "contract": "staking/astroport/cosmoshub>atom,terra2>astro"
         },
         "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
       ],
@@ -468,6 +468,20 @@
       [
         {
           "protocol": "astroport",
+          "contract": "staking/astroport/neutron>usdt,terra2>astro"
+        },
+        "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/neutron>ntrn,terra2>astro"
+        },
+        "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
+      ],
+      [
+        {
+          "protocol": "astroport",
           "contract": "staking/astroport/cosmoshub>atom,neutron>usdc"
         },
         "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
@@ -482,13 +496,6 @@
       [
         {
           "protocol": "astroport",
-          "contract": "staking/astroport/neutron>usdt,terra2>astro"
-        },
-        "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
-      ],
-      [
-        {
-          "protocol": "astroport",
           "contract": "staking/astroport/neutron>ntrn,neutron>usdt"
         },
         "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
@@ -497,20 +504,6 @@
         {
           "protocol": "astroport",
           "contract": "staking/astroport/neutron>usdc,terra2>astro"
-        },
-        "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
-      ],
-      [
-        {
-          "protocol": "astroport",
-          "contract": "staking/astroport/cosmoshub>atom,terra2>astro"
-        },
-        "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
-      ],
-      [
-        {
-          "protocol": "astroport",
-          "contract": "staking/astroport/neutron>usdc,neutron>usdt"
         },
         "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
       ],
@@ -534,6 +527,99 @@
           "contract": "staking/astroport/cosmoshub>atom,neutron>ntrn"
         },
         "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/axelar>ausdc,neutron>ntrn"
+        },
+        "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/axelar>ausdc,mars>mars"
+        },
+        "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/neutron>usdc,neutron>usdt"
+        },
+        "neutron1mgersa0snsudccqrtsyppxerq7unwtxv45t9p9l66hrmcwhlkf5q85a4af"
+      ]
+    ],
+    "neutron-1": [
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/cosmoshub>atom,neutron>ntrn"
+        },
+        "neutron1jz58yjay8uq8zkfw95ngyv3m2wfs2zjef9vdz75d9pa46fdtxc5sxtafny"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/axelar>usdc,neutron>ntrn"
+        },
+        "neutron1jz58yjay8uq8zkfw95ngyv3m2wfs2zjef9vdz75d9pa46fdtxc5sxtafny"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/axelar>usdc,axelar>usdt"
+        },
+        "neutron1jz58yjay8uq8zkfw95ngyv3m2wfs2zjef9vdz75d9pa46fdtxc5sxtafny"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/neutron>ntrn,stride>statom"
+        },
+        "neutron1jz58yjay8uq8zkfw95ngyv3m2wfs2zjef9vdz75d9pa46fdtxc5sxtafny"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/cosmoshub>atom,stride>statom"
+        },
+        "neutron1jz58yjay8uq8zkfw95ngyv3m2wfs2zjef9vdz75d9pa46fdtxc5sxtafny"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/neutron>ntrn,osmosis>osmo"
+        },
+        "neutron1jz58yjay8uq8zkfw95ngyv3m2wfs2zjef9vdz75d9pa46fdtxc5sxtafny"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/axelar>usdt,neutron>ntrn"
+        },
+        "neutron1jz58yjay8uq8zkfw95ngyv3m2wfs2zjef9vdz75d9pa46fdtxc5sxtafny"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/axelar>usdc,cosmoshub>atom"
+        },
+        "neutron1jz58yjay8uq8zkfw95ngyv3m2wfs2zjef9vdz75d9pa46fdtxc5sxtafny"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/axelar>usdc,mars>mars"
+        },
+        "neutron1jz58yjay8uq8zkfw95ngyv3m2wfs2zjef9vdz75d9pa46fdtxc5sxtafny"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/axelar>usdc,stride>statom"
+        },
+        "neutron1jz58yjay8uq8zkfw95ngyv3m2wfs2zjef9vdz75d9pa46fdtxc5sxtafny"
       ]
     ]
   }

@@ -29,8 +29,8 @@ dependencies:
     specifier: ^2.0.0
     version: 2.0.0
   chain-registry:
-    specifier: ^1.13.0
-    version: 1.13.0
+    specifier: ^1.18.0
+    version: 1.18.0
   cmd-ts:
     specifier: ^0.11.0
     version: 0.11.0
@@ -1850,8 +1850,8 @@ packages:
     resolution: {integrity: sha512-1MgUzEkoMO6gKfXflStpYgZDlFM7M/ck/bgfVCACO5vnAf0fXoNVHdWtqGU+MYca+4bL9Z5bpOVmR33cWW9G2A==}
     dev: true
 
-  /chain-registry@1.13.0:
-    resolution: {integrity: sha512-LFfKuEN2fV1QHJuTdqz1VmdiMGy87yAAYODy6i6/9tC+m6hwDroIPhR8iwuY4BxyJMZj9yr2cpD8m+8X8cZ/PA==}
+  /chain-registry@1.18.0:
+    resolution: {integrity: sha512-m80cUS7DM235FVxw82Vxf/9/j3qp8GXCQa7wtC55AaHdyajX/C0hWw513FVBKnMyCLPwLfMzC58eiFudBk888w==}
     dependencies:
       '@babel/runtime': 7.21.5
       '@chain-registry/types': 0.16.0

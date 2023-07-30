@@ -160,7 +160,12 @@ export class AstroportGql extends Exchange {
     astro_token_address: string
     [k: string]: string
   }> {
-    return await wretch(this.options.contractsUrl).get().text(jsonrepair).then(JSON.parse)
+    return await wretch(this.options.contractsUrl)
+      .get()
+      .text((j) => {
+        return jsonrepair(j.replace(': ,', ': null,'))
+      })
+      .then(JSON.parse)
   }
 
   toAbstractPoolType(poolType: string): PoolType {
