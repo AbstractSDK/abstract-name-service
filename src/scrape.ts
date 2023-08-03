@@ -12,10 +12,11 @@ import { match } from 'ts-pattern'
 import { Osmosis } from './chains/Osmosis'
 import { install as sourceMapSupportInstall } from 'source-map-support'
 import { Neutron } from './chains/Neutron'
+import { Archway } from './chains/Archway'
 
 sourceMapSupportInstall()
 
-const CHAIN_OPTIONS = ['terra', 'osmosis', 'juno', 'neutron'] as const
+const CHAIN_OPTIONS = ['terra', 'osmosis', 'juno', 'neutron', 'archway'] as const
 type ChainOption = typeof CHAIN_OPTIONS[number]
 
 const main = command({
@@ -39,6 +40,7 @@ const main = command({
       match(chain as ChainOption)
         .with('terra', () => new Terra2())
         .with('juno', () => new Juno())
+        .with('archway', () => new Archway())
         .with('neutron', () => new Neutron())
         .with('osmosis', () => new Osmosis())
         .exhaustive()

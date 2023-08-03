@@ -152,7 +152,7 @@ export abstract class Network {
         return this.assetRegistry.unknownAsset(baseDenom, denom)
       }
 
-      console.log(`Has portId: ${portId} and channelId: ${channelId}`)
+      // console.log(`Has portId: ${portId} and channelId: ${channelId}`)
       resolvedBaseDenom = baseDenom
       await this.globalCache.setValue<IbcAssetInfo>('ibcBaseDenoms', denom, { baseDenom, path })
     }
