@@ -16,6 +16,11 @@ import { bech32 } from 'bech32'
 import { Cw20Helper } from '../helpers/Cw20Helper'
 import { Chain } from '@chain-registry/types'
 
+export const RPC_OVERRIDES = {
+  'phoenix-1': 'https://terra-rpc.polkachu.com/',
+  'neutron-1': 'https://neutron-rpc.polkachu.com/',
+}
+
 interface INetwork {
   networkId: string
   assetRegistry: AssetRegistry
@@ -157,6 +162,7 @@ export abstract class Network {
       await this.globalCache.setValue<IbcAssetInfo>('ibcBaseDenoms', denom, { baseDenom, path })
     }
 
+    console.log('got down to here', denom, resolvedBaseDenom)
     let ansName
     // resolvedBaseDenom may be a cw20... so if it starts with cw20 then
     if (resolvedBaseDenom.startsWith('cw20:')) {
@@ -234,10 +240,8 @@ export abstract class Network {
     const chain = chains.find(({ chain_id }) => chain_id === this.networkId)
     if (!chain) throw new NotFoundError(`Chain ${this.networkId} not found in chain-registry`)
 
-    if (this.networkId === 'phoenix-1') {
-      return 'https://terra-rpc.polkachu.com/'
-    } else if (this.networkId === 'neutron-1') {
-      return 'https://rpc-kralum.neutron-1.neutron.org/'
+    if (Object.keys(RPC_OVERRIDES).includes(this.networkId)) {
+      return RPC_OVERRIDES[this.networkId as keyof typeof RPC_OVERRIDES]
     }
 
     const rpc = `https://rpc.cosmos.directory/${chain}`

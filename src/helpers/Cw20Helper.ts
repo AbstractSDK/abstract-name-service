@@ -2,6 +2,7 @@ import { Chain } from '@chain-registry/types'
 import { Cw20QueryClient } from '@abstract-os/abstract.js'
 import { CosmWasmClient } from '@cosmjs/cosmwasm-stargate'
 import { bech32 } from 'bech32'
+import { RPC_OVERRIDES } from '../networks/network'
 
 /**
  * A class wrapping the Cw20QueryClient to provide some helper methods.
@@ -20,8 +21,12 @@ export class Cw20Helper {
         `Incorrect chain. Found prefix: ${addrPrefix}, expected: ${chain.bech32_prefix}`
       )
     }
+
     const queryClient = new Cw20QueryClient(
-      await CosmWasmClient.connect(chain.apis!.rpc!.at(0)!.address),
+      await CosmWasmClient.connect(
+        // @ts-ignore
+        RPC_OVERRIDES[chain.chain_id] ?? chain.apis!.rpc!.at(0)!.address
+      ),
       address
     )
 
