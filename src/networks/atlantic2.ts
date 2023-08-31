@@ -1,33 +1,33 @@
-import { Network } from './network'
-import { AssetRegistry } from '../registry/assetRegistry'
 import { ContractRegistry } from '../registry/contractRegistry'
 import { PoolRegistry } from '../registry/poolRegistry'
+import { Network } from './network'
+import { AssetRegistry } from '../registry/assetRegistry'
 import { AstroportGql } from '../exchanges/astroportgql'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface Injective888Options {}
+interface Atlantic2Options {}
 
-const INJECTIVE_888 = 'injective-888'
+const ATLANTIC_2 = 'atlantic-2'
 
-export class Injective888 extends Network {
-  private options: Injective888Options
+export class Atlantic2 extends Network {
+  private options: Atlantic2Options
 
   constructor(
     assetRegistry: AssetRegistry,
     contractRegistry: ContractRegistry,
     poolRegistry: PoolRegistry,
-    options: Injective888Options = {}
+    options: Atlantic2Options = {}
   ) {
     super({
-      networkId: INJECTIVE_888,
-      assetRegistry: assetRegistry,
-      contractRegistry: contractRegistry,
-      poolRegistry: poolRegistry,
+      networkId: ATLANTIC_2,
+      assetRegistry,
+      contractRegistry,
+      poolRegistry,
       exchanges: [
         new AstroportGql({
           contractsUrl:
-            'https://github.com/astroport-fi/astroport-changelog/blob/main/injective/injective-888/core_testnet.json',
-          cacheSuffix: INJECTIVE_888,
+            'https://raw.githubusercontent.com/astroport-fi/astroport-changelog/main/sei/atlantic-2/core_testnet.json',
+          cacheSuffix: ATLANTIC_2,
           graphQlEndpoint: 'https://multichain-api.astroport.fi/graphql',
         }),
       ],

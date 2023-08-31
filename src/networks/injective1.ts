@@ -5,29 +5,29 @@ import { PoolRegistry } from '../registry/poolRegistry'
 import { AstroportGql } from '../exchanges/astroportgql'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface Injective888Options {}
+interface Injective1Options {}
 
-const INJECTIVE_888 = 'injective-888'
+const INJECTIVE_1 = 'injective-1'
 
-export class Injective888 extends Network {
-  private options: Injective888Options
+export class Injective1 extends Network {
+  private options: Injective1Options
 
   constructor(
     assetRegistry: AssetRegistry,
     contractRegistry: ContractRegistry,
     poolRegistry: PoolRegistry,
-    options: Injective888Options = {}
+    options: Injective1Options = {}
   ) {
     super({
-      networkId: INJECTIVE_888,
+      networkId: INJECTIVE_1,
       assetRegistry: assetRegistry,
       contractRegistry: contractRegistry,
       poolRegistry: poolRegistry,
       exchanges: [
         new AstroportGql({
           contractsUrl:
-            'https://github.com/astroport-fi/astroport-changelog/blob/main/injective/injective-888/core_testnet.json',
-          cacheSuffix: INJECTIVE_888,
+            'https://raw.githubusercontent.com/astroport-fi/astroport-changelog/main/injective/injective-1/core_mainnet.json',
+          cacheSuffix: INJECTIVE_1,
           graphQlEndpoint: 'https://multichain-api.astroport.fi/graphql',
         }),
       ],
