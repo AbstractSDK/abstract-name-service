@@ -13,10 +13,11 @@ import { Osmosis } from './chains/Osmosis'
 import { install as sourceMapSupportInstall } from 'source-map-support'
 import { Neutron } from './chains/Neutron'
 import { Archway } from './chains/Archway'
+import { Kujira } from './chains/Kujira'
 
 sourceMapSupportInstall()
 
-const CHAIN_OPTIONS = ['terra', 'osmosis', 'juno', 'neutron', 'archway'] as const
+const CHAIN_OPTIONS = ['terra', 'osmosis', 'juno', 'neutron', 'archway', 'kujira'] as const
 type ChainOption = typeof CHAIN_OPTIONS[number]
 
 const main = command({
@@ -42,6 +43,7 @@ const main = command({
         .with('juno', () => new Juno())
         .with('archway', () => new Archway())
         .with('neutron', () => new Neutron())
+        .with('kujira', () => new Kujira())
         .with('osmosis', () => new Osmosis())
         .exhaustive()
     )

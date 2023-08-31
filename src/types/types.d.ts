@@ -1,5 +1,5 @@
 // type Chain = string
-type ChainName = 'juno' | 'archway' | 'osmosis' | 'terra2' | 'neutron'
+type ChainName = 'juno' | 'archway' | 'osmosis' | 'terra2' | 'neutron' | 'kujira'
 
 type Addr = string
 

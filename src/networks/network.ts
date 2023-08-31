@@ -1,7 +1,13 @@
 import { chains } from 'chain-registry'
 import { CosmWasmClient } from '@cosmjs/cosmwasm-stargate'
 import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry, AssetInfo } from '../objects'
-import { IbcExtension, QueryClient, setupIbcExtension } from '@cosmjs/stargate'
+import {
+  BankExtension,
+  IbcExtension,
+  QueryClient,
+  setupBankExtension,
+  setupIbcExtension,
+} from '@cosmjs/stargate'
 import { Exchange } from '../exchanges'
 import { ContractRegistry } from '../registry/contractRegistry'
 import { PoolRegistry } from '../registry/poolRegistry'
@@ -15,6 +21,10 @@ import LocalCache from '../helpers/LocalCache'
 import { bech32 } from 'bech32'
 import { Cw20Helper } from '../helpers/Cw20Helper'
 import { Chain } from '@chain-registry/types'
+
+type TokenMetadata = UnwrapPromise<ReturnType<BankExtension['bank']['denomMetadata']>>
+
+type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
 
 export const RPC_OVERRIDES = {
   'phoenix-1': 'https://terra-rpc.polkachu.com/',
@@ -90,6 +100,15 @@ export abstract class Network {
         // We don't know any ibc denoms by default
         return this.assetRegistry.unknownAsset(denom, denom)
       }
+    } else if (AssetInfo.isFactoryDenom(denom)) {
+      try {
+        return await this.registerFactoryAsset(denom)
+      } catch (e) {
+        console.error(`Failed to register factory asset ${denom}: ${e}`)
+
+        // We don't know any factory denoms by default
+        return this.assetRegistry.unknownAsset(denom, denom)
+      }
     }
 
     if (!symbol) {
@@ -107,6 +126,35 @@ export abstract class Network {
 
     // If it's not IBC, register it!
     return this.registerLocalAsset(symbol, assetInfo)
+  }
+
+  /**
+   * Register a token factory asset.
+   * @param denom
+   */
+  public async registerFactoryAsset(denom: string) {
+    let metadata: TokenMetadata
+    // Check if we already know the base denom
+    if (await this.globalCache.hasValue('denomMetadata', denom)) {
+      metadata = await this.globalCache.getValueUnchecked<TokenMetadata>('denomMetadata', denom)
+    } else {
+      const factoryClient = await this.factoryQueryClient()
+
+      try {
+        metadata = await factoryClient.bank.denomMetadata(denom)
+        await this.globalCache.setValue<TokenMetadata>('denomMetadata', denom, metadata)
+      } catch (e) {
+        console.error(`Failed to get metadata for ${denom}: ${e}`)
+        throw e
+      }
+    }
+
+    // TODO: this will retrieve "uhans" for example
+    const symbol = metadata.symbol ? metadata.symbol : denom.split('/')[2]
+
+    // Pause before executing a new query
+    await new Promise((resolve) => setTimeout(resolve, 200))
+    this.registerLocalAsset(symbol, { native: denom })
   }
 
   /**
@@ -143,7 +191,9 @@ export abstract class Network {
       const splitPath = path.split('/')
 
       if (splitPath.length !== 2) {
-        console.log(`Skipping ${denom} because path is not 2 in length: ${path}`)
+        console.log(
+          `Skipping ${denom} with base denom ${baseDenom} because path is not 2 in length: ${path}`
+        )
         return this.assetRegistry.unknownAsset(baseDenom, denom)
       }
 
@@ -162,7 +212,6 @@ export abstract class Network {
       await this.globalCache.setValue<IbcAssetInfo>('ibcBaseDenoms', denom, { baseDenom, path })
     }
 
-    console.log('got down to here', denom, resolvedBaseDenom)
     let ansName
     // resolvedBaseDenom may be a cw20... so if it starts with cw20 then
     if (resolvedBaseDenom.startsWith('cw20:')) {
@@ -234,6 +283,11 @@ export abstract class Network {
   public async ibcQueryClient(): Promise<QueryClient & IbcExtension> {
     const tendermintClient = await Tendermint34Client.connect(await this.rpcUrl())
     return QueryClient.withExtensions(tendermintClient, setupIbcExtension)
+  }
+
+  public async factoryQueryClient(): Promise<QueryClient & BankExtension> {
+    const tendermintClient = await Tendermint34Client.connect(await this.rpcUrl())
+    return QueryClient.withExtensions(tendermintClient, setupBankExtension)
   }
 
   private async rpcUrl(): Promise<string> {

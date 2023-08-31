@@ -38,4 +38,8 @@ export class AssetInfo {
   public static isIbcDenom(denom: string): boolean {
     return denom.startsWith('ibc/')
   }
+
+  public static isFactoryDenom(denom: string): boolean {
+    return denom.startsWith('factory/')
+  }
 }

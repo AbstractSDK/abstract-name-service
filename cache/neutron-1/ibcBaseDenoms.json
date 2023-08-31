@@ -1,1 +1,30 @@
-{"ibc/5751B8BCDA688FD0A8EC0B292EEF1CDEAB4B766B63EC632778B196D317C40C3A":{"baseDenom":"cw20:terra1nsuqsk6kh58ulczatwev87ttq2z6r3pusulg9r24mfj2fvtzd4uq3exn26","path":"transfer/channel-5"},"ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9":{"baseDenom":"uatom","path":"transfer/channel-1"},"ibc/F082B65C88E4B6D5EF1DB243CDA1D331D002759E938A0F5CD3FFDC5D53B3E349":{"baseDenom":"uusdc","path":"transfer/channel-2"},"ibc/376222D6D9DAE23092E29740E56B758580935A6D77C24C2ABD57A6A78A1F3955":{"baseDenom":"uosmo","path":"transfer/channel-10"},"ibc/57503D7852EF4E1899FE6D71C5E81D7C839F76580F86F21E39348FC2BC9D7CE2":{"baseDenom":"uusdt","path":"transfer/channel-2"},"ibc/B7864B03E1B9FD4F049243E92ABD691586F682137037A9F3FCA5222815620B3C":{"baseDenom":"stuatom","path":"transfer/channel-8"},"ibc/9598CDEB7C6DB7FC21E746C8E0250B30CD5154F39CA111A9D4948A4362F638BD":{"baseDenom":"umars","path":"transfer/channel-16"}}
+{
+  "ibc/5751B8BCDA688FD0A8EC0B292EEF1CDEAB4B766B63EC632778B196D317C40C3A": {
+    "baseDenom": "cw20:terra1nsuqsk6kh58ulczatwev87ttq2z6r3pusulg9r24mfj2fvtzd4uq3exn26",
+    "path": "transfer/channel-5"
+  },
+  "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9": {
+    "baseDenom": "uatom",
+    "path": "transfer/channel-1"
+  },
+  "ibc/F082B65C88E4B6D5EF1DB243CDA1D331D002759E938A0F5CD3FFDC5D53B3E349": {
+    "baseDenom": "uusdc",
+    "path": "transfer/channel-2"
+  },
+  "ibc/376222D6D9DAE23092E29740E56B758580935A6D77C24C2ABD57A6A78A1F3955": {
+    "baseDenom": "uosmo",
+    "path": "transfer/channel-10"
+  },
+  "ibc/57503D7852EF4E1899FE6D71C5E81D7C839F76580F86F21E39348FC2BC9D7CE2": {
+    "baseDenom": "uusdt",
+    "path": "transfer/channel-2"
+  },
+  "ibc/B7864B03E1B9FD4F049243E92ABD691586F682137037A9F3FCA5222815620B3C": {
+    "baseDenom": "stuatom",
+    "path": "transfer/channel-8"
+  },
+  "ibc/9598CDEB7C6DB7FC21E746C8E0250B30CD5154F39CA111A9D4948A4362F638BD": {
+    "baseDenom": "umars",
+    "path": "transfer/channel-16"
+  }
+}
