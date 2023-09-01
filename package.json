@@ -29,7 +29,7 @@
     "@cosmjs/tendermint-rpc": "^0.30.1",
     "@osmonauts/lcd": "^0.8.0",
     "bech32": "^2.0.0",
-    "chain-registry": "^1.18.0",
+    "chain-registry": "^1.19.0",
     "cmd-ts": "^0.11.0",
     "cosmjs-types": "^0.7.1",
     "cosmwasm": "^1.1.1",

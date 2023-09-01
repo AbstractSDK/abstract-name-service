@@ -6,7 +6,7 @@
 import { readFile, writeFile } from 'fs'
 // import the json from networks.json
 import { array, command, multioption, oneOf, run } from 'cmd-ts'
-import { Chain, ChainExporter, Juno } from './chains'
+import { Chain, ChainExporter, Injective, Juno, Sei } from './chains'
 import { Terra2 } from './chains/Terra2'
 import { match } from 'ts-pattern'
 import { Osmosis } from './chains/Osmosis'
@@ -17,7 +17,16 @@ import { Kujira } from './chains/Kujira'
 
 sourceMapSupportInstall()
 
-const CHAIN_OPTIONS = ['terra', 'osmosis', 'juno', 'neutron', 'archway', 'kujira'] as const
+const CHAIN_OPTIONS = [
+  'terra',
+  'osmosis',
+  'juno',
+  'neutron',
+  'archway',
+  'kujira',
+  'injective',
+  'sei',
+] as const
 type ChainOption = typeof CHAIN_OPTIONS[number]
 
 const main = command({
@@ -44,6 +53,8 @@ const main = command({
         .with('archway', () => new Archway())
         .with('neutron', () => new Neutron())
         .with('kujira', () => new Kujira())
+        .with('injective', () => new Injective())
+        .with('sei', () => new Sei())
         .with('osmosis', () => new Osmosis())
         .exhaustive()
     )

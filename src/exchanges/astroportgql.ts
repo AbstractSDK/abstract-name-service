@@ -31,6 +31,10 @@ interface AstroportOptions {
   contractsUrl: string
   cacheSuffix: string
   graphQlEndpoint: string
+  astroContractsOverrides?: {
+    astro_token_address?: string
+    generator_address?: string
+  }
 }
 
 /**
@@ -160,12 +164,17 @@ export class AstroportGql extends Exchange {
     astro_token_address: string
     [k: string]: string
   }> {
-    return await wretch(this.options.contractsUrl)
+    const contracts = await wretch(this.options.contractsUrl)
       .get()
       .text((j) => {
         return jsonrepair(j.replace(': ,', ': null,'))
       })
       .then(JSON.parse)
+
+    return {
+      ...contracts,
+      ...this.options.astroContractsOverrides,
+    }
   }
 
   toAbstractPoolType(poolType: string): PoolType {

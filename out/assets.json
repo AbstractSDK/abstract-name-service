@@ -1318,5 +1318,491 @@
         }
       ]
     ]
+  },
+  "injective": {
+    "injective-888": [
+      [
+        "injective>astro",
+        {
+          "cw20": "inj1faccd69y862f73h3jay3qvxqfxtxt9wn43v564"
+        }
+      ],
+      [
+        "injective>usdc",
+        {
+          "native": "factory/inj17vytdwqczqz72j65saukplrktd4gyfme5agf6c/usdc"
+        }
+      ],
+      [
+        "injective>inj",
+        {
+          "native": "inj"
+        }
+      ],
+      [
+        "injective>crv",
+        {
+          "native": "factory/inj17vytdwqczqz72j65saukplrktd4gyfme5agf6c/crv"
+        }
+      ],
+      [
+        "terra2>astro",
+        {
+          "native": "ibc/E8AC6B792CDE60AB208CA060CA010A3881F682A7307F624347AB71B6A0B0BF89"
+        }
+      ],
+      [
+        "injective>cvx",
+        {
+          "native": "factory/inj17vytdwqczqz72j65saukplrktd4gyfme5agf6c/cvx"
+        }
+      ],
+      [
+        "injective>shib",
+        {
+          "native": "factory/inj17vytdwqczqz72j65saukplrktd4gyfme5agf6c/shib"
+        }
+      ],
+      [
+        "injective>aave",
+        {
+          "native": "factory/inj17vytdwqczqz72j65saukplrktd4gyfme5agf6c/aave"
+        }
+      ],
+      [
+        "injective>berb",
+        {
+          "cw20": "inj1f2p7378lq6ruupxs2gz7twrmv45vrrs78ymc0k"
+        }
+      ],
+      [
+        "injective>ttt",
+        {
+          "cw20": "inj1jmkgvd598rh3exzm6lm00m5zz9wklcljj68xpz"
+        }
+      ],
+      [
+        "injective>www",
+        {
+          "cw20": "inj1kgnnq495gn863ssmqv27dd84qtf7mg26ja772e"
+        }
+      ],
+      [
+        "injective>rwd",
+        {
+          "cw20": "inj1gu0ve2zc8qtj0ssphk4mgazree2xk90cl2fs03"
+        }
+      ],
+      [
+        "injective>thu",
+        {
+          "cw20": "inj10n82m2xgqmlxgf2f5uy0dlvnvx7te9wu6wmww2"
+        }
+      ],
+      [
+        "injective>aaa",
+        {
+          "cw20": "inj1tq334lmqkkx427u65t3cv0g92qnr5c9v93uh08"
+        }
+      ],
+      [
+        "injective>atom",
+        {
+          "native": "factory/inj17vytdwqczqz72j65saukplrktd4gyfme5agf6c/atom"
+        }
+      ],
+      [
+        "injective>hdro",
+        {
+          "cw20": "inj1zflmjmg0qt02s0l0vlcg8zlyplsapefzy6ej3t"
+        }
+      ],
+      [
+        "injective>woman",
+        {
+          "cw20": "inj1a9a8ascytfuwetlpsnpggsd6ajvtlkul2e97wh"
+        }
+      ],
+      [
+        "injective>man",
+        {
+          "cw20": "inj1ap7syukn8gwmkuw4rg6e4urvkq9ae2rn4naqgf"
+        }
+      ],
+      [
+        "injective>sol",
+        {
+          "native": "factory/inj17vytdwqczqz72j65saukplrktd4gyfme5agf6c/sol"
+        }
+      ],
+      [
+        "injective>red",
+        {
+          "cw20": "inj1hdx2ny05s56ygkfmyx4e3puwx89p50hrcec5fq"
+        }
+      ],
+      [
+        "injective>aptos",
+        {
+          "native": "factory/inj17vytdwqczqz72j65saukplrktd4gyfme5agf6c/aptos"
+        }
+      ],
+      [
+        "injective>avax",
+        {
+          "native": "factory/inj17vytdwqczqz72j65saukplrktd4gyfme5agf6c/avax"
+        }
+      ],
+      [
+        "injective>matic",
+        {
+          "native": "factory/inj17vytdwqczqz72j65saukplrktd4gyfme5agf6c/matic"
+        }
+      ],
+      [
+        "injective>hinj",
+        {
+          "cw20": "inj126zfsmxjmc95dmyhyys4vvqay0vd0war7n0dqj"
+        }
+      ],
+      [
+        "injective>ring",
+        {
+          "cw20": "inj19nk75445p2ds3wrr2dqkjtdnt9an47nzhqn7cj"
+        }
+      ],
+      [
+        "injective>odin",
+        {
+          "cw20": "inj1fu4v3yzd7rvmtev3xhak7ppv55pan3v2tdaxfr"
+        }
+      ],
+      [
+        "injective>nope",
+        {
+          "cw20": "inj1wlad39su9x8j6n826kclytp6ztydnrywm2trgh"
+        }
+      ],
+      [
+        "astroport/injective>crv,injective>usdc",
+        {
+          "cw20": "inj1kt0tjcawmumkqxq7c7gt7s3p0mytwg249j5xsg"
+        }
+      ],
+      [
+        "astroport/injective>cvx,injective>usdc",
+        {
+          "cw20": "inj1p97e9zxz7drjhz3au9myz6wf90y5cgnt9knh9l"
+        }
+      ],
+      [
+        "astroport/injective>cvx,injective>shib",
+        {
+          "cw20": "inj1ssy5c7kfp4s7yag0hk6kfa028qqrdzzck8hrf9"
+        }
+      ],
+      [
+        "astroport/injective>crv,terra2>astro",
+        {
+          "cw20": "inj1x9zqg9u924md7skgevwsdkdxc4k88ktew803hh"
+        }
+      ],
+      [
+        "astroport/injective>shib,injective>usdc",
+        {
+          "cw20": "inj1ru0ztqu36gj27yp4lhrry6trnrsakgcuw2lrn0"
+        }
+      ],
+      [
+        "astroport/injective>cvx,terra2>astro",
+        {
+          "cw20": "inj1fxl6jju92qvx5e3ftx5ep3fhrup9fh3v6skpfw"
+        }
+      ],
+      [
+        "astroport/injective>crv,injective>shib",
+        {
+          "cw20": "inj19eauz0gel807dqdr2r7598zlwzhvs5jpa6780g"
+        }
+      ],
+      [
+        "astroport/injective>inj,terra2>astro",
+        {
+          "cw20": "inj1qcatk4kk6ye54jxx4njykqz0d3v5rnay8zzpk5"
+        }
+      ],
+      [
+        "astroport/injective>inj,injective>usdc",
+        {
+          "cw20": "inj1g8pcf0w5ppk7hesdp8f8hhrq5yqz5ew8788f3f"
+        }
+      ],
+      [
+        "astroport/injective>usdc,terra2>astro",
+        {
+          "cw20": "inj15dph6ndevrvvzec8wzdv9ahegndfcqs6922kkf"
+        }
+      ],
+      [
+        "astroport/injective>ttt,injective>www",
+        {
+          "cw20": "inj1cut5z2ytf08q29mdec2kjz5nt5s350j8pwa8wj"
+        }
+      ],
+      [
+        "astroport/injective>inj,injective>rwd",
+        {
+          "cw20": "inj1ua9dkrvvghrg368j7f03tm3vlxz87zxdkzmzt5"
+        }
+      ],
+      [
+        "astroport/injective>inj,injective>thu",
+        {
+          "cw20": "inj1x437hfxjvj9k2c69kqx3wprth4r2mtje96sacx"
+        }
+      ],
+      [
+        "astroport/injective>aaa,injective>inj",
+        {
+          "cw20": "inj14gnvgxsd8pxyqq2f5ft7gzs07c8dfqug2w5x5l"
+        }
+      ],
+      [
+        "astroport/injective>inj,injective>ttt",
+        {
+          "cw20": "inj1ahl3dfyuxmlkw5czy5u7fqh5clfk7hp56rpf4a"
+        }
+      ],
+      [
+        "astroport/injective>aave,injective>cvx",
+        {
+          "cw20": "inj16gvdh3g2fhusran8qvse8cfaf9ez5tvdupf430"
+        }
+      ],
+      [
+        "astroport/injective>hdro,injective>inj",
+        {
+          "cw20": "inj19ksnqjnzhul4599xwtf97ykm3avkvqj6se4us2"
+        }
+      ],
+      [
+        "astroport/injective>aave,injective>usdc",
+        {
+          "cw20": "inj1faah2kerznv3vqy6p07zh6wjcnxte30xy7smeg"
+        }
+      ],
+      [
+        "astroport/injective>berb,injective>usdc",
+        {
+          "cw20": "inj1848mhcr6zmcruzzyd437x38fd7fzs2apa2l98k"
+        }
+      ],
+      [
+        "astroport/injective>inj,injective>woman",
+        {
+          "cw20": "inj1xt50gvkslqm0wh08wpg7pfpcprkcqzeqsjpxev"
+        }
+      ],
+      [
+        "astroport/injective>inj,injective>man",
+        {
+          "cw20": "inj16kwmzqycsnc836prs8zk876eueyucrfeg2wcrt"
+        }
+      ],
+      [
+        "astroport/injective>sol,injective>usdc",
+        {
+          "cw20": "inj1yjtfwnf8ul2usdt0wsu64evwanrjnu4q85jal4"
+        }
+      ],
+      [
+        "astroport/injective>inj,injective>red",
+        {
+          "cw20": "inj1eufpwzwvaxarcdqmy8g3qqn99m7nt0ru4jnv4v"
+        }
+      ],
+      [
+        "astroport/injective>aave,injective>aptos",
+        {
+          "cw20": "inj1vas4hqy8e57gzgpdpywp46ax43fp9d293smc7d"
+        }
+      ],
+      [
+        "astroport/injective>matic,injective>usdc",
+        {
+          "cw20": "inj15d59xkkk08pk0hkcwgvph3dqn8nuc5y397lft6"
+        }
+      ],
+      [
+        "astroport/injective>crv,injective>cvx",
+        {
+          "cw20": "inj1mlld7p0j52kv22rdu7rwn23lwfknr4g7f7czsr"
+        }
+      ],
+      [
+        "astroport/injective>hinj,injective>inj",
+        {
+          "cw20": "inj1h3xgrd36lhdgkyy8ad3lr4tkg3mc2jfxv6pm29"
+        }
+      ],
+      [
+        "astroport/injective>inj,injective>ring",
+        {
+          "cw20": "inj14nxpasu2j9nvru5tysze46cykzf03775y9m7av"
+        }
+      ],
+      [
+        "astroport/injective>inj,injective>odin",
+        {
+          "cw20": "inj17gv9hxjuq8fl65v9wjnwz5apqekkf939hh5ttg"
+        }
+      ],
+      [
+        "astroport/injective>inj,injective>nope",
+        {
+          "cw20": "inj1r8tff96z522ngg9rg42apf6x7xvvr5k7rpq0t4"
+        }
+      ],
+      [
+        "astroport/injective>avax,injective>inj",
+        {
+          "cw20": "inj19q8cak36nsh4uzr0m2v0lxsnzsxjc4el82nzsq"
+        }
+      ]
+    ],
+    "injective-1": [
+      [
+        "terra2>astro",
+        {
+          "native": "ibc/EBD5A24C554198EBAF44979C5B4D2C2D312E6EBAB71962C92F735499C7575839"
+        }
+      ],
+      [
+        "injective>inj",
+        {
+          "native": "inj"
+        }
+      ],
+      [
+        "injective>inj1q6zlut7gtkzknkk773jecujwsdkgq882akqksk",
+        {
+          "native": "factory/inj14ejqjyq8um4p3xfqj74yld5waqljf88f9eneuk/inj1q6zlut7gtkzknkk773jecujwsdkgq882akqksk"
+        }
+      ],
+      [
+        "cosmoshub>atom",
+        {
+          "native": "ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9"
+        }
+      ],
+      [
+        "stride>stinj",
+        {
+          "native": "ibc/AC87717EA002B0123B10A05063E69BCA274BA2C44D842AEEB41558D2856DCE93"
+        }
+      ],
+      [
+        "injective>inj1sthrn5ep8ls5vzz8f9gp89khhmedahhdkqa8z3",
+        {
+          "native": "factory/inj14ejqjyq8um4p3xfqj74yld5waqljf88f9eneuk/inj1sthrn5ep8ls5vzz8f9gp89khhmedahhdkqa8z3"
+        }
+      ],
+      [
+        "persistence>xprt",
+        {
+          "native": "ibc/B786E7CBBF026F6F15A8DA248E0F18C62A0F7A70CB2DABD9239398C8B5150ABB"
+        }
+      ],
+      [
+        "sommelier>somm",
+        {
+          "native": "ibc/34346A60A95EB030D62D6F5BDD4B745BE18E8A693372A8A347D5D53DBBB1328B"
+        }
+      ],
+      [
+        "injective>inj1mhmln627samtkuwe459ylq763r4n7n69gxxc9x",
+        {
+          "native": "factory/inj14ejqjyq8um4p3xfqj74yld5waqljf88f9eneuk/inj1mhmln627samtkuwe459ylq763r4n7n69gxxc9x"
+        }
+      ],
+      [
+        "injective>astr",
+        {
+          "cw20": "inj1mhmln627samtkuwe459ylq763r4n7n69gxxc9x"
+        }
+      ],
+      [
+        "injective>nbla",
+        {
+          "native": "factory/inj1d0zfq42409a5mhdagjutl8u6u9rgcm4h8zfmfq/nbla"
+        }
+      ],
+      [
+        "astroport/injective>inj,stride>stinj",
+        {
+          "cw20": "inj1hxq5q8h7d8up6j4jcmxje42zpkzr409j6ay4wu"
+        }
+      ],
+      [
+        "astroport/injective>inj,terra2>astro",
+        {
+          "cw20": "inj1rnraxu54huv7wkmpff3v8mzhqh49g0e6fj67sd"
+        }
+      ],
+      [
+        "astroport/injective>inj1q6zlut7gtkzknkk773jecujwsdkgq882akqksk,terra2>astro",
+        {
+          "cw20": "inj1rqfr752hn6auzm3vzzyr2pd8rt6fapf279tyfp"
+        }
+      ],
+      [
+        "astroport/injective>inj,injective>inj1q6zlut7gtkzknkk773jecujwsdkgq882akqksk",
+        {
+          "cw20": "inj12jszhw03el5pja9yh6km4f23chec0e85mcgmef"
+        }
+      ],
+      [
+        "astroport/cosmoshub>atom,injective>inj",
+        {
+          "cw20": "inj1h2s5vkv8uxvydvnyzru7cnjcg9qssjccmpqulz"
+        }
+      ],
+      [
+        "astroport/injective>inj1q6zlut7gtkzknkk773jecujwsdkgq882akqksk,persistence>xprt",
+        {
+          "cw20": "inj12c30qkdr256vrn4fp585y5mgwezng2zkfg8zpp"
+        }
+      ],
+      [
+        "astroport/injective>inj1q6zlut7gtkzknkk773jecujwsdkgq882akqksk,injective>inj1sthrn5ep8ls5vzz8f9gp89khhmedahhdkqa8z3",
+        {
+          "cw20": "inj15nhszwx82dudrpyhpnms6p776j9rs6yyujhqy3"
+        }
+      ],
+      [
+        "astroport/injective>inj,injective>inj1mhmln627samtkuwe459ylq763r4n7n69gxxc9x",
+        {
+          "cw20": "inj1testuvgnvkfwlr65xuhxkwrznlfars9hq2njt6"
+        }
+      ],
+      [
+        "astroport/injective>astr,injective>inj",
+        {
+          "cw20": "inj16t06swlcmrhq0e27859n2caq3ll2rhdhj5465a"
+        }
+      ],
+      [
+        "astroport/injective>inj,injective>inj1sthrn5ep8ls5vzz8f9gp89khhmedahhdkqa8z3",
+        {
+          "cw20": "inj1xn0lza6kukg8z2w8zj25h752c43l9usyhg8vv5"
+        }
+      ],
+      [
+        "astroport/injective>inj,injective>nbla",
+        {
+          "cw20": "inj1uu9dsss65z2dt6cz9avr2tk6wrdjxxe0cxh4d5"
+        }
+      ]
+    ]
   }
 }

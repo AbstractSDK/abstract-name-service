@@ -26,7 +26,7 @@ export class Injective888 extends Network {
       exchanges: [
         new AstroportGql({
           contractsUrl:
-            'https://github.com/astroport-fi/astroport-changelog/blob/main/injective/injective-888/core_testnet.json',
+            'https://raw.githubusercontent.com/astroport-fi/astroport-changelog/main/injective/injective-888/core_testnet.json',
           cacheSuffix: INJECTIVE_888,
           graphQlEndpoint: 'https://multichain-api.astroport.fi/graphql',
         }),

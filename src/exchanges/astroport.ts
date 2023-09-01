@@ -362,7 +362,7 @@ export class Astroport extends Exchange {
       console.log(`Fetched total share for ${pairAddr}: ${total_share}`)
 
       // Wait a bit
-      await new Promise((resolve) => setTimeout(resolve, 100))
+      await new Promise((resolve) => setTimeout(resolve, 300))
 
       return total_share
     } catch (e) {

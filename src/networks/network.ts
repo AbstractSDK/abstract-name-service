@@ -29,6 +29,7 @@ type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
 export const RPC_OVERRIDES = {
   'phoenix-1': 'https://terra-rpc.polkachu.com/',
   'neutron-1': 'https://neutron-rpc.polkachu.com/',
+  'atlantic-2': 'https://sei-testnet-rpc.polkachu.com/',
 }
 
 interface INetwork {
@@ -153,7 +154,7 @@ export abstract class Network {
     const symbol = metadata.symbol ? metadata.symbol : denom.split('/')[2]
 
     // Pause before executing a new query
-    await new Promise((resolve) => setTimeout(resolve, 200))
+    await new Promise((resolve) => setTimeout(resolve, 300))
     this.registerLocalAsset(symbol, { native: denom })
   }
 
@@ -180,8 +181,18 @@ export abstract class Network {
           return denomTrace
         })
       } catch (e) {
-        console.error(`Failed to get denom trace for ${denom}: ${e}`)
-        throw e
+        denomTrace = await ibcQueryClient.ibc.transfer
+          .denomTrace(denom.split('/')[1])
+          .then(({ denomTrace }) => {
+            if (!denomTrace) {
+              throw new Error(`No denom trace for ${denom}`)
+            }
+            return denomTrace
+          })
+          .catch((e) => {
+            console.error(`Failed to get denom trace for ${denom.split('/')[1]}: ${e}`)
+            throw e
+          })
       }
 
       // { path: 'transfer/channel-4', baseDenom: 'uxprt' }
@@ -231,7 +242,7 @@ export abstract class Network {
     }
 
     // Pause before executing a new query
-    await new Promise((resolve) => setTimeout(resolve, 200))
+    await new Promise((resolve) => setTimeout(resolve, 300))
     return this.assetRegistry.register(new AnsAssetEntry(ansName, AssetInfo.native(denom)))
   }
 
