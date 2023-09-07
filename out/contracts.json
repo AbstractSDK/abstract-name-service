@@ -286,8 +286,24 @@
     ]
   },
   "osmosis": {
-    "osmosis-1": [],
-    "osmo-test-5": []
+    "osmosis-1": [
+      [
+        {
+          "protocol": "croncat",
+          "contract": "factory"
+        },
+        "osmo14yjyt057saxauzc7scc5e0qce7c2dmeuzuhgsul0lnyy25xtz7ksxfzf07"
+      ]
+    ],
+    "osmo-test-5": [
+      [
+        {
+          "protocol": "croncat",
+          "contract": "factory"
+        },
+        "osmo105qu7ajcf9y5wgpj7kcqj2rmj6zn6d9ernw99efua7834xprvwkq3hfhaz"
+      ]
+    ]
   },
   "juno": {
     "juno-1": [
