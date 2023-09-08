@@ -39,7 +39,7 @@ export class Cw20Helper {
   async getSymbol() {
     try {
       const info = await this.queryClient.tokenInfo()
-      await new Promise((resolve) => setTimeout(resolve, 300))
+      await new Promise((resolve) => setTimeout(resolve, 500))
       const symbol = info.symbol.toLowerCase()
       return symbol
     } catch (e) {

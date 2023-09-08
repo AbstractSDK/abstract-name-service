@@ -154,7 +154,7 @@ export abstract class Network {
     const symbol = metadata.symbol ? metadata.symbol : denom.split('/')[2]
 
     // Pause before executing a new query
-    await new Promise((resolve) => setTimeout(resolve, 300))
+    await new Promise((resolve) => setTimeout(resolve, 500))
     this.registerLocalAsset(symbol, { native: denom })
   }
 
@@ -242,7 +242,7 @@ export abstract class Network {
     }
 
     // Pause before executing a new query
-    await new Promise((resolve) => setTimeout(resolve, 300))
+    await new Promise((resolve) => setTimeout(resolve, 500))
     return this.assetRegistry.register(new AnsAssetEntry(ansName, AssetInfo.native(denom)))
   }
 
