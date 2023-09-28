@@ -64,7 +64,7 @@ export class ChainRegistry {
     const asset = assets
       .filter(({ chain_name }) => !BLOCKLISTED_CHAIN_NAMES.includes(chain_name))
       .find((a) => a.chain_name === chainName)
-      ?.assets.find((a) => a.denom_units.some((u) => u.denom === denom))
+      ?.assets.find((a) => a.denom_units.some((du) => du.denom === denom))
     if (!asset) {
       throw new NotFoundError(`asset not found for chain ${chainName} and denom ${denom}`)
     }

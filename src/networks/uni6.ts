@@ -2,7 +2,6 @@
 import { ContractRegistry } from '../registry/contractRegistry'
 import { PoolRegistry } from '../registry/poolRegistry'
 import { Network } from './network'
-import { Junoswap } from '../exchanges'
 import { AssetRegistry } from '../registry/assetRegistry'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -10,7 +9,7 @@ interface Uni5Options {}
 
 const UNI_6 = 'uni-6'
 
-export class Uni5 extends Network {
+export class Uni6 extends Network {
   private options: Uni5Options
 
   constructor(
@@ -25,9 +24,10 @@ export class Uni5 extends Network {
       contractRegistry: contractRegistry,
       poolRegistry: poolRegistry,
       exchanges: [
-        new Junoswap({
-          poolListUrl: 'https://wasmswap.io/pools_list.testnet.json',
-        }),
+        // TODO: wasmswap is dead
+        // new Junoswap({
+        //   poolListUrl: 'https://wasmswap.io/pools_list.testnet.json',
+        // }),
       ],
     })
     this.options = options

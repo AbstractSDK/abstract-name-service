@@ -163,6 +163,7 @@ export abstract class Network {
    * @param denom
    */
   public async registerIbcAsset(denom: string) {
+    await new Promise((resolve) => setTimeout(resolve, 500))
     let resolvedBaseDenom: string
     // Check if we already know the base denom
     if (await this.globalCache.hasValue('ibcBaseDenoms', denom)) {

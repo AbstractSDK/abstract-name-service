@@ -26,7 +26,7 @@
         }
       ],
       [
-        "axelar>usdc",
+        "eth>axelar>usdc",
         {
           "native": "ibc/B3504E092456BA618CC28AC671A71FB08C6CA0FD0BE7C8A5B5A3E2DD933CC9E4"
         }
@@ -206,7 +206,7 @@
         }
       ],
       [
-        "astroport/axelar>usdc,stride>stluna",
+        "astroport/eth>axelar>usdc,stride>stluna",
         {
           "cw20": "terra10qshp8v3kunqzt38c8r8z4qwz8xuv0t0ltkx559y6ft4d6rkek8q8e3xhz"
         }
@@ -254,7 +254,7 @@
         }
       ],
       [
-        "astroport/axelar>usdc,migaloo>whale",
+        "astroport/eth>axelar>usdc,migaloo>whale",
         {
           "cw20": "terra12msg0u04085ua69vxfxtl7v3ajg3sjfggjkp382sszt5axtsxatq60x8vr"
         }
@@ -266,7 +266,7 @@
         }
       ],
       [
-        "astroport/axelar>usdc,migaloo>bwhale",
+        "astroport/eth>axelar>usdc,migaloo>bwhale",
         {
           "cw20": "terra1nxr788yv7nzmejq7eg8kmuzdd6a9thk09vfkw9gedtwgcmmm7juquar254"
         }
@@ -284,103 +284,103 @@
         }
       ],
       [
-        "astroport/axelar>usdc,migaloo>ampwhale",
+        "astroport/eth>axelar>usdc,migaloo>ampwhale",
         {
           "cw20": "terra1jtv8xs6ugx4q6cl6ghj3x2hwr3zm78mjt9yjuqlhd5p5c23q4ruqndl85w"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>frgy",
+        "astroport/eth>axelar>usdc,terra2>frgy",
         {
           "cw20": "terra18278qyznzktl8sxnepca4yw0cpdmxxjz54zf3xnn8sfh7au3uspq0ka994"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>busd",
+        "astroport/eth>axelar>usdc,terra2>busd",
         {
           "cw20": "terra15hgjqvr89q5t4qmvyt0qnmmlx34dyyn7e6x9z3fnqn5wtgj6lllqa95dm8"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>usdt",
+        "astroport/eth>axelar>usdc,terra2>usdt",
         {
           "cw20": "terra1v4ytr73tfkms7e5qhuy7qnmfkfgf6fs5ut9av6u78j9tv9ahwrlqazaycp"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>cluna",
+        "astroport/eth>axelar>usdc,terra2>cluna",
         {
           "cw20": "terra17arxq8nn63u7zghp53kh33alkvuad743d8h77tc6psnq570zuupslmdgur"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>tfloki",
+        "astroport/eth>axelar>usdc,terra2>tfloki",
         {
           "cw20": "terra153zpj7f0shmfrt95s2jmets2k7fuuclerxh295n7hltf0z7p9xdsdngtdr"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>trump",
+        "astroport/eth>axelar>usdc,terra2>trump",
         {
           "cw20": "terra1fmfrap9zwv07g6kwn7lrfp59xy4wp3ax9c65eajewsc9fvhar98qxwn8rm"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>slq",
+        "astroport/eth>axelar>usdc,terra2>slq",
         {
           "cw20": "terra1ulmcxv5ph4qcx6dtg6kmdxhtx5vk6ksu7n82h60v284y56d2wexsy07taa"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>sol",
+        "astroport/eth>axelar>usdc,terra2>sol",
         {
           "cw20": "terra109sh4nxudwcqrq0v8gdna46sc3mhs9qh49jrv3m6546asc3kk87s3z28hr"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>aaxlusdt",
+        "astroport/eth>axelar>usdc,terra2>aaxlusdt",
         {
           "cw20": "terra1lg5wyah066tc679ehp4d9d9cuk82grxk7vd7u73vpq6md8qzm9fq35lx7v"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>blue",
+        "astroport/eth>axelar>usdc,terra2>blue",
         {
           "cw20": "terra12xxlw5phr7hrsskgv74dvgqyl50j8hfpfy250cjth3ewqk32k6rsykej3n"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>yluna",
+        "astroport/eth>axelar>usdc,terra2>yluna",
         {
           "cw20": "terra15spkcas6jj2jrevvff5r0g7ht2s6h3mal7u8fmnjngk7k82rzt9s4gtnmj"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>ueth",
+        "astroport/eth>axelar>usdc,terra2>ueth",
         {
           "cw20": "terra13406847ntuyct7qgefrks05cfuca7jtf4u9zqnahud2c7vnarkysj2c8gj"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>usd",
+        "astroport/eth>axelar>usdc,terra2>usd",
         {
           "cw20": "terra1n9yykacl3ft9fw95sr0eckqsd6p9l62ehdhf5u6k6akmvupqr7as9ygupx"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>wavax",
+        "astroport/eth>axelar>usdc,terra2>wavax",
         {
           "cw20": "terra18pr2eu0js9laz3u4k5tcwyuqfup484z8qm66vtkwcfeukmpgyapq70wj44"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>seas",
+        "astroport/eth>axelar>usdc,terra2>seas",
         {
           "cw20": "terra1d78yf9347q8talx4c3hhaxfs0rkfyjsawvd27z9rjzf2mx5yyktqa846gt"
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>ust",
+        "astroport/eth>axelar>usdc,terra2>ust",
         {
           "cw20": "terra1ljjau3mzxv2rpje5p67vfa2uc82uvct5l70z5cqegd0pnus3u26svpura9"
         }
@@ -740,7 +740,7 @@
         }
       ],
       [
-        "axelar>usdc",
+        "eth>axelar>usdc",
         {
           "native": "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858"
         }
@@ -778,7 +778,7 @@
         }
       ],
       [
-        "axelar>usdc",
+        "eth>axelar>usdc",
         {
           "native": "ibc/B3504E092456BA618CC28AC671A71FB08C6CA0FD0BE7C8A5B5A3E2DD933CC9E4"
         }
@@ -868,7 +868,7 @@
         }
       ],
       [
-        "axelar>usdc",
+        "eth>axelar>usdc",
         {
           "native": "ibc/EAC38D55372F38F1AFD68DF7FE9EF762DCF69F26520643CF3F9D292A738D8034"
         }
@@ -1270,7 +1270,7 @@
         }
       ],
       [
-        "wynd/axelar>usdc,juno>juno",
+        "wynd/eth>axelar>usdc,juno>juno",
         {
           "cw20": "juno1jn6t0dsxryht8ljxulavxrfd22l87dvac8e9a99a7tuj29ysxksqffhf5k"
         }
@@ -1438,7 +1438,7 @@
         }
       ],
       [
-        "wynd/axelar>usdc,juno>wynd",
+        "wynd/eth>axelar>usdc,juno>wynd",
         {
           "cw20": "juno13ld2eq3w8k6rap5n5vsmwr8c4zhqhtfu9vjx0gqmhpefefl97nxq4u4pap"
         }

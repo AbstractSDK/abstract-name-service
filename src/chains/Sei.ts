@@ -102,6 +102,6 @@ const testnet = new Atlantic2(new AssetRegistry(), new ContractRegistry(), new P
 
 export class Sei extends Chain {
   constructor() {
-    super('sei', [mainnet])
+    super('sei', [mainnet, testnet])
   }
 }
