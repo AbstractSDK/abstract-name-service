@@ -19,9 +19,7 @@ pub fn get_scraped_entries(
     chain_id: &String,
 ) -> Result<ScrapedEntries, AbstractInterfaceError> {
     let raw_scraped_entries = crate::get_scraped_json_data("pools");
-
     let binding = raw_scraped_entries[chain_name][chain_id].clone();
-    eprintln!("Binding {:?}", binding);
     let parsed_scraped_entries: &Vec<Value> = binding.as_array().unwrap();
     let mut dexes_to_register: HashSet<String> = HashSet::new();
 
