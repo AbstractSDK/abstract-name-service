@@ -5,6 +5,7 @@ import { AssetRegistry } from '../registry/assetRegistry'
 import { Pacific1 } from '../networks/pacific1'
 import { Atlantic2 } from '../networks/atlantic2'
 
+// Assets found from https://github.com/PulsarDefi/IBC-Token-Data-Cosmos/blob/be2be11b0f8ed55ed1f55bb9255e25f53b145ef1/native_token_data.json#L3912C1-L3912C1
 const mainnet = new Pacific1(
   new AssetRegistry({
     assetRegistry: new Map([
