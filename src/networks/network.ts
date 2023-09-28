@@ -1,7 +1,13 @@
 import { chains } from 'chain-registry'
 import { CosmWasmClient } from '@cosmjs/cosmwasm-stargate'
 import { AnsAssetEntry, AnsContractEntry, AnsPoolEntry, AssetInfo } from '../objects'
-import { IbcExtension, QueryClient, setupIbcExtension } from '@cosmjs/stargate'
+import {
+  BankExtension,
+  IbcExtension,
+  QueryClient,
+  setupBankExtension,
+  setupIbcExtension,
+} from '@cosmjs/stargate'
 import { Exchange } from '../exchanges'
 import { ContractRegistry } from '../registry/contractRegistry'
 import { PoolRegistry } from '../registry/poolRegistry'
@@ -12,6 +18,19 @@ import { NotFoundError } from '../registry/IRegistry'
 import { AnsName } from '../objects/AnsName'
 import { Cw20QueryClient } from '@abstract-os/abstract.js'
 import LocalCache from '../helpers/LocalCache'
+import { bech32 } from 'bech32'
+import { Cw20Helper } from '../helpers/Cw20Helper'
+import { Chain } from '@chain-registry/types'
+
+type TokenMetadata = UnwrapPromise<ReturnType<BankExtension['bank']['denomMetadata']>>
+
+type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
+
+export const RPC_OVERRIDES = {
+  'phoenix-1': 'https://terra-rpc.polkachu.com/',
+  'neutron-1': 'https://neutron-rpc.polkachu.com/',
+  'atlantic-2': 'https://sei-testnet-rpc.polkachu.com/',
+}
 
 interface INetwork {
   networkId: string
@@ -33,6 +52,7 @@ interface IbcAssetInfo {
 
 export abstract class Network {
   networkId: string
+  chain: Chain
   assetRegistry: AssetRegistry
   contractRegistry: ContractRegistry
   poolRegistry: PoolRegistry
@@ -47,6 +67,7 @@ export abstract class Network {
     exchanges,
   }: INetwork) {
     this.networkId = networkId
+    this.chain = ChainRegistry.findChainBy({ chain_id: networkId })
     this.assetRegistry = assetRegistry
     this.contractRegistry = contractRegistry
     this.poolRegistry = poolRegistry
@@ -80,6 +101,15 @@ export abstract class Network {
         // We don't know any ibc denoms by default
         return this.assetRegistry.unknownAsset(denom, denom)
       }
+    } else if (AssetInfo.isFactoryDenom(denom)) {
+      try {
+        return await this.registerFactoryAsset(denom)
+      } catch (e) {
+        console.error(`Failed to register factory asset ${denom}: ${e}`)
+
+        // We don't know any factory denoms by default
+        return this.assetRegistry.unknownAsset(denom, denom)
+      }
     }
 
     if (!symbol) {
@@ -97,6 +127,35 @@ export abstract class Network {
 
     // If it's not IBC, register it!
     return this.registerLocalAsset(symbol, assetInfo)
+  }
+
+  /**
+   * Register a token factory asset.
+   * @param denom
+   */
+  public async registerFactoryAsset(denom: string) {
+    let metadata: TokenMetadata
+    // Check if we already know the base denom
+    if (await this.globalCache.hasValue('denomMetadata', denom)) {
+      metadata = await this.globalCache.getValueUnchecked<TokenMetadata>('denomMetadata', denom)
+    } else {
+      const factoryClient = await this.factoryQueryClient()
+
+      try {
+        metadata = await factoryClient.bank.denomMetadata(denom)
+        await this.globalCache.setValue<TokenMetadata>('denomMetadata', denom, metadata)
+      } catch (e) {
+        console.error(`Failed to get metadata for ${denom}: ${e}`)
+        throw e
+      }
+    }
+
+    // TODO: this will retrieve "uhans" for example
+    const symbol = metadata.symbol ? metadata.symbol : denom.split('/')[2]
+
+    // Pause before executing a new query
+    await new Promise((resolve) => setTimeout(resolve, 500))
+    this.registerLocalAsset(symbol, { native: denom })
   }
 
   /**
@@ -122,8 +181,18 @@ export abstract class Network {
           return denomTrace
         })
       } catch (e) {
-        console.error(`Failed to get denom trace for ${denom}: ${e}`)
-        throw e
+        denomTrace = await ibcQueryClient.ibc.transfer
+          .denomTrace(denom.split('/')[1])
+          .then(({ denomTrace }) => {
+            if (!denomTrace) {
+              throw new Error(`No denom trace for ${denom}`)
+            }
+            return denomTrace
+          })
+          .catch((e) => {
+            console.error(`Failed to get denom trace for ${denom.split('/')[1]}: ${e}`)
+            throw e
+          })
       }
 
       // { path: 'transfer/channel-4', baseDenom: 'uxprt' }
@@ -133,7 +202,9 @@ export abstract class Network {
       const splitPath = path.split('/')
 
       if (splitPath.length !== 2) {
-        console.log(`Skipping ${denom} because path is not 2 in length: ${path}`)
+        console.log(
+          `Skipping ${denom} with base denom ${baseDenom} because path is not 2 in length: ${path}`
+        )
         return this.assetRegistry.unknownAsset(baseDenom, denom)
       }
 
@@ -146,15 +217,32 @@ export abstract class Network {
         console.warn(`Denom trace path for ${denom} is not transfer, but ${portId}`)
         return this.assetRegistry.unknownAsset(baseDenom, denom)
       }
+
+      // console.log(`Has portId: ${portId} and channelId: ${channelId}`)
       resolvedBaseDenom = baseDenom
       await this.globalCache.setValue<IbcAssetInfo>('ibcBaseDenoms', denom, { baseDenom, path })
     }
 
-    // persistence>xprt
-    const ansName = ChainRegistry.externalChainDenomToAnsName(resolvedBaseDenom)
+    let ansName
+    // resolvedBaseDenom may be a cw20... so if it starts with cw20 then
+    if (resolvedBaseDenom.startsWith('cw20:')) {
+      const cw20Address = resolvedBaseDenom.replace('cw20:', '')
+      const { prefix } = bech32.decode(cw20Address)
+      const chain = ChainRegistry.findChainBy({
+        bech32_prefix: prefix,
+        network_type: this.chain.network_type,
+      })
+
+      const symbol = await Cw20Helper.init(chain, cw20Address).then((helper) => helper.getSymbol())
+
+      ansName = AnsName.chainNameIbcAsset(chain.chain_name, symbol)
+    } else {
+      // persistence>xprt
+      ansName = ChainRegistry.externalChainDenomToAnsName(resolvedBaseDenom)
+    }
 
     // Pause before executing a new query
-    await new Promise((resolve) => setTimeout(resolve, 200))
+    await new Promise((resolve) => setTimeout(resolve, 500))
     return this.assetRegistry.register(new AnsAssetEntry(ansName, AssetInfo.native(denom)))
   }
 
@@ -193,15 +281,10 @@ export abstract class Network {
       return await this.globalCache.getValueUnchecked('cw20Symbols', cw20Address)
     }
 
-    const client = new Cw20QueryClient(await this.queryClient(), cw20Address)
-    try {
-      const info = await client.tokenInfo()
-      const symbol = info.symbol.toLowerCase()
-      await this.globalCache.setValue('cw20Symbols', cw20Address, symbol)
-      return symbol
-    } catch (e) {
-      throw new Error(`Failed to query cw20 symbol for ${cw20Address}: ${e}`)
-    }
+    const client = new Cw20Helper(new Cw20QueryClient(await this.queryClient(), cw20Address))
+    const symbol = await client.getSymbol()
+    await this.globalCache.setValue('cw20Symbols', cw20Address, symbol)
+    return symbol
   }
 
   public async queryClient(): Promise<CosmWasmClient> {
@@ -213,12 +296,17 @@ export abstract class Network {
     return QueryClient.withExtensions(tendermintClient, setupIbcExtension)
   }
 
+  public async factoryQueryClient(): Promise<QueryClient & BankExtension> {
+    const tendermintClient = await Tendermint34Client.connect(await this.rpcUrl())
+    return QueryClient.withExtensions(tendermintClient, setupBankExtension)
+  }
+
   private async rpcUrl(): Promise<string> {
     const chain = chains.find(({ chain_id }) => chain_id === this.networkId)
     if (!chain) throw new NotFoundError(`Chain ${this.networkId} not found in chain-registry`)
 
-    if (this.networkId === 'phoenix-1') {
-      return 'https://terra-rpc.polkachu.com/'
+    if (Object.keys(RPC_OVERRIDES).includes(this.networkId)) {
+      return RPC_OVERRIDES[this.networkId as keyof typeof RPC_OVERRIDES]
     }
 
     const rpc = `https://rpc.cosmos.directory/${chain}`

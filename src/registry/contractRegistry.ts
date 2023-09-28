@@ -26,7 +26,9 @@ export class ContractRegistry implements IRegistry<AnsContractEntry> {
         throw new AlreadyRegisteredError(
           `Contract ${JSON.stringify(contractEntry.info)}:${
             contractEntry.address
-          } already registered with different info`
+          } already registered with different info (${JSON.stringify(existing.info)}:${
+            existing.address
+          }`
         )
       }
       // If the contract is already registered, we don't need to do anything

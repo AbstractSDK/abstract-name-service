@@ -8,7 +8,7 @@ import { AssetRegistry } from '../registry/assetRegistry'
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Uni5Options {}
 
-const UNI_5 = 'uni-5'
+const UNI_6 = 'uni-6'
 
 export class Uni5 extends Network {
   private options: Uni5Options
@@ -20,7 +20,7 @@ export class Uni5 extends Network {
     options: Uni5Options = {}
   ) {
     super({
-      networkId: UNI_5,
+      networkId: UNI_6,
       assetRegistry: assetRegistry,
       contractRegistry: contractRegistry,
       poolRegistry: poolRegistry,

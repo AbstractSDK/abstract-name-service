@@ -5,6 +5,12 @@ type AbstractPoolId =
   | {
       id: number
     }
+  | {
+      separate_addresses: {
+        swap: string
+        liquidity: string
+      }
+    }
 
 type PoolType = 'Stable' | 'Weighted' | 'LiquidityBootstrap' | 'ConstantProduct'
 

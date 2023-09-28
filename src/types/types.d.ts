@@ -1,5 +1,13 @@
 // type Chain = string
-type ChainName = 'juno' | 'archway' | 'osmosis' | 'terra2' | 'neutron'
+type ChainName =
+  | 'juno'
+  | 'archway'
+  | 'osmosis'
+  | 'terra2'
+  | 'neutron'
+  | 'kujira'
+  | 'sei'
+  | 'injective'
 
 type Addr = string
 
@@ -19,5 +27,4 @@ type AbstractContractEntry = {
   protocol: string
 }
 
-type ChainName = string
 type NetworkId = string

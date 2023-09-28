@@ -2,6 +2,12 @@
   "terra2": {
     "phoenix-1": [
       [
+        "terra2>astro",
+        {
+          "cw20": "terra1nsuqsk6kh58ulczatwev87ttq2z6r3pusulg9r24mfj2fvtzd4uq3exn26"
+        }
+      ],
+      [
         "terra>lunc",
         {
           "native": "ibc/177904239844D7D0E59D04F864D1278C07A80688EA67BCFA940E954FFA4CF699"
@@ -14,9 +20,21 @@
         }
       ],
       [
+        "stride>stluna",
+        {
+          "native": "ibc/08095CEDEA29977C9DD0CE9A48329FDA622C183359D5F90CF04CC4FF80CBE431"
+        }
+      ],
+      [
         "axelar>usdc",
         {
           "native": "ibc/B3504E092456BA618CC28AC671A71FB08C6CA0FD0BE7C8A5B5A3E2DD933CC9E4"
+        }
+      ],
+      [
+        "terra2>seas",
+        {
+          "cw20": "terra1rc6ssp5rym7a0hg29xpj4cc9e67tl56kg5jyzgl9qrhfxxc2ugvsnrkala"
         }
       ],
       [
@@ -44,21 +62,63 @@
         }
       ],
       [
-        "terra2>trump",
-        {
-          "cw20": "terra18ha3r45syfpp46qg85p9wqxy6p0nj82rlxt7c74qkdr0yzcjut9sw7gerz"
-        }
-      ],
-      [
         "cosmoshub>atom",
         {
           "native": "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
         }
       ],
       [
+        "terra2>blue",
+        {
+          "cw20": "terra1gwrz9xzhqsygyr5asrgyq3pu0ewpn00mv2zenu86yvx2nlwpe8lqppv584"
+        }
+      ],
+      [
+        "mars>mars",
+        {
+          "native": "ibc/2C50C2CC304FAE4C87868ED4B4279F8BF769F10CCFFD3154B6101C61E57AA498"
+        }
+      ],
+      [
+        "migaloo>bwhale",
+        {
+          "native": "ibc/517E13F14A1245D4DE8CF467ADD4DA0058974CDCC880FA6AE536DBCA1D16D84E"
+        }
+      ],
+      [
+        "migaloo>ampwhale",
+        {
+          "native": "ibc/B3F639855EE7478750CC8F82072307ED6E131A8EFF20345E1D136B50C4E5EC36"
+        }
+      ],
+      [
+        "migaloo>whale",
+        {
+          "native": "ibc/36A02FFC4E74DF4F64305130C3DFA1B06BEAC775648927AA44467C76A77AB8DB"
+        }
+      ],
+      [
+        "juno>juno",
+        {
+          "native": "ibc/4CD525F166D32B0132C095F353F4C6F033B0FF5C49141470D1EFDA1D63303D04"
+        }
+      ],
+      [
+        "juno>empwr",
+        {
+          "native": "ibc/55892DEC5D6213E0353F76D72161037780DB2DCEF27C9134817808AD5005B35A"
+        }
+      ],
+      [
         "terra2>bluna",
         {
           "cw20": "terra1hspy32cecnj72wwpma59eldpmsmfndlrwqxnzx6awfdtarns66qqw5kn85"
+        }
+      ],
+      [
+        "comdex>cmdx",
+        {
+          "native": "ibc/6CD39EACF052B761E3ADC709A11747CFCCA49F07DA23A26E61DB1CEF4D0CCC33"
         }
       ],
       [
@@ -83,6 +143,12 @@
         "terra2>cluna",
         {
           "cw20": "terra13eekqp0zgj55arjuacpxqxzgqy2uydf5wzzqns9ddgpepj377afqflunf3"
+        }
+      ],
+      [
+        "terra2>trump",
+        {
+          "cw20": "terra18ha3r45syfpp46qg85p9wqxy6p0nj82rlxt7c74qkdr0yzcjut9sw7gerz"
         }
       ],
       [
@@ -134,27 +200,21 @@
         }
       ],
       [
-        "terra2>capa",
+        "astroport/stride>stluna,stride>strd",
         {
-          "cw20": "terra1t4p3u8khpd7f8qzurwyafxt648dya6mp6vur3vaapswt6m24gkuqrfdhar"
+          "cw20": "terra1u743c64h98zqjtghz99srwgw7wtj8q6gtvrel0ep24zd48xhk3ssza869y"
         }
       ],
       [
-        "terra2>usdc",
+        "astroport/axelar>usdc,stride>stluna",
         {
-          "cw20": "terra1uc3r74qg44csdrl8hrm5muzlue9gf7umgkyv569pgazh7tudpr4qdtgqh6"
+          "cw20": "terra10qshp8v3kunqzt38c8r8z4qwz8xuv0t0ltkx559y6ft4d6rkek8q8e3xhz"
         }
       ],
       [
-        "terra2>sayve",
+        "astroport/stride>stluna,terra2>seas",
         {
-          "cw20": "terra1xp9hrhthzddnl7j5du83gqqr4wmdjm5t0guzg9jp6jwrtpukwfjsjgy4f3"
-        }
-      ],
-      [
-        "terra2>steak",
-        {
-          "cw20": "terra1xumzh893lfa7ak5qvpwmnle5m5xp47t3suwwa9s0ydqa8d8s5faqn6x7al"
+          "cw20": "terra1p5ug8m5ly6nf4j520gdgt506qrvv9thjttjh4yqfrq0zn3flu6asufpr7l"
         }
       ],
       [
@@ -176,9 +236,57 @@
         }
       ],
       [
-        "astroport/cosmoshub>atom,terra2>trump",
+        "astroport/cosmoshub>atom,terra2>blue",
         {
-          "cw20": "terra1jv0qp3jtcgdckfk2r0zvqy96xqvq4ku9zn8we25z3n7rwv0nhpks28vfkq"
+          "cw20": "terra186ef4d7l9pfckw3j6ks7jp9u0kl8q6tf4wxe0kdmwck54zczmgvqpq925m"
+        }
+      ],
+      [
+        "astroport/mars>mars,migaloo>bwhale",
+        {
+          "cw20": "terra1m6dzl3nazd8azhlgadx89yex9wyynzlw8rdxunxxsfksy86w75csmcga4s"
+        }
+      ],
+      [
+        "astroport/mars>mars,migaloo>ampwhale",
+        {
+          "cw20": "terra1jw3gt2th6dhnv5mx69sd9qwxzzc8qgrjmu95zsnrkhfl2tep9x7qy003ld"
+        }
+      ],
+      [
+        "astroport/axelar>usdc,migaloo>whale",
+        {
+          "cw20": "terra12msg0u04085ua69vxfxtl7v3ajg3sjfggjkp382sszt5axtsxatq60x8vr"
+        }
+      ],
+      [
+        "astroport/juno>empwr,juno>juno",
+        {
+          "cw20": "terra1fyx8fkqyv8vm4wckgjlrw9zcl5f4xn7fk857vvqrlwsy5hqd6pjszalx50"
+        }
+      ],
+      [
+        "astroport/axelar>usdc,migaloo>bwhale",
+        {
+          "cw20": "terra1nxr788yv7nzmejq7eg8kmuzdd6a9thk09vfkw9gedtwgcmmm7juquar254"
+        }
+      ],
+      [
+        "astroport/migaloo>bwhale,terra2>luna",
+        {
+          "cw20": "terra149pph3xmqt735t64hzceh0emh96j82lksvx9u7af69lzlvnzuctshcfw0n"
+        }
+      ],
+      [
+        "astroport/comdex>cmdx,terra2>seas",
+        {
+          "cw20": "terra12garlje5e8uy625wvx5r2539pz6xdpuc2ngzrv3phtzxaa3jf0cq5pkwng"
+        }
+      ],
+      [
+        "astroport/axelar>usdc,migaloo>ampwhale",
+        {
+          "cw20": "terra1jtv8xs6ugx4q6cl6ghj3x2hwr3zm78mjt9yjuqlhd5p5c23q4ruqndl85w"
         }
       ],
       [
@@ -236,9 +344,9 @@
         }
       ],
       [
-        "astroport/axelar>usdc,terra2>pow",
+        "astroport/axelar>usdc,terra2>blue",
         {
-          "cw20": "terra14ajz8e4xkzj934hp2xdg28ve2789arf20alaxgyevdmdscgppe5qs694v6"
+          "cw20": "terra12xxlw5phr7hrsskgv74dvgqyl50j8hfpfy250cjth3ewqk32k6rsykej3n"
         }
       ],
       [
@@ -266,37 +374,25 @@
         }
       ],
       [
+        "astroport/axelar>usdc,terra2>seas",
+        {
+          "cw20": "terra1d78yf9347q8talx4c3hhaxfs0rkfyjsawvd27z9rjzf2mx5yyktqa846gt"
+        }
+      ],
+      [
         "astroport/axelar>usdc,terra2>ust",
         {
           "cw20": "terra1ljjau3mzxv2rpje5p67vfa2uc82uvct5l70z5cqegd0pnus3u26svpura9"
         }
-      ],
-      [
-        "astroport/axelar>usdc,terra2>capa",
-        {
-          "cw20": "terra1gcf7zj637djpmll9epm63dnutp3ljxqpdvz2esk02lun8cvpz3tsvejlnp"
-        }
-      ],
-      [
-        "astroport/axelar>usdc,terra2>usdc",
-        {
-          "cw20": "terra1wv46n9zggd8sx30d8gfgzeyu2a7rmdc8makk7cl4qgtlnw342kpq94faz0"
-        }
-      ],
-      [
-        "astroport/axelar>usdc,terra2>sayve",
-        {
-          "cw20": "terra1l3r2z220fs6hfz8var4ms8w0tlxhw7aqdulslvgz9ur9g3g7mn9qd9mptr"
-        }
-      ],
-      [
-        "astroport/axelar>usdc,terra2>steak",
-        {
-          "cw20": "terra1dpvp8xra378kadfmn0c93n9qvf942r04vkznh75c2s4cy3atq72sq3jetx"
-        }
       ]
     ],
     "pisco-1": [
+      [
+        "terra2>xastro",
+        {
+          "cw20": "terra1ctzthkc0nzseppqtqlwq9mjwy9gq8ht2534rtcj3yplerm06snmqfc5ucr"
+        }
+      ],
       [
         "terra2>neb",
         {
@@ -322,15 +418,21 @@
         }
       ],
       [
-        "terra2>xsayve",
+        "terra2>moon",
         {
-          "cw20": "terra12g7rhutj6lsupfphl25a8ymgfwx2jl2j8l4y8gp5auv8vszzetrs0w7acg"
+          "cw20": "terra120t9eqmt8m78nwdfshf0xj502940pqmk07e7v3scl7eu9qqcjn8sjdjv03"
         }
       ],
       [
-        "terra2>xastro",
+        "terra2>weth",
         {
-          "cw20": "terra1ctzthkc0nzseppqtqlwq9mjwy9gq8ht2534rtcj3yplerm06snmqfc5ucr"
+          "cw20": "terra1lz4vhnt5xwnd7tpkezqddvp9ax4y39l4ydtjzxrdy2hy6tuvjpuqh7uwtl"
+        }
+      ],
+      [
+        "terra2>xsayve",
+        {
+          "cw20": "terra12g7rhutj6lsupfphl25a8ymgfwx2jl2j8l4y8gp5auv8vszzetrs0w7acg"
         }
       ],
       [
@@ -406,6 +508,12 @@
         }
       ],
       [
+        "terra2>ampluna",
+        {
+          "cw20": "terra1xgvp6p0qml53reqdyxgcl8ttl0pkh0n2mtx2n7tzfahn6e0vca7s0g7sg6"
+        }
+      ],
+      [
         "terra2>usdt",
         {
           "cw20": "terra1dwtyvyrkw0s7e0rucwgfwypr4m4emshvsf56nmjn3gertd2jwdzsjt33nl"
@@ -424,33 +532,15 @@
         }
       ],
       [
-        "terra2>test-a",
+        "astroport/terra2>moon,terra2>weth",
         {
-          "cw20": "terra1fq4hrvkv2eem8ddln80w3uyr96lxl5r4543amcpj9rxm3aqnt60qqm4fqa"
-        }
-      ],
-      [
-        "terra2>test-b",
-        {
-          "cw20": "terra15l4hnaeegy790z7wt4590wv0fakn3s6lrppkltw3j3qxg2kytkzq7kl92m"
-        }
-      ],
-      [
-        "astroport/terra2>astro,terra2>xsayve",
-        {
-          "cw20": "terra1grgw9xv9wltztykv65wph4wdxzgknx33k62m9ykegdu9ury69tsq2maq2u"
+          "cw20": "terra1n27wfm0uhxckc2pjnlz62tydp6gdm2328yc80ewrxw6kd5lhvwzs7ctpxt"
         }
       ],
       [
         "astroport/terra2>xastro,terra2>xsayve",
         {
           "cw20": "terra160eafvn89pfl7lgxt776en6jwkkaq002a4ykknx2ywxejrf384psrsnp0k"
-        }
-      ],
-      [
-        "astroport/terra2>astro,terra2>lunax",
-        {
-          "cw20": "terra19tkea6zceztzyqsqyute3gdwj37k85mvn3cefxj5hf7d0kc3f2rqd0mpeg"
         }
       ],
       [
@@ -502,6 +592,12 @@
         }
       ],
       [
+        "astroport/terra2>lunc,terra2>xastro",
+        {
+          "cw20": "terra14xx3ye63t4smcj70l62ww9kwhvfwhmj9hc0hs2dtnf506h33cr9q9rt3rm"
+        }
+      ],
+      [
         "astroport/terra2>dota,terra2>lunc",
         {
           "cw20": "terra1rfkr67qea7je92szz9j94szudyqetnz3gntjq5rwck70apjfdr0supu8jq"
@@ -514,6 +610,12 @@
         }
       ],
       [
+        "astroport/terra2>ampluna,terra2>ustc",
+        {
+          "cw20": "terra19jlskasp5a79dt2r73cw5qhp6jznt4v9vxm0zxfrj48prywpnnpsst0cnf"
+        }
+      ],
+      [
         "astroport/terra2>strd,terra2>xastro",
         {
           "cw20": "terra1662g847f4g980paudwv5sd0w0905ym9ptdxf7p9295ltszvadfuqcjhzhx"
@@ -523,18 +625,6 @@
         "astroport/terra2>astro,terra2>usdc",
         {
           "cw20": "terra13s00q3mnlh6ujg6la4mjd95kw66arp8cenjr9q294v9vvsfp5yjs0mtamc"
-        }
-      ],
-      [
-        "astroport/terra2>test-a,terra2>test-b",
-        {
-          "cw20": "terra16v9p6jw3yf740zeyepalxsrgdwmzh8gfln2x9uhswqka85nwh5cssc6unf"
-        }
-      ],
-      [
-        "astroport/terra2>astro,terra2>earth",
-        {
-          "cw20": "terra1rmzzg7zjnrr0jf5npzhg3qz8ksr2ps5xhcr2n2llnycdkllkukdqaehzz3"
         }
       ]
     ]

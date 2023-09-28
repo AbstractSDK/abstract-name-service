@@ -1,8 +1,8 @@
 import { ContractRegistry } from '../registry/contractRegistry'
 import { PoolRegistry } from '../registry/poolRegistry'
 import { Network } from './network'
-import { Astroport } from '../exchanges'
 import { AssetRegistry } from '../registry/assetRegistry'
+import { AstroportGql } from '../exchanges/astroportgql'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Phoenix1Options {}
@@ -24,10 +24,16 @@ export class Phoenix1 extends Network {
       contractRegistry,
       poolRegistry,
       exchanges: [
-        new Astroport({
+        // new Astroport({
+        //   contractsUrl:
+        //     'https://raw.githubusercontent.com/astroport-fi/astroport-changelog/main/terra-2/phoenix-1/core_phoenix.json',
+        //     cacheSuffix: PHOENIX_1
+        // }),
+        new AstroportGql({
           contractsUrl:
             'https://raw.githubusercontent.com/astroport-fi/astroport-changelog/main/terra-2/phoenix-1/core_phoenix.json',
-            cacheSuffix: PHOENIX_1
+          cacheSuffix: PHOENIX_1,
+          graphQlEndpoint: 'https://multichain-api.astroport.fi/graphql',
         }),
       ],
     })

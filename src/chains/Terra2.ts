@@ -11,8 +11,8 @@ const phoenix_1 = new Phoenix1(new AssetRegistry(), new ContractRegistry(), new 
 
 export class Terra2 extends Chain {
   constructor() {
-    super('terra2', [pisco_1])
-    // super('terra2', [phoenix_1])
+    // super('terra2', [pisco_1])
+    super('terra2', [phoenix_1])
     // super('terra2', [phoenix_1, pisco_1])
   }
 }
