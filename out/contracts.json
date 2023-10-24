@@ -912,5 +912,683 @@
   },
   "archway": {
     "archway-1": []
+  },
+  "sei": {
+    "pacific-1": [
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/eth-wormhole>usdc,sei>sei"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/bsc-wormhole>usdt,eth-wormhole>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/eth-wormhole>usdc,op-wormhole>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/axelar>usdc,eth-wormhole>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/eth-wormhole>usdc,sol-wormhole>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/eth-wormhole>usdc,matic-wormhole>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/arb-wormhole>usdc,eth-wormhole>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/eth-wormhole>weth,sei>sei"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/osmosis>osmo,sei>sei"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei>sei,sei>spepe"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/cosmoshub>atom,sei>sei"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei>sdoge,sei>sei"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/matic-wormhole>usdc,sei>sei"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/axelar>usdc,terra2>astro"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/bsc-wormhole>usdt,sei>seilor"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/eth-wormhole>wbtc,sei>sei"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei>sei,terra2>astro"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/axelar>usdc,sei>sei"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei>musk,sei>sei"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/arb-wormhole>usdc,terra2>astro"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei>say,sei>sei"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/bsc-wormhole>usdt,sei>sei"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei>sei,sei>seinu"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/arb-wormhole>usdc,sei>sei"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei>sei,sol-wormhole>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/osmosis>osmo,sol-wormhole>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei>sea,sei>sei"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei>sea,sei>sey"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/eth-wormhole>usdc,osmosis>osmo"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/eth-wormhole>usdc,eth-wormhole>weth"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/axelar>usdc,sei>sey"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei>oin,sei>sei"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/cosmoshub>atom,eth-wormhole>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei>sei,sei>sey"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei>float,sei>sink"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/arb-wormhole>weth,eth-wormhole>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/matic-wormhole>usdc,sei>seinu"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/bsc-wormhole>weth,eth-wormhole>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/bsc-wormhole>usdc,matic-wormhole>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/bsc-wormhole>usdt,terra2>astro"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/op-wormhole>usdc,terra2>astro"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/eth-wormhole>usdc,terra2>astro"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/bsc-wormhole>usdc,eth-wormhole>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei>seinu,sol-wormhole>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei>sei,sei>turtle"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/arb-wormhole>usdc,axelar>usdc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/eth-wormhole>usdc,eth-wormhole>wbtc"
+        },
+        "sei13hwj6afyxgue26f966hd5jkcvvjeruv7f9cdtd5d9mrtyrnn73ysp04nt4"
+      ]
+    ],
+    "atlantic-2": [
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc,sei2>token"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc,terra2>astro"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>sei,terra2>astro"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc,sei2>factory/sei1vs8s40qfwcesvdazxuxz0fqc3ag40yt8ayclch/usdc"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>sei,sei2>token"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc,sei2>factory/sei1jdppe6fnj2q7hjsepty5crxtrryzhuqsjrj95y/uust2"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>sen,sei2>token"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1jdppe6fnj2q7hjsepty5crxtrryzhuqsjrj95y/uust2,terra2>astro"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc,sei2>factory/sei1j8xuxg6wzuphmplqjwh9kgpa394h235j8gt6p9/simba"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1jdppe6fnj2q7hjsepty5crxtrryzhuqsjrj95y/uust2,sei2>sei"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc,sei2>sen"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1jdppe6fnj2q7hjsepty5crxtrryzhuqsjrj95y/uust2,sei2>rum"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1vs8s40qfwcesvdazxuxz0fqc3ag40yt8ayclch/usdc,sei2>token"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>oct,sei2>sei"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>lusd,sei2>token"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1jdppe6fnj2q7hjsepty5crxtrryzhuqsjrj95y/uust2,sei2>sen"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>rum,terra2>astro"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>ais,sei2>sei"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>token,terra2>astro"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1j8xuxg6wzuphmplqjwh9kgpa394h235j8gt6p9/simba,sei2>oct"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc,sei2>kmb"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1jdppe6fnj2q7hjsepty5crxtrryzhuqsjrj95y/uust2,sei2>factory/sei1vs8s40qfwcesvdazxuxz0fqc3ag40yt8ayclch/usdc"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1vs8s40qfwcesvdazxuxz0fqc3ag40yt8ayclch/usdc,terra2>astro"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1dkdwdvknx0qav5cp5kw68mkn3r99m3svkyjfvkztwh97dv2lm0ksj6xrak/gotfbk8vudfbqgtjgf1nhv7bfzguxfwiwadnlkv5pems,terra2>astro"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc,sei2>sei"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1vs8s40qfwcesvdazxuxz0fqc3ag40yt8ayclch/usdc,sei2>rum"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>suke,sei2>token"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1dkdwdvknx0qav5cp5kw68mkn3r99m3svkyjfvkztwh97dv2lm0ksj6xrak/gotfbk8vudfbqgtjgf1nhv7bfzguxfwiwadnlkv5pems,sei2>factory/sei1kmrnnc7230e6ha2hcl5h6guwwcch298p057rw85vkfhuk6wjwe5sv4hqx6/kusd"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1vs8s40qfwcesvdazxuxz0fqc3ag40yt8ayclch/usdc,sei2>sei"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc,sei2>rum"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>pepesei,sei2>token"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1jdppe6fnj2q7hjsepty5crxtrryzhuqsjrj95y/uust2,sei2>jwk"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>jwk,sei2>sei"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>pepesei,sei2>sei"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>rum,sei2>sei"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>sei,sei2>suke"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>lusd,sei2>sei"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>kmb,sei2>lusd"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1dreru8834gk69045rxha0rkfle5azrqdqr07md/sen,terra2>astro"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>lusd,terra2>astro"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>kmb,sei2>sei"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>lusd,sei2>oct"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>oct,terra2>astro"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>bald,sei2>sei"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>kpt,sei2>sei"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei135mlnw9ndkyglgx7ma95pw22cl64mpnw58pfpd/usdc,sei2>factory/sei1kmrnnc7230e6ha2hcl5h6guwwcch298p057rw85vkfhuk6wjwe5sv4hqx6/kusd"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1j8xuxg6wzuphmplqjwh9kgpa394h235j8gt6p9/simba,sei2>factory/sei1jdppe6fnj2q7hjsepty5crxtrryzhuqsjrj95y/uust2"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>factory/sei1jdppe6fnj2q7hjsepty5crxtrryzhuqsjrj95y/uust2,sei2>lusd"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ],
+      [
+        {
+          "protocol": "astroport",
+          "contract": "staking/astroport/sei2>ais,sei2>factory/sei1jdppe6fnj2q7hjsepty5crxtrryzhuqsjrj95y/uust2"
+        },
+        "sei1z272lfg4vwqtg4tr7qywy6hpx4y3vwke0pnsjxvjtqjuju5v3u3qfnhu6k"
+      ]
+    ]
   }
 }
