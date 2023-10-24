@@ -12,8 +12,8 @@
           "dex": "kujira",
           "pool_type": "ConstantProduct",
           "assets": [
-            "kujira>kuji",
-            "kujira>demo"
+            "kujira>demo",
+            "kujira>kuji"
           ]
         }
       ]
