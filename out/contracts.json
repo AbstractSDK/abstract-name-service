@@ -911,7 +911,106 @@
     ]
   },
   "archway": {
-    "archway-1": []
+    "archway-1": [
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/archway>xjkl,axelar>usdc"
+        },
+        "archway1w60f8nslzs70xa323e3xv9lhajre45qt8ydfusl9mdpz0qhsnd9sfyju6f"
+      ],
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/archway>xarch,archway>xjkl"
+        },
+        "archway1kzqddgfzdma4pxeh78207k6nakcqjluyu3xum4twpcfe6c6dpdyq2mmuf0"
+      ],
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/archway>xarch,archway>xdec"
+        },
+        "archway13zp5y5ux42aqkq4q0eqdk5sxq2ha466emyrekn92aeygnxpdkhpqannpwt"
+      ],
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/archway>xarch,axelar>weth"
+        },
+        "archway1ukrm9kjmlaxyguju0lg583mg9yd6yfz9pxxczww39u76942hrk9s2npt56"
+      ],
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/archway>xarch,eth>axelar>usdc"
+        },
+        "archway1m8f5a24pcs5e0xmmprsngsxewv3nztv2val7e9qhpp3nt9sfcy2s46t8hc"
+      ],
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/agoric>ist,archway>xarch"
+        },
+        "archway1kg7gvuul3k3hxarasedrngm0xyz0z68lp7k3e2kh0dvt3k93tlhq3qlp3p"
+      ],
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/archway>xarch,archway>xaxl"
+        },
+        "archway1e3ev0wepu3ds6g7lefzp858mhtpjuk6cd5tdt6zuks05zyrvxrtsfguhe5"
+      ],
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/archway>xarch,archway>xatom"
+        },
+        "archway1axdrh30qxejcppxnlqzc6yx2gd8zx2hesg7ppxkueuw58gr05q3q3q3ntv"
+      ],
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/archway>xjkl,jackal>jkl"
+        },
+        "archway14n3elrssh269gs6qy43um7968kp7ycwlv5q2egaqrpv4uqzk4gjs86tdwg"
+      ],
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/archway>arch,archway>xarch"
+        },
+        "archway13xeat9u6s0x7vphups0r096fl3tkr3zenhdvfjrsc2t0t70ayugscdw46g"
+      ],
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/archway>xdec,decentr>dec"
+        },
+        "archway1qpeaelp3cqwua5q9a9aqe6h8f4lafsxwxxs2f0a4yex4vk02nnlq2kscep"
+      ],
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/archway>xatom,cosmoshub>atom"
+        },
+        "archway12sqy9uzzl3h3vqxam7sz9f0yvmhampcgv3aj6f4lr6f0gtqgpzgsl443yk"
+      ],
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/agoric>ist,axelar>usdc"
+        },
+        "archway1aqn5mp6f8gg3fxs5y2dt8k3mk92xms9rq5gpw3rqhgyr6ar9k0vs8ehnfm"
+      ],
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/archway>xaxl,axelar>axl"
+        },
+        "archway1ad6e2j6amhkerc0ysghwyk97r7uydzkrunmuk65z8cz688ya3kmqd682nm"
+      ]
+    ]
   },
   "sei": {
     "pacific-1": [

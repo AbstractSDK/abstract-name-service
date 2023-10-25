@@ -25,8 +25,10 @@ export class Archway1 extends Network {
       poolRegistry,
       exchanges: [
         new Astrovault({
-          pairFactoryAddress: 'archway1cq6tgc32az7zpq5w7t2d89taekkn9q95g2g79ka6j46ednw7xkkq7n55a2',
-          poolFactoryAddress: 'archway19yzx44k7w7gsjjhumkd4sh9r0z6lscq583hgpu9s4yyl00z9lahq0ptra0',
+          standardPoolFactoryAddress:
+            'archway1cq6tgc32az7zpq5w7t2d89taekkn9q95g2g79ka6j46ednw7xkkq7n55a2',
+          stablePoolFactoryAddress:
+            'archway19yzx44k7w7gsjjhumkd4sh9r0z6lscq583hgpu9s4yyl00z9lahq0ptra0',
           cacheSuffix: ARCHWAY_1,
         }),
       ],

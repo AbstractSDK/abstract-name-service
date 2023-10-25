@@ -2675,7 +2675,190 @@
     ]
   },
   "archway": {
-    "archway-1": []
+    "archway-1": [
+      [
+        {
+          "contract": "archway1e6l4sh2cqpwvdgp6h99nzv9tn0ga0jvt4qlarxlqsrtfmgpdy84qt8nq32"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "axelar>usdc",
+            "archway>xjkl"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "archway139hgd4rm3xyuqyrn63ardjxkg7puzafne7u3pj04qag7ld9cyhnqk9540y"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "archway>xarch",
+            "archway>xjkl"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "archway1k6falt0jp8qjfycvh2fgqlwl2znxdqql72knvrljtd3ezh5cmqesfxmzdt"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "archway>xarch",
+            "archway>xdec"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "archway17wenhyfn5km24884s0f2xuj6g7mccwvhaptqna7lg2ufy5pv88usk3t5cq"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "axelar>weth",
+            "archway>xarch"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "archway1evz8agrnppzq7gt2nnutkmqgpm86374xds0alc7hru987f9v4hqsejqfaq"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "eth>axelar>usdc",
+            "archway>xarch"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "archway18wdt3zsqgk2rgvgkqga44z5hz4p2yjsuszxpgeew8ftv4nev99esar8wt2"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "agoric>ist",
+            "archway>xarch"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "archway13q509p7yl5c79kukvj5fl3586838mp9at9e23kr2fnptgx88cf8qlcazfw"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "archway>xarch",
+            "archway>xaxl"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "archway1tadvtdm4ah6vnt8tzhfmk0e3aj62wxsvrq43zxlerqspufs2ydjs88pspp"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "archway>xarch",
+            "archway>xatom"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "archway1hyww8hnnl9jafeau68l9dwruty0xskp3v9ukdy5jzeg633x2qtasp6dl40"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "Stable",
+          "assets": [
+            "jackal>jkl",
+            "archway>xjkl"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "archway1vq9jza8kuz80f7ypyvm3pttvpcwlsa5fvum9hxhew5u95mffknxsjy297r"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "Stable",
+          "assets": [
+            "archway>arch",
+            "archway>xarch"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "archway1h6gxz86dtx34087lp5psdnc4glhsnhqyq3fym3ddt2s9awllexhqs9hpzx"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "Stable",
+          "assets": [
+            "decentr>dec",
+            "archway>xdec"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "archway14stujwyxsqddhe4wwcxx4ykkqp585lzems9rhzxyuh5k87lta8rqmsa7jz"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "Stable",
+          "assets": [
+            "cosmoshub>atom",
+            "archway>xatom"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "archway102gh7tqaeptt88nckg73mfx8j8du64hw4qqm53zwwykcchwar86sza46ge"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "Stable",
+          "assets": [
+            "agoric>ist",
+            "axelar>usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "archway17y8clrh58xqlypdtt6ussxqrcykfq548w7mxha65y2ky40d4muqs8shh52"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "Stable",
+          "assets": [
+            "axelar>axl",
+            "archway>xaxl"
+          ]
+        }
+      ]
+    ]
   },
   "sei": {
     "pacific-1": [
