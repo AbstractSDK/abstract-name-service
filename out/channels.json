@@ -1,0 +1,12 @@
+{
+  "archway": {
+    "osmosis": [
+      "channel-42"
+    ],
+  },
+  "osmosis": {
+    "archway": [
+      "channel-7707"
+    ]
+  }
+}
