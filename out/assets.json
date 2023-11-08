@@ -1564,6 +1564,20 @@
     ]
   },
   "archway": {
+    "constantine-3": [
+      [
+        "archway>const",
+        {
+          "native": "aconst"
+        }
+      ],
+      [
+        "archway>xconst",
+        {
+          "cw20": "archway1sdzaas0068n42xk8ndm6959gpu6n09tajmeuq7vak8t9qt5jrp6sjjtnka"
+        }
+      ]
+    ],
     "archway-1": [
       [
         "eth>axelar>usdc",

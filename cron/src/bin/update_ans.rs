@@ -12,9 +12,9 @@ use tokio::runtime::Runtime;
 fn update_ans() -> anyhow::Result<()> {
     let rt = Runtime::new()?;
     let deployment = Abstract::load_from(Mock::new(&Addr::unchecked("input")))?;
-    let chain_ids = deployment.get_all_deployed_chains();
+    // let chain_ids = deployment.get_all_deployed_chains();
 
-    let networks: Vec<ChainInfo> = chain_ids.iter().map(|n| parse_network(n)).collect();
+    let networks: Vec<ChainInfo> = vec![parse_network("constantine-3")];
 
     for network in networks {
         let chain = DaemonBuilder::default()
