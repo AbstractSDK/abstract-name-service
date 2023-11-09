@@ -1576,6 +1576,12 @@
         {
           "cw20": "archway1sdzaas0068n42xk8ndm6959gpu6n09tajmeuq7vak8t9qt5jrp6sjjtnka"
         }
+      ],
+      [
+        "archway>usdc",
+        {
+          "cw20": "archway1mmu32f7hn0fyw8gh57xl5uhaqu4pq5xx59ynf0tju60n2nzha0as3vtmcm"
+        }
       ]
     ],
     "archway-1": [
