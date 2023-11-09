@@ -14,10 +14,7 @@ pub fn get_scraped_entries(
 ) -> Result<HashMap<UncheckedContractEntry, String>, AbstractInterfaceError> {
     let raw_scraped_entries = crate::get_scraped_json_data("contracts");
 
-    println!("binding: {raw_scraped_entries}");
-    println!("chain_name: {chain_name}, chain_id: {chain_id}");
     let binding = raw_scraped_entries[chain_name][chain_id].clone();
-    println!("binding: {binding}");
     let parsed_scraped_entries: &Vec<Value> = binding.as_array().unwrap();
 
     let scraped_entries_vec: Vec<(UncheckedContractEntry, String)> = parsed_scraped_entries
