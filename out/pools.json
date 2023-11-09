@@ -2697,8 +2697,8 @@
           "dex": "astrovault",
           "pool_type": "ConstantProduct",
           "assets": [
-            "archway>xconst",
-            "archway>usdc"
+            "archway>usdc",
+            "archway>xconst"
           ]
         }
       ]
