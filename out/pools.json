@@ -2675,6 +2675,34 @@
     ]
   },
   "archway": {
+    "constantine-3": [
+      [
+        {
+          "contract": "archway1flsdgve559shl8fvqfrk3p2wdxn82ykqyqk7w2wjaw7p3gnhj3esfmq8t0"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "Stable",
+          "assets": [
+            "archway>const",
+            "archway>xconst"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "archway1jdrvvzd2tcfvhvyaedy7e8s92lh2m3a3jklvn74768fh6n5quh4sl6rgkx"
+        },
+        {
+          "dex": "astrovault",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "archway>usdc",
+            "archway>xconst"
+          ]
+        }
+      ]
+    ],
     "archway-1": [
       [
         {

@@ -911,6 +911,22 @@
     ]
   },
   "archway": {
+    "constantine-3": [
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/archway>const,archway>xconst"
+        },
+        "archway14mwujg8f3qleemetthz4ndphr82q2r2gt2hul6qgaerxn4dnlnuqgsm82e"
+      ],
+      [
+        {
+          "protocol": "astrovault",
+          "contract": "staking/astrovault/archway>usdc,archway>xconst"
+        },
+        "archway1gyucz0m7qgl450n7hmj24ckthdt2sap5phk0zyrwcj8hjprv9vss4nn8kw"
+      ]
+    ],
     "archway-1": [
       [
         {
