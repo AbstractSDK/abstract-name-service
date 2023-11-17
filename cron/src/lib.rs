@@ -129,8 +129,8 @@ pub fn get_scraped_entries(ans_host: &AnsHost<Daemon>) -> Result<AnsData, Abstra
 
     let contracts = crate::contracts::get_scraped_entries(chain_name, &chain_id)?;
     let mut assets = crate::assets::get_scraped_entries(chain_name, &chain_id)?;
-    let (pools, dexes, extra_assets) = crate::pools::get_scraped_entries(chain_name, &chain_id)?;
-    assets.extend(extra_assets);
+    let (pools, dexes, lp_assets) = crate::pools::get_scraped_entries(chain_name, &chain_id)?;
+    assets.extend(lp_assets);
 
     Ok(AnsData {
         contracts: contracts.into_iter().collect(),

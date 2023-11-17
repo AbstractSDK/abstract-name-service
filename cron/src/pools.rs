@@ -24,7 +24,7 @@ pub fn get_scraped_entries(
     let binding = raw_scraped_entries[chain_name][chain_id].clone();
     let parsed_scraped_entries: &Vec<Value> = binding.as_array().unwrap();
     let mut dexes_to_register: HashSet<String> = HashSet::new();
-    let mut extra_assets: HashMap<String, AssetInfoBase<String>> = HashMap::new();
+    let mut lp_assets: HashMap<String, AssetInfoBase<String>> = HashMap::new();
 
     let scraped_entries_vec: Vec<(UncheckedPoolAddress, PoolMetadata)> = parsed_scraped_entries
         .iter()
@@ -41,7 +41,7 @@ pub fn get_scraped_entries(
                     .collect::<Vec<_>>()
                     .join(",");
                 let asset_name = format!("{dex}/{assets}",);
-                extra_assets.insert(
+                lp_assets.insert(
                     asset_name,
                     AssetInfoBase::Native(format!("gamm/pool/{pool_id}")),
                 );
@@ -55,7 +55,7 @@ pub fn get_scraped_entries(
     Ok((
         scraped_entries_vec.into_iter().collect(),
         dexes_to_register,
-        extra_assets,
+        lp_assets,
     ))
 }
 
