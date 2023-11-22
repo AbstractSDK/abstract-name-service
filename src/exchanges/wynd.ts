@@ -8,7 +8,7 @@ import { fromAscii, toAscii } from 'cosmwasm'
 import { CosmWasmClient } from '@cosmjs/cosmwasm-stargate'
 import { Cw20QueryClient } from '@abstract-os/abstract.js'
 
-const WYND_DEX = 'Wynd'
+const WYND_DEX = 'Wyndex'
 
 const WYND_POOL_TYPE: PoolType = 'ConstantProduct'
 
