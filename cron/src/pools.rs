@@ -31,6 +31,7 @@ pub fn get_scraped_entries(
         .map(|value| {
             let pool: (UncheckedPoolAddress, PoolMetadata) =
                 serde_json::from_value(value.clone()).unwrap();
+            // If pool uses pool-id we assume it is on Osmosis and register the LP assets with the `gamm/pool/{pool_id}` prefix.
             if let UncheckedPoolAddress::Id(pool_id) = pool.0 {
                 let dex = &pool.1.dex;
                 let assets = pool
