@@ -30,6 +30,7 @@ export const RPC_OVERRIDES = {
   'phoenix-1': 'https://terra-rpc.polkachu.com/',
   'neutron-1': 'https://neutron-rpc.polkachu.com/',
   'atlantic-2': 'https://sei-testnet-rpc.polkachu.com/',
+  'osmosis-1': 'https://osmosis-rpc.reece.sh/',
 }
 
 interface INetwork {

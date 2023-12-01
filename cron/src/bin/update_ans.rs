@@ -1,10 +1,9 @@
 use abstract_interface::Abstract;
-
 use cw_orch::{
     deploy::Deploy,
     prelude::{
-        networks::{parse_network, ChainInfo},
         *,
+        networks::{ChainInfo, parse_network},
     },
 };
 use tokio::runtime::Runtime;
@@ -12,7 +11,8 @@ use tokio::runtime::Runtime;
 fn update_ans() -> anyhow::Result<()> {
     let rt = Runtime::new()?;
     let deployment = Abstract::load_from(Mock::new(&Addr::unchecked("input")))?;
-    let chain_ids = deployment.get_all_deployed_chains();
+    // let chain_ids = deployment.get_all_deployed_chains();
+    let chain_ids: Vec<String> = vec!["juno-1"].into_iter().map(|n| n.to_string()).collect();
 
     let networks: Vec<ChainInfo> = chain_ids.iter().map(|n| parse_network(n)).collect();
 

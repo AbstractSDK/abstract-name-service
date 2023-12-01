@@ -10,6 +10,8 @@ interface OsmosisOptions {
   volumeUrl: string | undefined
 }
 
+const MAX_POOLS = 75
+
 export class OsmosisDex extends Exchange {
   options: OsmosisOptions
 
@@ -91,7 +93,12 @@ export class OsmosisDex extends Exchange {
       // TODO: confirm whether we are including staking contracts
       const stakingContract = this.stakingContractEntry(assetNames, id)
 
-      network.contractRegistry.register(stakingContract)
+      try {
+        network.contractRegistry.register(stakingContract)
+      } catch (e) {
+        console.warn(`Failed to register staking contract for pool ${id}: ${e}`)
+        return
+      }
 
       network.poolRegistry.register(
         new AnsPoolEntry(poolId, {
@@ -129,7 +136,7 @@ export class OsmosisDex extends Exchange {
 
       poolList = {
         ...poolList,
-        pools: sortedPools.slice(0, volumeList.data.length),
+        pools: sortedPools.slice(0, MAX_POOLS),
       }
     } else {
       // sort all pools by their weight in descending order
