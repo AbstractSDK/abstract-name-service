@@ -1,9 +1,10 @@
 use crate::EntryDif;
+use cw_asset::AssetInfoBase;
 use cw_orch::prelude::*;
 
 use abstract_core::ans_host::*;
 use abstract_core::objects::pool_id::{PoolAddressBase, UncheckedPoolAddress};
-use abstract_core::objects::{DexAssetPairing, PoolMetadata, UniquePoolId};
+use abstract_core::objects::{DexAssetPairing, PoolMetadata, UniquePoolId, AssetEntry};
 use abstract_interface::{AbstractInterfaceError, AnsHost};
 
 use serde_json::Value;
@@ -12,6 +13,7 @@ use std::collections::{HashMap, HashSet};
 pub type ScrapedEntries = (
     HashMap<PoolAddressBase<String>, PoolMetadata>,
     HashSet<String>,
+    HashMap<String, AssetInfoBase<String>>,
 );
 
 pub fn get_scraped_entries(
@@ -22,20 +24,40 @@ pub fn get_scraped_entries(
     let binding = raw_scraped_entries[chain_name][chain_id].clone();
     let parsed_scraped_entries: &Vec<Value> = binding.as_array().unwrap();
     let mut dexes_to_register: HashSet<String> = HashSet::new();
+    let mut lp_assets: HashMap<String, AssetInfoBase<String>> = HashMap::new();
 
     let scraped_entries_vec: Vec<(UncheckedPoolAddress, PoolMetadata)> = parsed_scraped_entries
         .iter()
         .map(|value| {
             let pool: (UncheckedPoolAddress, PoolMetadata) =
                 serde_json::from_value(value.clone()).unwrap();
-
+            // If pool uses pool-id we assume it is on Osmosis and register the LP assets with the `gamm/pool/{pool_id}` prefix.
+            if let UncheckedPoolAddress::Id(pool_id) = pool.0 {
+                let dex = &pool.1.dex;
+                let assets = pool
+                    .1
+                    .assets
+                    .iter()
+                    .map(AssetEntry::as_str)
+                    .collect::<Vec<_>>()
+                    .join(",");
+                let asset_name = format!("{dex}/{assets}",);
+                lp_assets.insert(
+                    asset_name,
+                    AssetInfoBase::Native(format!("gamm/pool/{pool_id}")),
+                );
+            }
             dexes_to_register.insert(pool.1.dex.clone());
 
             pool
         })
         .collect();
 
-    Ok((scraped_entries_vec.into_iter().collect(), dexes_to_register))
+    Ok((
+        scraped_entries_vec.into_iter().collect(),
+        dexes_to_register,
+        lp_assets,
+    ))
 }
 
 pub fn get_on_chain_entries(
