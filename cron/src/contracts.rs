@@ -15,7 +15,8 @@ pub fn get_scraped_entries(
     let raw_scraped_entries = crate::get_scraped_json_data("contracts");
 
     let binding = raw_scraped_entries[chain_name][chain_id].clone();
-    let parsed_scraped_entries: &Vec<Value> = binding.as_array().unwrap();
+    let bd = vec![];
+    let parsed_scraped_entries: &Vec<Value> = binding.as_array().unwrap_or(&bd);
 
     let scraped_entries_vec: Vec<(UncheckedContractEntry, String)> = parsed_scraped_entries
         .iter()
@@ -58,13 +59,13 @@ pub fn update(
     let to_remove: Vec<_> = diff.0.into_iter().collect();
 
     // add the contracts
-    ans_host.execute_chunked(&to_add, 25, |chunk| ExecuteMsg::UpdateContractAddresses {
+    ans_host.execute_chunked(&to_add, 10, |chunk| ExecuteMsg::UpdateContractAddresses {
         to_add: chunk.to_vec(),
         to_remove: vec![],
     })?;
 
     // remove the contracts
-    ans_host.execute_chunked(&to_remove, 25, |chunk| {
+    ans_host.execute_chunked(&to_remove, 10, |chunk| {
         ExecuteMsg::UpdateContractAddresses {
             to_add: vec![],
             to_remove: chunk.to_vec(),
