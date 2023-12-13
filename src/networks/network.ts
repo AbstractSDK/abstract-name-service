@@ -151,6 +151,7 @@ export abstract class Network {
       }
     }
 
+    // factory/kujira19kxd9sqk09zlzqfykk7tzyf70hl009hkekufq8q0ud90ejtqvvxs8xg5cq/uhans
     // TODO: this will retrieve "uhans" for example
     const symbol = metadata.symbol ? metadata.symbol : denom.split('/')[2]
 

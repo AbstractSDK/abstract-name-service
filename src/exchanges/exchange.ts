@@ -24,6 +24,11 @@ export abstract class Exchange {
     return AnsName.lpToken(this.name, assets)
   }
 
+  /**
+   * {"protocol":"osmosis","contract":"staking/osmosis/cosmoshub>atom,osmosis>osmo"}: <staking address or id>
+   * @param assetNames
+   * @param stakingAddress
+   */
   stakingContractEntry(assetNames: string[], stakingAddress: string): AnsContractEntry {
     const stakingContractName = AnsName.stakingContract(this.name.toLowerCase(), assetNames)
 

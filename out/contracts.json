@@ -297,7 +297,512 @@
     ]
   },
   "osmosis": {
-    "osmosis-1": {},
+    "osmosis-1": [
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/cosmoshub>atom,osmosis>osmo"
+        },
+        "1"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/eth>axelar>usdc,osmosis>osmo"
+        },
+        "678"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/injective>inj,osmosis>osmo"
+        },
+        "725"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/axelar>axl,osmosis>osmo"
+        },
+        "812"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/chihuahua>huahua,osmosis>osmo"
+        },
+        "605"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/kujira>kuji,osmosis>osmo"
+        },
+        "744"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/eth>axelar>weth,osmosis>osmo"
+        },
+        "704"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/evmos>evmos,osmosis>osmo"
+        },
+        "722"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/chihuahua>huahua,cosmoshub>atom"
+        },
+        "606"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/eth>axelar>wbtc,osmosis>osmo"
+        },
+        "712"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/akash>akt,osmosis>osmo"
+        },
+        "3"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/akash>akt,cosmoshub>atom"
+        },
+        "4"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/jackal>jkl,osmosis>osmo"
+        },
+        "832"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/celestia>tia,osmosis>osmo"
+        },
+        "1249"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,secretnetwork>scrt"
+        },
+        "584"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/cronos>cro,osmosis>osmo"
+        },
+        "9"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/neutron>ntrn,osmosis>osmo"
+        },
+        "1046"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,terraclassic>ust"
+        },
+        "560"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/fetchhub>fet,osmosis>osmo"
+        },
+        "681"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/cerberus>crbrus,osmosis>osmo"
+        },
+        "662"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/eth>axelar>usdc,nolus>nls"
+        },
+        "1041"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/cosmoshub>atom,stride>statom"
+        },
+        "803"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/mars>mars,osmosis>osmo"
+        },
+        "907"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,picasso>pica"
+        },
+        "1057"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,stargaze>stars"
+        },
+        "604"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,sentinel>dvpn"
+        },
+        "5"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/eth>axelar>usdc,passage>pasg"
+        },
+        "1137"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/cosmoshub>atom,secretnetwork>scrt"
+        },
+        "585"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/bostrom>boot,cosmoshub>atom"
+        },
+        "596"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/cosmoshub>atom,juno>juno"
+        },
+        "498"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/binancesmartchain>axelar>wbnb,osmosis>osmo"
+        },
+        "840"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/migaloo>whale,osmosis>osmo"
+        },
+        "960"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,xpla>xpla"
+        },
+        "1173"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/cosmoshub>atom,cronos>cro"
+        },
+        "10"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/bostrom>boot,osmosis>osmo"
+        },
+        "597"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/avalanche>axelar>wavax,osmosis>osmo"
+        },
+        "899"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,sommelier>somm"
+        },
+        "627"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/cosmoshub>atom,stargaze>stars"
+        },
+        "611"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/juno>juno,osmosis>osmo"
+        },
+        "497"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/cudos>cudos,osmosis>osmo"
+        },
+        "796"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/cosmoshub>atom,sentinel>dvpn"
+        },
+        "6"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/bostrom>boot,eth>axelar>weth"
+        },
+        "912"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,stride>strd"
+        },
+        "806"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/eth>axelar>dai,osmosis>osmo"
+        },
+        "674"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/omniflixhub>flix,osmosis>osmo"
+        },
+        "992"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/eth>axelar>usdt,osmosis>osmo"
+        },
+        "831"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,polygon>axelar>wmatic"
+        },
+        "789"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/cheqd>cheq,osmosis>osmo"
+        },
+        "602"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,persistence>xprt"
+        },
+        "15"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,umee>umee"
+        },
+        "641"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,panacea>med"
+        },
+        "586"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>umbrn"
+        },
+        "1225"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/archway>arch,osmosis>osmo"
+        },
+        "1061"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/moonbeam>axelar>dot,osmosis>osmo"
+        },
+        "773"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,terra2>luna"
+        },
+        "726"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/oraichain>orai,osmosis>osmo"
+        },
+        "799"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,teritori>tori"
+        },
+        "816"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>ucdt"
+        },
+        "1226"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/eth>gravitybridge>weth,osmosis>osmo"
+        },
+        "634"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/onomy>nom,osmosis>osmo"
+        },
+        "882"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/cosmoshub>atom,panacea>med"
+        },
+        "587"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/kyve>kyve,osmosis>osmo"
+        },
+        "1075"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/cosmoshub>atom,irisnet>iris"
+        },
+        "8"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/bandchain>band,osmosis>osmo"
+        },
+        "626"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/decentr>dec,osmosis>osmo"
+        },
+        "644"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/irisnet>iris,osmosis>osmo"
+        },
+        "7"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,sifchain>rowan"
+        },
+        "629"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/agoric>ist,osmosis>osmo"
+        },
+        "837"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,quicksilver>qck"
+        },
+        "952"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/gravitybridge>grav,osmosis>osmo"
+        },
+        "625"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/coreum>core,osmosis>osmo"
+        },
+        "1244"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,terraclassic>luna"
+        },
+        "561"
+      ]
+    ],
     "osmo-test-5": [
       [
         {
