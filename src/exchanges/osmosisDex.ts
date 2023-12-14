@@ -12,6 +12,10 @@ interface OsmosisOptions {
 
 const MAX_POOLS = 75
 
+function isGamm(object: OsmosisPool): object is OsmosisGammPool {
+  return 'pool_assets' in object
+}
+
 export class OsmosisDex extends Exchange {
   options: OsmosisOptions
 
@@ -61,12 +65,22 @@ export class OsmosisDex extends Exchange {
     console.log(`Retrieved ${poolList.pools.length} pools for ${this.name} on ${network.networkId}`)
 
     poolList.pools.forEach((pool: OsmosisPool) => {
-      const { pool_assets, id } = pool
+      const { id } = pool
 
-      const poolDenoms = pool_assets?.map(({ token }) => token).map(({ denom }) => denom)
+      let poolDenoms
+      if (isGamm(pool)) {
+        poolDenoms = pool.pool_assets?.map(({ token }) => token).map(({ denom }) => denom)
+      } else {
+        poolDenoms = [pool.token0, pool.token1]
+      }
       if (!poolDenoms) return
 
-      const poolType = this.determineOsmosisPoolType(pool)
+      let poolType: PoolType | undefined
+      if (isGamm(pool)) {
+        poolType = this.determineOsmosisPoolType(pool)
+      } else {
+        poolType = 'ConcentratedLiquidity'
+      }
       if (!poolType) return
 
       const poolId = PoolId.id(+id)
@@ -175,7 +189,7 @@ export class OsmosisDex extends Exchange {
     pool_assets,
     pool_params,
     id,
-  }: OsmosisPool): PoolType | undefined => {
+  }: OsmosisGammPool): PoolType | undefined => {
     if (pool_assets?.length) {
       if (pool_params.smooth_weight_change_params) {
         return 'LiquidityBootstrap'
@@ -246,7 +260,9 @@ interface OsmosisPoolList {
   pagination: Pagination
 }
 
-interface OsmosisPool {
+type OsmosisPool = OsmosisGammPool | OsmosisConcentratedPool
+
+interface OsmosisGammPool {
   '@type': string
   address: string
   id: string
@@ -258,6 +274,23 @@ interface OsmosisPool {
   pool_liquidity?: PoolLiquidityItem[]
   scaling_factors?: string[]
   scaling_factor_controller?: string
+}
+
+interface OsmosisConcentratedPool {
+  '@type': string
+  address: string
+  incentives_address: string
+  spread_rewards_address: string
+  id: string
+  current_tick_liquidity: string
+  token0: string
+  token1: string
+  current_sqrt_price: string
+  current_tick: string
+  tick_spacing: string
+  exponent_at_price_one: string
+  spread_factor: string
+  last_liquidity_update: string
 }
 
 interface Pool_params {
