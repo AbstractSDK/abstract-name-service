@@ -65,6 +65,7 @@ export class OsmosisDex extends Exchange {
     console.log(`Retrieved ${poolList.pools.length} pools for ${this.name} on ${network.networkId}`)
 
     poolList.pools.forEach((pool: OsmosisPool) => {
+      // TODO: handle Pool type here and do 2 functions instead?
       const { id } = pool
 
       let poolDenoms
