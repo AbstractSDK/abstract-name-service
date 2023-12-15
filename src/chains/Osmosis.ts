@@ -149,8 +149,8 @@ const testnet = new OsmoTest5(
 export class Osmosis extends Chain {
   constructor() {
     super('osmosis', [
-      // mainnet,
-      testnet,
+      mainnet,
+      // testnet,
     ])
   }
 }
