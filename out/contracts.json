@@ -806,6 +806,13 @@
     "osmo-test-5": [
       [
         {
+          "protocol": "croncat",
+          "contract": "factory"
+        },
+        "osmo105qu7ajcf9y5wgpj7kcqj2rmj6zn6d9ernw99efua7834xprvwkq3hfhaz"
+      ],
+      [
+        {
           "protocol": "osmosis",
           "contract": "staking/osmosis/osmosis>osmo,osmosis>uakt-v1"
         },
@@ -824,6 +831,13 @@
           "contract": "staking/osmosis/osmosis>osmo,osmosis>uaxl-v1"
         },
         "21"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>uevmos-v1"
+        },
+        "22"
       ],
       [
         {
@@ -926,6 +940,13 @@
       [
         {
           "protocol": "osmosis",
+          "contract": "staking/osmosis/axelar>ausdc,chain4energy>c4e"
+        },
+        "37"
+      ],
+      [
+        {
+          "protocol": "osmosis",
           "contract": "staking/osmosis/cosmoshub>atom,osmosis>osmo"
         },
         "43"
@@ -954,13 +975,6 @@
       [
         {
           "protocol": "osmosis",
-          "contract": "staking/osmosis/osmosis>tuosmo,osmosis>weth"
-        },
-        "155"
-      ],
-      [
-        {
-          "protocol": "osmosis",
           "contract": "staking/osmosis/osmosis>osmo,osmosis>utcouin"
         },
         "65"
@@ -984,14 +998,14 @@
           "protocol": "osmosis",
           "contract": "staking/osmosis/osmosis>osmo,osmosis>umbrn"
         },
-        "177"
+        "179"
       ],
       [
         {
           "protocol": "osmosis",
           "contract": "staking/osmosis/osmosis>osmo,osmosis>ucdt"
         },
-        "247"
+        "209"
       ],
       [
         {
@@ -999,6 +1013,13 @@
           "contract": "staking/osmosis/osmosis>osmo,osmosis>uusdc"
         },
         "15"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>tuatom,osmosis>tuosmo"
+        },
+        "145"
       ],
       [
         {
@@ -1013,13 +1034,6 @@
           "contract": "staking/osmosis/axelar>usdc,osmosis>osmo"
         },
         "45"
-      ],
-      [
-        {
-          "protocol": "osmosis",
-          "contract": "staking/osmosis/osmosis>osmo,quicksilver>qatom"
-        },
-        "143"
       ],
       [
         {

@@ -986,9 +986,15 @@
         }
       ],
       [
-        "osmosis>ujuno-v1",
+        "osmosis>umbrn",
         {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ujuno-v1"
+          "native": "factory/osmo1ufxfgzywrn2tpke9ltkfet8ldsjputrz4hcj4dalzhtynvl2l6nswwntn4/umbrn"
+        }
+      ],
+      [
+        "osmosis>uusdc",
+        {
+          "native": "factory/osmo109ns4u04l44kqdkvp876hukd3hxz8zzm7809el/uusdc"
         }
       ],
       [
@@ -998,21 +1004,15 @@
         }
       ],
       [
-        "akash>akt",
-        {
-          "native": "ibc/7153C8C55DB988805FAC69E449B680A8BAAC15944B87CF210ADCD1A3A9542857"
-        }
-      ],
-      [
         "axelar>ausdc",
         {
           "native": "ibc/6F34E1BD664C36CE49ACC28E60D62559A5F96C4F9A6CCE4FC5A67B2852E24CFE"
         }
       ],
       [
-        "cosmoshub>atom",
+        "akash>akt",
         {
-          "native": "ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477"
+          "native": "ibc/7153C8C55DB988805FAC69E449B680A8BAAC15944B87CF210ADCD1A3A9542857"
         }
       ],
       [
@@ -1025,6 +1025,12 @@
         "shareledger>shr",
         {
           "native": "ibc/043BECDA5DE9B9ACDA73B958D79C33F1EFC7DD986692302DB8A21A995FCCFF5F"
+        }
+      ],
+      [
+        "cosmoshub>atom",
+        {
+          "native": "ibc/A8C2D23A1E6F95DA4E48BA349667E322BD7A6C996D8A4AAE8BA72E190F3D1477"
         }
       ],
       [
@@ -1076,9 +1082,15 @@
         }
       ],
       [
+        "osmosis>uatom-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uatom-v1"
+        }
+      ],
+      [
         "osmosis>ucdt",
         {
-          "native": "factory/osmo13v6tqxtjl2ua2c3lwxh70mpcqa3zd3mv0m3pxfudkdzacp8cpeysklaudf/ucdt"
+          "native": "factory/osmo1j7fas6rpg2syj33ttac8jje60cltph0l37gvk5er3j3y6z4c9yfsl30q8v/ucdt"
         }
       ],
       [
@@ -1088,39 +1100,9 @@
         }
       ],
       [
-        "osmosis>ustjuno-v1",
+        "osmosis>ustevmos-v1",
         {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ustjuno-v1"
-        }
-      ],
-      [
-        "osmosis>umbrn",
-        {
-          "native": "factory/osmo1gfc7wff2p59q4uq39r5w8ka50h7p9cve3cxftp77rmu7pwur2h7sd26hj7/umbrn"
-        }
-      ],
-      [
-        "osmosis>tuosmo",
-        {
-          "native": "factory/osmo14stg73x3jhw53m443pjhr3q5ygvca54rvt02zy/tuosmo"
-        }
-      ],
-      [
-        "osmosis>uakt-v1",
-        {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uakt-v1"
-        }
-      ],
-      [
-        "osmosis>uatom-v1",
-        {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uatom-v1"
-        }
-      ],
-      [
-        "osmosis>weth",
-        {
-          "native": "factory/osmo14stg73x3jhw53m443pjhr3q5ygvca54rvt02zy/weth"
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ustevmos-v1"
         }
       ],
       [
@@ -1130,39 +1112,9 @@
         }
       ],
       [
-        "osmosis>uregen-v1",
+        "osmosis>ujuno-v1",
         {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uregen-v1"
-        }
-      ],
-      [
-        "osmosis>ustosmo-v1",
-        {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ustosmo-v1"
-        }
-      ],
-      [
-        "osmosis>uaxl-v1",
-        {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uaxl-v1"
-        }
-      ],
-      [
-        "osmosis>uststars-v1",
-        {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uststars-v1"
-        }
-      ],
-      [
-        "osmosis>uumee-v1",
-        {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uumee-v1"
-        }
-      ],
-      [
-        "osmosis>usdc",
-        {
-          "native": "factory/osmo14stg73x3jhw53m443pjhr3q5ygvca54rvt02zy/usdc"
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ujuno-v1"
         }
       ],
       [
@@ -1172,9 +1124,21 @@
         }
       ],
       [
-        "osmosis>ustevmos-v1",
+        "osmosis>tuosmo",
         {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ustevmos-v1"
+          "native": "factory/osmo14stg73x3jhw53m443pjhr3q5ygvca54rvt02zy/tuosmo"
+        }
+      ],
+      [
+        "osmosis>uumee-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uumee-v1"
+        }
+      ],
+      [
+        "osmosis>qsr",
+        {
+          "native": "factory/osmo1h4xwfcy3hke3c5ex5a8vhfg7964k28h4f488q7/qsr"
         }
       ],
       [
@@ -1184,15 +1148,9 @@
         }
       ],
       [
-        "osmosis>uscrt-v1",
+        "osmosis>ustosmo-v1",
         {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uscrt-v1"
-        }
-      ],
-      [
-        "osmosis>ustatom-v1",
-        {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ustatom-v1"
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ustosmo-v1"
         }
       ],
       [
@@ -1202,9 +1160,69 @@
         }
       ],
       [
-        "quicksilver>qatom",
+        "osmosis>tuatom",
         {
-          "native": "ibc/719996A7AE97D7EFB992EED35F6E30DBCFFFEBBE197F6462456CF48598E99F88"
+          "native": "factory/osmo14stg73x3jhw53m443pjhr3q5ygvca54rvt02zy/tuatom"
+        }
+      ],
+      [
+        "osmosis>uststars-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uststars-v1"
+        }
+      ],
+      [
+        "osmosis>uakt-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uakt-v1"
+        }
+      ],
+      [
+        "osmosis>uregen-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uregen-v1"
+        }
+      ],
+      [
+        "osmosis>ustjuno-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ustjuno-v1"
+        }
+      ],
+      [
+        "osmosis>uscrt-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uscrt-v1"
+        }
+      ],
+      [
+        "osmosis>uaxl-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uaxl-v1"
+        }
+      ],
+      [
+        "osmosis>uevmos-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uevmos-v1"
+        }
+      ],
+      [
+        "osmosis>usdc",
+        {
+          "native": "factory/osmo14stg73x3jhw53m443pjhr3q5ygvca54rvt02zy/usdc"
+        }
+      ],
+      [
+        "osmosis>atom",
+        {
+          "native": "factory/osmo1e8sttj5lrm3f8pgv8vfcl9wq5gact02chusca4/atom"
+        }
+      ],
+      [
+        "chain4energy>c4e",
+        {
+          "native": "ibc/E3D323CB6F427C49E56F913C853A416F6B71BAA9B0164625AD0203266F92B3ED"
         }
       ],
       [
@@ -1214,15 +1232,15 @@
         }
       ],
       [
-        "osmosis>uusdc",
-        {
-          "native": "factory/osmo109ns4u04l44kqdkvp876hukd3hxz8zzm7809el/uusdc"
-        }
-      ],
-      [
         "osmosis>celatone",
         {
           "native": "factory/osmo1h8lpl5qcs5k5nngxvdum5v20jnww2lckwuqfkd/celatone"
+        }
+      ],
+      [
+        "osmosis>ustatom-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ustatom-v1"
         }
       ]
     ]

@@ -2025,6 +2025,19 @@
       ],
       [
         {
+          "id": 22
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>uevmos-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
           "id": 23
         },
         {
@@ -2207,6 +2220,19 @@
       ],
       [
         {
+          "id": 37
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "Weighted",
+          "assets": [
+            "axelar>ausdc",
+            "chain4energy>c4e"
+          ]
+        }
+      ],
+      [
+        {
           "id": 43
         },
         {
@@ -2259,19 +2285,6 @@
       ],
       [
         {
-          "id": 155
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "Weighted",
-          "assets": [
-            "osmosis>tuosmo",
-            "osmosis>weth"
-          ]
-        }
-      ],
-      [
-        {
           "id": 65
         },
         {
@@ -2311,7 +2324,7 @@
       ],
       [
         {
-          "id": 177
+          "id": 179
         },
         {
           "dex": "osmosis",
@@ -2324,7 +2337,7 @@
       ],
       [
         {
-          "id": 247
+          "id": 209
         },
         {
           "dex": "osmosis",
@@ -2350,6 +2363,19 @@
       ],
       [
         {
+          "id": 145
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "Weighted",
+          "assets": [
+            "osmosis>tuatom",
+            "osmosis>tuosmo"
+          ]
+        }
+      ],
+      [
+        {
           "id": 140
         },
         {
@@ -2370,19 +2396,6 @@
           "pool_type": "Weighted",
           "assets": [
             "axelar>usdc",
-            "osmosis>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 143
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "Weighted",
-          "assets": [
-            "quicksilver>qatom",
             "osmosis>osmo"
           ]
         }
