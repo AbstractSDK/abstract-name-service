@@ -1126,6 +1126,19 @@
       ],
       [
         {
+          "id": 1057
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "picasso>pica",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
           "id": 3
         },
         {
@@ -1146,19 +1159,6 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "eth>axelar>weth",
-            "osmosis>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 1057
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "picasso>pica",
             "osmosis>osmo"
           ]
         }
@@ -1334,13 +1334,13 @@
       ],
       [
         {
-          "id": 907
+          "id": 1244
         },
         {
           "dex": "osmosis",
           "pool_type": "ConstantProduct",
           "assets": [
-            "mars>mars",
+            "coreum>core",
             "osmosis>osmo"
           ]
         }
@@ -1360,6 +1360,19 @@
       ],
       [
         {
+          "id": 907
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "mars>mars",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
           "id": 1041
         },
         {
@@ -1368,19 +1381,6 @@
           "assets": [
             "eth>axelar>usdc",
             "nolus>nls"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 1244
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "coreum>core",
-            "osmosis>osmo"
           ]
         }
       ],
@@ -1451,19 +1451,6 @@
       ],
       [
         {
-          "id": 597
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "bostrom>boot",
-            "osmosis>osmo"
-          ]
-        }
-      ],
-      [
-        {
           "id": 960
         },
         {
@@ -1471,6 +1458,19 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "migaloo>whale",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 597
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "bostrom>boot",
             "osmosis>osmo"
           ]
         }
@@ -1503,6 +1503,19 @@
       ],
       [
         {
+          "id": 796
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "cudos>cudos",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
           "id": 806
         },
         {
@@ -1511,19 +1524,6 @@
           "assets": [
             "stride>strd",
             "osmosis>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 6
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "Weighted",
-          "assets": [
-            "cosmoshub>atom",
-            "sentinel>dvpn"
           ]
         }
       ],
@@ -1542,6 +1542,19 @@
       ],
       [
         {
+          "id": 6
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "Weighted",
+          "assets": [
+            "cosmoshub>atom",
+            "sentinel>dvpn"
+          ]
+        }
+      ],
+      [
+        {
           "id": 596
         },
         {
@@ -1550,19 +1563,6 @@
           "assets": [
             "cosmoshub>atom",
             "bostrom>boot"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 796
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "cudos>cudos",
-            "osmosis>osmo"
           ]
         }
       ],
@@ -1581,19 +1581,6 @@
       ],
       [
         {
-          "id": 10
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "cosmoshub>atom",
-            "cronos>cro"
-          ]
-        }
-      ],
-      [
-        {
           "id": 627
         },
         {
@@ -1602,6 +1589,19 @@
           "assets": [
             "sommelier>somm",
             "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 10
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "cosmoshub>atom",
+            "cronos>cro"
           ]
         }
       ],
@@ -1672,6 +1672,32 @@
       ],
       [
         {
+          "id": 1135
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>osmo",
+            "cosmoshub>atom"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 1248
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "celestia>tia",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
           "id": 1221
         },
         {
@@ -1680,6 +1706,19 @@
           "assets": [
             "osmosis>osmo",
             "noble>usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 1133
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>osmo",
+            "eth>axelar>usdc"
           ]
         }
       ],
@@ -1724,6 +1763,19 @@
       ],
       [
         {
+          "id": 1265
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>osmo",
+            "cosmoshub>atom"
+          ]
+        }
+      ],
+      [
+        {
           "id": 1077
         },
         {
@@ -1745,6 +1797,84 @@
           "assets": [
             "eth>axelar>usdc",
             "noble>usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 1136
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "stride>statom",
+            "cosmoshub>atom"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 1134
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>osmo",
+            "eth>axelar>weth"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 1093
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "akash>akt",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 1090
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>osmo",
+            "eth>axelar>wbtc"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 1263
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>osmo",
+            "noble>usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 1111
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "chihuahua>huahua",
+            "osmosis>osmo"
           ]
         }
       ],
@@ -1784,6 +1914,58 @@
           "assets": [
             "kujira>kuji",
             "kava>usdt"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 1283
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "stride>statom",
+            "cosmoshub>atom"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 1078
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "kava>usdt"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 1264
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "eth>axelar>weth",
+            "noble>usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 1096
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "stargaze>stars",
+            "osmosis>osmo"
           ]
         }
       ]
@@ -2090,6 +2272,32 @@
       ],
       [
         {
+          "id": 254
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "impacthub>ixo",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 155
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "Weighted",
+          "assets": [
+            "osmosis>tuosmo",
+            "osmosis>weth"
+          ]
+        }
+      ],
+      [
+        {
           "id": 65
         },
         {
@@ -2129,26 +2337,26 @@
       ],
       [
         {
-          "id": 179
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "osmosis>umbrn",
-            "osmosis>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 209
+          "id": 194
         },
         {
           "dex": "osmosis",
           "pool_type": "ConstantProduct",
           "assets": [
             "osmosis>ucdt",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 266
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>umbrn",
             "osmosis>osmo"
           ]
         }
@@ -2298,6 +2506,630 @@
       ],
       [
         {
+          "id": 157
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>stuosmo",
+            "osmosis>tuosmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 100
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "akash>akt",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 101
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>uakt-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 102
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>uatom-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 103
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>uaxl-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 104
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>uion-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 105
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ujuno-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 106
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>uregen-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 107
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>uscrt-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 108
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ustars-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 109
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ustrd-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 110
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>uumee-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 111
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ustatom-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 112
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ustjuno-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 113
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>uststars-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 114
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "quicksilver>qck",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 115
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "neutron>ntrn",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 116
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ustosmo-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 117
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "axelar>ausdc",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 118
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 119
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "axelar>usdc",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 120
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "axelar>usdc",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 121
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "evmos>tevmos",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 122
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 123
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "quasar>qsr",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 124
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 125
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 126
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 127
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 128
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 129
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 130
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ion",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 131
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>utcouin",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 132
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>utcouin",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 134
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 135
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "juno>junox",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 136
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "shareledger>shr",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 137
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "persistence>xprt",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 138
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "persistence>xprt",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 152
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "nolus>nls",
+            "axelar>ausdc"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 153
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "nolus>nls",
+            "axelar>ausdc"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 315
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>factory/osmo1fjr6qj7g2wjju7hlcy4c6azsu46z2ncpdtekzp/eth",
+            "osmosis>factory/osmo1fjr6qj7g2wjju7hlcy4c6azsu46z2ncpdtekzp/ryeth"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 316
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>factory/osmo1fjr6qj7g2wjju7hlcy4c6azsu46z2ncpdtekzp/ryeth",
+            "osmosis>factory/osmo1fjr6qj7g2wjju7hlcy4c6azsu46z2ncpdtekzp/eth"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 59
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>osmo",
+            "juno>junox"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 60
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ion",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 61
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ion",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 63
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ion",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 74
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ion",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
           "id": 75
         },
         {
@@ -2311,6 +3143,58 @@
       ],
       [
         {
+          "id": 76
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ion",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 77
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ion",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 78
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ion",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 79
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>ion",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
           "id": 80
         },
         {
@@ -2318,6 +3202,149 @@
           "pool_type": "ConcentratedLiquidity",
           "assets": [
             "osmosis>celatone",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 88
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "kyvedevnet>kyve",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 89
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "axelar>ausdc",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 91
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "mars>mars",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 92
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "mars>mars",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 93
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 94
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 95
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 96
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 97
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>uusdc",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 98
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "osmosis>uusdc",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 99
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "akash>akt",
             "osmosis>osmo"
           ]
         }

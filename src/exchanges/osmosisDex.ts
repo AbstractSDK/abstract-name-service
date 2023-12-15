@@ -12,7 +12,7 @@ interface OsmosisOptions {
 }
 
 const MAX_GAMM_POOLS = 50
-const MAX_CL_POOLS = 20
+const MAX_CL_POOLS = 25
 
 interface OsmosisPoolLists {
   gammPoolList: OsmosisGammPoolList
@@ -122,16 +122,6 @@ export class OsmosisDex extends Exchange {
         throw e
       }
 
-      // TODO: confirm whether we are including staking contracts
-      const stakingContract = this.stakingContractEntry(assetNames, id)
-
-      try {
-        network.contractRegistry.register(stakingContract)
-      } catch (e) {
-        console.warn(`Failed to register staking contract for pool ${id}: ${e}`)
-        return
-      }
-
       network.poolRegistry.register(
         new AnsPoolEntry(poolId, {
           dex: this.name.toLowerCase(),
@@ -167,16 +157,6 @@ export class OsmosisDex extends Exchange {
           return
         }
         throw e
-      }
-
-      // TODO: confirm whether we are including staking contracts
-      const stakingContract = this.stakingContractEntry(assetNames, id)
-
-      try {
-        network.contractRegistry.register(stakingContract)
-      } catch (e) {
-        console.warn(`Failed to register staking contract for pool ${id}: ${e}`)
-        return
       }
 
       network.poolRegistry.register(
