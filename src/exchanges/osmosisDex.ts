@@ -11,7 +11,8 @@ interface OsmosisOptions {
   volumeUrl: string | undefined
 }
 
-const MAX_POOLS = 75
+const MAX_GAMM_POOLS = 50
+const MAX_CL_POOLS = 20
 
 interface OsmosisPoolLists {
   gammPoolList: OsmosisGammPoolList
@@ -223,11 +224,11 @@ export class OsmosisDex extends Exchange {
 
       gammPoolList = {
         ...gammPoolList,
-        pools: sortedGammPools.slice(0, MAX_POOLS),
+        pools: sortedGammPools.slice(0, MAX_GAMM_POOLS),
       }
       concentratedPoolList = {
         ...concentratedPoolList,
-        pools: sortedConcentratedPools.slice(0, MAX_POOLS),
+        pools: sortedConcentratedPools.slice(0, MAX_CL_POOLS),
       }
     } else {
       // TODO: can we sort concentrated in any way?
