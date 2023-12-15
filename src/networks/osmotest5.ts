@@ -24,13 +24,10 @@ export class OsmoTest5 extends Network {
       contractRegistry: contractRegistry,
       poolRegistry: poolRegistry,
       exchanges: [
-        // new OsmosisDex({
-        //   poolUrl:
-        //     'https://lcd.testnet.osmosis.zone/osmosis/gamm/v1beta1/pools?pagination.limit=1000',
-        //   volumeUrl: undefined,
-        // }),
         new OsmosisDex({
-          poolUrl:
+          gammPoolUrl:
+            'https://lcd.testnet.osmosis.zone/osmosis/gamm/v1beta1/pools?pagination.limit=1000',
+          concentratedPoolUrl:
             'https://lcd.testnet.osmosis.zone/osmosis/concentratedliquidity/v1beta1/pools?pagination.limit=1000',
           volumeUrl: undefined,
         }),

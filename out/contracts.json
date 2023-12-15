@@ -806,10 +806,283 @@
     "osmo-test-5": [
       [
         {
-          "protocol": "croncat",
-          "contract": "factory"
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>uakt-v1"
         },
-        "osmo105qu7ajcf9y5wgpj7kcqj2rmj6zn6d9ernw99efua7834xprvwkq3hfhaz"
+        "19"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>uatom-v1"
+        },
+        "20"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>uaxl-v1"
+        },
+        "21"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>uion-v1"
+        },
+        "23"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>ujuno-v1"
+        },
+        "24"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>uregen-v1"
+        },
+        "25"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>uscrt-v1"
+        },
+        "26"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>ustars-v1"
+        },
+        "27"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>ustrd-v1"
+        },
+        "28"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>uumee-v1"
+        },
+        "29"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>ustatom-v1"
+        },
+        "30"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>ustevmos-v1"
+        },
+        "31"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>ustjuno-v1"
+        },
+        "32"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>uststars-v1"
+        },
+        "33"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>ustosmo-v1"
+        },
+        "38"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/kyvedevnet>kyve,osmosis>osmo"
+        },
+        "4"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/akash>akt,osmosis>osmo"
+        },
+        "17"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/cosmoshub>atom,osmosis>osmo"
+        },
+        "43"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>ion,osmosis>osmo"
+        },
+        "62"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/juno>junox,osmosis>osmo"
+        },
+        "82"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,shareledger>shr"
+        },
+        "83"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>tuosmo,osmosis>weth"
+        },
+        "155"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>utcouin"
+        },
+        "65"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>tuosmo,osmosis>wbtc"
+        },
+        "156"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>tuosmo,osmosis>usdc"
+        },
+        "154"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>umbrn"
+        },
+        "177"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>ucdt"
+        },
+        "247"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>uusdc"
+        },
+        "15"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/axelar>ausdc,qwoyn>qwoyn"
+        },
+        "140"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/axelar>usdc,osmosis>osmo"
+        },
+        "45"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,quicksilver>qatom"
+        },
+        "143"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/axelar>ausdc,osmosis>osmo"
+        },
+        "5"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/mars>mars,osmosis>osmo"
+        },
+        "9"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,quicksilver>qck"
+        },
+        "34"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/neutron>ntrn,osmosis>osmo"
+        },
+        "35"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/evmos>tevmos,osmosis>osmo"
+        },
+        "48"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,quasar>qsr"
+        },
+        "50"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,persistence>xprt"
+        },
+        "84"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>osmo,osmosis>uosmoexp"
+        },
+        "75"
+      ],
+      [
+        {
+          "protocol": "osmosis",
+          "contract": "staking/osmosis/osmosis>celatone,osmosis>osmo"
+        },
+        "80"
       ]
     ]
   },

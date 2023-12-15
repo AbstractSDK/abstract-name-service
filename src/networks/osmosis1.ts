@@ -25,7 +25,10 @@ export class Osmosis1 extends Network {
       poolRegistry: poolRegistry,
       exchanges: [
         new OsmosisDex({
-          poolUrl: 'https://lcd-osmosis.keplr.app/osmosis/gamm/v1beta1/pools?pagination.limit=1500',
+          gammPoolUrl:
+            'https://lcd-osmosis.keplr.app/osmosis/gamm/v1beta1/pools?pagination.limit=1500',
+          concentratedPoolUrl:
+            'https://lcd-osmosis.keplr.app/osmosis/concentratedliquidity/v1beta1/pools?pagination.limit=1500',
           volumeUrl: 'https://api-osmosis.imperator.co/fees/v1/pools',
         }),
       ],

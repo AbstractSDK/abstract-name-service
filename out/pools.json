@@ -1986,40 +1986,196 @@
     "osmo-test-5": [
       [
         {
-          "id": 1
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "Weighted",
-          "assets": [
-            "osmosis5>ion",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 2
+          "id": 19
         },
         {
           "dex": "osmosis",
           "pool_type": "ConstantProduct",
           "assets": [
-            "akash>akt",
-            "osmosis5>osmo"
+            "osmosis>uakt-v1",
+            "osmosis>osmo"
           ]
         }
       ],
       [
         {
-          "id": 3
+          "id": 20
         },
         {
           "dex": "osmosis",
           "pool_type": "ConstantProduct",
           "assets": [
-            "juno>junox",
-            "osmosis5>osmo"
+            "osmosis>uatom-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 21
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>uaxl-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 23
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>uion-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 24
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>ujuno-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 25
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>uregen-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 26
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>uscrt-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 27
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>ustars-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 28
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>ustrd-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 29
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>uumee-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 30
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>ustatom-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 31
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>ustevmos-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 32
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>ustjuno-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 33
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>uststars-v1",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 38
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>ustosmo-v1",
+            "osmosis>osmo"
           ]
         }
       ],
@@ -2032,216 +2188,20 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "kyvedevnet>kyve",
-            "osmosis5>osmo"
+            "osmosis>osmo"
           ]
         }
       ],
       [
         {
-          "id": 5
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "axelar>ausdc",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 6
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "eth>axelar>usdc",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 8
+          "id": 17
         },
         {
           "dex": "osmosis",
           "pool_type": "ConstantProduct",
           "assets": [
             "akash>akt",
-            "juno>junox",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 9
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "mars>mars",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 10
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "mars>mars",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 11
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "cosmoshub>atom",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 12
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "cosmoshub>atom",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 13
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "cosmoshub>atom",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 14
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "cosmoshub>atom",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 34
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "quicksilver>qck",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 35
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "neutron>ntrn",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 36
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "cosmoshub>atom",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 37
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "Weighted",
-          "assets": [
-            "axelar>ausdc",
-            "chain4energy>c4e"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 39
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "axelar>ausdc",
-            "nolus>nls"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 40
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "axelar>ausdc",
-            "chain4energy>c4e"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 42
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "axelar>ausdc",
-            "osmosis5>osmo"
+            "osmosis>osmo"
           ]
         }
       ],
@@ -2254,7 +2214,228 @@
           "pool_type": "Weighted",
           "assets": [
             "cosmoshub>atom",
-            "osmosis5>osmo"
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 62
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>ion",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 82
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "juno>junox",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 83
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "shareledger>shr",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 155
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "Weighted",
+          "assets": [
+            "osmosis>tuosmo",
+            "osmosis>weth"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 65
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "Weighted",
+          "assets": [
+            "osmosis>utcouin",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 156
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "Weighted",
+          "assets": [
+            "osmosis>tuosmo",
+            "osmosis>wbtc"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 154
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "Weighted",
+          "assets": [
+            "osmosis>tuosmo",
+            "osmosis>usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 177
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>umbrn",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 247
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>ucdt",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 15
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "Weighted",
+          "assets": [
+            "osmosis>uusdc",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 140
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "axelar>ausdc",
+            "qwoyn>qwoyn"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 45
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "Weighted",
+          "assets": [
+            "axelar>usdc",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 143
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "Weighted",
+          "assets": [
+            "quicksilver>qatom",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 5
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "axelar>ausdc",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 9
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "mars>mars",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 34
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "quicksilver>qck",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 35
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "neutron>ntrn",
+            "osmosis>osmo"
           ]
         }
       ],
@@ -2267,20 +2448,7 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "evmos>tevmos",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 49
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "cosmoshub>atom",
-            "osmosis5>osmo"
+            "osmosis>osmo"
           ]
         }
       ],
@@ -2293,85 +2461,46 @@
           "pool_type": "ConstantProduct",
           "assets": [
             "quasar>qsr",
-            "osmosis5>osmo"
+            "osmosis>osmo"
           ]
         }
       ],
       [
         {
-          "id": 51
+          "id": 84
         },
         {
           "dex": "osmosis",
           "pool_type": "ConstantProduct",
           "assets": [
-            "cosmoshub>atom",
-            "osmosis5>osmo"
+            "persistence>xprt",
+            "osmosis>osmo"
           ]
         }
       ],
       [
         {
-          "id": 52
+          "id": 75
         },
         {
           "dex": "osmosis",
-          "pool_type": "ConstantProduct",
+          "pool_type": "ConcentratedLiquidity",
           "assets": [
-            "cosmoshub>atom",
-            "osmosis5>osmo"
+            "osmosis>uosmoexp",
+            "osmosis>osmo"
           ]
         }
       ],
       [
         {
-          "id": 53
+          "id": 80
         },
         {
           "dex": "osmosis",
-          "pool_type": "ConstantProduct",
+          "pool_type": "ConcentratedLiquidity",
           "assets": [
-            "cosmoshub>atom",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 54
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "cosmoshub>atom",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 57
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "cosmoshub>atom",
-            "osmosis5>osmo"
-          ]
-        }
-      ],
-      [
-        {
-          "id": 58
-        },
-        {
-          "dex": "osmosis",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "cosmoshub>atom",
-            "osmosis5>osmo"
+            "osmosis>celatone",
+            "osmosis>osmo"
           ]
         }
       ]

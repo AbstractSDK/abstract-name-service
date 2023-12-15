@@ -6,20 +6,22 @@ import { NotFoundError } from '../registry/IRegistry'
 const OSMOSIS = 'Osmosis'
 
 interface OsmosisOptions {
-  poolUrl: string
+  gammPoolUrl: string
+  concentratedPoolUrl: string
   volumeUrl: string | undefined
 }
 
 const MAX_POOLS = 75
 
-function isGamm(object: OsmosisPool): object is OsmosisGammPool {
-  return 'pool_assets' in object
+interface OsmosisPoolLists {
+  gammPoolList: OsmosisGammPoolList
+  concentratedPoolList: OsmosisConcentratedList
 }
 
 export class OsmosisDex extends Exchange {
   options: OsmosisOptions
 
-  private poolListCache: OsmosisPoolList | undefined
+  private poolListCache: OsmosisPoolLists | undefined
 
   constructor(options: OsmosisOptions) {
     super(OSMOSIS)
@@ -32,9 +34,9 @@ export class OsmosisDex extends Exchange {
 
     const ibcQueryClient = await network.ibcQueryClient()
 
-    // Register the assets in the pools
+    // Register the assets in the gamm pools
     await Promise.all(
-      poolList.pools
+      poolList.gammPoolList.pools
         .flatMap(({ pool_assets }) => pool_assets)
         .filter<PoolAssetsItem>((poolAsset): poolAsset is PoolAssetsItem => !!poolAsset)
         .map(async ({ token: { denom } }) => {
@@ -57,32 +59,93 @@ export class OsmosisDex extends Exchange {
         })
     )
 
+    // Register the assets in the concentrated pools
+    await Promise.all(
+      poolList.concentratedPoolList.pools.map(async ({ token0, token1 }) => {
+        if (!network.assetRegistry.hasDenom(token0)) {
+          try {
+            await network.registerNativeAsset({ denom: token0 })
+          } catch (e) {
+            console.log("couldn't find asset", token0, e)
+          }
+        }
+
+        if (!network.assetRegistry.hasDenom(token1)) {
+          try {
+            await network.registerNativeAsset({ denom: token1 })
+          } catch (e) {
+            console.log("couldn't find asset", token1, e)
+          }
+        }
+      })
+    )
+
     return []
   }
 
   async registerPools(network: Network) {
     const poolList = await this.fetchPoolList()
-    console.log(`Retrieved ${poolList.pools.length} pools for ${this.name} on ${network.networkId}`)
+    console.log(
+      `Retrieved ${
+        poolList.concentratedPoolList.pools.length + poolList.gammPoolList.pools.length
+      } pools for ${this.name} on ${network.networkId}`
+    )
 
-    poolList.pools.forEach((pool: OsmosisPool) => {
-      // TODO: handle Pool type here and do 2 functions instead?
+    poolList.gammPoolList.pools.forEach((pool: OsmosisGammPool) => {
       const { id } = pool
 
-      let poolDenoms
-      if (isGamm(pool)) {
-        poolDenoms = pool.pool_assets?.map(({ token }) => token).map(({ denom }) => denom)
-      } else {
-        poolDenoms = [pool.token0, pool.token1]
-      }
+      const poolDenoms = pool.pool_assets?.map(({ token }) => token).map(({ denom }) => denom)
       if (!poolDenoms) return
 
-      let poolType: PoolType | undefined
-      if (isGamm(pool)) {
-        poolType = this.determineOsmosisPoolType(pool)
-      } else {
-        poolType = 'ConcentratedLiquidity'
-      }
+      const poolType = this.determineOsmosisPoolType(pool)
       if (!poolType) return
+
+      const poolId = PoolId.id(+id)
+
+      let assetNames: string[]
+
+      try {
+        assetNames = network.assetRegistry.getNamesByDenoms(poolDenoms)
+      } catch (e) {
+        if (e instanceof NotFoundError) {
+          console.log(`Skipping pool ${id} because not all denoms are registered`)
+          network.poolRegistry.unknown(
+            new AnsPoolEntry(poolId, {
+              dex: this.name.toLowerCase(),
+              pool_type: poolType,
+              assets: poolDenoms,
+            })
+          )
+          return
+        }
+        throw e
+      }
+
+      // TODO: confirm whether we are including staking contracts
+      const stakingContract = this.stakingContractEntry(assetNames, id)
+
+      try {
+        network.contractRegistry.register(stakingContract)
+      } catch (e) {
+        console.warn(`Failed to register staking contract for pool ${id}: ${e}`)
+        return
+      }
+
+      network.poolRegistry.register(
+        new AnsPoolEntry(poolId, {
+          dex: this.name.toLowerCase(),
+          pool_type: poolType,
+          assets: assetNames,
+        })
+      )
+    })
+
+    poolList.concentratedPoolList.pools.forEach((pool: ConcentratedPool) => {
+      const { id, token0, token1 } = pool
+
+      const poolDenoms = [token0, token1]
+
+      const poolType = 'ConcentratedLiquidity'
 
       const poolId = PoolId.id(+id)
 
@@ -128,14 +191,17 @@ export class OsmosisDex extends Exchange {
   /**
    * Fetch a list of osmosis pools and only take the highest ones by volume.
    */
-  private async fetchPoolList(): Promise<OsmosisPoolList> {
+  private async fetchPoolList(): Promise<OsmosisPoolLists> {
     if (this.poolListCache) {
       return this.poolListCache
     }
 
     // retrieve all the pools
-    const { poolUrl, volumeUrl } = this.options
-    let poolList: OsmosisPoolList = await fetch(poolUrl).then((res) => res.json())
+    const { gammPoolUrl, concentratedPoolUrl, volumeUrl } = this.options
+    let gammPoolList: OsmosisGammPoolList = await fetch(gammPoolUrl).then((res) => res.json())
+    const concentratedPoolList: OsmosisConcentratedList = await fetch(concentratedPoolUrl).then(
+      (res) => res.json()
+    )
 
     // If the volumeUrl is specified, we sort the actual pools by volume
     if (volumeUrl) {
@@ -143,19 +209,19 @@ export class OsmosisDex extends Exchange {
       const volumeList: OsmosisPoolVolumeList = await fetch(volumeUrl).then((res) => res.json())
 
       // sort the pools by volume
-      const sortedPools = poolList.pools.sort((a, b) => {
+      const sortedPools = gammPoolList.pools.sort((a, b) => {
         const aVolume = volumeList.data.find((pool) => pool.pool_id === a.id)?.volume_7d ?? 0
         const bVolume = volumeList.data.find((pool) => pool.pool_id === b.id)?.volume_7d ?? 0
         return bVolume - aVolume
       })
 
-      poolList = {
-        ...poolList,
+      gammPoolList = {
+        ...gammPoolList,
         pools: sortedPools.slice(0, MAX_POOLS),
       }
     } else {
       // sort all pools by their weight in descending order
-      const sortedPools = poolList.pools.sort((a, b) =>
+      const sortedPools = gammPoolList.pools.sort((a, b) =>
         compareLargeNumbers(b.total_weight ?? '0', a.total_weight ?? '0')
       )
 
@@ -175,15 +241,16 @@ export class OsmosisDex extends Exchange {
           uniquePoolList.push(pool)
         }
       }
-      poolList = {
-        ...poolList,
+      gammPoolList = {
+        ...gammPoolList,
         pools: uniquePoolList,
       }
     }
 
-    this.poolListCache = poolList
+    const pool_lists = { gammPoolList, concentratedPoolList }
+    this.poolListCache = pool_lists
 
-    return poolList
+    return pool_lists
   }
 
   private determineOsmosisPoolType = ({
@@ -256,12 +323,10 @@ function compareLargeNumbers(a: string, b: string) {
   return 0 // They are equal
 }
 
-interface OsmosisPoolList {
-  pools: OsmosisPool[]
+interface OsmosisGammPoolList {
+  pools: OsmosisGammPool[]
   pagination: Pagination
 }
-
-type OsmosisPool = OsmosisGammPool | OsmosisConcentratedPool
 
 interface OsmosisGammPool {
   '@type': string
@@ -275,23 +340,6 @@ interface OsmosisGammPool {
   pool_liquidity?: PoolLiquidityItem[]
   scaling_factors?: string[]
   scaling_factor_controller?: string
-}
-
-interface OsmosisConcentratedPool {
-  '@type': string
-  address: string
-  incentives_address: string
-  spread_rewards_address: string
-  id: string
-  current_tick_liquidity: string
-  token0: string
-  token1: string
-  current_sqrt_price: string
-  current_tick: string
-  tick_spacing: string
-  exponent_at_price_one: string
-  spread_factor: string
-  last_liquidity_update: string
 }
 
 interface Pool_params {
@@ -337,4 +385,28 @@ interface PoolVolumeItem {
   fees_spent_24h: number
   fees_spent_7d: number
   fees_percentage: string
+}
+
+// Concentrated liquidity
+
+interface OsmosisConcentratedList {
+  pools: ConcentratedPool[]
+  pagination: Pagination
+}
+
+interface ConcentratedPool {
+  '@type': string
+  address: string
+  incentives_address: string
+  spread_rewards_address: string
+  id: string
+  current_tick_liquidity: string
+  token0: string
+  token1: string
+  current_sqrt_price: string
+  current_tick: string
+  tick_spacing: string
+  exponent_at_price_one: string
+  spread_factor: string
+  last_liquidity_update: string
 }
