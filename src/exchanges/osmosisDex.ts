@@ -199,7 +199,7 @@ export class OsmosisDex extends Exchange {
     // retrieve all the pools
     const { gammPoolUrl, concentratedPoolUrl, volumeUrl } = this.options
     let gammPoolList: OsmosisGammPoolList = await fetch(gammPoolUrl).then((res) => res.json())
-    const concentratedPoolList: OsmosisConcentratedList = await fetch(concentratedPoolUrl).then(
+    let concentratedPoolList: OsmosisConcentratedList = await fetch(concentratedPoolUrl).then(
       (res) => res.json()
     )
 
@@ -209,17 +209,29 @@ export class OsmosisDex extends Exchange {
       const volumeList: OsmosisPoolVolumeList = await fetch(volumeUrl).then((res) => res.json())
 
       // sort the pools by volume
-      const sortedPools = gammPoolList.pools.sort((a, b) => {
+      const sortedGammPools = gammPoolList.pools.sort((a, b) => {
         const aVolume = volumeList.data.find((pool) => pool.pool_id === a.id)?.volume_7d ?? 0
         const bVolume = volumeList.data.find((pool) => pool.pool_id === b.id)?.volume_7d ?? 0
         return bVolume - aVolume
       })
 
+      const sortedConcentratedPools = concentratedPoolList.pools.sort((a, b) => {
+        const aVolume = volumeList.data.find((pool) => pool.pool_id == a.id)?.volume_7d ?? 0
+        const bVolume = volumeList.data.find((pool) => pool.pool_id == b.id)?.volume_7d ?? 0
+        return bVolume - aVolume
+      })
+
       gammPoolList = {
         ...gammPoolList,
-        pools: sortedPools.slice(0, MAX_POOLS),
+        pools: sortedGammPools.slice(0, MAX_POOLS),
+      }
+      concentratedPoolList = {
+        ...concentratedPoolList,
+        pools: sortedConcentratedPools.slice(0, MAX_POOLS),
       }
     } else {
+      // TODO: can we sort concentrated in any way?
+
       // sort all pools by their weight in descending order
       const sortedPools = gammPoolList.pools.sort((a, b) =>
         compareLargeNumbers(b.total_weight ?? '0', a.total_weight ?? '0')
