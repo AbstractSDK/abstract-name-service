@@ -4,7 +4,7 @@ use cw_orch::prelude::*;
 
 use abstract_core::ans_host::*;
 use abstract_core::objects::pool_id::{PoolAddressBase, UncheckedPoolAddress};
-use abstract_core::objects::{DexAssetPairing, PoolMetadata, UniquePoolId, AssetEntry};
+use abstract_core::objects::{AssetEntry, DexAssetPairing, PoolMetadata, UniquePoolId};
 use abstract_interface::{AbstractInterfaceError, AnsHost};
 
 use serde_json::Value;
