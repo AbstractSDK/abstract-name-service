@@ -4,7 +4,7 @@ import { PoolRegistry } from '../registry/poolRegistry'
 import { AssetRegistry } from '../registry/assetRegistry'
 import { Osmosis1 } from '../networks/osmosis1'
 import { OsmoTest5 } from '../networks/osmotest5'
-
+import { AnsContractEntry } from '../objects'
 /*
 https://github.com/cosmostation/chainlist/blob/d433b3b8b7a0699ac137be1775b67fa00393de05/chain/osmosis/assets.json#L1255
 https://github.com/osmosis-labs/osmosis/blob/f11259d75d53a9e7ebeec03b163bd533f5cc90df/cmd/osmosisd/cmd/osmosis-1-assetlist.json#L6873
@@ -131,13 +131,24 @@ const mainnet = new Osmosis1(
   new ContractRegistry(),
   new PoolRegistry()
 )
-const testnet = new OsmoTest5(new AssetRegistry(), new ContractRegistry(), new PoolRegistry())
-
+const testnet = new OsmoTest5(
+  new AssetRegistry(),
+  new ContractRegistry({
+    contractRegistry: [
+      new AnsContractEntry(
+        'croncat',
+        'factory',
+        'osmo105qu7ajcf9y5wgpj7kcqj2rmj6zn6d9ernw99efua7834xprvwkq3hfhaz'
+      ),
+    ],
+  }),
+  new PoolRegistry()
+)
 export class Osmosis extends Chain {
   constructor() {
     super('osmosis', [
-      mainnet,
-      // testnet,
+      // mainnet,
+      testnet,
     ])
   }
 }
