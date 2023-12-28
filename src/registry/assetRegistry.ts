@@ -108,13 +108,15 @@ export class AssetRegistry implements IRegistry<AnsAssetEntry> {
   }
 
   public getNamesByDenoms(denoms: string[]): string[] {
-    return denoms.map((denom) => {
-      const registered = this.getByDenom(denom)
-      if (!registered) {
-        throw new NotFoundError(`No registered asset found for ${denom}`)
-      }
-      return registered
-    })
+    return denoms
+      .map((denom) => {
+        const registered = this.getByDenom(denom)
+        if (!registered) {
+          throw new NotFoundError(`No registered asset found for ${denom}`)
+        }
+        return registered
+      })
+      .sort()
   }
 
   public export(): AnsAssetEntry[] {

@@ -684,81 +684,9 @@
         }
       ],
       [
-        "osmosis>umbrn",
-        {
-          "native": "factory/osmo1s794h9rxggytja3a4pmwul53u98k06zy2qtrdvjnfuxruh7s8yjs6cyxgd/umbrn"
-        }
-      ],
-      [
-        "osmosis>ucdt",
-        {
-          "native": "factory/osmo1s794h9rxggytja3a4pmwul53u98k06zy2qtrdvjnfuxruh7s8yjs6cyxgd/ucdt"
-        }
-      ],
-      [
         "cosmoshub>atom",
         {
           "native": "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
-        }
-      ],
-      [
-        "secretnetwork>scrt",
-        {
-          "native": "ibc/0954E1C28EB7AF5B72D24F3BC2B47BBB2FDF91BDDFD57B74B99E133AED40972A"
-        }
-      ],
-      [
-        "jackal>jkl",
-        {
-          "native": "ibc/8E697BDABE97ACE8773C6DF7402B2D1D5104DD1EEABE12608E3469B7F64C15BA"
-        }
-      ],
-      [
-        "sentinel>dvpn",
-        {
-          "native": "ibc/9712DBB13B9631EDFA9BF61B55F1B2D290B2ADB67E3A4EB3A875F3B6081B3B84"
-        }
-      ],
-      [
-        "picasso>pica",
-        {
-          "native": "ibc/56D7C03B8F6A07AD322EEE1BEF3AE996E09D1C1E34C27CF37E0D4A0AC5972516"
-        }
-      ],
-      [
-        "migaloo>whale",
-        {
-          "native": "ibc/EDD6F0D66BCD49C1084FB2C35353B4ACD7B9191117CE63671B61320548F7C89D"
-        }
-      ],
-      [
-        "sommelier>somm",
-        {
-          "native": "ibc/9BBA9A1C257E971E38C1422780CE6F0B0686F0A3085E2D61118D904BFE0F5F5E"
-        }
-      ],
-      [
-        "cudos>cudos",
-        {
-          "native": "ibc/E09ED39F390EC51FA9F3F69BEA08B5BBE6A48B3057B2B1C3467FAAE9E58B021B"
-        }
-      ],
-      [
-        "omniflixhub>flix",
-        {
-          "native": "ibc/CEE970BB3D26F4B907097B6B660489F13F3B0DA765B83CC7D9A0BC0CE220FA6F"
-        }
-      ],
-      [
-        "persistence>xprt",
-        {
-          "native": "ibc/A0CC0CF735BFB30E730C70019D4218A1244FF383503FF7579C9201AB93CA9293"
-        }
-      ],
-      [
-        "umee>umee",
-        {
-          "native": "ibc/67795E528DF67C5606FC20F824EA39A6EF55BA133F4DC79C90A8C47A0901E17C"
         }
       ],
       [
@@ -768,27 +696,9 @@
         }
       ],
       [
-        "terra2>luna",
+        "sgenetwork>sge",
         {
-          "native": "ibc/785AFEC6B3741100D15E7AF01374E3C4C36F24888E96479B1C33F5C71F364EF9"
-        }
-      ],
-      [
-        "irisnet>iris",
-        {
-          "native": "ibc/7C4D60AA95E5A7558B0A364860979CA34B7FF8AAF255B87AF9E879374470CEC0"
-        }
-      ],
-      [
-        "coreum>core",
-        {
-          "native": "ibc/F3166F4D31D6BA1EC6C9F5536F5DDDD4CC93DBA430F7419E7CDC41C497944A65"
-        }
-      ],
-      [
-        "xpla>xpla",
-        {
-          "native": "ibc/95C9B5870F95E21A242E6AF9ADCB1F212EE4A8855087226C36FBE43FC41A77B8"
+          "native": "ibc/A1830DECC0B742F0B2044FF74BE727B5CF92C9A28A9235C3BACE4D24A23504FA"
         }
       ],
       [
@@ -798,81 +708,81 @@
         }
       ],
       [
-        "stargaze>stars",
+        "jackal>jkl",
         {
-          "native": "ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4"
+          "native": "ibc/8E697BDABE97ACE8773C6DF7402B2D1D5104DD1EEABE12608E3469B7F64C15BA"
         }
       ],
       [
-        "gravitybridge>grav",
+        "coreum>core",
         {
-          "native": "ibc/E97634A40119F1898989C2A23224ED83FDD0A57EA46B3A094E287288D1672B44"
+          "native": "ibc/F3166F4D31D6BA1EC6C9F5536F5DDDD4CC93DBA430F7419E7CDC41C497944A65"
         }
       ],
       [
-        "bostrom>boot",
+        "picasso>pica",
         {
-          "native": "ibc/FE2CD1E6828EC0FAB8AF39BAC45BC25B965BA67CCBC50C13A14BD610B0D1E2C4"
+          "native": "ibc/56D7C03B8F6A07AD322EEE1BEF3AE996E09D1C1E34C27CF37E0D4A0AC5972516"
         }
       ],
       [
-        "stride>statom",
+        "secretnetwork>scrt",
         {
-          "native": "ibc/C140AFD542AE77BD7DCC83F13FDD8C5E5BB8C4929785E6EC2F4C636F98F17901"
+          "native": "ibc/0954E1C28EB7AF5B72D24F3BC2B47BBB2FDF91BDDFD57B74B99E133AED40972A"
         }
       ],
       [
-        "juno>juno",
+        "sommelier>somm",
         {
-          "native": "ibc/46B44899322F3CD854D2D46DEEF881958467CDD4B3B10086DA49296BBED94BED"
+          "native": "ibc/9BBA9A1C257E971E38C1422780CE6F0B0686F0A3085E2D61118D904BFE0F5F5E"
         }
       ],
       [
-        "oraichain>orai",
+        "comdex>cmdx",
         {
-          "native": "ibc/161D7D62BAB3B9C39003334F1671208F43C06B643CC9EDBBE82B64793C857F1D"
+          "native": "ibc/EA3E1640F9B1532AB129A571203A0B9F789A7F14BB66E350DCBFA18E1A1931F0"
         }
       ],
       [
-        "neutron>ntrn",
+        "akash>akt",
         {
-          "native": "ibc/126DA09104B71B164883842B769C0E9EC1486C0887D27A9999E395C2C8FB5682"
-        }
-      ],
-      [
-        "cheqd>cheq",
-        {
-          "native": "ibc/7A08C6F11EF0F59EB841B9F788A87EC9F2361C7D9703157EC13D940DC53031FA"
-        }
-      ],
-      [
-        "injective>inj",
-        {
-          "native": "ibc/64BA6E31FE887D66C6F8F31C7B1A80C7CA179239677B4088BB55F5EA07DBE273"
-        }
-      ],
-      [
-        "bandchain>band",
-        {
-          "native": "ibc/F867AE2112EFE646EC71A25CD2DFABB8927126AC1E19F1BBF0FF693A4ECA05DE"
-        }
-      ],
-      [
-        "stride>strd",
-        {
-          "native": "ibc/A8CA5EE328FA10C9519DF6057DA1F69682D28F7D0F5CCC7ECB72E3DCA2D157A4"
-        }
-      ],
-      [
-        "quicksilver>qck",
-        {
-          "native": "ibc/635CB83EF1DFE598B10A3E90485306FD0D47D34217A4BE5FD9977FA010A5367D"
+          "native": "ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4"
         }
       ],
       [
         "archway>arch",
         {
           "native": "ibc/23AB778D694C1ECFC59B91D8C399C115CC53B0BD1C61020D8E19519F002BDD85"
+        }
+      ],
+      [
+        "irisnet>iris",
+        {
+          "native": "ibc/7C4D60AA95E5A7558B0A364860979CA34B7FF8AAF255B87AF9E879374470CEC0"
+        }
+      ],
+      [
+        "cronos>cro",
+        {
+          "native": "ibc/E6931F78057F7CC5DA0FD6CEF82FF39373A6E0452BF1FD76910B93292CF356C1"
+        }
+      ],
+      [
+        "migaloo>whale",
+        {
+          "native": "ibc/EDD6F0D66BCD49C1084FB2C35353B4ACD7B9191117CE63671B61320548F7C89D"
+        }
+      ],
+      [
+        "stargaze>stars",
+        {
+          "native": "ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4"
+        }
+      ],
+      [
+        "passage>pasg",
+        {
+          "native": "ibc/208B2F137CDE510B44C41947C045CFDC27F996A9D990EA64460BDD5B3DBEB2ED"
         }
       ],
       [
@@ -888,33 +798,15 @@
         }
       ],
       [
-        "chihuahua>huahua",
+        "stride>strd",
         {
-          "native": "ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228"
+          "native": "ibc/A8CA5EE328FA10C9519DF6057DA1F69682D28F7D0F5CCC7ECB72E3DCA2D157A4"
         }
       ],
       [
-        "akash>akt",
+        "juno>juno",
         {
-          "native": "ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4"
-        }
-      ],
-      [
-        "agoric>ist",
-        {
-          "native": "ibc/92BE0717F4678905E53F4E45B2DED18BC0CB97BF1F8B6A25AFEDF3D5A879B4D5"
-        }
-      ],
-      [
-        "kyve>kyve",
-        {
-          "native": "ibc/613BF0BF2F2146AE9941E923725745E931676B2C14E9768CD609FA0849B2AE13"
-        }
-      ],
-      [
-        "nolus>nls",
-        {
-          "native": "ibc/D9AFCECDD361D38302AA66EB3BAC23B95234832C51D12489DC451FA2B7C72782"
+          "native": "ibc/46B44899322F3CD854D2D46DEEF881958467CDD4B3B10086DA49296BBED94BED"
         }
       ],
       [
@@ -924,15 +816,27 @@
         }
       ],
       [
-        "passage>pasg",
+        "sentinel>dvpn",
         {
-          "native": "ibc/208B2F137CDE510B44C41947C045CFDC27F996A9D990EA64460BDD5B3DBEB2ED"
+          "native": "ibc/9712DBB13B9631EDFA9BF61B55F1B2D290B2ADB67E3A4EB3A875F3B6081B3B84"
         }
       ],
       [
-        "axelar>axl",
+        "stride>statom",
         {
-          "native": "ibc/903A61A498756EA560B85A85132D3AEE21B5DEDD41213725D22ABF276EA6945E"
+          "native": "ibc/C140AFD542AE77BD7DCC83F13FDD8C5E5BB8C4929785E6EC2F4C636F98F17901"
+        }
+      ],
+      [
+        "chihuahua>huahua",
+        {
+          "native": "ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228"
+        }
+      ],
+      [
+        "kyve>kyve",
+        {
+          "native": "ibc/613BF0BF2F2146AE9941E923725745E931676B2C14E9768CD609FA0849B2AE13"
         }
       ],
       [
@@ -942,21 +846,15 @@
         }
       ],
       [
-        "cerberus>crbrus",
+        "cheqd>cheq",
         {
-          "native": "ibc/41999DF04D9441DAC0DF5D8291DF4333FBCBA810FFD63FDCE34FDF41EF37B6F7"
+          "native": "ibc/7A08C6F11EF0F59EB841B9F788A87EC9F2361C7D9703157EC13D940DC53031FA"
         }
       ],
       [
-        "onomy>nom",
+        "axelar>axl",
         {
-          "native": "ibc/B9606D347599F0F2FDF82BA3EE339000673B7D274EA50F59494DC51EFCD42163"
-        }
-      ],
-      [
-        "cronos>cro",
-        {
-          "native": "ibc/E6931F78057F7CC5DA0FD6CEF82FF39373A6E0452BF1FD76910B93292CF356C1"
+          "native": "ibc/903A61A498756EA560B85A85132D3AEE21B5DEDD41213725D22ABF276EA6945E"
         }
       ],
       [
@@ -966,9 +864,117 @@
         }
       ],
       [
+        "oraichain>orai",
+        {
+          "native": "ibc/161D7D62BAB3B9C39003334F1671208F43C06B643CC9EDBBE82B64793C857F1D"
+        }
+      ],
+      [
+        "agoric>bld",
+        {
+          "native": "ibc/2DA9C149E9AD2BD27FEFA635458FB37093C256C1A940392634A16BEA45262604"
+        }
+      ],
+      [
+        "xpla>xpla",
+        {
+          "native": "ibc/95C9B5870F95E21A242E6AF9ADCB1F212EE4A8855087226C36FBE43FC41A77B8"
+        }
+      ],
+      [
+        "injective>inj",
+        {
+          "native": "ibc/64BA6E31FE887D66C6F8F31C7B1A80C7CA179239677B4088BB55F5EA07DBE273"
+        }
+      ],
+      [
+        "umee>umee",
+        {
+          "native": "ibc/67795E528DF67C5606FC20F824EA39A6EF55BA133F4DC79C90A8C47A0901E17C"
+        }
+      ],
+      [
+        "onomy>nom",
+        {
+          "native": "ibc/B9606D347599F0F2FDF82BA3EE339000673B7D274EA50F59494DC51EFCD42163"
+        }
+      ],
+      [
+        "cudos>cudos",
+        {
+          "native": "ibc/E09ED39F390EC51FA9F3F69BEA08B5BBE6A48B3057B2B1C3467FAAE9E58B021B"
+        }
+      ],
+      [
+        "nolus>nls",
+        {
+          "native": "ibc/D9AFCECDD361D38302AA66EB3BAC23B95234832C51D12489DC451FA2B7C72782"
+        }
+      ],
+      [
+        "persistence>xprt",
+        {
+          "native": "ibc/A0CC0CF735BFB30E730C70019D4218A1244FF383503FF7579C9201AB93CA9293"
+        }
+      ],
+      [
+        "omniflixhub>flix",
+        {
+          "native": "ibc/CEE970BB3D26F4B907097B6B660489F13F3B0DA765B83CC7D9A0BC0CE220FA6F"
+        }
+      ],
+      [
         "fetchhub>fet",
         {
           "native": "ibc/5D1F516200EE8C6B2354102143B78A2DEDA25EDE771AC0F8DC3C1837C8FD4447"
+        }
+      ],
+      [
+        "fxcore>fx",
+        {
+          "native": "ibc/2B30802A0B03F91E4E16D6175C9B70F2911377C1CAE9E50FF011C821465463F9"
+        }
+      ],
+      [
+        "neutron>ntrn",
+        {
+          "native": "ibc/126DA09104B71B164883842B769C0E9EC1486C0887D27A9999E395C2C8FB5682"
+        }
+      ],
+      [
+        "odin>odin",
+        {
+          "native": "ibc/C360EF34A86D334F625E4CBB7DA3223AEA97174B61F35BB3758081A8160F7D9B"
+        }
+      ],
+      [
+        "source>source",
+        {
+          "native": "ibc/E7905742CE2EA4EA5D592527DC89220C59B617DE803939FE7293805A64B484D7"
+        }
+      ],
+      [
+        "meme>meme",
+        {
+          "native": "ibc/67C89B8B0A70C08F093C909A4DD996DD10E0494C87E28FD9A551697BF173D4CA"
+        }
+      ],
+      [
+        "kava>kava",
+        {
+          "native": "ibc/57AA1A70A4BC9769C525EBF6386F7A21536E04A79D62E1981EFCEF9428EBB205"
+        }
+      ],
+      [
+        "bandchain>band",
+        {
+          "native": "ibc/F867AE2112EFE646EC71A25CD2DFABB8927126AC1E19F1BBF0FF693A4ECA05DE"
+        }
+      ],
+      [
+        "regen>regen",
+        {
+          "native": "ibc/1DCC8A6CB5689018431323953344A9F6CC4D0BFB261E88C9F7777372C10CD076"
         }
       ]
     ],
@@ -986,69 +992,111 @@
         }
       ],
       [
-        "osmosis>uatom-v1",
+        "cosmoshub>atom",
         {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uatom-v1"
+          "native": "ibc/B28CFD38D84A480EF2A03AC575DCB05004D934A603A5A642888847BCDA6340C0"
         }
       ],
       [
-        "osmosis>umbrn",
+        "kyvedevnet>kyve",
         {
-          "native": "factory/osmo1dmhjhst2f8fdqhdvpuzmmxww7g97ydplx2pq7gydx99g9ple24lsvh6mg7/umbrn"
+          "native": "ibc/AB8AF05799E299FB5C5C80781DA35887F53E029745D20E5641233DB4E6B28515"
+        }
+      ],
+      [
+        "axelar>ausdc",
+        {
+          "native": "ibc/6F34E1BD664C36CE49ACC28E60D62559A5F96C4F9A6CCE4FC5A67B2852E24CFE"
+        }
+      ],
+      [
+        "juno>junox",
+        {
+          "native": "ibc/8E2FEFCBD754FA3C97411F0126B9EC76191BAA1B3959CB73CECF396A4037BBF0"
+        }
+      ],
+      [
+        "impacthub>ixo",
+        {
+          "native": "ibc/88C815D69587CF0F05E96E5E2731EA56194D73C9A02A500095294D3A5DE68F16"
+        }
+      ],
+      [
+        "axelar>wmatic",
+        {
+          "native": "ibc/2B5D096F5732F3BADBFB987FE42FDA24B3569514BC5DFDEA1BC042B223A0CED3"
+        }
+      ],
+      [
+        "xpla>xpla",
+        {
+          "native": "ibc/6500257DF54E73C25DF950EBAF9A051347ACD21B0BDCC85578FFCE88CD1282D4"
+        }
+      ],
+      [
+        "nolus>nls",
+        {
+          "native": "ibc/95359FD9C5D15DBD7B9A6B7271F5E769776999590DE138ED62B6E89D5D010B7C"
+        }
+      ],
+      [
+        "celestia>tia",
+        {
+          "native": "ibc/0E22FFB61DB307FE01D3D0DFF4A8EBEB6CC4997DCF9E901AE0751A2FFF4B90DD"
+        }
+      ],
+      [
+        "qwoyn>qwoyn",
+        {
+          "native": "ibc/E74B23A1BFBE86CCF778CEADEA17CF8A694B4A111D359009FE6C903BBBAD855E"
+        }
+      ],
+      [
+        "akash>akt",
+        {
+          "native": "ibc/4DAE26570FD24ABA40E2BE4137E39D946C78B00B248D3F78B0919567C4371156"
+        }
+      ],
+      [
+        "axelar>usdc",
+        {
+          "native": "ibc/40F1B2458AEDA66431F9D44F48413240B8D28C072463E2BF53655728683583E3"
+        }
+      ],
+      [
+        "quicksilver>qatom",
+        {
+          "native": "ibc/719996A7AE97D7EFB992EED35F6E30DBCFFFEBBE197F6462456CF48598E99F88"
+        }
+      ],
+      [
+        "quasar>qsr",
+        {
+          "native": "ibc/206DE6A2D1882D91A12F01C8BD85A33C9673C6A39761D36CF736436D6EF4C588"
+        }
+      ],
+      [
+        "persistence>xprt",
+        {
+          "native": "ibc/754C8533F8A418B03AD5F2C6AA19D4703CF78BBAB9E2E4DDD6212AAC2E502CA6"
+        }
+      ],
+      [
+        "osmosis>uakt-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uakt-v1"
         }
       ],
       [
         "osmosis>ucdt",
         {
-          "native": "factory/osmo13rgq5qvfyt5eygquc4rpwu7dqpf0wjczqzqpukglahlnr3gsc2mqmjasps/ucdt"
+          "native": "factory/osmo17yuj2rrn9hnrktudj06thkkwl2pjc5acsusjhaz5fwgvc75gmn8sk9t44n/ucdt"
         }
       ],
       [
-        "osmosis>wbtc",
+        "osmosis>umbrn",
         {
-          "native": "factory/osmo14stg73x3jhw53m443pjhr3q5ygvca54rvt02zy/wbtc"
-        }
-      ],
-      [
-        "osmosis>uion-v1",
-        {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uion-v1"
-        }
-      ],
-      [
-        "osmosis>usdc",
-        {
-          "native": "factory/osmo14stg73x3jhw53m443pjhr3q5ygvca54rvt02zy/usdc"
-        }
-      ],
-      [
-        "osmosis>tuosmo",
-        {
-          "native": "factory/osmo14stg73x3jhw53m443pjhr3q5ygvca54rvt02zy/tuosmo"
-        }
-      ],
-      [
-        "osmosis>ustars-v1",
-        {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ustars-v1"
-        }
-      ],
-      [
-        "osmosis>weth",
-        {
-          "native": "factory/osmo14stg73x3jhw53m443pjhr3q5ygvca54rvt02zy/weth"
-        }
-      ],
-      [
-        "osmosis>uumee-v1",
-        {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uumee-v1"
-        }
-      ],
-      [
-        "osmosis>uevmos-v1",
-        {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uevmos-v1"
+          "native": "factory/osmo1ufxfgzywrn2tpke9ltkfet8ldsjputrz4hcj4dalzhtynvl2l6nswwntn4/umbrn"
         }
       ],
       [
@@ -1058,9 +1106,87 @@
         }
       ],
       [
+        "osmosis>ujuno-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ujuno-v1"
+        }
+      ],
+      [
+        "osmosis>uregen-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uregen-v1"
+        }
+      ],
+      [
+        "osmosis>usdc",
+        {
+          "native": "factory/osmo14stg73x3jhw53m443pjhr3q5ygvca54rvt02zy/usdc"
+        }
+      ],
+      [
+        "osmosis>uaxl-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uaxl-v1"
+        }
+      ],
+      [
+        "osmosis>tuosmo",
+        {
+          "native": "factory/osmo14stg73x3jhw53m443pjhr3q5ygvca54rvt02zy/tuosmo"
+        }
+      ],
+      [
+        "osmosis>ustatom-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ustatom-v1"
+        }
+      ],
+      [
+        "osmosis>uion-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uion-v1"
+        }
+      ],
+      [
         "osmosis>uscrt-v1",
         {
           "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uscrt-v1"
+        }
+      ],
+      [
+        "osmosis>uusdc",
+        {
+          "native": "factory/osmo109ns4u04l44kqdkvp876hukd3hxz8zzm7809el/uusdc"
+        }
+      ],
+      [
+        "osmosis>uststars-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uststars-v1"
+        }
+      ],
+      [
+        "osmosis>uumee-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uumee-v1"
+        }
+      ],
+      [
+        "osmosis>ustevmos-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ustevmos-v1"
+        }
+      ],
+      [
+        "osmosis>weth",
+        {
+          "native": "factory/osmo14stg73x3jhw53m443pjhr3q5ygvca54rvt02zy/weth"
+        }
+      ],
+      [
+        "osmosis>stuosmo",
+        {
+          "native": "factory/osmo14stg73x3jhw53m443pjhr3q5ygvca54rvt02zy/stuosmo"
         }
       ],
       [
@@ -1070,9 +1196,63 @@
         }
       ],
       [
-        "osmosis>ujuno-v1",
+        "osmosis>ustrd-v1",
         {
-          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ujuno-v1"
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ustrd-v1"
+        }
+      ],
+      [
+        "osmosis>ustars-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ustars-v1"
+        }
+      ],
+      [
+        "mars>mars",
+        {
+          "native": "ibc/2E7368A14AC9AB7870F32CFEA687551C5064FA861868EDF7437BC877358A81F9"
+        }
+      ],
+      [
+        "evmos>tevmos",
+        {
+          "native": "ibc/F7985F7A0D7D56189F23404FA802EC957F9DB1C78274C8AFC70CA4E69EE9852A"
+        }
+      ],
+      [
+        "quicksilver>qck",
+        {
+          "native": "ibc/F37CF69589DE12342758382F8770C0852CD8D2E4519F55166EBDAF472AD667C9"
+        }
+      ],
+      [
+        "chain4energy>c4e",
+        {
+          "native": "ibc/E3D323CB6F427C49E56F913C853A416F6B71BAA9B0164625AD0203266F92B3ED"
+        }
+      ],
+      [
+        "osmosis>uatom-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/uatom-v1"
+        }
+      ],
+      [
+        "osmosis>atom",
+        {
+          "native": "factory/osmo1e8sttj5lrm3f8pgv8vfcl9wq5gact02chusca4/atom"
+        }
+      ],
+      [
+        "osmosis>ustjuno-v1",
+        {
+          "native": "factory/osmo1jjx3kvnf0jk3fu2twfgt8wld9qtzfw08nyvm65/ustjuno-v1"
+        }
+      ],
+      [
+        "osmosis>qsr",
+        {
+          "native": "factory/osmo1e8sttj5lrm3f8pgv8vfcl9wq5gact02chusca4/qsr"
         }
       ]
     ]
