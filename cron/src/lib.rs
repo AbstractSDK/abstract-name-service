@@ -86,7 +86,7 @@ use serde_json::Value;
 use tokio::runtime::Runtime;
 
 const ANS_SCRAPE_URL: &str =
-    "https://raw.githubusercontent.com/AbstractSDK/ans-scraper/mainline/out/";
+    "https://raw.githubusercontent.com/AbstractSDK/ans-scraper/buckram/osmosis-testnet-without-5/out/";
 
 /// get some json  
 pub fn get_scraped_json_data(suffix: &str) -> Value {
