@@ -43,7 +43,7 @@ const mainnet = new Osmosis1(
         },
       ],
       [
-        'eth>kava>usdt',
+        'kava>usdt',
         {
           native: 'ibc/4ABBEF4C8926DDDB320AE5188CFD63267ABBCEFC0583E4AE05D6E5AA2401DDAB',
         }
