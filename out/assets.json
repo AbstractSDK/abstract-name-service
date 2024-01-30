@@ -690,9 +690,27 @@
         }
       ],
       [
+        "osmosis>factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilktia",
+        {
+          "native": "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA"
+        }
+      ],
+      [
+        "osmosis>factory/osmo1pfyxruwvtwk00y8z06dh2lqjdj82ldvy74wzm3/wosmo",
+        {
+          "native": "factory/osmo1pfyxruwvtwk00y8z06dh2lqjdj82ldvy74wzm3/WOSMO"
+        }
+      ],
+      [
         "osmosis>ucdt",
         {
           "native": "factory/osmo1s794h9rxggytja3a4pmwul53u98k06zy2qtrdvjnfuxruh7s8yjs6cyxgd/ucdt"
+        }
+      ],
+      [
+        "picasso>pica",
+        {
+          "native": "ibc/56D7C03B8F6A07AD322EEE1BEF3AE996E09D1C1E34C27CF37E0D4A0AC5972516"
         }
       ],
       [
@@ -708,15 +726,9 @@
         }
       ],
       [
-        "picasso>pica",
+        "kujira>kuji",
         {
-          "native": "ibc/56D7C03B8F6A07AD322EEE1BEF3AE996E09D1C1E34C27CF37E0D4A0AC5972516"
-        }
-      ],
-      [
-        "evmos>evmos",
-        {
-          "native": "ibc/6AE98883D4D5D5FF9E50D7130F1305DA2FFA0C652D1DD9C123657C6B4EB2DF8A"
+          "native": "ibc/BB6BCDB515050BAE97516111873CCD7BCF1FD0CCB723CC12F3C4F704D6C646CE"
         }
       ],
       [
@@ -726,9 +738,21 @@
         }
       ],
       [
-        "kujira>kuji",
+        "omniflixhub>flix",
         {
-          "native": "ibc/BB6BCDB515050BAE97516111873CCD7BCF1FD0CCB723CC12F3C4F704D6C646CE"
+          "native": "ibc/CEE970BB3D26F4B907097B6B660489F13F3B0DA765B83CC7D9A0BC0CE220FA6F"
+        }
+      ],
+      [
+        "secretnetwork>scrt",
+        {
+          "native": "ibc/0954E1C28EB7AF5B72D24F3BC2B47BBB2FDF91BDDFD57B74B99E133AED40972A"
+        }
+      ],
+      [
+        "evmos>evmos",
+        {
+          "native": "ibc/6AE98883D4D5D5FF9E50D7130F1305DA2FFA0C652D1DD9C123657C6B4EB2DF8A"
         }
       ],
       [
@@ -750,21 +774,9 @@
         }
       ],
       [
-        "secretnetwork>scrt",
+        "akash>akt",
         {
-          "native": "ibc/0954E1C28EB7AF5B72D24F3BC2B47BBB2FDF91BDDFD57B74B99E133AED40972A"
-        }
-      ],
-      [
-        "fetchhub>fet",
-        {
-          "native": "ibc/5D1F516200EE8C6B2354102143B78A2DEDA25EDE771AC0F8DC3C1837C8FD4447"
-        }
-      ],
-      [
-        "omniflixhub>flix",
-        {
-          "native": "ibc/CEE970BB3D26F4B907097B6B660489F13F3B0DA765B83CC7D9A0BC0CE220FA6F"
+          "native": "ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4"
         }
       ],
       [
@@ -774,21 +786,21 @@
         }
       ],
       [
-        "akash>akt",
+        "fetchhub>fet",
         {
-          "native": "ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4"
-        }
-      ],
-      [
-        "chihuahua>huahua",
-        {
-          "native": "ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228"
+          "native": "ibc/5D1F516200EE8C6B2354102143B78A2DEDA25EDE771AC0F8DC3C1837C8FD4447"
         }
       ],
       [
         "stargaze>stars",
         {
           "native": "ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4"
+        }
+      ],
+      [
+        "chihuahua>huahua",
+        {
+          "native": "ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228"
         }
       ],
       [
@@ -816,12 +828,6 @@
         }
       ],
       [
-        "stride>statom",
-        {
-          "native": "ibc/C140AFD542AE77BD7DCC83F13FDD8C5E5BB8C4929785E6EC2F4C636F98F17901"
-        }
-      ],
-      [
         "sentinel>dvpn",
         {
           "native": "ibc/9712DBB13B9631EDFA9BF61B55F1B2D290B2ADB67E3A4EB3A875F3B6081B3B84"
@@ -831,6 +837,12 @@
         "oraichain>orai",
         {
           "native": "ibc/161D7D62BAB3B9C39003334F1671208F43C06B643CC9EDBBE82B64793C857F1D"
+        }
+      ],
+      [
+        "stride>statom",
+        {
+          "native": "ibc/C140AFD542AE77BD7DCC83F13FDD8C5E5BB8C4929785E6EC2F4C636F98F17901"
         }
       ],
       [
@@ -864,15 +876,33 @@
         }
       ],
       [
+        "odin>odin",
+        {
+          "native": "ibc/C360EF34A86D334F625E4CBB7DA3223AEA97174B61F35BB3758081A8160F7D9B"
+        }
+      ],
+      [
         "quicksilver>qck",
         {
           "native": "ibc/635CB83EF1DFE598B10A3E90485306FD0D47D34217A4BE5FD9977FA010A5367D"
         }
       ],
       [
-        "mars>mars",
+        "source>source",
         {
-          "native": "ibc/573FCD90FACEE750F55A8864EF7D38265F07E5A9273FA0E8DAFD39951332B580"
+          "native": "ibc/E7905742CE2EA4EA5D592527DC89220C59B617DE803939FE7293805A64B484D7"
+        }
+      ],
+      [
+        "shentu>ctk",
+        {
+          "native": "ibc/7ED954CFFFC06EE8419387F3FC688837FF64EF264DE14219935F724EEEDBF8D3"
+        }
+      ],
+      [
+        "assetmantle>mntl",
+        {
+          "native": "ibc/CBA34207E969623D95D057D9B11B0C8B32B89A71F170577D982FDDE623813FFC"
         }
       ],
       [
@@ -882,15 +912,39 @@
         }
       ],
       [
-        "terra2>luna",
+        "planq>plq",
         {
-          "native": "ibc/785AFEC6B3741100D15E7AF01374E3C4C36F24888E96479B1C33F5C71F364EF9"
+          "native": "ibc/B1E0166EA0D759FDF4B207D1F5F12210D8BFE36F2345CEFC76948CE2B36DFBAF"
+        }
+      ],
+      [
+        "regen>regen",
+        {
+          "native": "ibc/1DCC8A6CB5689018431323953344A9F6CC4D0BFB261E88C9F7777372C10CD076"
         }
       ],
       [
         "migaloo>whale",
         {
           "native": "ibc/EDD6F0D66BCD49C1084FB2C35353B4ACD7B9191117CE63671B61320548F7C89D"
+        }
+      ],
+      [
+        "mars>mars",
+        {
+          "native": "ibc/573FCD90FACEE750F55A8864EF7D38265F07E5A9273FA0E8DAFD39951332B580"
+        }
+      ],
+      [
+        "comdex>cmdx",
+        {
+          "native": "ibc/EA3E1640F9B1532AB129A571203A0B9F789A7F14BB66E350DCBFA18E1A1931F0"
+        }
+      ],
+      [
+        "terra2>luna",
+        {
+          "native": "ibc/785AFEC6B3741100D15E7AF01374E3C4C36F24888E96479B1C33F5C71F364EF9"
         }
       ],
       [
@@ -903,6 +957,12 @@
         "sommelier>somm",
         {
           "native": "ibc/9BBA9A1C257E971E38C1422780CE6F0B0686F0A3085E2D61118D904BFE0F5F5E"
+        }
+      ],
+      [
+        "fxcore>fx",
+        {
+          "native": "ibc/2B30802A0B03F91E4E16D6175C9B70F2911377C1CAE9E50FF011C821465463F9"
         }
       ],
       [
@@ -921,66 +981,6 @@
         "xpla>xpla",
         {
           "native": "ibc/95C9B5870F95E21A242E6AF9ADCB1F212EE4A8855087226C36FBE43FC41A77B8"
-        }
-      ],
-      [
-        "osmosis>factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilktia",
-        {
-          "native": "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA"
-        }
-      ],
-      [
-        "osmosis>factory/osmo1pfyxruwvtwk00y8z06dh2lqjdj82ldvy74wzm3/wosmo",
-        {
-          "native": "factory/osmo1pfyxruwvtwk00y8z06dh2lqjdj82ldvy74wzm3/WOSMO"
-        }
-      ],
-      [
-        "comdex>cmdx",
-        {
-          "native": "ibc/EA3E1640F9B1532AB129A571203A0B9F789A7F14BB66E350DCBFA18E1A1931F0"
-        }
-      ],
-      [
-        "odin>odin",
-        {
-          "native": "ibc/C360EF34A86D334F625E4CBB7DA3223AEA97174B61F35BB3758081A8160F7D9B"
-        }
-      ],
-      [
-        "assetmantle>mntl",
-        {
-          "native": "ibc/CBA34207E969623D95D057D9B11B0C8B32B89A71F170577D982FDDE623813FFC"
-        }
-      ],
-      [
-        "fxcore>fx",
-        {
-          "native": "ibc/2B30802A0B03F91E4E16D6175C9B70F2911377C1CAE9E50FF011C821465463F9"
-        }
-      ],
-      [
-        "planq>plq",
-        {
-          "native": "ibc/B1E0166EA0D759FDF4B207D1F5F12210D8BFE36F2345CEFC76948CE2B36DFBAF"
-        }
-      ],
-      [
-        "regen>regen",
-        {
-          "native": "ibc/1DCC8A6CB5689018431323953344A9F6CC4D0BFB261E88C9F7777372C10CD076"
-        }
-      ],
-      [
-        "source>source",
-        {
-          "native": "ibc/E7905742CE2EA4EA5D592527DC89220C59B617DE803939FE7293805A64B484D7"
-        }
-      ],
-      [
-        "shentu>ctk",
-        {
-          "native": "ibc/7ED954CFFFC06EE8419387F3FC688837FF64EF264DE14219935F724EEEDBF8D3"
         }
       ],
       [
