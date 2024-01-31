@@ -159,6 +159,13 @@ export class AstroportGql extends Exchange {
       }
 
       const poolMetadata = this.poolMetadata(poolType, assetNames)
+      if (poolMetadata.pool_type === 'ConcentratedLiquidity') {
+        console.log(
+          'Skipping pool because Concentrated Liquiditiy!! TODO: REmove AFTER 0.20',
+          poolMetadata
+        )
+        return
+      }
 
       network.poolRegistry.register(new AnsPoolEntry(PoolId.contract(poolAddress), poolMetadata))
 

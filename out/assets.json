@@ -30,6 +30,18 @@
         }
       ],
       [
+        "eth>axelar>usdt",
+        {
+          "native": "ibc/CBF67A2BCF6CAE343FDF251E510C8E18C361FC02B23430C121116E0811835DEF"
+        }
+      ],
+      [
+        "noble>usdc",
+        {
+          "native": "ibc/8198819CC2F25B16991D6391826B6BFA50F03AB6B5688C3399BB6A7BD5CCA53C"
+        }
+      ],
+      [
         "eth>axelar>weth",
         {
           "native": "ibc/BC8A77AFBD872FDC32A348D3FB10CC09277C266CFE52081DE341C7EC6752E674"
@@ -75,12 +87,6 @@
         "terra2>ampluna",
         {
           "cw20": "terra1ecgazyd0waaj3g7l9cmy5gulhxkps2gmxu9ghducvuypjq68mq2s5lvsct"
-        }
-      ],
-      [
-        "axelar>usdt",
-        {
-          "native": "ibc/CBF67A2BCF6CAE343FDF251E510C8E18C361FC02B23430C121116E0811835DEF"
         }
       ],
       [
@@ -150,55 +156,13 @@
         }
       ],
       [
-        "astroport/eth>axelar>usdc,terra2>luna",
-        {
-          "cw20": "terra1f8epc9r74uk2yle4nnrw9j95a2t3p5nalr7r0zlhc8zuy3fwhmqqqefvh6"
-        }
-      ],
-      [
-        "astroport/eth>axelar>wbtc,terra2>luna",
-        {
-          "cw20": "terra1a5apghncafx0nem740fsrmd6demaywvp332a4uat63u2jtwn8mgsz7khkw"
-        }
-      ],
-      [
-        "astroport/eth>axelar>weth,terra2>luna",
-        {
-          "cw20": "terra1gvg0nknxadc8r55gvq6n7rt7ve2amv34nyvtwalwyupgg89fgvxqnxkx6m"
-        }
-      ],
-      [
-        "astroport/eth>axelar>usdc,terra2>astro",
-        {
-          "cw20": "terra1406nvns7h937289c7tz9mapvcgq3ucwga952afq855lky57hdfwqdq2ch2"
-        }
-      ],
-      [
-        "astroport/terra2>astro,terra2>luna",
-        {
-          "cw20": "terra1yzukr6k2pfgv6zl5x2zt2p2mkw05wcf5fjun6s88ypr4486f402snyrs7n"
-        }
-      ],
-      [
-        "astroport/terra2>luna,terra2>sol",
-        {
-          "cw20": "terra1vc66wpr2ghcesnf203em6yefpze3vrmq99n8yz0me3jzs6g4e8rs2kec75"
-        }
-      ],
-      [
-        "astroport/terra2>luna,terra2>wbnb",
-        {
-          "cw20": "terra12eu8jk4w7lgn2rk7xs46nz7c7r9fw8q98afy9adlwtkghazj40asjf65zu"
-        }
-      ],
-      [
         "astroport/terra2>ampluna,terra2>luna",
         {
           "cw20": "terra1cq22eugxwgp0x34cqfrxmd9jkyy43gas93yqjhmwrm7j0h5ecrqq5j7dgp"
         }
       ],
       [
-        "astroport/axelar>usdt,eth>axelar>usdc",
+        "astroport/eth>axelar>usdc,eth>axelar>usdt",
         {
           "cw20": "terra1khsxwfnzuxqcyza2sraxf2ngkr3dwy9f7rm0uts0xpkeshs96ccsqtu6nv"
         }
@@ -210,15 +174,27 @@
         }
       ],
       [
-        "astroport/terra2>luna,terra2>roar",
+        "astroport/eth>axelar>usdc,terra2>astro",
         {
-          "cw20": "terra1vczn40ch624g2kserhzqu2n69j3h7h7c5nfeznw96pnxjuly5h5s25u9dm"
+          "cw20": "terra16esjk7qqlgh8w7p2a58yxhgkfk4ykv72p7ha056zul58adzjm6msvc674t"
         }
       ],
       [
         "astroport/terra2>luna,terra2>lunax",
         {
           "cw20": "terra1kggfd6z0ad2k9q8v24f7ftxyqush8fp9xku9nyrjcs2wv0e4kypszfrfd0"
+        }
+      ],
+      [
+        "astroport/terra2>astro,terra2>luna",
+        {
+          "cw20": "terra1fs0p7gammucw7get7mq7rzdk6rexxgszp003zr3859qyfc02ur2sdha672"
+        }
+      ],
+      [
+        "astroport/eth>axelar>usdc,terra2>luna",
+        {
+          "cw20": "terra1ckmsqdhlky9jxcmtyj64crgzjxad9pvsd58k8zsxsnv4vzvwdt7qke04hl"
         }
       ],
       [

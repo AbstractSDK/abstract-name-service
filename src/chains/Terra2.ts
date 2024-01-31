@@ -17,6 +17,18 @@ const phoenix_1 = new Phoenix1(
         },
       ],
       [
+        'eth>axelar>usdt',
+        {
+          native: 'ibc/CBF67A2BCF6CAE343FDF251E510C8E18C361FC02B23430C121116E0811835DEF',
+        },
+      ],
+      [
+        'noble>usdc',
+        {
+          native: 'ibc/8198819CC2F25B16991D6391826B6BFA50F03AB6B5688C3399BB6A7BD5CCA53C',
+        },
+      ],
+      [
         'eth>axelar>weth',
         {
           native: 'ibc/BC8A77AFBD872FDC32A348D3FB10CC09277C266CFE52081DE341C7EC6752E674',

@@ -84,7 +84,7 @@ pub mod hashmap_diff;
 pub mod pools;
 
 const ANS_SCRAPE_URL: &str =
-    "https://raw.githubusercontent.com/AbstractSDK/abstract-name-service/8bec2f68437856169d3ec0301d36e99f547fed55/out/";
+    "https://raw.githubusercontent.com/AbstractSDK/abstract-name-service/bdb5d873a12a2cd8b7deed45e5f5f63690c738fc/out/";
 
 /// get some json
 pub fn get_scraped_json_data(suffix: &str) -> Value {

@@ -23,97 +23,6 @@
     "phoenix-1": [
       [
         {
-          "contract": "terra13cw46g72kwtgln0540j9cqa79ham5k86jlx34e2pqukww6v0v3yseakged"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConcentratedLiquidity",
-          "assets": [
-            "terra2>luna",
-            "eth>axelar>usdc"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra1afkvgc0mxfqakqlaqpxdgy58n79x4r239q3tucxmrsqvqk7ce3ksnctxfu"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConcentratedLiquidity",
-          "assets": [
-            "terra2>luna",
-            "eth>axelar>wbtc"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra16n04evd52r67acm3t8dy2369msuzkapdjmg9rzr6ankmmmj6054s8q5zlc"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConcentratedLiquidity",
-          "assets": [
-            "terra2>luna",
-            "eth>axelar>weth"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra1tm20pwpzwyyvyadu4v488hrg59nhu9v2l8v7k67nhccam4aagczsg0pzzr"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConcentratedLiquidity",
-          "assets": [
-            "terra2>astro",
-            "eth>axelar>usdc"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra1vl6vdefwpznm87d8tmcxaqn7mjtqlvyn4a485x6ux54lnusx8eespp0569"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConcentratedLiquidity",
-          "assets": [
-            "terra2>luna",
-            "terra2>astro"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra16zzqwekwsqn4zlsyu4vhjr52ee2hdvppjcr8h22qznjadaazzdgsvd905d"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConcentratedLiquidity",
-          "assets": [
-            "terra2>luna",
-            "terra2>sol"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra1v3xmc8nn8h8e7z55d80a72g4rgz6mrxyasxq089k8n6m40xldlksf2w5x8"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConcentratedLiquidity",
-          "assets": [
-            "terra2>luna",
-            "terra2>wbnb"
-          ]
-        }
-      ],
-      [
-        {
           "contract": "terra1cr8dg06sh343hh4xzn3gxd3ayetsjtet7q5gp4kfrewul2kql8sqvhaey4"
         },
         {
@@ -134,7 +43,7 @@
           "pool_type": "Stable",
           "assets": [
             "eth>axelar>usdc",
-            "axelar>usdt"
+            "eth>axelar>usdt"
           ]
         }
       ],
@@ -161,19 +70,6 @@
           "assets": [
             "terra2>astro",
             "eth>axelar>usdc"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "terra189v2ewgfx5wdhje6geefdtxefeemujplk8qw2wx3x5hdswn95l8qf4n2r0"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConcentratedLiquidity",
-          "assets": [
-            "terra2>roar",
-            "terra2>luna"
           ]
         }
       ],
