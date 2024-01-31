@@ -12,7 +12,12 @@ type AbstractPoolId =
       }
     }
 
-type PoolType = 'Stable' | 'Weighted' | 'LiquidityBootstrap' | 'ConstantProduct'
+type PoolType =
+  | 'Stable'
+  | 'Weighted'
+  | 'LiquidityBootstrap'
+  | 'ConstantProduct'
+  | 'ConcentratedLiquidity'
 
 type AbstractPoolMetadata = {
   dex: string

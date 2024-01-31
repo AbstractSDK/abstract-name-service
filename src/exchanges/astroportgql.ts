@@ -7,6 +7,7 @@ import { Network } from '../networks/network'
 import { match, P } from 'ts-pattern'
 import { AssetInfo as AstroportAssetInfo } from '../clients/astroport/AstroportFactory.types'
 import LocalCache from '../helpers/LocalCache'
+import { ASTROPORT_POOLS } from './astroportResponses'
 
 const ASTROPORT = 'Astroport'
 
@@ -36,6 +37,8 @@ interface AstroportOptions {
     generator_address?: string
   }
 }
+
+const MAX_POOLS = 25
 
 /**
  * Astroport scraper.
@@ -86,21 +89,37 @@ export class AstroportGql extends Exchange {
   }
 
   private async fetchGraphql(network: Network): Promise<AstroportPoolsQueryResponse> {
-    const { data } = await fetch(this.options.graphQlEndpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        query: GRAPHQL_QUERY,
-        variables: {
-          chains: [network.networkId],
+    let pools: AstroportPoolsQueryResponse
+    // check manual override
+    if (ASTROPORT_POOLS[network.networkId as keyof typeof ASTROPORT_POOLS]) {
+      pools = { pools: ASTROPORT_POOLS[network.networkId as keyof typeof ASTROPORT_POOLS] }
+    } else {
+      const { data } = await fetch(this.options.graphQlEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
-      }),
-    }).then((r) => r.json())
+        body: JSON.stringify({
+          query: GRAPHQL_QUERY,
+          variables: {
+            chains: [network.networkId],
+          },
+        }),
+      }).then((r) => r.json())
 
-    return data
+      pools = data
+    }
+
+    const sortedPools = pools.pools
+      .sort((a, b) => {
+        return a.poolLiquidityUsd > b.poolLiquidityUsd ? -1 : 1
+      })
+      .slice(0, MAX_POOLS)
+
+    return {
+      pools: sortedPools,
+    }
   }
 
   private astroportInfoToAssetInfo(assetInfo: AstroportAssetInfo) {
@@ -180,11 +199,12 @@ export class AstroportGql extends Exchange {
   toAbstractPoolType(poolType: string): PoolType {
     return match(poolType)
       .with('xyk', () => 'ConstantProduct' as const)
+      .with('astroport-pair-xyk-sale-tax', () => 'ConstantProduct' as const)
       .with('stable', () => 'Stable' as const)
-      .with('concentrated', () => 'Weighted' as const)
+      .with('concentrated', () => 'ConcentratedLiquidity' as const)
       .otherwise((c) => {
         return match(c)
-          .with('concentrated', () => 'Weighted' as const)
+          .with('concentrated', () => 'ConcentratedLiquidity' as const)
           .otherwise(() => {
             throw new Error(`Unknown custom type: ${JSON.stringify(c)}`)
           })
@@ -210,6 +230,7 @@ interface AstroportPool {
   lpAddress: string
   poolAddress: string
   stakeable: boolean
+  poolLiquidityUsd: number
 }
 
 interface PoolAsset {

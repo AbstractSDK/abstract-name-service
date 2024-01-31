@@ -2643,19 +2643,6 @@
       ],
       [
         {
-          "contract": "neutron1wzsewgysr8ttdlw96lp7u2j55z3sg7rtuvfjmd70ajavvpr3308s3zekqu"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "neutron>wsteth",
-            "axelar>weth"
-          ]
-        }
-      ],
-      [
-        {
           "contract": "neutron1l7ny0rckx9rks2p2aq94wd74sehjczym6n9y4yax8lcy9s39uans4uga62"
         },
         {
@@ -2669,170 +2656,14 @@
       ],
       [
         {
-          "contract": "neutron1jpm7j2cmj2mmk5pnxv20dxz869tw2vyy87qdl0xjasqnn23l04psudtf2y"
+          "contract": "neutron1d73vc84e36d4mmm9dwqql4sty3fx4usjmupxewx36e4qudm5auqs0yryma"
         },
         {
           "dex": "astroport",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "terra2>astro",
-            "eth>axelar>usdc"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "neutron17hdxfavyu4qen5fy8cy09js2qud02h6d97dvx72m4uhtjryhdcks8de0wq"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "neutron>wsteth",
-            "eth>axelar>usdc"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "neutron1adk7gupr0thjr3e6wcnlxr7ugclcg4cukv2np8la29dz38zuzymqjcv5s4"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "Stable",
-          "assets": [
-            "eth>axelar>usdc",
-            "axelar>usdt"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "neutron165m0r6rkhqxs30wch00t7mkykxxvgve9yyu254wknwhhjn34rmqsh6vfcj"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "mars>mars",
-            "eth>axelar>usdc"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "neutron1s2lr8u69xammmg3s8hemegcz57y07ae0wa7c7d2adupp6du3neyqd8ygp7"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "terra2>astro",
-            "neutron>ntrn"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "neutron14z9ke0yq90zcvu6uhctd48cgzqv8v4nqxhlx5w3gfamcvttmt0dsxdt7w7"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "neutron>ntrn",
-            "axelar>usdt"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "neutron16yll06qup0j0mnjc7v68stmw939e73ykr3twtd78l3hqlkstm2ysr0k4q8"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "terra2>astro",
-            "cosmoshub>atom"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "neutron18dll2ugfwfhjsytrm46r5dyv7gfka8q334wvxu824s0glev0hdlsg8757n"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "terra2>astro",
-            "stride>statom"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "neutron1u4v7xcvkhz8sxs3u9mjhprwc8vwc2p08x0tje4ugtrrkjhkagdysztt5dq"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "osmosis>osmo",
-            "neutron>ntrn"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "neutron1y4048k0rn0y8wmcy8x6vj03w572g20xyj7s9zsarvcz283rslnyq9x50xx"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "neutron>ntrn",
-            "stride>statom"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "neutron17wg25zvvud2d27pnxjv76f5xk5tm5jfda4c7003valghrlju5u6q5dt83n"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConstantProduct",
+          "pool_type": "ConcentratedLiquidity",
           "assets": [
             "cosmoshub>atom",
-            "eth>axelar>usdc"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "neutron1s9fvdffwf3uvara287rfpzpq09mahk9qg4mjfrhu9jvc2unnps9qj5cfzu"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "ConstantProduct",
-          "assets": [
-            "axelar>weth",
-            "eth>axelar>usdc"
-          ]
-        }
-      ],
-      [
-        {
-          "contract": "neutron10fztjv4atdgs4dyfkh2yu9rhn9n6vkctvdqa34g7g4nc0qckygqqksvz0r"
-        },
-        {
-          "dex": "astroport",
-          "pool_type": "Stable",
-          "assets": [
-            "eth>axelar>usdc",
-            "stride>statom"
+            "persistence>stkatom"
           ]
         }
       ],
@@ -2851,27 +2682,248 @@
       ],
       [
         {
-          "contract": "neutron1gexnrw67sqje6y8taeehlmrl5nyw0tn9vtpq6tgxs62upsjhql5q2glanc"
+          "contract": "neutron1yw0a7nxa8jdgzmdsme4gwxhj76n44z305qgwrzvlfavgna9epcys3k9m2f"
         },
         {
           "dex": "astroport",
-          "pool_type": "Stable",
+          "pool_type": "ConcentratedLiquidity",
           "assets": [
-            "stride>statom",
+            "neutron>wsteth",
+            "axelar>weth"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron1hk5nfsc2dc3hjf0pulnlxlcqdyxdturz6jvkx8z63u4vpjnz2a8ssqd9fz"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "eth>axelar>usdc",
+            "dydx>dydx"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron1jh27klc7z8xk3nr32nynvk40qm9f64eypq7nj2w48egtehu35n3q59pkfn"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "terra2>astro",
+            "eth>axelar>usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron14798daa6d6ysq28fjzpg7jkykaseq7tlz6euleeegj02e0a8gkksltdm9l"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "neutron>newt",
+            "neutron>ntrn"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron1fr3h0w6sg62agzpvu42ewj8m6rn9x45py77egd8xefp2682st39suqnx6n"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "neutron>ntrn",
+            "neutron>wsteth"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron1vxfnhwxdpr8gq3e5vkkcq5hsdhagk289458z8m77hgrx3tha252s25j6p4"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "cosmoshub>atom",
+            "neutron>eclip"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron169vshmj6x7dlugd32zvwpv6ujwgz80d0l6xt8f5eufkn2dtvhk6s3ulgqv"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "neutron>apollo",
+            "neutron>wsteth"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron1zhjrgpvu2th5t8w5ndfw9lwsqp95sgr46kf4j3jrcfe2lep0hlnqfczpjm"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "neutron>apollo",
+            "terra2>astro"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron1lys60a2wygdd0layel8u2t9u40g3dwln8xraje5a902xh39mhynsk8tfgs"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "neutron>ntrn",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron15wal8wsy7mq37hagmrzchwmugpjzwlzrlw7pylkhlfuwukmc2kps722ems"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "neutron>apollo",
+            "axelar>usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron12gkx5m4zgz3uttqjq36jh5hzqlxr23c2z4w5elzzdzxpw0zqupnsz02xx3"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "neutron>ntrn",
+            "nolus>nls"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron18wpdnllkvn7sesuat3y6vtsv92q4v7ff9929jcxp8w2d7kfs3ewsnecrux"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "neutron>circus",
             "cosmoshub>atom"
           ]
         }
       ],
       [
         {
-          "contract": "neutron1tx80z5v3nurwfm2mulyv6396pc7mjdh3pmydrv80ulu889a9wfxsn8jh2m"
+          "contract": "neutron1adk7gupr0thjr3e6wcnlxr7ugclcg4cukv2np8la29dz38zuzymqjcv5s4"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "Stable",
+          "assets": [
+            "eth>axelar>usdc",
+            "axelar>usdt"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron15a7wjqnfjk7jr8atyheul3f9lv6827nhn4m9fue0n0sruv0ptj4szcsj5j"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "neutron>newt",
+            "eth>axelar>usdc"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron1yq9gtuegd0c8c2lhfcwg7s5e362u8ylhx7kd4p093ypsaugjufvsrqmp26"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "terra2>astro",
+            "neutron>newt"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron1eqcl88ek70zp4pms4q3e3qff56lmf67dqg7nd57as0ge67geh5rqse5sph"
         },
         {
           "dex": "astroport",
           "pool_type": "ConstantProduct",
           "assets": [
-            "neutron>wsteth",
+            "neutron>ntrn",
+            "cerberus>osmosis>crbrus"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron1wj4tfjdd8qgzet4m8nv6v27j42qnz6j6cty5apy3vtcn45edspwsu4vt25"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "terra2>astro",
             "neutron>ntrn"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron13hsh7972clgl46my38atwj7kcsqlfzyd07yeayztan65lgx25l7qnrd7ve"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "ConcentratedLiquidity",
+          "assets": [
+            "neutron>newt",
+            "neutron>circus"
+          ]
+        }
+      ],
+      [
+        {
+          "contract": "neutron1ghhlz6zfc33r49u0y77u3shf5a88hcw2wrpwvuky7ucs24ye9ypqj3aypu"
+        },
+        {
+          "dex": "astroport",
+          "pool_type": "Stable",
+          "assets": [
+            "axelar>wsteth",
+            "neutron>wsteth"
           ]
         }
       ]
