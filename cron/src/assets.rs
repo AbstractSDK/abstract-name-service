@@ -1,13 +1,12 @@
-use crate::EntryDif;
-use cw_asset::AssetInfoBase;
-
-use cw_orch::prelude::*;
+use std::collections::HashMap;
 
 use abstract_core::ans_host::*;
 use abstract_interface::{AbstractInterfaceError, AnsHost};
-
+use cw_asset::AssetInfoBase;
+use cw_orch::prelude::*;
 use serde_json::{from_value, Value};
-use std::collections::HashMap;
+
+use crate::{EntryDif, execute_ans_batched};
 
 pub fn get_scraped_entries(
     chain_name: &str,
@@ -54,13 +53,13 @@ pub fn update(
     let to_remove: Vec<_> = diff.0.into_iter().collect();
 
     // add the assets
-    ans_host.execute_chunked(&to_add, 25, |chunk| ExecuteMsg::UpdateAssetAddresses {
+    execute_ans_batched(&ans_host, &to_add, 25, |chunk| ExecuteMsg::UpdateAssetAddresses {
         to_add: chunk.to_vec(),
         to_remove: vec![],
     })?;
 
     // remove the assets
-    ans_host.execute_chunked(&to_remove, 25, |chunk| ExecuteMsg::UpdateAssetAddresses {
+    execute_ans_batched(&ans_host, &to_remove, 25, |chunk| ExecuteMsg::UpdateAssetAddresses {
         to_add: vec![],
         to_remove: chunk.to_vec(),
     })?;
@@ -70,16 +69,17 @@ pub fn update(
 
 #[cfg(test)]
 mod test {
-
-    use cw_orch::daemon::ChainRegistryData as ChainData;
     use std::env::set_var;
+
+    use abstract_interface::Abstract;
+    use anyhow::Result as AnyResult;
+    use cw_orch::{deploy::Deploy, prelude::networks::JUNO_1};
+    use cw_orch::daemon::{ChainInfo, DaemonBuilder};
+    use cw_orch::daemon::ChainRegistryData as ChainData;
     use tokio::runtime::Runtime;
 
     use super::{get_on_chain_entries, get_scraped_entries};
-    use abstract_interface::Abstract;
-    use anyhow::Result as AnyResult;
-    use cw_orch::daemon::{ChainInfo, DaemonBuilder};
-    use cw_orch::{deploy::Deploy, prelude::networks::JUNO_1};
+
     const CHAIN: ChainInfo = JUNO_1;
 
     #[test]
