@@ -1,12 +1,56 @@
 {
   "archway": {
-    "osmosis": [
-      "channel-42"
-    ],
+    "archway-1": [
+      [
+        {
+          "connected_chain": "juno",
+          "protocol": "ics-20"
+        },
+        "channel-15"
+      ],
+      [
+        {
+          "connected_chain": "osmosis",
+          "protocol": "ics-20"
+        },
+        "channel-1"
+      ]
+    ]
+  },
+  "juno": {
+    "juno-1": [
+      [
+        {
+          "connected_chain": "osmosis",
+          "protocol": "ics-20"
+        },
+        "channel-0"
+      ],
+      [
+        {
+          "connected_chain": "archway",
+          "protocol": "ics-20"
+        },
+        "channel-290"
+      ]
+    ]
   },
   "osmosis": {
-    "archway": [
-      "channel-7707"
+    "osmosis-1": [
+      [
+        {
+          "connected_chain": "archway",
+          "protocol": "ics-20"
+        },
+        "channel-1429"
+      ],
+      [
+        {
+          "connected_chain": "juno",
+          "protocol": "ics-20"
+        },
+        "channel-42"
+      ]
     ]
   }
 }
