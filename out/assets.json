@@ -594,6 +594,12 @@
         }
       ],
       [
+        "kava>usdt",
+        {
+          "native": "ibc/4ABBEF4C8926DDDB320AE5188CFD63267ABBCEFC0583E4AE05D6E5AA2401DDAB"
+        }
+      ],
+      [
         "eth>axelar>usdc",
         {
           "native": "ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858"
@@ -684,9 +690,15 @@
         }
       ],
       [
-        "osmosis>umbrn",
+        "osmosis>factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilktia",
         {
-          "native": "factory/osmo1s794h9rxggytja3a4pmwul53u98k06zy2qtrdvjnfuxruh7s8yjs6cyxgd/umbrn"
+          "native": "factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA"
+        }
+      ],
+      [
+        "osmosis>factory/osmo1pfyxruwvtwk00y8z06dh2lqjdj82ldvy74wzm3/wosmo",
+        {
+          "native": "factory/osmo1pfyxruwvtwk00y8z06dh2lqjdj82ldvy74wzm3/WOSMO"
         }
       ],
       [
@@ -696,153 +708,15 @@
         }
       ],
       [
-        "cosmoshub>atom",
-        {
-          "native": "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
-        }
-      ],
-      [
-        "secretnetwork>scrt",
-        {
-          "native": "ibc/0954E1C28EB7AF5B72D24F3BC2B47BBB2FDF91BDDFD57B74B99E133AED40972A"
-        }
-      ],
-      [
-        "jackal>jkl",
-        {
-          "native": "ibc/8E697BDABE97ACE8773C6DF7402B2D1D5104DD1EEABE12608E3469B7F64C15BA"
-        }
-      ],
-      [
-        "sentinel>dvpn",
-        {
-          "native": "ibc/9712DBB13B9631EDFA9BF61B55F1B2D290B2ADB67E3A4EB3A875F3B6081B3B84"
-        }
-      ],
-      [
         "picasso>pica",
         {
           "native": "ibc/56D7C03B8F6A07AD322EEE1BEF3AE996E09D1C1E34C27CF37E0D4A0AC5972516"
         }
       ],
       [
-        "migaloo>whale",
+        "cosmoshub>atom",
         {
-          "native": "ibc/EDD6F0D66BCD49C1084FB2C35353B4ACD7B9191117CE63671B61320548F7C89D"
-        }
-      ],
-      [
-        "sommelier>somm",
-        {
-          "native": "ibc/9BBA9A1C257E971E38C1422780CE6F0B0686F0A3085E2D61118D904BFE0F5F5E"
-        }
-      ],
-      [
-        "cudos>cudos",
-        {
-          "native": "ibc/E09ED39F390EC51FA9F3F69BEA08B5BBE6A48B3057B2B1C3467FAAE9E58B021B"
-        }
-      ],
-      [
-        "omniflixhub>flix",
-        {
-          "native": "ibc/CEE970BB3D26F4B907097B6B660489F13F3B0DA765B83CC7D9A0BC0CE220FA6F"
-        }
-      ],
-      [
-        "persistence>xprt",
-        {
-          "native": "ibc/A0CC0CF735BFB30E730C70019D4218A1244FF383503FF7579C9201AB93CA9293"
-        }
-      ],
-      [
-        "umee>umee",
-        {
-          "native": "ibc/67795E528DF67C5606FC20F824EA39A6EF55BA133F4DC79C90A8C47A0901E17C"
-        }
-      ],
-      [
-        "panacea>med",
-        {
-          "native": "ibc/3BCCC93AD5DF58D11A6F8A05FA8BC801CBA0BA61A981F57E91B8B598BF8061CB"
-        }
-      ],
-      [
-        "terra2>luna",
-        {
-          "native": "ibc/785AFEC6B3741100D15E7AF01374E3C4C36F24888E96479B1C33F5C71F364EF9"
-        }
-      ],
-      [
-        "irisnet>iris",
-        {
-          "native": "ibc/7C4D60AA95E5A7558B0A364860979CA34B7FF8AAF255B87AF9E879374470CEC0"
-        }
-      ],
-      [
-        "coreum>core",
-        {
-          "native": "ibc/F3166F4D31D6BA1EC6C9F5536F5DDDD4CC93DBA430F7419E7CDC41C497944A65"
-        }
-      ],
-      [
-        "xpla>xpla",
-        {
-          "native": "ibc/95C9B5870F95E21A242E6AF9ADCB1F212EE4A8855087226C36FBE43FC41A77B8"
-        }
-      ],
-      [
-        "kujira>kuji",
-        {
-          "native": "ibc/BB6BCDB515050BAE97516111873CCD7BCF1FD0CCB723CC12F3C4F704D6C646CE"
-        }
-      ],
-      [
-        "stargaze>stars",
-        {
-          "native": "ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4"
-        }
-      ],
-      [
-        "gravitybridge>grav",
-        {
-          "native": "ibc/E97634A40119F1898989C2A23224ED83FDD0A57EA46B3A094E287288D1672B44"
-        }
-      ],
-      [
-        "bostrom>boot",
-        {
-          "native": "ibc/FE2CD1E6828EC0FAB8AF39BAC45BC25B965BA67CCBC50C13A14BD610B0D1E2C4"
-        }
-      ],
-      [
-        "stride>statom",
-        {
-          "native": "ibc/C140AFD542AE77BD7DCC83F13FDD8C5E5BB8C4929785E6EC2F4C636F98F17901"
-        }
-      ],
-      [
-        "juno>juno",
-        {
-          "native": "ibc/46B44899322F3CD854D2D46DEEF881958467CDD4B3B10086DA49296BBED94BED"
-        }
-      ],
-      [
-        "oraichain>orai",
-        {
-          "native": "ibc/161D7D62BAB3B9C39003334F1671208F43C06B643CC9EDBBE82B64793C857F1D"
-        }
-      ],
-      [
-        "neutron>ntrn",
-        {
-          "native": "ibc/126DA09104B71B164883842B769C0E9EC1486C0887D27A9999E395C2C8FB5682"
-        }
-      ],
-      [
-        "cheqd>cheq",
-        {
-          "native": "ibc/7A08C6F11EF0F59EB841B9F788A87EC9F2361C7D9703157EC13D940DC53031FA"
+          "native": "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
         }
       ],
       [
@@ -852,81 +726,9 @@
         }
       ],
       [
-        "bandchain>band",
+        "kujira>kuji",
         {
-          "native": "ibc/F867AE2112EFE646EC71A25CD2DFABB8927126AC1E19F1BBF0FF693A4ECA05DE"
-        }
-      ],
-      [
-        "stride>strd",
-        {
-          "native": "ibc/A8CA5EE328FA10C9519DF6057DA1F69682D28F7D0F5CCC7ECB72E3DCA2D157A4"
-        }
-      ],
-      [
-        "quicksilver>qck",
-        {
-          "native": "ibc/635CB83EF1DFE598B10A3E90485306FD0D47D34217A4BE5FD9977FA010A5367D"
-        }
-      ],
-      [
-        "archway>arch",
-        {
-          "native": "ibc/23AB778D694C1ECFC59B91D8C399C115CC53B0BD1C61020D8E19519F002BDD85"
-        }
-      ],
-      [
-        "teritori>tori",
-        {
-          "native": "ibc/EB7FB9C8B425F289B63703413327C2051030E848CE4EAAEA2E51199D6D39D3EC"
-        }
-      ],
-      [
-        "mars>mars",
-        {
-          "native": "ibc/573FCD90FACEE750F55A8864EF7D38265F07E5A9273FA0E8DAFD39951332B580"
-        }
-      ],
-      [
-        "chihuahua>huahua",
-        {
-          "native": "ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228"
-        }
-      ],
-      [
-        "akash>akt",
-        {
-          "native": "ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4"
-        }
-      ],
-      [
-        "agoric>ist",
-        {
-          "native": "ibc/92BE0717F4678905E53F4E45B2DED18BC0CB97BF1F8B6A25AFEDF3D5A879B4D5"
-        }
-      ],
-      [
-        "kyve>kyve",
-        {
-          "native": "ibc/613BF0BF2F2146AE9941E923725745E931676B2C14E9768CD609FA0849B2AE13"
-        }
-      ],
-      [
-        "nolus>nls",
-        {
-          "native": "ibc/D9AFCECDD361D38302AA66EB3BAC23B95234832C51D12489DC451FA2B7C72782"
-        }
-      ],
-      [
-        "sifchain>rowan",
-        {
-          "native": "ibc/8318FD63C42203D16DDCAF49FE10E8590669B3219A3E87676AC9DA50722687FB"
-        }
-      ],
-      [
-        "passage>pasg",
-        {
-          "native": "ibc/208B2F137CDE510B44C41947C045CFDC27F996A9D990EA64460BDD5B3DBEB2ED"
+          "native": "ibc/BB6BCDB515050BAE97516111873CCD7BCF1FD0CCB723CC12F3C4F704D6C646CE"
         }
       ],
       [
@@ -936,27 +738,15 @@
         }
       ],
       [
-        "decentr>dec",
+        "omniflixhub>flix",
         {
-          "native": "ibc/9BCB27203424535B6230D594553F1659C77EC173E36D9CF4759E7186EE747E84"
+          "native": "ibc/CEE970BB3D26F4B907097B6B660489F13F3B0DA765B83CC7D9A0BC0CE220FA6F"
         }
       ],
       [
-        "cerberus>crbrus",
+        "secretnetwork>scrt",
         {
-          "native": "ibc/41999DF04D9441DAC0DF5D8291DF4333FBCBA810FFD63FDCE34FDF41EF37B6F7"
-        }
-      ],
-      [
-        "onomy>nom",
-        {
-          "native": "ibc/B9606D347599F0F2FDF82BA3EE339000673B7D274EA50F59494DC51EFCD42163"
-        }
-      ],
-      [
-        "cronos>cro",
-        {
-          "native": "ibc/E6931F78057F7CC5DA0FD6CEF82FF39373A6E0452BF1FD76910B93292CF356C1"
+          "native": "ibc/0954E1C28EB7AF5B72D24F3BC2B47BBB2FDF91BDDFD57B74B99E133AED40972A"
         }
       ],
       [
@@ -966,9 +756,237 @@
         }
       ],
       [
+        "jackal>jkl",
+        {
+          "native": "ibc/8E697BDABE97ACE8773C6DF7402B2D1D5104DD1EEABE12608E3469B7F64C15BA"
+        }
+      ],
+      [
+        "passage>pasg",
+        {
+          "native": "ibc/208B2F137CDE510B44C41947C045CFDC27F996A9D990EA64460BDD5B3DBEB2ED"
+        }
+      ],
+      [
+        "coreum>core",
+        {
+          "native": "ibc/F3166F4D31D6BA1EC6C9F5536F5DDDD4CC93DBA430F7419E7CDC41C497944A65"
+        }
+      ],
+      [
+        "akash>akt",
+        {
+          "native": "ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4"
+        }
+      ],
+      [
+        "stride>strd",
+        {
+          "native": "ibc/A8CA5EE328FA10C9519DF6057DA1F69682D28F7D0F5CCC7ECB72E3DCA2D157A4"
+        }
+      ],
+      [
         "fetchhub>fet",
         {
           "native": "ibc/5D1F516200EE8C6B2354102143B78A2DEDA25EDE771AC0F8DC3C1837C8FD4447"
+        }
+      ],
+      [
+        "stargaze>stars",
+        {
+          "native": "ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4"
+        }
+      ],
+      [
+        "chihuahua>huahua",
+        {
+          "native": "ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228"
+        }
+      ],
+      [
+        "cudos>cudos",
+        {
+          "native": "ibc/E09ED39F390EC51FA9F3F69BEA08B5BBE6A48B3057B2B1C3467FAAE9E58B021B"
+        }
+      ],
+      [
+        "neutron>ntrn",
+        {
+          "native": "ibc/126DA09104B71B164883842B769C0E9EC1486C0887D27A9999E395C2C8FB5682"
+        }
+      ],
+      [
+        "kyve>kyve",
+        {
+          "native": "ibc/613BF0BF2F2146AE9941E923725745E931676B2C14E9768CD609FA0849B2AE13"
+        }
+      ],
+      [
+        "juno>juno",
+        {
+          "native": "ibc/46B44899322F3CD854D2D46DEEF881958467CDD4B3B10086DA49296BBED94BED"
+        }
+      ],
+      [
+        "sentinel>dvpn",
+        {
+          "native": "ibc/9712DBB13B9631EDFA9BF61B55F1B2D290B2ADB67E3A4EB3A875F3B6081B3B84"
+        }
+      ],
+      [
+        "oraichain>orai",
+        {
+          "native": "ibc/161D7D62BAB3B9C39003334F1671208F43C06B643CC9EDBBE82B64793C857F1D"
+        }
+      ],
+      [
+        "stride>statom",
+        {
+          "native": "ibc/C140AFD542AE77BD7DCC83F13FDD8C5E5BB8C4929785E6EC2F4C636F98F17901"
+        }
+      ],
+      [
+        "cronos>cro",
+        {
+          "native": "ibc/E6931F78057F7CC5DA0FD6CEF82FF39373A6E0452BF1FD76910B93292CF356C1"
+        }
+      ],
+      [
+        "nolus>nls",
+        {
+          "native": "ibc/D9AFCECDD361D38302AA66EB3BAC23B95234832C51D12489DC451FA2B7C72782"
+        }
+      ],
+      [
+        "archway>arch",
+        {
+          "native": "ibc/23AB778D694C1ECFC59B91D8C399C115CC53B0BD1C61020D8E19519F002BDD85"
+        }
+      ],
+      [
+        "cheqd>cheq",
+        {
+          "native": "ibc/7A08C6F11EF0F59EB841B9F788A87EC9F2361C7D9703157EC13D940DC53031FA"
+        }
+      ],
+      [
+        "teritori>tori",
+        {
+          "native": "ibc/EB7FB9C8B425F289B63703413327C2051030E848CE4EAAEA2E51199D6D39D3EC"
+        }
+      ],
+      [
+        "odin>odin",
+        {
+          "native": "ibc/C360EF34A86D334F625E4CBB7DA3223AEA97174B61F35BB3758081A8160F7D9B"
+        }
+      ],
+      [
+        "quicksilver>qck",
+        {
+          "native": "ibc/635CB83EF1DFE598B10A3E90485306FD0D47D34217A4BE5FD9977FA010A5367D"
+        }
+      ],
+      [
+        "source>source",
+        {
+          "native": "ibc/E7905742CE2EA4EA5D592527DC89220C59B617DE803939FE7293805A64B484D7"
+        }
+      ],
+      [
+        "shentu>ctk",
+        {
+          "native": "ibc/7ED954CFFFC06EE8419387F3FC688837FF64EF264DE14219935F724EEEDBF8D3"
+        }
+      ],
+      [
+        "assetmantle>mntl",
+        {
+          "native": "ibc/CBA34207E969623D95D057D9B11B0C8B32B89A71F170577D982FDDE623813FFC"
+        }
+      ],
+      [
+        "persistence>xprt",
+        {
+          "native": "ibc/A0CC0CF735BFB30E730C70019D4218A1244FF383503FF7579C9201AB93CA9293"
+        }
+      ],
+      [
+        "planq>plq",
+        {
+          "native": "ibc/B1E0166EA0D759FDF4B207D1F5F12210D8BFE36F2345CEFC76948CE2B36DFBAF"
+        }
+      ],
+      [
+        "regen>regen",
+        {
+          "native": "ibc/1DCC8A6CB5689018431323953344A9F6CC4D0BFB261E88C9F7777372C10CD076"
+        }
+      ],
+      [
+        "migaloo>whale",
+        {
+          "native": "ibc/EDD6F0D66BCD49C1084FB2C35353B4ACD7B9191117CE63671B61320548F7C89D"
+        }
+      ],
+      [
+        "mars>mars",
+        {
+          "native": "ibc/573FCD90FACEE750F55A8864EF7D38265F07E5A9273FA0E8DAFD39951332B580"
+        }
+      ],
+      [
+        "comdex>cmdx",
+        {
+          "native": "ibc/EA3E1640F9B1532AB129A571203A0B9F789A7F14BB66E350DCBFA18E1A1931F0"
+        }
+      ],
+      [
+        "terra2>luna",
+        {
+          "native": "ibc/785AFEC6B3741100D15E7AF01374E3C4C36F24888E96479B1C33F5C71F364EF9"
+        }
+      ],
+      [
+        "decentr>dec",
+        {
+          "native": "ibc/9BCB27203424535B6230D594553F1659C77EC173E36D9CF4759E7186EE747E84"
+        }
+      ],
+      [
+        "sommelier>somm",
+        {
+          "native": "ibc/9BBA9A1C257E971E38C1422780CE6F0B0686F0A3085E2D61118D904BFE0F5F5E"
+        }
+      ],
+      [
+        "fxcore>fx",
+        {
+          "native": "ibc/2B30802A0B03F91E4E16D6175C9B70F2911377C1CAE9E50FF011C821465463F9"
+        }
+      ],
+      [
+        "panacea>med",
+        {
+          "native": "ibc/3BCCC93AD5DF58D11A6F8A05FA8BC801CBA0BA61A981F57E91B8B598BF8061CB"
+        }
+      ],
+      [
+        "bandchain>band",
+        {
+          "native": "ibc/F867AE2112EFE646EC71A25CD2DFABB8927126AC1E19F1BBF0FF693A4ECA05DE"
+        }
+      ],
+      [
+        "xpla>xpla",
+        {
+          "native": "ibc/95C9B5870F95E21A242E6AF9ADCB1F212EE4A8855087226C36FBE43FC41A77B8"
+        }
+      ],
+      [
+        "realio>rio",
+        {
+          "native": "ibc/1CDF9C7D073DD59ED06F15DB08CC0901F2A24759BE70463570E8896F9A444ADF"
         }
       ]
     ],
