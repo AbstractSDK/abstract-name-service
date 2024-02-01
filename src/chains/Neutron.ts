@@ -14,6 +14,18 @@ const testnet = new Pion1(
           native: 'ibc/CC8B40E3F3536D003C6ED7C65421067215453AECE1517A6F0935470C634A036B',
         },
       ],
+      [
+        'nolus>nls',
+        {
+          native: 'ibc/830F6CA3E33406586DFAADB25908769CB111046755EDAAD1D8D6A6E72A5E0C87',
+        },
+      ],
+      [
+        'mars>mars',
+        {
+          native: 'ibc/584A4A23736884E0C198FD1EE932455A9357A492A7B94324E4A02B5628687831',
+        },
+      ],
     ]),
   }),
   new ContractRegistry(),
@@ -60,6 +72,6 @@ const mainnet = new Neutron1(
 
 export class Neutron extends Chain {
   constructor() {
-    super('neutron', [mainnet])
+    super('neutron', [mainnet, testnet])
   }
 }

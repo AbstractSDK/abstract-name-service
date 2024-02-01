@@ -222,7 +222,7 @@ export class AstroportGql extends Exchange {
     return {
       dex: this.name.toLowerCase(),
       pool_type: this.toAbstractPoolType(pairType),
-      assets,
+      assets: assets.sort(),
     }
   }
 }
