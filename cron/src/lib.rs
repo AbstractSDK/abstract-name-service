@@ -1,10 +1,28 @@
+use std::cmp::min;
+use std::collections::HashMap;
+use std::collections::HashSet;
+
+use abstract_core::ans_host;
+use abstract_core::objects::pool_id::UncheckedPoolAddress;
+use abstract_core::objects::PoolMetadata;
+use abstract_core::objects::UncheckedContractEntry;
+use abstract_core::objects::UniquePoolId;
+use abstract_interface::AbstractInterfaceError;
+use abstract_interface::AnsHost;
+use cw_asset::AssetInfoBase;
 use cw_orch::{
     daemon::ChainInfo,
     prelude::{
-        networks::{HARPOON_4, JUNO_1, OSMO_5, PHOENIX_1, PION_1, PISCO_1, UNI_6},
         *,
+        networks::{HARPOON_4, JUNO_1, OSMO_5, PHOENIX_1, PION_1, PISCO_1, UNI_6},
     },
 };
+use cw_orch::daemon::Daemon;
+use cw_orch::daemon::DaemonAsyncBuilder;
+use cw_orch::state::ChainState;
+use reqwest::Client;
+use serde_json::Value;
+use tokio::runtime::Runtime;
 
 const GAS_TO_DEPLOY: u64 = 60_000_000;
 pub const SUPPORTED_CHAINS: &[ChainInfo] = &[
@@ -65,30 +83,10 @@ pub mod contracts;
 pub mod hashmap_diff;
 pub mod pools;
 
-use abstract_core::objects::UniquePoolId;
-use cw_asset::AssetInfoBase;
-use cw_orch::daemon::DaemonAsyncBuilder;
-use std::collections::HashMap;
-use std::collections::HashSet;
-
-use abstract_core::objects::UncheckedContractEntry;
-use cw_orch::state::ChainState;
-
-use abstract_core::objects::pool_id::UncheckedPoolAddress;
-use abstract_core::objects::PoolMetadata;
-use abstract_interface::AnsHost;
-use cw_orch::daemon::Daemon;
-
-use abstract_interface::AbstractInterfaceError;
-
-use reqwest::Client;
-use serde_json::Value;
-use tokio::runtime::Runtime;
-
 const ANS_SCRAPE_URL: &str =
     "https://raw.githubusercontent.com/AbstractSDK/ans-scraper/mainline/out/";
 
-/// get some json  
+/// get some json
 pub fn get_scraped_json_data(suffix: &str) -> Value {
     let client = Client::new();
     let url = format!("{}{}.json", ANS_SCRAPE_URL, suffix);
@@ -204,5 +202,25 @@ pub fn update(ans_host: &AnsHost<Daemon>, diff: AnsDataDiff) -> Result<(), Abstr
     pools::update_dexes(ans_host, diff.dexes)?;
     pools::update(ans_host, diff.pools)?;
 
+    Ok(())
+}
+
+/// Temporarily include batch function here until it's moved to abstract_interface
+/// Should be genericized
+pub fn batch_execute_ans<T, MsgBuilder>(
+    ans_host: &AnsHost<Daemon>,
+    items: &[T],
+    chunk_size: usize,
+    mut msg_builder: MsgBuilder,
+) -> Result<(), crate::AbstractInterfaceError>
+    where
+        MsgBuilder: FnMut(&[T]) -> ans_host::ExecuteMsg,
+{
+    let mut i = 0;
+    while i < items.len() {
+        let chunk = &items[i..min(i + chunk_size, items.len())];
+        i += chunk.len();
+        ans_host.execute(&msg_builder(chunk), None)?;
+    }
     Ok(())
 }

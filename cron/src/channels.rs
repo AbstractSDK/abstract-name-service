@@ -1,11 +1,13 @@
+use std::fs::File;
+
 use abstract_core::ans_host::*;
 use abstract_core::objects::UncheckedChannelEntry;
 use abstract_interface::{AbstractInterfaceError, AnsHost};
-use serde_json::from_reader;
-use std::fs::File;
-
 use cw_orch::prelude::*;
 use cw_orch::state::ChainState;
+use serde_json::from_reader;
+
+use crate::batch_execute_ans;
 
 const PATH: &str = "resources/old/channels.json";
 
@@ -30,7 +32,7 @@ pub fn update_channels(ans: &AnsHost<Daemon>) -> Result<(), AbstractInterfaceErr
         })
         .collect();
 
-    ans.execute_chunked(&channels_to_add, 25, |chunk| ExecuteMsg::UpdateChannels {
+    batch_execute_ans(&ans, &channels_to_add, 25, |chunk| ExecuteMsg::UpdateChannels {
         to_add: chunk.to_vec(),
         to_remove: vec![],
     })?;
