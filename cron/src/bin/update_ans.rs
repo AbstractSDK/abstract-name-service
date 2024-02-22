@@ -2,11 +2,25 @@ use abstract_interface::Abstract;
 use cw_orch::{
     deploy::Deploy,
     prelude::{
-        networks::{parse_network, ChainInfo},
         *,
+        networks::{ChainInfo, parse_network},
     },
 };
+use cw_orch::daemon::ChainKind;
+use cw_orch::daemon::networks::neutron::NEUTRON_NETWORK;
 use tokio::runtime::Runtime;
+
+/// <https://github.com/cosmos/chain-registry/blob/master/neutron/chain.json>
+pub const NEUTRON_1: ChainInfo = ChainInfo {
+    kind: ChainKind::Mainnet,
+    chain_id: "neutron-1",
+    gas_denom: "untrn",
+    gas_price: 0.25,
+    grpc_urls: &["http://grpc-kralum.neutron-1.neutron.org:80"],
+    network_info: NEUTRON_NETWORK,
+    lcd_url: Some("https://rest-kralum.neutron-1.neutron.org"),
+    fcd_url: None,
+};
 
 fn update_ans() -> anyhow::Result<()> {
     let rt = Runtime::new()?;

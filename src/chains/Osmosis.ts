@@ -164,6 +164,12 @@ const mainnet = new Osmosis1(
           native: 'ibc/698350B8A61D575025F3ED13E9AC9C0F45C89DEFE92F76D5838F1D3C1A7FF7C9',
         },
       ],
+      [
+        'agoric>ist',
+        {
+          native: 'ibc/92BE0717F4678905E53F4E45B2DED18BC0CB97BF1F8B6A25AFEDF3D5A879B4D5',
+        },
+      ],
     ]),
   }),
   new ContractRegistry(),
