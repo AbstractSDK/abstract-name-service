@@ -4,6 +4,7 @@ import { PoolRegistry } from '../registry/poolRegistry'
 import { AssetRegistry } from '../registry/assetRegistry'
 import { Osmosis1 } from '../networks/osmosis1'
 import { OsmoTest5 } from '../networks/osmotest5'
+import { AnsPoolEntry } from '../objects'
 
 /*
 https://github.com/cosmostation/chainlist/blob/d433b3b8b7a0699ac137be1775b67fa00393de05/chain/osmosis/assets.json#L1255
@@ -135,7 +136,40 @@ const mainnet = new Osmosis1(
     ]),
   }),
   new ContractRegistry(),
-  new PoolRegistry()
+  new PoolRegistry({
+    contractRegistry: [
+      new AnsPoolEntry(
+        {
+          id: 1220,
+        },
+        {
+          dex: 'osmosis',
+          pool_type: 'ConcentratedLiquidity',
+          assets: ['noble>usdc', 'kava>usdt'],
+        }
+      ),
+      new AnsPoolEntry(
+        {
+          id: 1220,
+        },
+        {
+          dex: 'osmosis',
+          pool_type: 'ConcentratedLiquidity',
+          assets: ['noble>usdc', 'kava>usdt'],
+        }
+      ),
+      new AnsPoolEntry(
+        {
+          id: 1221,
+        },
+        {
+          dex: 'osmosis',
+          pool_type: 'ConcentratedLiquidity',
+          assets: ['noble>usdc', 'osmosis>osmo'],
+        }
+      ),
+    ],
+  })
 )
 const testnet = new OsmoTest5(new AssetRegistry(), new ContractRegistry(), new PoolRegistry())
 
