@@ -49,7 +49,9 @@ export class PoolRegistry implements IRegistry<AnsPoolEntry> {
 
   public unknown(poolEntry: AnsPoolEntry) {
     console.warn(
-      `Adding unknown pool: ${JSON.stringify(poolEntry.id)} with metadata: ${JSON.stringify(poolEntry.metadata)}`
+      `Adding unknown pool: ${JSON.stringify(poolEntry.id)} with metadata: ${JSON.stringify(
+        poolEntry.metadata
+      )}`
     )
     this.unknownRegistry.push(poolEntry)
   }

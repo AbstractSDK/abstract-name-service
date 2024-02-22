@@ -6,7 +6,7 @@ use cw_asset::AssetInfoBase;
 use cw_orch::prelude::*;
 use serde_json::{from_value, Value};
 
-use crate::{batch_execute_ans, EntryDif};
+use crate::{EntryDif, execute_ans_batched};
 
 pub fn get_scraped_entries(
     chain_name: &str,
@@ -53,13 +53,13 @@ pub fn update(
     let to_remove: Vec<_> = diff.0.into_iter().collect();
 
     // add the assets
-    batch_execute_ans(&ans_host, &to_add, 25, |chunk| ExecuteMsg::UpdateAssetAddresses {
+    execute_ans_batched(&ans_host, &to_add, 25, |chunk| ExecuteMsg::UpdateAssetAddresses {
         to_add: chunk.to_vec(),
         to_remove: vec![],
     })?;
 
     // remove the assets
-    batch_execute_ans(&ans_host, &to_remove, 25, |chunk| ExecuteMsg::UpdateAssetAddresses {
+    execute_ans_batched(&ans_host, &to_remove, 25, |chunk| ExecuteMsg::UpdateAssetAddresses {
         to_add: vec![],
         to_remove: chunk.to_vec(),
     })?;

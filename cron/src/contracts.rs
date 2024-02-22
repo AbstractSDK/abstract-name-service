@@ -6,7 +6,7 @@ use abstract_interface::{AbstractInterfaceError, AnsHost};
 use cw_orch::prelude::*;
 use serde_json::Value;
 
-use crate::{batch_execute_ans, EntryDif};
+use crate::{EntryDif, execute_ans_batched};
 
 pub fn get_scraped_entries(
     chain_name: &String,
@@ -59,13 +59,13 @@ pub fn update(
     let to_remove: Vec<_> = diff.0.into_iter().collect();
 
     // add the contracts
-    batch_execute_ans(&ans_host, &to_add, 10, |chunk| ExecuteMsg::UpdateContractAddresses {
+    execute_ans_batched(&ans_host, &to_add, 10, |chunk| ExecuteMsg::UpdateContractAddresses {
         to_add: chunk.to_vec(),
         to_remove: vec![],
     })?;
 
     // remove the contracts
-    batch_execute_ans(&ans_host, &to_remove, 10, |chunk| {
+    execute_ans_batched(&ans_host, &to_remove, 10, |chunk| {
         ExecuteMsg::UpdateContractAddresses {
             to_add: vec![],
             to_remove: chunk.to_vec(),

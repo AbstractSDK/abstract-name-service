@@ -7,7 +7,7 @@ use cw_orch::prelude::*;
 use cw_orch::state::ChainState;
 use serde_json::from_reader;
 
-use crate::batch_execute_ans;
+use crate::execute_ans_batched;
 
 const PATH: &str = "resources/old/channels.json";
 
@@ -32,7 +32,7 @@ pub fn update_channels(ans: &AnsHost<Daemon>) -> Result<(), AbstractInterfaceErr
         })
         .collect();
 
-    batch_execute_ans(&ans, &channels_to_add, 25, |chunk| ExecuteMsg::UpdateChannels {
+    execute_ans_batched(&ans, &channels_to_add, 25, |chunk| ExecuteMsg::UpdateChannels {
         to_add: chunk.to_vec(),
         to_remove: vec![],
     })?;

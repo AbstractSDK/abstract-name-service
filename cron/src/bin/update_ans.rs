@@ -8,6 +8,7 @@ use cw_orch::{
 };
 use cw_orch::daemon::ChainKind;
 use cw_orch::daemon::networks::neutron::NEUTRON_NETWORK;
+use cw_orch::daemon::networks::PHOENIX_1;
 use tokio::runtime::Runtime;
 
 /// <https://github.com/cosmos/chain-registry/blob/master/neutron/chain.json>

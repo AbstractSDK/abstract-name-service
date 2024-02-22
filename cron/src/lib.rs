@@ -207,7 +207,7 @@ pub fn update(ans_host: &AnsHost<Daemon>, diff: AnsDataDiff) -> Result<(), Abstr
 
 /// Temporarily include batch function here until it's moved to abstract_interface
 /// Should be genericized
-pub fn batch_execute_ans<T, MsgBuilder>(
+pub fn execute_ans_batched<T, MsgBuilder>(
     ans_host: &AnsHost<Daemon>,
     items: &[T],
     chunk_size: usize,

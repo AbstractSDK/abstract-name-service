@@ -26,7 +26,7 @@ interface AstroportOptions {
 const ALL_PAIRS_CACHE_KEY = 'allPairs'
 const TOP_PAIRS_CACHE_KEY = 'topPairs'
 
-const TOP_PAIR_COUNT = 50
+const TOP_PAIR_COUNT = 30
 
 /**
  * Astroport scraper.
@@ -45,7 +45,11 @@ export class Astroport extends Exchange {
   async registerAssets(network: Network) {
     // TODO: check if not cw20
     const { astro_token_address } = await this.retrieveAstroContracts()
-    await network.registerCw20Asset(astro_token_address)
+    if (AssetInfo.isIbcDenom(astro_token_address)) {
+      await network.registerNativeAsset({ denom: astro_token_address })
+    } else {
+      await network.registerCw20Asset(astro_token_address)
+    }
     const assets = await this.fetchTopAssets(network)
 
     for (const assetInfo of assets) {
@@ -282,7 +286,7 @@ export class Astroport extends Exchange {
       let pairs = []
       try {
         // @ts-ignore
-        const { pairs: pairsR } = await factoryQClient.pairs({ limit: 30, startAfter })
+        const { pairs: pairsR } = await factoryQClient.pairs({ limit: 20, startAfter })
         pairs = pairsR
       } catch (e) {
         console.error(e)

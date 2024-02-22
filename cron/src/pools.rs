@@ -8,7 +8,7 @@ use cw_asset::AssetInfoBase;
 use cw_orch::prelude::*;
 use serde_json::Value;
 
-use crate::{batch_execute_ans, EntryDif};
+use crate::{EntryDif, execute_ans_batched};
 
 pub type ScrapedEntries = (
     HashMap<PoolAddressBase<String>, PoolMetadata>,
@@ -118,7 +118,7 @@ pub fn update(
     let to_remove: Vec<_> = diff.0.into_iter().collect();
 
     // add the pools
-    batch_execute_ans(&ans_host, &to_add.into_iter().collect::<Vec<_>>(), 25, |chunk| {
+    execute_ans_batched(&ans_host, &to_add.into_iter().collect::<Vec<_>>(), 25, |chunk| {
         ExecuteMsg::UpdatePools {
             to_add: chunk.to_vec(),
             to_remove: vec![],
@@ -126,7 +126,7 @@ pub fn update(
     })?;
 
     // remove the pools
-    batch_execute_ans(&ans_host, &to_remove.into_iter().collect::<Vec<_>>(), 25, |chunk| {
+    execute_ans_batched(&ans_host, &to_remove.into_iter().collect::<Vec<_>>(), 25, |chunk| {
         ExecuteMsg::UpdatePools {
             to_add: vec![],
             to_remove: chunk.to_vec(),
@@ -144,13 +144,13 @@ pub fn update_dexes(
     let to_remove: Vec<_> = diff.0.into_iter().collect();
 
     // add the dexes
-    batch_execute_ans(ans_host, &to_add, 25, |chunk| ExecuteMsg::UpdateDexes {
+    execute_ans_batched(ans_host, &to_add, 25, |chunk| ExecuteMsg::UpdateDexes {
         to_add: chunk.to_vec(),
         to_remove: vec![],
     })?;
 
     // remove the dexes
-    batch_execute_ans(ans_host, &to_remove, 25, |chunk| ExecuteMsg::UpdateDexes {
+    execute_ans_batched(ans_host, &to_remove, 25, |chunk| ExecuteMsg::UpdateDexes {
         to_add: vec![],
         to_remove: chunk.to_vec(),
     })?;
