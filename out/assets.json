@@ -714,45 +714,15 @@
         }
       ],
       [
+        "agoric>ist",
+        {
+          "native": "ibc/92BE0717F4678905E53F4E45B2DED18BC0CB97BF1F8B6A25AFEDF3D5A879B4D5"
+        }
+      ],
+      [
         "osmosis>osmo",
         {
           "native": "uosmo"
-        }
-      ],
-      [
-        "jackal>jkl",
-        {
-          "native": "ibc/8E697BDABE97ACE8773C6DF7402B2D1D5104DD1EEABE12608E3469B7F64C15BA"
-        }
-      ],
-      [
-        "axelar>axl",
-        {
-          "native": "ibc/903A61A498756EA560B85A85132D3AEE21B5DEDD41213725D22ABF276EA6945E"
-        }
-      ],
-      [
-        "picasso>pica",
-        {
-          "native": "ibc/56D7C03B8F6A07AD322EEE1BEF3AE996E09D1C1E34C27CF37E0D4A0AC5972516"
-        }
-      ],
-      [
-        "cosmoshub>atom",
-        {
-          "native": "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
-        }
-      ],
-      [
-        "stride>strd",
-        {
-          "native": "ibc/A8CA5EE328FA10C9519DF6057DA1F69682D28F7D0F5CCC7ECB72E3DCA2D157A4"
-        }
-      ],
-      [
-        "secretnetwork>scrt",
-        {
-          "native": "ibc/0954E1C28EB7AF5B72D24F3BC2B47BBB2FDF91BDDFD57B74B99E133AED40972A"
         }
       ],
       [
@@ -762,9 +732,33 @@
         }
       ],
       [
+        "jackal>jkl",
+        {
+          "native": "ibc/8E697BDABE97ACE8773C6DF7402B2D1D5104DD1EEABE12608E3469B7F64C15BA"
+        }
+      ],
+      [
+        "secretnetwork>scrt",
+        {
+          "native": "ibc/0954E1C28EB7AF5B72D24F3BC2B47BBB2FDF91BDDFD57B74B99E133AED40972A"
+        }
+      ],
+      [
+        "cosmoshub>atom",
+        {
+          "native": "ibc/27394FB092D2ECCD56123C74F36E4C1F926001CEADA9CA97EA622B25F41E5EB2"
+        }
+      ],
+      [
         "injective>inj",
         {
           "native": "ibc/64BA6E31FE887D66C6F8F31C7B1A80C7CA179239677B4088BB55F5EA07DBE273"
+        }
+      ],
+      [
+        "stride>strd",
+        {
+          "native": "ibc/A8CA5EE328FA10C9519DF6057DA1F69682D28F7D0F5CCC7ECB72E3DCA2D157A4"
         }
       ],
       [
@@ -792,27 +786,39 @@
         }
       ],
       [
-        "passage>pasg",
-        {
-          "native": "ibc/208B2F137CDE510B44C41947C045CFDC27F996A9D990EA64460BDD5B3DBEB2ED"
-        }
-      ],
-      [
         "akash>akt",
         {
           "native": "ibc/1480B8FD20AD5FCAE81EA87584D269547DD4D436843C1D20F15E00EB64743EF4"
         }
       ],
       [
-        "coreum>core",
+        "passage>pasg",
         {
-          "native": "ibc/F3166F4D31D6BA1EC6C9F5536F5DDDD4CC93DBA430F7419E7CDC41C497944A65"
+          "native": "ibc/208B2F137CDE510B44C41947C045CFDC27F996A9D990EA64460BDD5B3DBEB2ED"
+        }
+      ],
+      [
+        "picasso>pica",
+        {
+          "native": "ibc/56D7C03B8F6A07AD322EEE1BEF3AE996E09D1C1E34C27CF37E0D4A0AC5972516"
+        }
+      ],
+      [
+        "axelar>axl",
+        {
+          "native": "ibc/903A61A498756EA560B85A85132D3AEE21B5DEDD41213725D22ABF276EA6945E"
         }
       ],
       [
         "bostrom>boot",
         {
           "native": "ibc/FE2CD1E6828EC0FAB8AF39BAC45BC25B965BA67CCBC50C13A14BD610B0D1E2C4"
+        }
+      ],
+      [
+        "coreum>core",
+        {
+          "native": "ibc/F3166F4D31D6BA1EC6C9F5536F5DDDD4CC93DBA430F7419E7CDC41C497944A65"
         }
       ],
       [
@@ -894,12 +900,6 @@
         }
       ],
       [
-        "chihuahua>huahua",
-        {
-          "native": "ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228"
-        }
-      ],
-      [
         "stride>statom",
         {
           "native": "ibc/C140AFD542AE77BD7DCC83F13FDD8C5E5BB8C4929785E6EC2F4C636F98F17901"
@@ -915,6 +915,12 @@
         "bluzelle>blz",
         {
           "native": "ibc/63CDD51098FD99E04E5F5610A3882CBE7614C441607BA6FCD7F3A3C1CD5325F8"
+        }
+      ],
+      [
+        "chihuahua>huahua",
+        {
+          "native": "ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228"
         }
       ]
     ],
