@@ -10,3 +10,9 @@ The script can be triggered by two different events:
 2. A new deployment of the ANS contracts is made. In this case the address of the deployed contract is provided to the script and all the relevant data to that deployment is uploaded to the relevant ANS contract.
 
 In both cases a deployment `state.json` is used as the reference for finding the ANS addresses of a deployment.
+
+## Running Manually
+
+```bash
+cargo run --bin update_ans
+```
