@@ -20,14 +20,7 @@ abstract-core  = { git = "https://github.com/AbstractSDK/abstract",branch = "rel
 abstract-interface = { git = "https://github.com/AbstractSDK/abstract",branch = "release-0.19", version = "0.19.3", features = [
   "daemon",
 ], default-features = false }
-# Commented out until deployed chains are fixed
-#cw-orch = { version = "0.19.1", features = ["daemon"] }
-#abstract-core = { git = "https://github.com/AbstractSDK/abstract", branch = "release-0.20", version = "0.20.0", features = [
-#  "interface",
-#] }
-#abstract-interface = { git = "https://github.com/AbstractSDK/abstract", branch = "release-0.20", version = "0.20.0", features = [
-#  "daemon",
-#], default-features = false }
+
 
 tokio = { version = "1" }
 log = "0.4.14"
