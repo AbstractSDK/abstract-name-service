@@ -4,6 +4,7 @@ import { PoolRegistry } from '../registry/poolRegistry'
 import { AssetRegistry } from '../registry/assetRegistry'
 import { Osmosis1 } from '../networks/osmosis1'
 import { OsmoTest5 } from '../networks/osmotest5'
+import { AnsContractEntry } from '../objects'
 
 /*
 https://github.com/cosmostation/chainlist/blob/d433b3b8b7a0699ac137be1775b67fa00393de05/chain/osmosis/assets.json#L1255
@@ -133,6 +134,37 @@ const mainnet = new Osmosis1(
         },
       ],
       [
+        'osmosis>milktia',
+        {
+          native:
+            'factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA',
+        },
+      ],
+      [
+        'osmosis>mbrn',
+        {
+          native: 'factory/osmo1s794h9rxggytja3a4pmwul53u98k06zy2qtrdvjnfuxruh7s8yjs6cyxgd/umbrn',
+        },
+      ],
+      [
+        'osmosis>cdt',
+        {
+          native: 'factory/osmo1s794h9rxggytja3a4pmwul53u98k06zy2qtrdvjnfuxruh7s8yjs6cyxgd/ucdt',
+        },
+      ],
+      [
+        'dymension>dym',
+        {
+          native: 'ibc/9A76CDF0CBCEF37923F32518FA15E5DC92B9F56128292BC4D63C4AEA76CBB110',
+        },
+      ],
+      [
+        'stride>sttia',
+        {
+          native: 'ibc/698350B8A61D575025F3ED13E9AC9C0F45C89DEFE92F76D5838F1D3C1A7FF7C9',
+        },
+      ],
+      [
         'agoric>ist',
         {
           native: 'ibc/92BE0717F4678905E53F4E45B2DED18BC0CB97BF1F8B6A25AFEDF3D5A879B4D5',
@@ -143,7 +175,19 @@ const mainnet = new Osmosis1(
   new ContractRegistry(),
   new PoolRegistry()
 )
-const testnet = new OsmoTest5(new AssetRegistry(), new ContractRegistry(), new PoolRegistry())
+const testnet = new OsmoTest5(
+  new AssetRegistry(),
+  new ContractRegistry({
+    contractRegistry: [
+      new AnsContractEntry(
+        'croncat',
+        'factory',
+        'osmo105qu7ajcf9y5wgpj7kcqj2rmj6zn6d9ernw99efua7834xprvwkq3hfhaz'
+      ),
+    ],
+  }),
+  new PoolRegistry()
+)
 
 export class Osmosis extends Chain {
   constructor() {

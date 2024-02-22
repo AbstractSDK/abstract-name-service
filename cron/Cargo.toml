@@ -1,14 +1,14 @@
 [package]
-name    = "script-helpers"
+name = "script-helpers"
 version = "0.0.1"
 edition = "2021"
 
 [lib]
 
 [dependencies]
-cosmwasm-std   = { version = "1" }
-serde          = { version = "1" }
-semver         = { version = "1", default-features = false }
+cosmwasm-std = { version = "1" }
+serde = { version = "1" }
+semver = { version = "1", default-features = false }
 cw-controllers = { version = "1" }
 thiserror      = { version = "1" }
 cw-asset       = { version = "3" }

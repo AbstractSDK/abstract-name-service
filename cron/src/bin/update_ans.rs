@@ -7,7 +7,6 @@ use cw_orch::{
     },
 };
 use cw_orch::daemon::ChainKind;
-use cw_orch::daemon::networks::{OSMOSIS_1, PHOENIX_1};
 use cw_orch::daemon::networks::neutron::NEUTRON_NETWORK;
 use tokio::runtime::Runtime;
 
@@ -25,12 +24,17 @@ pub const NEUTRON_1: ChainInfo = ChainInfo {
 
 fn update_ans() -> anyhow::Result<()> {
     let rt = Runtime::new()?;
-    let deployment = Abstract::load_from(Mock::new(&Addr::unchecked("input")))?;
-    // Below does not exist anymore?
+    // let deployment = Abstract::load_from(Mock::new(&Addr::unchecked("input")))?;
     // let chain_ids = deployment.get_all_deployed_chains();
-    // let chain_ids: Vec<String> = vec!["phoenix-1"].into_iter().map(|n| n.to_string()).collect();
+    let chain_ids: Vec<String> = vec!["osmo-test-5"]
+        .into_iter()
+        .map(|n| n.to_string())
+        .collect();
 
-    let networks: Vec<ChainInfo> = vec![OSMOSIS_1];
+    let networks: Vec<ChainInfo> = chain_ids
+        .iter()
+        .map(|n| parse_network(n).unwrap())
+        .collect();
 
     for network in networks {
         let chain = DaemonBuilder::default()
