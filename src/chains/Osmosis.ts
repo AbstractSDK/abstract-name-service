@@ -133,6 +133,37 @@ const mainnet = new Osmosis1(
           native: 'ibc/65381C5F3FD21442283D56925E62EA524DED8B6927F0FF94E21E0020954C40B5',
         },
       ],
+      [
+        'osmosis>milktia',
+        {
+          native:
+            'factory/osmo1f5vfcph2dvfeqcqkhetwv75fda69z7e5c2dldm3kvgj23crkv6wqcn47a0/umilkTIA',
+        },
+      ],
+      [
+        'osmosis>mbrn',
+        {
+          native: 'factory/osmo1s794h9rxggytja3a4pmwul53u98k06zy2qtrdvjnfuxruh7s8yjs6cyxgd/umbrn',
+        },
+      ],
+      [
+        'osmosis>cdt',
+        {
+          native: 'factory/osmo1s794h9rxggytja3a4pmwul53u98k06zy2qtrdvjnfuxruh7s8yjs6cyxgd/ucdt',
+        },
+      ],
+      [
+        'dymension>dym',
+        {
+          native: 'ibc/9A76CDF0CBCEF37923F32518FA15E5DC92B9F56128292BC4D63C4AEA76CBB110',
+        },
+      ],
+      [
+        'stride>sttia',
+        {
+          native: 'ibc/698350B8A61D575025F3ED13E9AC9C0F45C89DEFE92F76D5838F1D3C1A7FF7C9',
+        },
+      ],
     ]),
   }),
   new ContractRegistry(),

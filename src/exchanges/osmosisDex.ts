@@ -2,6 +2,7 @@ import { AnsPoolEntry, PoolId } from '../objects'
 import { Exchange } from './exchange'
 import { Network } from '../networks/network'
 import { NotFoundError } from '../registry/IRegistry'
+import wretch from 'wretch'
 
 const OSMOSIS = 'Osmosis'
 
@@ -136,8 +137,6 @@ export class OsmosisDex extends Exchange {
 
       const poolDenoms = [token0, token1]
 
-      const poolType = 'ConcentratedLiquidity'
-
       const poolId = PoolId.id(+id)
 
       let assetNames: string[]
@@ -150,7 +149,7 @@ export class OsmosisDex extends Exchange {
           network.poolRegistry.unknown(
             new AnsPoolEntry(poolId, {
               dex: this.name.toLowerCase(),
-              pool_type: poolType,
+              pool_type: 'ConcentratedLiquidity',
               assets: poolDenoms,
             })
           )
@@ -162,7 +161,7 @@ export class OsmosisDex extends Exchange {
       network.poolRegistry.register(
         new AnsPoolEntry(poolId, {
           dex: this.name.toLowerCase(),
-          pool_type: poolType,
+          pool_type: 'ConcentratedLiquidity',
           assets: assetNames,
         })
       )
@@ -179,10 +178,10 @@ export class OsmosisDex extends Exchange {
 
     // retrieve all the pools
     const { gammPoolUrl, concentratedPoolUrl, volumeUrl } = this.options
-    let gammPoolList: OsmosisGammPoolList = await fetch(gammPoolUrl).then((res) => res.json())
-    let concentratedPoolList: OsmosisConcentratedList = await fetch(concentratedPoolUrl).then(
-      (res) => res.json()
-    )
+    let gammPoolList: OsmosisGammPoolList = await wretch(gammPoolUrl).get().json()
+    let concentratedPoolList: OsmosisConcentratedList = await wretch(concentratedPoolUrl)
+      .get()
+      .json()
 
     // If the volumeUrl is specified, we sort the actual pools by volume
     if (volumeUrl) {
