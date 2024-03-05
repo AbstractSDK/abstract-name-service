@@ -1,23 +1,25 @@
 [package]
-name    = "script-helpers"
+name = "script-helpers"
 version = "0.0.1"
 edition = "2021"
 
 [lib]
 
 [dependencies]
-cosmwasm-std   = { version = "1" }
-serde          = { version = "1" }
-semver         = { version = "1", default-features = false }
+cosmwasm-std = { version = "1" }
+serde = { version = "1" }
+semver = { version = "1", default-features = false }
 cw-controllers = { version = "1" }
 thiserror      = { version = "1" }
 cw-asset       = { version = "3" }
 cw2            = { version = "1" }
 cw20           = { version = "1" }
 cw20-base      = { version = "1" }
-cw-orch        = { version = "0.16.2", features = ["daemon"] }
-abstract-core  = { git = "https://github.com/AbstractSDK/abstract",branch = "release-0.19", version = "0.19.2", features = ["interface"] }
-abstract-interface = { git = "https://github.com/AbstractSDK/abstract",branch = "release-0.19", version = "0.19.3", features = [
+cw-orch = { version = "0.19.1", features = ["daemon"] }
+abstract-core = { git = "https://github.com/AbstractSDK/abstract", branch = "release-0.20", version = "0.20.0", features = [
+  "interface",
+] }
+abstract-interface = { git = "https://github.com/AbstractSDK/abstract", branch = "release-0.20", version = "0.20.0", features = [
   "daemon",
 ], default-features = false }
 

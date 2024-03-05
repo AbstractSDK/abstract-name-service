@@ -4,7 +4,10 @@ export class AnsPoolEntry {
 
   constructor(id: AbstractPoolId, metadata: AbstractPoolMetadata) {
     this.id = id
-    this.metadata = metadata
+    this.metadata = {
+      ...metadata,
+      assets: metadata.assets.map((a) => a.toLowerCase()).sort(),
+    }
   }
 
   public equals(other: AnsPoolEntry): boolean {
