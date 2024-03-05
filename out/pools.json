@@ -1061,6 +1061,19 @@
       ],
       [
         {
+          "id": 1057
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>osmo",
+            "picasso>pica"
+          ]
+        }
+      ],
+      [
+        {
           "id": 678
         },
         {
@@ -1438,6 +1451,84 @@
       ],
       [
         {
+          "id": 907
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "mars>mars",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 1041
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "eth>axelar>usdc",
+            "nolus>nls"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 816
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "osmosis>osmo",
+            "teritori>tori"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 497
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "juno>juno",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 644
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "decentr>dec",
+            "osmosis>osmo"
+          ]
+        }
+      ],
+      [
+        {
+          "id": 611
+        },
+        {
+          "dex": "osmosis",
+          "pool_type": "ConstantProduct",
+          "assets": [
+            "cosmoshub>atom",
+            "stargaze>stars"
+          ]
+        }
+      ],
+      [
+        {
           "id": 992
         },
         {
@@ -1633,7 +1724,7 @@
       ],
       [
         {
-          "id": 952
+          "id": 587
         },
         {
           "dex": "osmosis",

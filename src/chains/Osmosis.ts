@@ -5,7 +5,6 @@ import { AssetRegistry } from '../registry/assetRegistry'
 import { Osmosis1 } from '../networks/osmosis1'
 import { OsmoTest5 } from '../networks/osmotest5'
 import { AnsContractEntry } from '../objects'
-
 /*
 https://github.com/cosmostation/chainlist/blob/d433b3b8b7a0699ac137be1775b67fa00393de05/chain/osmosis/assets.json#L1255
 https://github.com/osmosis-labs/osmosis/blob/f11259d75d53a9e7ebeec03b163bd533f5cc90df/cmd/osmosisd/cmd/osmosis-1-assetlist.json#L6873
