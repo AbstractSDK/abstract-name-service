@@ -32,9 +32,11 @@ pub fn update_channels(ans: &AnsHost<Daemon>) -> Result<(), AbstractInterfaceErr
         })
         .collect();
 
-    batch_execute_ans(&ans, &channels_to_add, 25, |chunk| ExecuteMsg::UpdateChannels {
-        to_add: chunk.to_vec(),
-        to_remove: vec![],
+    batch_execute_ans(ans, &channels_to_add, 25, |chunk| {
+        ExecuteMsg::UpdateChannels {
+            to_add: chunk.to_vec(),
+            to_remove: vec![],
+        }
     })?;
 
     Ok(())

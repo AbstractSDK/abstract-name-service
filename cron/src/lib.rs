@@ -10,16 +10,16 @@ use abstract_core::objects::UniquePoolId;
 use abstract_interface::AbstractInterfaceError;
 use abstract_interface::AnsHost;
 use cw_asset::AssetInfoBase;
-use cw_orch::{
-    daemon::ChainInfo,
-    prelude::{
-        *,
-        networks::{HARPOON_4, JUNO_1, OSMO_5, PHOENIX_1, PION_1, PISCO_1, UNI_6},
-    },
-};
 use cw_orch::daemon::Daemon;
 use cw_orch::daemon::DaemonAsyncBuilder;
 use cw_orch::state::ChainState;
+use cw_orch::{
+    daemon::ChainInfo,
+    prelude::{
+        networks::{HARPOON_4, JUNO_1, OSMO_5, PHOENIX_1, PION_1, PISCO_1, UNI_6},
+        *,
+    },
+};
 use reqwest::Client;
 use serde_json::Value;
 use tokio::runtime::Runtime;
@@ -109,7 +109,7 @@ pub struct AnsData {
 
 pub type EntryDif<K, V> = (HashSet<K>, HashMap<K, V>);
 
-#[derive(Default, Debug)]
+#[derive(Default, Debug, PartialEq)]
 pub struct AnsDataDiff {
     pub contracts: EntryDif<UncheckedContractEntry, String>,
     pub assets: EntryDif<String, AssetInfoBase<String>>,
@@ -160,23 +160,34 @@ pub fn diff(
     scraped_entry: AnsData,
     on_chain_entry: AnsData,
 ) -> Result<AnsDataDiff, AbstractInterfaceError> {
-    let contracts = crate::hashmap_diff::diff(scraped_entry.contracts, on_chain_entry.contracts)?;
-    let assets = crate::hashmap_diff::diff(scraped_entry.assets, on_chain_entry.assets)?;
-    let dexes =
-        crate::hashmap_diff::diff(scraped_entry.dexes.clone(), on_chain_entry.dexes.clone())?;
+    let contracts =
+        crate::hashmap_diff::diff(scraped_entry.contracts, on_chain_entry.contracts, false)?;
+    let assets = crate::hashmap_diff::diff(scraped_entry.assets, on_chain_entry.assets, false)?;
+    let dexes = crate::hashmap_diff::diff(
+        scraped_entry.dexes.clone(),
+        on_chain_entry.dexes.clone(),
+        false,
+    )?;
 
     // For pools, we diff only the metadata and then get the uniquepoolid to attach to the address
+    // As well as remove "outdated" pools, which are duplicates of PoolAddress
     let pools = crate::hashmap_diff::diff(
         scraped_entry
             .pools
             .iter()
-            .map(|(a, (_u, m))| (a.clone(), m.clone()))
+            // Sort scraped assets, in case it was scraped by hands
+            .map(|(a, (_u, m))| {
+                let mut m = m.clone();
+                m.assets.sort_unstable();
+                (a.clone(), m)
+            })
             .collect(),
         on_chain_entry
             .pools
             .iter()
             .map(|(a, (_u, m))| (a.clone(), m.clone()))
             .collect(),
+        true,
     )?;
 
     let pool_return = (
@@ -213,8 +224,8 @@ pub fn batch_execute_ans<T, MsgBuilder>(
     chunk_size: usize,
     mut msg_builder: MsgBuilder,
 ) -> Result<(), crate::AbstractInterfaceError>
-    where
-        MsgBuilder: FnMut(&[T]) -> ans_host::ExecuteMsg,
+where
+    MsgBuilder: FnMut(&[T]) -> ans_host::ExecuteMsg,
 {
     let mut i = 0;
     while i < items.len() {

@@ -53,15 +53,19 @@ pub fn update(
     let to_remove: Vec<_> = diff.0.into_iter().collect();
 
     // add the assets
-    batch_execute_ans(&ans_host, &to_add, 25, |chunk| ExecuteMsg::UpdateAssetAddresses {
-        to_add: chunk.to_vec(),
-        to_remove: vec![],
+    batch_execute_ans(ans_host, &to_add, 25, |chunk| {
+        ExecuteMsg::UpdateAssetAddresses {
+            to_add: chunk.to_vec(),
+            to_remove: vec![],
+        }
     })?;
 
     // remove the assets
-    batch_execute_ans(&ans_host, &to_remove, 25, |chunk| ExecuteMsg::UpdateAssetAddresses {
-        to_add: vec![],
-        to_remove: chunk.to_vec(),
+    batch_execute_ans(ans_host, &to_remove, 25, |chunk| {
+        ExecuteMsg::UpdateAssetAddresses {
+            to_add: vec![],
+            to_remove: chunk.to_vec(),
+        }
     })?;
 
     Ok(())
@@ -73,9 +77,9 @@ mod test {
 
     use abstract_interface::Abstract;
     use anyhow::Result as AnyResult;
-    use cw_orch::{deploy::Deploy, prelude::networks::JUNO_1};
-    use cw_orch::daemon::{ChainInfo, DaemonBuilder};
     use cw_orch::daemon::ChainRegistryData as ChainData;
+    use cw_orch::daemon::{ChainInfo, DaemonBuilder};
+    use cw_orch::{deploy::Deploy, prelude::networks::JUNO_1};
     use tokio::runtime::Runtime;
 
     use super::{get_on_chain_entries, get_scraped_entries};

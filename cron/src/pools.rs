@@ -1,8 +1,8 @@
 use std::collections::{HashMap, HashSet};
 
 use abstract_core::ans_host::*;
-use abstract_core::objects::{AssetEntry, DexAssetPairing, PoolMetadata, UniquePoolId};
 use abstract_core::objects::pool_id::{PoolAddressBase, UncheckedPoolAddress};
+use abstract_core::objects::{AssetEntry, DexAssetPairing, PoolMetadata, UniquePoolId};
 use abstract_interface::{AbstractInterfaceError, AnsHost};
 use cw_asset::AssetInfoBase;
 use cw_orch::prelude::*;
@@ -29,13 +29,12 @@ pub fn get_scraped_entries(
     let scraped_entries_vec: Vec<(UncheckedPoolAddress, PoolMetadata)> = parsed_scraped_entries
         .iter()
         .map(|value| {
-            let pool: (UncheckedPoolAddress, PoolMetadata) =
+            let (pool_address, pool_metadata): (UncheckedPoolAddress, PoolMetadata) =
                 serde_json::from_value(value.clone()).unwrap();
             // If pool uses pool-id we assume it is on Osmosis and register the LP assets with the `gamm/pool/{pool_id}` prefix.
-            if let UncheckedPoolAddress::Id(pool_id) = pool.0 {
-                let dex = &pool.1.dex;
-                let assets = pool
-                    .1
+            if let UncheckedPoolAddress::Id(pool_id) = pool_address {
+                let dex = &pool_metadata.dex;
+                let assets = pool_metadata
                     .assets
                     .iter()
                     .map(AssetEntry::as_str)
@@ -47,9 +46,9 @@ pub fn get_scraped_entries(
                     AssetInfoBase::Native(format!("gamm/pool/{pool_id}")),
                 );
             }
-            dexes_to_register.insert(pool.1.dex.clone());
+            dexes_to_register.insert(pool_metadata.dex.clone());
 
-            pool
+            (pool_address, pool_metadata)
         })
         .collect();
 
@@ -118,20 +117,26 @@ pub fn update(
     let to_remove: Vec<_> = diff.0.into_iter().collect();
 
     // add the pools
-    batch_execute_ans(&ans_host, &to_add.into_iter().collect::<Vec<_>>(), 25, |chunk| {
-        ExecuteMsg::UpdatePools {
+    batch_execute_ans(
+        ans_host,
+        &to_add.into_iter().collect::<Vec<_>>(),
+        25,
+        |chunk| ExecuteMsg::UpdatePools {
             to_add: chunk.to_vec(),
             to_remove: vec![],
-        }
-    })?;
+        },
+    )?;
 
     // remove the pools
-    batch_execute_ans(&ans_host, &to_remove.into_iter().collect::<Vec<_>>(), 25, |chunk| {
-        ExecuteMsg::UpdatePools {
+    batch_execute_ans(
+        ans_host,
+        &to_remove.into_iter().collect::<Vec<_>>(),
+        25,
+        |chunk| ExecuteMsg::UpdatePools {
             to_add: vec![],
             to_remove: chunk.to_vec(),
-        }
-    })?;
+        },
+    )?;
 
     Ok(())
 }
