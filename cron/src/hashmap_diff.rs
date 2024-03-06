@@ -6,6 +6,7 @@ use std::{collections::HashSet, hash::Hash};
 pub fn diff<K, V>(
     scraped_entries: HashMap<K, V>,
     on_chain_entries: HashMap<K, V>,
+    remove_outdated: bool,
 ) -> Result<(HashSet<K>, HashMap<K, V>), AbstractInterfaceError>
 where
     K: Eq + Hash + Clone + Debug,
@@ -16,6 +17,7 @@ where
         &union_keys,
         &scraped_entries,
         &on_chain_entries,
+        remove_outdated,
     ))
 }
 
@@ -37,6 +39,7 @@ fn get_changes<K, V>(
     union_keys: &Vec<&K>,
     scraped_entries: &HashMap<K, V>,
     on_chain_entries: &HashMap<K, V>,
+    remove_stale: bool,
 ) -> (HashSet<K>, HashMap<K, V>)
 where
     K: Eq + Hash + Clone + Debug,
@@ -60,6 +63,9 @@ where
                 log::info!("{:?} - {:?}", val_scraped, val_on_chain);
                 log::info!("entry : {:?}", entry);
                 to_add.insert((*entry).to_owned(), val_scraped.clone());
+                if remove_stale {
+                    to_remove.insert((*entry).clone());
+                }
             }
         }
     }
@@ -69,6 +75,14 @@ where
 #[cfg(test)]
 mod test {
 
+    use std::collections::HashMap;
+    use std::collections::HashSet;
+
+    use abstract_core::objects::pool_id::UncheckedPoolAddress;
+    use abstract_core::objects::AssetEntry;
+    use abstract_core::objects::PoolMetadata;
+    use abstract_core::objects::PoolType;
+    use abstract_core::objects::UniquePoolId;
     use cw_orch::daemon::ChainRegistryData as ChainData;
 
     use cw_orch::daemon::ChainInfo;
@@ -77,6 +91,7 @@ mod test {
     use anyhow::Result as AnyResult;
 
     use crate::assets::get_scraped_entries;
+    use crate::AnsData;
     const CHAIN: ChainInfo = JUNO_1;
 
     #[test]
@@ -103,7 +118,7 @@ mod test {
 
         let dummy_scraped = scraped.clone();
 
-        let diff = super::diff(scraped, dummy_scraped)?;
+        let diff = super::diff(scraped, dummy_scraped, false)?;
 
         assert!(diff.0.is_empty());
         assert!(diff.1.is_empty());
@@ -124,7 +139,7 @@ mod test {
         let first_value = dummy_scraped.get(&first_key).unwrap().clone();
         dummy_scraped.remove(&first_key);
 
-        let diff = super::diff(scraped, dummy_scraped)?;
+        let diff = super::diff(scraped, dummy_scraped, false)?;
 
         assert!(diff.0.is_empty());
         assert_eq!(
@@ -151,7 +166,7 @@ mod test {
             dummy_scraped.remove(&first_key);
         }
 
-        let diff = super::diff(scraped, dummy_scraped)?;
+        let diff = super::diff(scraped, dummy_scraped, false)?;
 
         assert!(diff.0.is_empty());
         assert_eq!(diff.1.len(), 6);
@@ -171,7 +186,7 @@ mod test {
         let first_key = dummy_scraped.keys().next().unwrap().clone();
         dummy_scraped.remove(&first_key);
 
-        let diff = super::diff(dummy_scraped, scraped)?;
+        let diff = super::diff(dummy_scraped, scraped, false)?;
 
         assert!(diff.1.is_empty());
         assert_eq!(diff.0.into_iter().collect::<Vec<_>>(), vec![first_key]);
@@ -197,7 +212,7 @@ mod test {
             cw_asset::AssetInfoBase::Cw20("dummy_value".to_string()),
         );
 
-        let diff = super::diff(scraped, dummy_scraped)?;
+        let diff = super::diff(scraped, dummy_scraped, false)?;
 
         assert_eq!(diff.0.into_iter().collect::<Vec<_>>(), vec!["dummy_key"]);
         assert_eq!(
@@ -226,7 +241,7 @@ mod test {
             cw_asset::AssetInfoBase::Cw20("dummy_value".to_string()),
         );
 
-        let diff = super::diff(scraped, dummy_scraped)?;
+        let diff = super::diff(scraped, dummy_scraped, false)?;
 
         assert!(diff.0.is_empty());
         assert_eq!(
@@ -252,7 +267,7 @@ mod test {
         let new_value = cw_asset::AssetInfoBase::Cw20("dummy_value".to_string());
         dummy_scraped.insert(first_key.to_string(), new_value.clone());
 
-        let diff = super::diff(dummy_scraped, scraped)?;
+        let diff = super::diff(dummy_scraped, scraped, false)?;
 
         assert!(diff.0.is_empty());
         assert_eq!(
@@ -260,5 +275,77 @@ mod test {
             vec![(first_key, new_value)]
         );
         Ok(())
+    }
+
+    #[test]
+    fn remove_pool_if_new_pool_address_same() {
+        let scraped_entries = HashMap::from([(
+            UncheckedPoolAddress::Id(0),
+            (PoolMetadata::new(
+                "dex_name",
+                PoolType::ConstantProduct,
+                vec!["asset_a", "asset_b"],
+            ),),
+        )]);
+
+        let on_chain_entries = HashMap::from([(
+            UncheckedPoolAddress::Id(0),
+            (PoolMetadata::new(
+                "dex_name",
+                PoolType::ConstantProduct,
+                vec!["asset_a_typo", "asset_b"],
+            ),),
+        )]);
+
+        let actual_diff = super::diff(scraped_entries, on_chain_entries, true).unwrap();
+        let expected_diff = (
+            HashSet::from([UncheckedPoolAddress::Id(0)]),
+            HashMap::from([(
+                UncheckedPoolAddress::Id(0),
+                (PoolMetadata::new(
+                    "dex_name",
+                    PoolType::ConstantProduct,
+                    vec!["asset_a", "asset_b"],
+                ),),
+            )]),
+        );
+        assert_eq!(actual_diff, expected_diff);
+    }
+
+    #[test]
+    fn no_diff_in_pool_if_scraped_assets_unsorted() {
+        let scraped_entries = AnsData {
+            pools: HashMap::from([(
+                UncheckedPoolAddress::Id(0),
+                (
+                    UniquePoolId::new(0),
+                    PoolMetadata {
+                        dex: "dex_name".to_owned(),
+                        pool_type: PoolType::ConstantProduct,
+                        assets: vec![AssetEntry::new("asset_b"), AssetEntry::new("asset_a")],
+                    },
+                ),
+            )]),
+            ..Default::default()
+        };
+
+        let on_chain_entries = AnsData {
+            pools: HashMap::from([(
+                UncheckedPoolAddress::Id(0),
+                (
+                    UniquePoolId::new(0),
+                    PoolMetadata {
+                        dex: "dex_name".to_owned(),
+                        pool_type: PoolType::ConstantProduct,
+                        assets: vec![AssetEntry::new("asset_a"), AssetEntry::new("asset_b")],
+                    },
+                ),
+            )]),
+            ..Default::default()
+        };
+
+        let actual_diff = crate::diff(scraped_entries, on_chain_entries).unwrap();
+        let expected_diff = crate::AnsDataDiff::default();
+        assert_eq!(actual_diff, expected_diff);
     }
 }

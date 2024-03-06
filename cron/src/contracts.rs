@@ -59,13 +59,15 @@ pub fn update(
     let to_remove: Vec<_> = diff.0.into_iter().collect();
 
     // add the contracts
-    batch_execute_ans(&ans_host, &to_add, 10, |chunk| ExecuteMsg::UpdateContractAddresses {
-        to_add: chunk.to_vec(),
-        to_remove: vec![],
+    batch_execute_ans(ans_host, &to_add, 10, |chunk| {
+        ExecuteMsg::UpdateContractAddresses {
+            to_add: chunk.to_vec(),
+            to_remove: vec![],
+        }
     })?;
 
     // remove the contracts
-    batch_execute_ans(&ans_host, &to_remove, 10, |chunk| {
+    batch_execute_ans(ans_host, &to_remove, 10, |chunk| {
         ExecuteMsg::UpdateContractAddresses {
             to_add: vec![],
             to_remove: chunk.to_vec(),
