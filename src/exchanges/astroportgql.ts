@@ -33,7 +33,7 @@ interface AstroportOptions {
   graphQlEndpoint: string
   astroContractsOverrides?: {
     astro_token_address?: string
-    generator_address?: string
+    incentives_address?: string
   }
 }
 
@@ -113,11 +113,11 @@ export class AstroportGql extends Exchange {
   async registerPools(network: Network) {
     const astroContracts = await this.retrieveAstroContracts()
 
-    if (!astroContracts.generator_address) {
+    if (!astroContracts.incentives_address) {
       throw new Error('Could not find generator address')
     }
 
-    const { generator_address: stakingAddress } = astroContracts
+    const { incentives_address: stakingAddress } = astroContracts
 
     const { pools } = await this.fetchGraphql(network)
 
@@ -159,7 +159,7 @@ export class AstroportGql extends Exchange {
   async registerContracts(network: Network) {}
 
   private async retrieveAstroContracts(): Promise<{
-    generator_address: string
+    incentives_address: string
     factory_address: string
     astro_token_address: string
     [k: string]: string

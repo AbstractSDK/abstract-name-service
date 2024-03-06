@@ -21,7 +21,7 @@ export type PairType =
 export interface InstantiateMsg {
   coin_registry_address: string
   fee_address?: string | null
-  generator_address?: string | null
+  incentives_address?: string | null
   owner: string
   pair_configs: PairConfig[]
   token_code_id: number
@@ -42,7 +42,7 @@ export type ExecuteMsg =
       update_config: {
         coin_registry_address?: string | null
         fee_address?: string | null
-        generator_address?: string | null
+        incentives_address?: string | null
         token_code_id?: number | null
         whitelist_code_id?: number | null
       }
@@ -130,7 +130,7 @@ export type ArrayOfPairType = PairType[]
 export interface ConfigResponse {
   coin_registry_address: Addr
   fee_address?: Addr | null
-  generator_address?: Addr | null
+  incentives_address?: Addr | null
   owner: Addr
   pair_configs: PairConfig[]
   token_code_id: number

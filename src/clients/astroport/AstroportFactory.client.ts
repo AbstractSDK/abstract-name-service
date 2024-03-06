@@ -102,13 +102,13 @@ export interface AstroportFactoryInterface extends AstroportFactoryReadOnlyInter
     {
       coinRegistryAddress,
       feeAddress,
-      generatorAddress,
+      incentivesAddress,
       tokenCodeId,
       whitelistCodeId,
     }: {
       coinRegistryAddress?: string
       feeAddress?: string
-      generatorAddress?: string
+      incentivesAddress?: string
       tokenCodeId?: number
       whitelistCodeId?: number
     },
@@ -211,13 +211,13 @@ export class AstroportFactoryClient
     {
       coinRegistryAddress,
       feeAddress,
-      generatorAddress,
+      incentivesAddress,
       tokenCodeId,
       whitelistCodeId,
     }: {
       coinRegistryAddress?: string
       feeAddress?: string
-      generatorAddress?: string
+      incentivesAddress?: string
       tokenCodeId?: number
       whitelistCodeId?: number
     },
@@ -232,7 +232,7 @@ export class AstroportFactoryClient
         update_config: {
           coin_registry_address: coinRegistryAddress,
           fee_address: feeAddress,
-          generator_address: generatorAddress,
+          incentives_address: incentivesAddress,
           token_code_id: tokenCodeId,
           whitelist_code_id: whitelistCodeId,
         },
