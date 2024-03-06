@@ -89,11 +89,11 @@ export class Wyndex extends Exchange {
   async registerPools(network: Network) {
     const astroContracts = await this.retrieveAstroContracts()
 
-    if (!astroContracts.generator_address) {
+    if (!astroContracts.incentives_address) {
       throw new Error('Could not find generator address')
     }
 
-    const { generator_address: stakingAddress } = astroContracts
+    const { incentives_address: stakingAddress } = astroContracts
 
     const pairs = await this.fetchTopPairs(network)
 
@@ -164,11 +164,11 @@ export class Wyndex extends Exchange {
   async registerContracts(network: Network) {
     // const astroContracts = await this.retrieveAstroContracts()
     //
-    // if (!astroContracts.generator_address) {
+    // if (!astroContracts.incentives_address) {
     //   throw new Error('Could not find generator address')
     // }
     //
-    // const { generator_address: stakingAddress } = astroContracts
+    // const { incentives_address: stakingAddress } = astroContracts
     //
     // const { pools } = await this.fetchPoolList(network)
     //
